@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SideHustle — predicciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0E1116;--card:#171B22;--line:rgba(255,255,255,0.06);--text:#F4F6F8;--muted:#9BA3AE;--brand:#0AF5E1;--gold:#FFCE1F;--coral:#FF7A59;--green:#38FF48;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#0a0c10;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;display:flex;justify-content:center;min-height:100vh;padding:16px;}
+  .app{width:100%;max-width:420px;background:var(--bg);border-radius:24px;overflow:hidden;border:1px solid var(--line);align-self:flex-start;}
+  .pad{padding:16px 18px;}
+  .row{display:flex;align-items:center;}
+  .between{justify-content:space-between;}
+  .muted{color:var(--muted);}
+  .count{font-size:14px;font-weight:600;color:var(--coral);font-variant-numeric:tabular-nums;}
+  h1{font-size:20px;font-weight:600;margin:0 0 10px;}
+  .info{display:flex;align-items:center;gap:9px;margin-bottom:6px;font-size:13px;color:#DDE6F5;}
+  .info.sub{font-size:12px;color:var(--muted);}
+  .mcard{background:var(--card);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:12px;margin-bottom:10px;}
+  .matchseq{margin:0 0 8px 2px;color:#7F8A9A;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+  .mrow{display:flex;align-items:center;gap:8px;}
+  .team{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:600;color:#C3C9D2;background:var(--bg);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:9px 6px;cursor:pointer;transition:all .15s ease;}
+  .mono{display:inline-flex;align-items:center;justify-content:center;min-width:36px;padding:4px 7px;border-radius:6px;color:#fff;font-family:'Graduate',serif;font-size:12px;letter-spacing:.5px;border:1px solid rgba(255,255,255,0.18);line-height:1;}
+  .vs{font-size:11px;color:#6B7280;}
+  .lockbtn{width:34px;height:34px;border-radius:9px;background:var(--bg);border:1px solid rgba(255,255,255,0.07);color:#6B7280;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none;}
+  .lockbtn.on{background:rgba(255,206,31,0.15);border-color:var(--gold);color:var(--gold);}
+  .lockscore{display:none;grid-template-columns:1fr auto 1fr;gap:10px;align-items:start;margin-top:12px;padding-bottom:6px;}
+  .lockscore.show{display:grid;}
+  .scorefield{display:flex;flex-direction:column;align-items:center;gap:7px;position:relative;}
+  .scorefield .sc-mono{min-width:34px;padding:3px 8px;border-radius:6px;color:#fff;font:700 12px/1 'Graduate',serif;letter-spacing:.5px;text-align:center;border:1px solid rgba(255,255,255,0.18);}
+  .scorefield input{width:100%;max-width:92px;background:var(--bg);color:var(--text);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:9px;text-align:center;font:700 24px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums;}
+  .scorefield input::-webkit-outer-spin-button,.scorefield input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+  .scorefield input[type=number]{-moz-appearance:textfield;appearance:textfield;}
+  .scorefield input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 2px rgba(255,206,31,0.14);}
+  .scorefield.won .sc-mono{box-shadow:0 0 0 2px var(--gold);}
+  .scorefield.won::after{content:'\2191 tu pick';position:absolute;bottom:-14px;font:600 9px/1 -apple-system,sans-serif;color:var(--gold);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+  .scoredash{color:var(--muted);font-weight:700;font-size:20px;align-self:center;padding-top:25px;}
+  .scorefield.err input{border-color:rgba(255,122,89,0.6);box-shadow:0 0 0 2px rgba(255,122,89,0.12);}
+  .lockwarn{display:none;align-items:center;gap:5px;margin-top:14px;font-size:11px;font-weight:600;line-height:1.3;}
+  .lockwarn.show{display:flex;}
+  .lockwarn.bad{color:var(--coral);}
+  .lockwarn.ok{color:#6FE9DD;}
+  .lockcap{font-size:11px;color:#C9A24B;margin-top:8px;display:none;}
+  .lockcap.show{display:block;}
+  .mcard.frozen{background:#0f1218;border-color:rgba(255,255,255,0.04);}
+  .mcard.frozen.sealed{position:relative;background:var(--card);border:1.5px solid rgba(111,233,221,0.5);}
+  .mcard.frozen .scorefield input{background:transparent;color:#A99A6A;border-color:rgba(201,162,75,0.15);}
+  .frozencap{font-size:11px;color:#9BA3AE;margin-top:8px;display:flex;align-items:center;gap:5px;}
+  .group{margin-bottom:4px;}
+  .ghead{display:flex;align-items:center;gap:8px;padding:9px 4px;cursor:pointer;user-select:none;}
+  .ghead .glabel{font-size:13px;color:var(--muted);font-weight:600;}
+  .ghead .gcount{font-size:12px;color:var(--muted);background:#171B22;border-radius:20px;padding:1px 9px;}
+  .ghead:hover{background:rgba(255,255,255,0.02);border-radius:8px;}
+  .ghead .chevbtn{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#171B22;color:var(--muted);font-size:16px;}
+  .ghead:hover .chevbtn{background:#1d232c;color:#C3C9D2;}
+  .ghead .chevbtn svg{display:block;transition:transform .2s ease;}
+  .ghead.collapsed .chevbtn svg{transform:rotate(-90deg);}
+  @media (min-width:760px){
+    .app{max-width:780px;}
+    #open-body{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;}
+    #open-body .mcard{margin-bottom:0;order:var(--desktop-order,0);}
+  }
+  .spinner{width:28px;height:28px;border-radius:50%;border:3px solid rgba(255,255,255,0.10);border-top-color:var(--brand);animation:spin .8s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  button.send{width:100%;background:var(--brand);color:#0E1116;border:none;font-size:15px;font-weight:600;padding:13px;border-radius:12px;cursor:pointer;}
+  button.send:disabled{opacity:.7;cursor:default;}
+  .status{display:none;margin-top:12px;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.4;}
+  .stale-list{display:grid;grid-template-columns:1fr;gap:4px;margin:8px 0;padding:0;list-style:none;color:#F3CFC2;}
+  .stale-list li{padding:5px 8px;border-radius:7px;background:rgba(255,255,255,0.035);break-inside:avoid;}
+  @media (min-width:760px){.stale-list{display:block;column-count:2;column-gap:8px;}.stale-list li{margin-bottom:4px;}}
+  .disclaimer{text-align:center;font-size:11px;color:#565B64;padding:8px 20px 18px;line-height:1.5;}
+  .warn{background:rgba(255,122,89,0.12);border:1px solid rgba(255,122,89,0.35);color:#F3CFC2;font-size:12px;border-radius:10px;padding:10px 12px;margin:0 18px 10px;display:none;}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="pad">
+    <div class="row between" style="margin-bottom:14px;">
+      <div class="row" style="gap:9px;">
+        <div style="width:26px;height:26px;border-radius:7px;background:var(--brand);display:flex;align-items:center;justify-content:center;"><span data-ic="bolt" data-sz="15" data-col="#0E1116"></span></div>
+        <span style="font-size:15px;font-weight:600;">SideHustle</span>
+        <span id="env-badge" style="display:none;margin-left:6px;font-size:10px;font-weight:700;color:#fff;padding:2px 6px;border-radius:5px;letter-spacing:.04em;"></span>
+      </div>
+      <div style="text-align:right;"><div style="font-size:11px;" class="muted"><span id="next-match">—</span> cierra en</div><div id="count" class="count">—</div></div>
+    </div>
+    <h1 id="greeting">Hola</h1>
+    <div class="info"><span data-ic="lock-open" data-sz="17" data-col="#6FE9DD"></span><span>Puedes editar cada partido hasta 10 min antes de su inicio</span></div>
+    <div class="info sub"><span data-ic="eye-off" data-sz="15" data-col="#6B7280"></span><span>tus picks son confidenciales hasta el cierre</span></div>
+  </div>
+
+  <div id="cfgwarn" class="warn">Falta configurar <code>APPS_SCRIPT_URL</code> arriba del &lt;script&gt;. La página muestra el flujo pero no enviará al Sheet.</div>
+
+  <div class="pad" style="padding-top:6px;">
+    <div class="row between" style="padding:6px 4px 10px;">
+      <span class="muted" style="font-size:13px;">tus picks de la semana</span>
+      <span id="prog" style="font-size:13px;font-weight:600;color:var(--gold);"></span>
+    </div>
+    <div id="picks-skeleton" style="padding:36px 12px;display:flex;flex-direction:column;align-items:center;gap:14px;">
+      <div class="spinner"></div>
+      <span style="font-size:13px;color:#9BA3AE;">cargando tus predicciones…</span>
+    </div>
+    <div id="picks-content" style="opacity:0;transition:opacity .35s ease;">
+      <div class="group" id="group-open">
+        <div class="ghead" data-target="open-body"><span data-ic="lock-open" data-sz="15" data-col="#6FE9DD"></span><span class="glabel">abiertos</span><span class="gcount" id="cnt-open">0</span><span class="chevbtn"><span data-ic="chevron-down" data-sz="16"></span></span></div>
+        <div class="gbody" id="open-body"></div>
+      </div>
+      <div class="group" id="group-closed" style="display:none;">
+        <div class="ghead collapsed" data-target="closed-body"><span data-ic="lock" data-sz="15" data-col="#6B7280"></span><span class="glabel">cerrados</span><span class="gcount" id="cnt-closed">0</span><span class="chevbtn"><span data-ic="chevron-down" data-sz="16"></span></span></div>
+        <div class="gbody" id="closed-body" style="display:none;"></div>
+      </div>
+      <p id="week-note" style="text-align:center;font-size:12px;color:#6B7280;margin:10px 0 2px;"></p>
+    </div>
+  </div>
+
+  <div class="pad" style="padding-top:6px;padding-bottom:6px;">
+    <button id="send" class="send">Enviar predicciones</button>
+    <div id="status" class="status"></div>
+  </div>
+  <p class="disclaimer">SideHustle no está afiliada ni patrocinada por la NFL. Los nombres y colores pertenecen a sus respectivos equipos.</p>
+
+</div>
+
+<script src="betz_bootstrap.js"></script>
+<script>
+//--------------------------------------------------------------
+// 1. Config  (por AMBIENTE vía betz-runtime.json — no editar aquí)
+//--------------------------------------------------------------
+// El endpoint, competition_id y period_id EFECTIVOS provienen de
+// betz-runtime.json (artefacto de deployment, no versionado). Los valores de
+// abajo son solo defaults de RENDER local; la captura permanece BLOQUEADA hasta
+// que el handshake receiver_info (sin token) coincida exactamente con el
+// ambiente declarado. Ningún endpoint queda embebido en este archivo.
+var APPS_SCRIPT_URL = "";          // se resuelve desde betz-runtime.json
+var COMPETITION_ID  = "NFL2026";   // default de render; runtime lo sobreescribe
+var PERIOD_ID       = "REG-1";     // default de render; runtime lo sobreescribe
+var TOKEN = "";
+var DISPLAY_NAME = "Invitado";
+var CAPTURE_READY = false;
+var CAPTURE_BLOCK_REASON = "";
+var ACTIVE_ENVIRONMENT = "";
+
+document.getElementById("greeting").textContent = "Hola, " + DISPLAY_NAME;
+
+//--------------------------------------------------------------
+// 2. Bootstrap seguro (handshake de ambiente antes del token)
+//--------------------------------------------------------------
+function captureBlockedMessage(){
+  var reasons = {
+    RUNTIME_MISSING: "configuración de ambiente ausente o inválida (betz-runtime.json)",
+    HANDSHAKE_UNAVAILABLE: "no se pudo verificar el ambiente del receptor",
+    ENVIRONMENT_MISMATCH: "el receptor no coincide con el ambiente configurado",
+    COMPETITION_MISMATCH: "la competencia del receptor no coincide",
+    DEPLOYMENT_MISMATCH: "el identificador del receptor no coincide",
+    PERIOD_UNSUPPORTED: "el receptor no soporta este periodo",
+    URL_SANITIZATION_FAILED: "no se pudo limpiar tu enlace; recarga desde tu enlace personal",
+    NO_STORED_TOKEN: "abre tu enlace personal con ?k=TU_LLAVE",
+    RENDER_PERIOD_MISMATCH: "recarga: el periodo del receptor difiere del mostrado",
+    BOOTSTRAP_ERROR: "captura no disponible: verifica tu configuración"
+  };
+  if (/^RUNTIME_FIELD_INVALID/.test(CAPTURE_BLOCK_REASON)) return reasons.RUNTIME_MISSING;
+  return reasons[CAPTURE_BLOCK_REASON] || "captura no disponible: verifica tu configuración";
+}
+function setEnvBadge(env){
+  var el = document.getElementById("env-badge");
+  if (!el) return;
+  if (!env){ el.style.display = "none"; return; }
+  el.textContent = env;
+  el.style.display = "inline-block";
+  el.style.background = (env === "LAB") ? "#7A5CFF" : (env === "DEV") ? "#0FA36B" : "#2A3038";
+}
+function showEnvBanner(msg){ var el=document.getElementById("cfgwarn"); if (el){ el.textContent=msg; el.style.display="block"; } }
+function hideEnvBanner(){ var el=document.getElementById("cfgwarn"); if (el) el.style.display="none"; }
+function applyBootstrap(result){
+  ACTIVE_ENVIRONMENT = result.environment || "";
+  setEnvBadge(ACTIVE_ENVIRONMENT);
+  if (result.display_name){ DISPLAY_NAME = result.display_name; document.getElementById("greeting").textContent = "Hola, " + DISPLAY_NAME; }
+  if (result.status === "BLOCKED"){ CAPTURE_READY=false; CAPTURE_BLOCK_REASON=result.reason || "BOOTSTRAP_ERROR"; showEnvBanner(captureBlockedMessage()); return; }
+  if (result.period_id !== PERIOD_ID){ CAPTURE_READY=false; CAPTURE_BLOCK_REASON="RENDER_PERIOD_MISMATCH"; showEnvBanner(captureBlockedMessage()); return; }
+  APPS_SCRIPT_URL = result.apps_script_url || "";
+  COMPETITION_ID = result.competition_id || COMPETITION_ID;
+  PERIOD_ID = result.period_id || PERIOD_ID;
+  TOKEN = result.token || "";
+  if (result.status === "READY" && TOKEN){ CAPTURE_READY=true; CAPTURE_BLOCK_REASON=""; hideEnvBanner(); }
+  else { CAPTURE_READY=false; CAPTURE_BLOCK_REASON=result.reason || "NO_STORED_TOKEN"; showEnvBanner(captureBlockedMessage()); }
+}
+
+//--------------------------------------------------------------
+// Iconos SVG propios (sin dependencia de fuente externa)
+//--------------------------------------------------------------
+function icon(name, size, color){
+  var paths = {
+    "bolt":'<path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11z"/>',
+    "lock":'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    "lock-open":'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0"/>',
+    "eye-off":'<path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M16.7 16.7A8.7 8.7 0 0 1 12 18c-3.6 0-6.6-2-9-6a15 15 0 0 1 4.3-4.7m2.9-1.1A9 9 0 0 1 12 6c3.6 0 6.6 2 9 6a15 15 0 0 1-2.1 2.9"/><path d="M3 3l18 18"/>',
+    "star":'<path d="M12 2l2.9 6.3 6.1.9-4.5 4.4 1.1 6.4-5.6-3-5.6 3 1.1-6.4-4.5-4.4 6.1-.9z"/>',
+    "chevron-down":'<path d="M6 9l6 6 6-6"/>',
+    "circle-check":'<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/>',
+    "alert-triangle":'<path d="M12 9v4"/><path d="M10.4 3.6 2.3 17a1.5 1.5 0 0 0 1.3 2.3h16.8a1.5 1.5 0 0 0 1.3-2.3L13.6 3.6a1.5 1.5 0 0 0-2.6 0z"/><path d="M12 17h.01"/>',
+    "snowflake":'<path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/><path d="M9.5 5.5 12 3l2.5 2.5"/><path d="M14.5 18.5 12 21l-2.5-2.5"/><path d="M6.2 12l-3-1M17.8 12l3 1"/>',
+    "pin":'<path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/>'
+  };
+  var solid = (name === "bolt" || name === "star");
+  return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="' + (solid ? "currentColor" : "none") + '" stroke="' + (solid ? "none" : "currentColor") + '" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="' + (color ? "color:" + color + ";" : "") + 'display:inline-block;vertical-align:middle;">' + (paths[name] || "") + '</svg>';
+}
+document.querySelectorAll("[data-ic]").forEach(function(el){
+  el.innerHTML = icon(el.getAttribute("data-ic"), Number(el.getAttribute("data-sz")) || 16, el.getAttribute("data-col") || "");
+});
+
+//--------------------------------------------------------------
+// 3. Deadline (display para la prueba)
+//--------------------------------------------------------------
+function pad(n){ return n < 10 ? "0"+n : ""+n; }
+var matchFreeze = {};  // match_id -> Date(freeze_at), poblado por load_latest (matches[])
+function fmtCountdown(ms){ if (ms < 0) ms = 0; var D=Math.floor(ms/86400000),H=Math.floor(ms%86400000/3600000),M=Math.floor(ms%3600000/60000),S=Math.floor(ms%60000/1000); return (D>0? D+"d ":"")+pad(H)+":"+pad(M)+":"+pad(S); }
+function periodLabel(pid){ var m=/^REG-(\d+)$/.exec(pid); if (m) return "Semana "+m[1]; return {WC:"Wild Card",DIV:"Divisional",CC:"Final de Conferencia",SB:"Super Bowl"}[pid] || pid; }
+function nextFreeze(){ var now=Date.now(), best=null; PERIOD_MATCHES.forEach(function(m){ var f=matchFreeze[m.m]; if (f && f.getTime()>now && (!best || f.getTime()<best.f)) best={f:f.getTime(), m:m}; }); return best; }
+function tickHeader(){
+  if (!Object.keys(matchFreeze).length) return;           // aún sin datos del receptor
+  var now=Date.now(), moved=false;
+  PERIOD_MATCHES.forEach(function(m){ var f=matchFreeze[m.m]; if (f && f.getTime()<=now){ var c=cardByMatch(m.m); if (c && !c.classList.contains("frozen")){ markFrozen(c); moved=true; } } });
+  if (moved){ organizeGroups(); prog(); }
+  var nm=document.getElementById("next-match"), cnt=document.getElementById("count"), nf=nextFreeze();
+  if (!nf){ nm.textContent="jornada"; cnt.textContent="cerrada"; return; }
+  var h=TEAMS[nf.m.h]||{a:nf.m.h}, a=TEAMS[nf.m.a]||{a:nf.m.a};
+  nm.textContent = h.a + " vs " + a.a;
+  cnt.textContent = fmtCountdown(nf.f - now);
+}
+setInterval(tickHeader, 1000);
+
+//--------------------------------------------------------------
+// 4. Partidos de la semana (prueba)
+//--------------------------------------------------------------
+// Fixture real NFL2026 (equipos + sort_order de competition_context.json / Match Catalog;
+// colores del provider). En producción esto se obtiene de competition_context + manifest, no embebido.
+var TEAMS={"ARI":{"a":"ARI","n":"Cardinals","c":"#a40227"},"ATL":{"a":"ATL","n":"Falcons","c":"#a71930"},"BAL":{"a":"BAL","n":"Ravens","c":"#29126f"},"BUF":{"a":"BUF","n":"Bills","c":"#00338d"},"CAR":{"a":"CAR","n":"Panthers","c":"#0085ca"},"CHI":{"a":"CHI","n":"Bears","c":"#0b1c3a"},"CIN":{"a":"CIN","n":"Bengals","c":"#fb4f14"},"CLE":{"a":"CLE","n":"Browns","c":"#472a08"},"DAL":{"a":"DAL","n":"Cowboys","c":"#002a5c"},"DEN":{"a":"DEN","n":"Broncos","c":"#0a2343"},"DET":{"a":"DET","n":"Lions","c":"#0076b6"},"GB":{"a":"GB","n":"Packers","c":"#204e32"},"HOU":{"a":"HOU","n":"Texans","c":"#00143f"},"IND":{"a":"IND","n":"Colts","c":"#003b75"},"JAX":{"a":"JAX","n":"Jaguars","c":"#007487"},"KC":{"a":"KC","n":"Chiefs","c":"#e31837"},"LAC":{"a":"LAC","n":"Chargers","c":"#0080c6"},"LAR":{"a":"LAR","n":"Rams","c":"#003594"},"LV":{"a":"LV","n":"Raiders","c":"#000000"},"MIA":{"a":"MIA","n":"Dolphins","c":"#008e97"},"MIN":{"a":"MIN","n":"Vikings","c":"#4f2683"},"NE":{"a":"NE","n":"Patriots","c":"#002a5c"},"NO":{"a":"NO","n":"Saints","c":"#d3bc8d"},"NYG":{"a":"NYG","n":"Giants","c":"#003c7f"},"NYJ":{"a":"NYJ","n":"Jets","c":"#115740"},"PHI":{"a":"PHI","n":"Eagles","c":"#06424d"},"PIT":{"a":"PIT","n":"Steelers","c":"#000000"},"SEA":{"a":"SEA","n":"Seahawks","c":"#002a5c"},"SF":{"a":"SF","n":"49ers","c":"#aa0000"},"TB":{"a":"TB","n":"Buccaneers","c":"#bd1c36"},"TEN":{"a":"TEN","n":"Titans","c":"#4b92db"},"WSH":{"a":"WSH","n":"Commanders","c":"#5a1414"}};
+var FIXTURE={"REG-1":[{"m":"REG001","so":1,"h":"SEA","a":"NE"},{"m":"REG002","so":2,"h":"LAR","a":"SF"},{"m":"REG003","so":3,"h":"PIT","a":"ATL"},{"m":"REG004","so":4,"h":"IND","a":"BAL"},{"m":"REG005","so":5,"h":"HOU","a":"BUF"},{"m":"REG006","so":6,"h":"CAR","a":"CHI"},{"m":"REG007","so":7,"h":"JAX","a":"CLE"},{"m":"REG008","so":8,"h":"DET","a":"NO"},{"m":"REG009","so":9,"h":"TEN","a":"NYJ"},{"m":"REG010","so":10,"h":"CIN","a":"TB"},{"m":"REG011","so":11,"h":"LAC","a":"ARI"},{"m":"REG012","so":12,"h":"MIN","a":"GB"},{"m":"REG013","so":13,"h":"LV","a":"MIA"},{"m":"REG014","so":14,"h":"PHI","a":"WSH"},{"m":"REG015","so":15,"h":"NYG","a":"DAL"},{"m":"REG016","so":16,"h":"KC","a":"DEN"}],"REG-2":[{"m":"REG017","so":17,"h":"BUF","a":"DET"},{"m":"REG018","so":18,"h":"ATL","a":"CAR"},{"m":"REG019","so":19,"h":"BAL","a":"NO"},{"m":"REG020","so":20,"h":"CHI","a":"MIN"},{"m":"REG021","so":21,"h":"HOU","a":"CIN"},{"m":"REG022","so":22,"h":"NE","a":"PIT"},{"m":"REG023","so":23,"h":"NYJ","a":"GB"},{"m":"REG024","so":24,"h":"TB","a":"CLE"},{"m":"REG025","so":25,"h":"TEN","a":"PHI"},{"m":"REG026","so":26,"h":"DEN","a":"JAX"},{"m":"REG027","so":27,"h":"LAC","a":"LV"},{"m":"REG028","so":28,"h":"ARI","a":"SEA"},{"m":"REG029","so":29,"h":"DAL","a":"WSH"},{"m":"REG030","so":30,"h":"SF","a":"MIA"},{"m":"REG031","so":31,"h":"KC","a":"IND"},{"m":"REG032","so":32,"h":"LAR","a":"NYG"}],"REG-3":[{"m":"REG033","so":33,"h":"GB","a":"ATL"},{"m":"REG034","so":34,"h":"BUF","a":"LAC"},{"m":"REG035","so":35,"h":"CLE","a":"CAR"},{"m":"REG036","so":36,"h":"DET","a":"NYJ"},{"m":"REG037","so":37,"h":"IND","a":"HOU"},{"m":"REG038","so":38,"h":"JAX","a":"NE"},{"m":"REG039","so":39,"h":"MIA","a":"KC"},{"m":"REG040","so":40,"h":"NYG","a":"TEN"},{"m":"REG041","so":41,"h":"PIT","a":"CIN"},{"m":"REG042","so":42,"h":"WSH","a":"SEA"},{"m":"REG043","so":43,"h":"SF","a":"ARI"},{"m":"REG044","so":44,"h":"TB","a":"MIN"},{"m":"REG045","so":45,"h":"NO","a":"LV"},{"m":"REG046","so":46,"h":"DAL","a":"BAL"},{"m":"REG047","so":47,"h":"DEN","a":"LAR"},{"m":"REG048","so":48,"h":"CHI","a":"PHI"}],"REG-4":[{"m":"REG049","so":49,"h":"CLE","a":"PIT"},{"m":"REG050","so":50,"h":"WSH","a":"IND"},{"m":"REG051","so":51,"h":"BAL","a":"TEN"},{"m":"REG052","so":52,"h":"BUF","a":"NE"},{"m":"REG053","so":53,"h":"CHI","a":"NYJ"},{"m":"REG054","so":54,"h":"CIN","a":"JAX"},{"m":"REG055","so":55,"h":"HOU","a":"DAL"},{"m":"REG056","so":56,"h":"NYG","a":"ARI"},{"m":"REG057","so":57,"h":"PHI","a":"LAR"},{"m":"REG058","so":58,"h":"TB","a":"GB"},{"m":"REG059","so":59,"h":"MIN","a":"MIA"},{"m":"REG060","so":60,"h":"LV","a":"KC"},{"m":"REG061","so":61,"h":"SEA","a":"LAC"},{"m":"REG062","so":62,"h":"SF","a":"DEN"},{"m":"REG063","so":63,"h":"CAR","a":"DET"},{"m":"REG064","so":64,"h":"NO","a":"ATL"}],"REG-5":[{"m":"REG065","so":65,"h":"DAL","a":"TB"},{"m":"REG066","so":66,"h":"JAX","a":"PHI"},{"m":"REG067","so":67,"h":"MIA","a":"CIN"},{"m":"REG068","so":68,"h":"NE","a":"LV"},{"m":"REG069","so":69,"h":"NO","a":"MIN"},{"m":"REG070","so":70,"h":"NYJ","a":"CLE"},{"m":"REG071","so":71,"h":"PIT","a":"IND"},{"m":"REG072","so":72,"h":"TEN","a":"HOU"},{"m":"REG073","so":73,"h":"WSH","a":"NYG"},{"m":"REG074","so":74,"h":"LAC","a":"DEN"},{"m":"REG075","so":75,"h":"ARI","a":"DET"},{"m":"REG076","so":76,"h":"GB","a":"CHI"},{"m":"REG077","so":77,"h":"SEA","a":"SF"},{"m":"REG078","so":78,"h":"ATL","a":"BAL"},{"m":"REG079","so":79,"h":"LAR","a":"BUF"}],"REG-6":[{"m":"REG080","so":80,"h":"DEN","a":"SEA"},{"m":"REG081","so":81,"h":"JAX","a":"HOU"},{"m":"REG082","so":82,"h":"ATL","a":"CHI"},{"m":"REG083","so":83,"h":"CLE","a":"BAL"},{"m":"REG084","so":84,"h":"IND","a":"TEN"},{"m":"REG085","so":85,"h":"NE","a":"NYJ"},{"m":"REG086","so":86,"h":"NYG","a":"NO"},{"m":"REG087","so":87,"h":"PHI","a":"CAR"},{"m":"REG088","so":88,"h":"TB","a":"PIT"},{"m":"REG089","so":89,"h":"LAR","a":"ARI"},{"m":"REG090","so":90,"h":"KC","a":"LAC"},{"m":"REG091","so":91,"h":"LV","a":"BUF"},{"m":"REG092","so":92,"h":"GB","a":"DAL"},{"m":"REG093","so":93,"h":"SF","a":"WSH"}],"REG-7":[{"m":"REG094","so":94,"h":"CHI","a":"NE"},{"m":"REG095","so":95,"h":"NO","a":"PIT"},{"m":"REG096","so":96,"h":"ATL","a":"SF"},{"m":"REG097","so":97,"h":"BAL","a":"CIN"},{"m":"REG098","so":98,"h":"CAR","a":"TB"},{"m":"REG099","so":99,"h":"HOU","a":"NYG"},{"m":"REG100","so":100,"h":"MIN","a":"IND"},{"m":"REG101","so":101,"h":"NYJ","a":"MIA"},{"m":"REG102","so":102,"h":"TEN","a":"CLE"},{"m":"REG103","so":103,"h":"ARI","a":"DEN"},{"m":"REG104","so":104,"h":"DET","a":"GB"},{"m":"REG105","so":105,"h":"LV","a":"LAR"},{"m":"REG106","so":106,"h":"SEA","a":"KC"},{"m":"REG107","so":107,"h":"PHI","a":"DAL"}],"REG-8":[{"m":"REG108","so":108,"h":"GB","a":"CAR"},{"m":"REG109","so":109,"h":"BUF","a":"BAL"},{"m":"REG110","so":110,"h":"CIN","a":"TEN"},{"m":"REG111","so":111,"h":"DAL","a":"ARI"},{"m":"REG112","so":112,"h":"DET","a":"MIN"},{"m":"REG113","so":113,"h":"JAX","a":"IND"},{"m":"REG114","so":114,"h":"NYJ","a":"LV"},{"m":"REG115","so":115,"h":"PIT","a":"CLE"},{"m":"REG116","so":116,"h":"TB","a":"ATL"},{"m":"REG117","so":117,"h":"LAR","a":"LAC"},{"m":"REG118","so":118,"h":"DEN","a":"KC"},{"m":"REG119","so":119,"h":"MIA","a":"NE"},{"m":"REG120","so":120,"h":"WSH","a":"PHI"},{"m":"REG121","so":121,"h":"SEA","a":"CHI"}],"REG-9":[{"m":"REG122","so":122,"h":"BAL","a":"JAX"},{"m":"REG123","so":123,"h":"ATL","a":"CIN"},{"m":"REG124","so":124,"h":"CAR","a":"DEN"},{"m":"REG125","so":125,"h":"IND","a":"DAL"},{"m":"REG126","so":126,"h":"KC","a":"NYJ"},{"m":"REG127","so":127,"h":"MIA","a":"DET"},{"m":"REG128","so":128,"h":"NO","a":"CLE"},{"m":"REG129","so":129,"h":"PHI","a":"NYG"},{"m":"REG130","so":130,"h":"WSH","a":"LAR"},{"m":"REG131","so":131,"h":"LAC","a":"HOU"},{"m":"REG132","so":132,"h":"SF","a":"LV"},{"m":"REG133","so":133,"h":"NE","a":"GB"},{"m":"REG134","so":134,"h":"SEA","a":"ARI"},{"m":"REG135","so":135,"h":"CHI","a":"TB"},{"m":"REG136","so":136,"h":"MIN","a":"BUF"}],"REG-10":[{"m":"REG137","so":137,"h":"NYG","a":"WSH"},{"m":"REG138","so":138,"h":"DET","a":"NE"},{"m":"REG139","so":139,"h":"ATL","a":"KC"},{"m":"REG140","so":140,"h":"CLE","a":"HOU"},{"m":"REG141","so":141,"h":"GB","a":"MIN"},{"m":"REG142","so":142,"h":"IND","a":"MIA"},{"m":"REG143","so":143,"h":"NO","a":"CAR"},{"m":"REG144","so":144,"h":"NYJ","a":"BUF"},{"m":"REG145","so":145,"h":"TEN","a":"JAX"},{"m":"REG146","so":146,"h":"ARI","a":"LAR"},{"m":"REG147","so":147,"h":"LV","a":"SEA"},{"m":"REG148","so":148,"h":"DAL","a":"SF"},{"m":"REG149","so":149,"h":"CIN","a":"PIT"},{"m":"REG150","so":150,"h":"BAL","a":"LAC"}],"REG-11":[{"m":"REG151","so":151,"h":"HOU","a":"IND"},{"m":"REG152","so":152,"h":"BUF","a":"MIA"},{"m":"REG153","so":153,"h":"CAR","a":"BAL"},{"m":"REG154","so":154,"h":"CHI","a":"NO"},{"m":"REG155","so":155,"h":"DAL","a":"TEN"},{"m":"REG156","so":156,"h":"DET","a":"TB"},{"m":"REG157","so":157,"h":"KC","a":"ARI"},{"m":"REG158","so":158,"h":"NYG","a":"JAX"},{"m":"REG159","so":159,"h":"LAC","a":"NYJ"},{"m":"REG160","so":160,"h":"DEN","a":"LV"},{"m":"REG161","so":161,"h":"PHI","a":"PIT"},{"m":"REG162","so":162,"h":"SF","a":"MIN"},{"m":"REG163","so":163,"h":"WSH","a":"CIN"}],"REG-12":[{"m":"REG164","so":164,"h":"LAR","a":"GB"},{"m":"REG165","so":165,"h":"DET","a":"CHI"},{"m":"REG166","so":166,"h":"DAL","a":"PHI"},{"m":"REG167","so":167,"h":"BUF","a":"KC"},{"m":"REG168","so":168,"h":"PIT","a":"DEN"},{"m":"REG169","so":169,"h":"CIN","a":"NO"},{"m":"REG170","so":170,"h":"CLE","a":"LV"},{"m":"REG171","so":171,"h":"HOU","a":"BAL"},{"m":"REG172","so":172,"h":"IND","a":"NYG"},{"m":"REG173","so":173,"h":"MIA","a":"NYJ"},{"m":"REG174","so":174,"h":"MIN","a":"ATL"},{"m":"REG175","so":175,"h":"JAX","a":"TEN"},{"m":"REG176","so":176,"h":"ARI","a":"WSH"},{"m":"REG177","so":177,"h":"SF","a":"SEA"},{"m":"REG178","so":178,"h":"LAC","a":"NE"},{"m":"REG179","so":179,"h":"TB","a":"CAR"}],"REG-13":[{"m":"REG180","so":180,"h":"LAR","a":"KC"},{"m":"REG181","so":181,"h":"ATL","a":"DET"},{"m":"REG182","so":182,"h":"CHI","a":"JAX"},{"m":"REG183","so":183,"h":"CLE","a":"CIN"},{"m":"REG184","so":184,"h":"NO","a":"GB"},{"m":"REG185","so":185,"h":"NYG","a":"SF"},{"m":"REG186","so":186,"h":"TB","a":"LAC"},{"m":"REG187","so":187,"h":"TEN","a":"WSH"},{"m":"REG188","so":188,"h":"ARI","a":"PHI"},{"m":"REG189","so":189,"h":"DEN","a":"MIA"},{"m":"REG190","so":190,"h":"MIN","a":"CAR"},{"m":"REG191","so":191,"h":"NE","a":"BUF"},{"m":"REG192","so":192,"h":"PIT","a":"HOU"},{"m":"REG193","so":193,"h":"SEA","a":"DAL"}],"REG-14":[{"m":"REG194","so":194,"h":"NE","a":"MIN"},{"m":"REG195","so":195,"h":"BAL","a":"TB"},{"m":"REG196","so":196,"h":"CAR","a":"NO"},{"m":"REG197","so":197,"h":"CLE","a":"ATL"},{"m":"REG198","so":198,"h":"DET","a":"TEN"},{"m":"REG199","so":199,"h":"MIA","a":"CHI"},{"m":"REG200","so":200,"h":"NYJ","a":"DEN"},{"m":"REG201","so":201,"h":"PHI","a":"IND"},{"m":"REG202","so":202,"h":"WSH","a":"HOU"},{"m":"REG203","so":203,"h":"LV","a":"LAC"},{"m":"REG204","so":204,"h":"CIN","a":"KC"},{"m":"REG205","so":205,"h":"SEA","a":"NYG"},{"m":"REG206","so":206,"h":"SF","a":"LAR"},{"m":"REG207","so":207,"h":"GB","a":"BUF"},{"m":"REG208","so":208,"h":"JAX","a":"PIT"}],"REG-15":[{"m":"REG209","so":209,"h":"LAC","a":"SF"},{"m":"REG210","so":210,"h":"PHI","a":"SEA"},{"m":"REG211","so":211,"h":"BUF","a":"CHI"},{"m":"REG212","so":212,"h":"CAR","a":"CIN"},{"m":"REG213","so":213,"h":"GB","a":"MIA"},{"m":"REG214","so":214,"h":"HOU","a":"JAX"},{"m":"REG215","so":215,"h":"NYG","a":"CLE"},{"m":"REG216","so":216,"h":"PIT","a":"BAL"},{"m":"REG217","so":217,"h":"TB","a":"NO"},{"m":"REG218","so":218,"h":"TEN","a":"IND"},{"m":"REG219","so":219,"h":"WSH","a":"ATL"},{"m":"REG220","so":220,"h":"ARI","a":"NYJ"},{"m":"REG221","so":221,"h":"LAR","a":"DAL"},{"m":"REG222","so":222,"h":"LV","a":"DEN"},{"m":"REG223","so":223,"h":"MIN","a":"DET"},{"m":"REG224","so":224,"h":"KC","a":"NE"}],"REG-16":[{"m":"REG225","so":225,"h":"PHI","a":"HOU"},{"m":"REG226","so":226,"h":"CHI","a":"GB"},{"m":"REG227","so":227,"h":"DEN","a":"BUF"},{"m":"REG228","so":228,"h":"SEA","a":"LAR"},{"m":"REG229","so":229,"h":"BAL","a":"CLE"},{"m":"REG230","so":230,"h":"MIA","a":"LAC"},{"m":"REG231","so":231,"h":"NO","a":"ARI"},{"m":"REG232","so":232,"h":"NYJ","a":"NE"},{"m":"REG233","so":233,"h":"LV","a":"TEN"},{"m":"REG234","so":234,"h":"KC","a":"SF"},{"m":"REG235","so":235,"h":"DAL","a":"JAX"},{"m":"REG236","so":236,"h":"DET","a":"NYG"},{"m":"REG237","so":237,"h":"ATL","a":"TB"},{"m":"REG238","so":238,"h":"IND","a":"CIN"},{"m":"REG239","so":239,"h":"MIN","a":"WSH"},{"m":"REG240","so":240,"h":"PIT","a":"CAR"}],"REG-17":[{"m":"REG241","so":241,"h":"CIN","a":"BAL"},{"m":"REG242","so":242,"h":"ATL","a":"NO"},{"m":"REG243","so":243,"h":"CAR","a":"SEA"},{"m":"REG244","so":244,"h":"CLE","a":"IND"},{"m":"REG245","so":245,"h":"DAL","a":"NYG"},{"m":"REG246","so":246,"h":"MIA","a":"BUF"},{"m":"REG247","so":247,"h":"NYJ","a":"MIN"},{"m":"REG248","so":248,"h":"TEN","a":"PIT"},{"m":"REG249","so":249,"h":"ARI","a":"LV"},{"m":"REG250","so":250,"h":"CHI","a":"DET"},{"m":"REG251","so":251,"h":"SF","a":"PHI"},{"m":"REG252","so":252,"h":"GB","a":"HOU"},{"m":"REG253","so":253,"h":"JAX","a":"WSH"},{"m":"REG254","so":254,"h":"LAC","a":"KC"},{"m":"REG255","so":255,"h":"NE","a":"DEN"},{"m":"REG256","so":256,"h":"TB","a":"LAR"}],"REG-18":[{"m":"REG257","so":257,"h":"ARI","a":"SF"},{"m":"REG258","so":258,"h":"BAL","a":"PIT"},{"m":"REG259","so":259,"h":"BUF","a":"NYJ"},{"m":"REG260","so":260,"h":"CAR","a":"ATL"},{"m":"REG261","so":261,"h":"CIN","a":"CLE"},{"m":"REG262","so":262,"h":"DEN","a":"LAC"},{"m":"REG263","so":263,"h":"GB","a":"DET"},{"m":"REG264","so":264,"h":"HOU","a":"TEN"},{"m":"REG265","so":265,"h":"IND","a":"JAX"},{"m":"REG266","so":266,"h":"KC","a":"LV"},{"m":"REG267","so":267,"h":"LAR","a":"SEA"},{"m":"REG268","so":268,"h":"MIN","a":"CHI"},{"m":"REG269","so":269,"h":"NE","a":"MIA"},{"m":"REG270","so":270,"h":"NO","a":"TB"},{"m":"REG271","so":271,"h":"NYG","a":"PHI"},{"m":"REG272","so":272,"h":"WSH","a":"DAL"}],"WC":[{"m":"WC01","so":273,"h":"TBD","a":"TBD"},{"m":"WC02","so":274,"h":"TBD","a":"TBD"},{"m":"WC03","so":275,"h":"TBD","a":"TBD"},{"m":"WC04","so":276,"h":"TBD","a":"TBD"},{"m":"WC05","so":277,"h":"TBD","a":"TBD"},{"m":"WC06","so":278,"h":"TBD","a":"TBD"}],"DIV":[{"m":"DIV01","so":279,"h":"TBD","a":"TBD"},{"m":"DIV02","so":280,"h":"TBD","a":"TBD"},{"m":"DIV03","so":281,"h":"TBD","a":"TBD"},{"m":"DIV04","so":282,"h":"TBD","a":"TBD"}],"CC":[{"m":"CC01","so":283,"h":"TBD","a":"TBD"},{"m":"CC02","so":284,"h":"TBD","a":"TBD"}],"SB":[{"m":"SB01","so":285,"h":"TBD","a":"TBD"}]};
+var PERIOD_MATCHES = FIXTURE[PERIOD_ID] || [];
+function pill(teamId, side){
+  var t = TEAMS[teamId] || { a: teamId, n: teamId, c: "#2A3038" };
+  return '<div class="team" data-c="'+t.c+'" data-pick="'+side+'"><span class="mono" data-c="'+t.c+'" style="background:'+t.c+';">'+t.a+'</span><span>'+t.n+'</span></div>';
+}
+function cardEl(m, periodIndex){
+  return '<div class="mcard" data-mid="'+m.m+'" data-so="'+m.so+'">'
+    + '<div class="matchseq">Partido '+periodIndex+' de '+PERIOD_MATCHES.length+'</div>'
+    + '<div class="mrow">'+pill(m.h,"H")+'<span class="vs">vs</span>'+pill(m.a,"A")+'<button class="lockbtn" aria-label="Fijar partido">'+icon("pin",17,"")+'</button></div>'
+    + '<div class="lockcap">tu partido fijado · pronostica el marcador exacto (tu equipo debe quedar arriba)</div>'
+    + '<div class="lockscore"><label class="scorefield" data-side="H"><span class="sc-mono" style="background:'+TEAMS[m.h].c+';">'+TEAMS[m.h].a+'</span><input type="number" inputmode="numeric" min="0" step="1" data-score="H" placeholder="0" aria-label="Marcador '+TEAMS[m.h].a+'"></label><span class="scoredash">–</span><label class="scorefield" data-side="A"><span class="sc-mono" style="background:'+TEAMS[m.a].c+';">'+TEAMS[m.a].a+'</span><input type="number" inputmode="numeric" min="0" step="1" data-score="A" placeholder="0" aria-label="Marcador '+TEAMS[m.a].a+'"></label></div>'
+    + '<div class="lockwarn"></div>'
+    + '</div>';
+}
+document.getElementById("open-body").innerHTML = PERIOD_MATCHES.map(function(match, index){ return cardEl(match, index + 1); }).join("");
+(function(){ var wn = document.getElementById("week-note"); if (wn) wn.textContent = periodLabel(PERIOD_ID) + " · " + PERIOD_MATCHES.length + " partidos"; })();
+
+//--------------------------------------------------------------
+// 5. Interacción
+//--------------------------------------------------------------
+var lastSent = null;
+var sendBtn = document.getElementById("send");
+var box = document.getElementById("status");
+sendBtn.disabled = true;
+function newCsid(){ return "csid-" + ((window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + "-" + Math.random().toString(36).slice(2))); }
+var currentCsid = newCsid();
+var currentCsidAttempted = false;
+var acceptedSignature = null;
+function prog(){ var n=0; document.querySelectorAll(".mcard").forEach(function(c){ if (c.querySelector(".team.on")) n++; }); document.getElementById("prog").textContent = n+" de "+PERIOD_MATCHES.length; }
+function edited(){
+  prog();
+  if (currentCsidAttempted) {
+    currentCsid = newCsid();
+    currentCsidAttempted = false;
+  }
+  if (acceptedSignature !== null && picksSignature(collectAllPicks()) === acceptedSignature) showNoChanges();
+  else showDirty();
+}
+
+function selectTeam(t){
+  var r = t.parentNode;
+  r.querySelectorAll(".team").forEach(function(x){ x.classList.remove("on"); x.style.background=""; x.style.color=""; x.style.borderColor=""; var m=x.querySelector(".mono"); m.style.background=m.getAttribute("data-c"); m.style.color="#fff"; });
+  var c = t.getAttribute("data-c"); t.classList.add("on"); t.style.background=c; t.style.color="#fff"; t.style.borderColor=c;
+  var mo = t.querySelector(".mono"); mo.style.background="#fff"; mo.style.color=c;
+}
+function markLockWinner(card){
+  card.querySelectorAll(".scorefield").forEach(function(sf){ sf.classList.remove("won"); });
+  var chosen = card.querySelector(".team.on");
+  if (!chosen) return;
+  var sf = card.querySelector('.scorefield[data-side="'+chosen.getAttribute("data-pick")+'"]');
+  if (sf) sf.classList.add("won");
+}
+function validateLockScore(card){
+  var warn = card.querySelector(".lockwarn"); if (!warn) return;
+  card.querySelectorAll(".scorefield").forEach(function(sf){ sf.classList.remove("err"); });
+  warn.className = "lockwarn";
+  if (card.classList.contains("frozen")) return;
+  var lock = card.querySelector(".lockbtn").classList.contains("on");
+  var chosen = card.querySelector(".team.on");
+  var hI = card.querySelector('[data-score="H"]'), aI = card.querySelector('[data-score="A"]');
+  if (!lock || !chosen || hI.value === "" || aI.value === "") return;   // incompleto → neutral
+  var h = Number(hI.value), a = Number(aI.value);
+  var side = chosen.getAttribute("data-pick");
+  var pickName = chosen.querySelector(".mono").textContent;
+  var pickScore = side === "H" ? h : a, otherScore = side === "H" ? a : h;
+  if (h === a){
+    card.querySelectorAll(".scorefield").forEach(function(sf){ sf.classList.add("err"); });
+    warn.className = "lockwarn show bad"; warn.textContent = "Empate no válido · tu marcador debe dar un ganador.";
+  } else if (pickScore <= otherScore){
+    card.querySelector('.scorefield[data-side="'+side+'"]').classList.add("err");
+    warn.className = "lockwarn show bad"; warn.textContent = "El marcador debe dar ganador a " + pickName + " (tu pick).";
+  } else {
+    warn.className = "lockwarn show ok"; warn.textContent = "✓ " + pickName + " gana por " + (pickScore - otherScore) + ".";
+  }
+}
+function syncPickFromScore(card){
+  if (!card.querySelector(".lockbtn").classList.contains("on")) return;
+  var hI=card.querySelector('[data-score="H"]'), aI=card.querySelector('[data-score="A"]');
+  if (hI.value==="" || aI.value==="") return;
+  var h=Number(hI.value), a=Number(aI.value);
+  if (h===a) return;                                   // empate → no auto-elige, se avisa
+  var winSide = h>a ? "H" : "A";
+  var current = card.querySelector(".team.on");
+  if (!current || current.getAttribute("data-pick")!==winSide){
+    var teamEl = card.querySelector('.team[data-pick="'+winSide+'"]');
+    if (teamEl){ selectTeam(teamEl); markLockWinner(card); }
+  }
+}
+function resetScoreIfContradicts(card){
+  if (!card.querySelector(".lockbtn").classList.contains("on")) return;
+  var chosen=card.querySelector(".team.on"); if(!chosen) return;
+  var hI=card.querySelector('[data-score="H"]'), aI=card.querySelector('[data-score="A"]');
+  if (hI.value==="" || aI.value==="") return;
+  var h=Number(hI.value), a=Number(aI.value);
+  var winSide = h===a ? null : (h>a?"H":"A");
+  if (winSide !== chosen.getAttribute("data-pick")){ hI.value=""; aI.value=""; }   // el pick nuevo contradice → limpia
+}
+function setLock(card, on){
+  var frozenLock = document.querySelector(".mcard.frozen .lockbtn.on");
+  if (on && frozenLock && frozenLock.closest(".mcard") !== card) {
+    showError("tu partido fijado ya quedó cerrado y no puede moverse en esta jornada");
+    return false;
+  }
+  document.querySelectorAll(".mcard:not(.frozen)").forEach(function(c){ c.querySelector(".lockbtn").classList.remove("on"); c.querySelector(".lockscore").classList.remove("show"); c.querySelector(".lockcap").classList.remove("show"); });
+  if (on){ card.querySelector(".lockbtn").classList.add("on"); card.querySelector(".lockscore").classList.add("show"); card.querySelector(".lockcap").classList.add("show"); markLockWinner(card); validateLockScore(card); }
+  return true;
+}
+document.querySelectorAll(".team").forEach(function(t){
+  t.addEventListener("click", function(){ var mc=this.closest(".mcard"); if (mc.classList.contains("frozen")) return; selectTeam(this); resetScoreIfContradicts(mc); markLockWinner(mc); validateLockScore(mc); edited(); });
+});
+document.querySelectorAll(".lockbtn").forEach(function(b){
+  b.addEventListener("click", function(){ var card = this.closest(".mcard"); if (card.classList.contains("frozen")) return; if (setLock(card, !this.classList.contains("on"))) edited(); });
+});
+document.querySelectorAll(".scorefield input").forEach(function(input){
+  input.addEventListener("input", function(){ var mc=this.closest(".mcard"); if (!mc.classList.contains("frozen")){ syncPickFromScore(mc); validateLockScore(mc); edited(); } });
+});
+
+//--------------------------------------------------------------
+// 6. Construir picks + enviar
+//--------------------------------------------------------------
+function collectPicks(){
+  var picks = [];
+  document.querySelectorAll(".mcard:not(.frozen)").forEach(function(c){
+    var chosen = c.querySelector(".team.on");
+    if (!chosen) return;
+    var lock = c.querySelector(".lockbtn").classList.contains("on");
+    var homeScore = c.querySelector('[data-score="H"]').value;
+    var awayScore = c.querySelector('[data-score="A"]').value;
+    picks.push({
+      match_id: c.getAttribute("data-mid"),
+      pick: chosen.getAttribute("data-pick"),
+      lock: lock,
+      predicted_home_score: lock && homeScore !== "" ? Number(homeScore) : null,
+      predicted_away_score: lock && awayScore !== "" ? Number(awayScore) : null
+    });
+  });
+  return picks;
+}
+function collectAllPicks(){
+  var picks = [];
+  document.querySelectorAll(".mcard").forEach(function(c){
+    var chosen = c.querySelector(".team.on");
+    if (!chosen) return;
+    var lock = c.querySelector(".lockbtn").classList.contains("on");
+    var homeScore = c.querySelector('[data-score="H"]').value;
+    var awayScore = c.querySelector('[data-score="A"]').value;
+    picks.push({
+      match_id: c.getAttribute("data-mid"),
+      pick: chosen.getAttribute("data-pick"),
+      lock: lock,
+      predicted_home_score: lock && homeScore !== "" ? Number(homeScore) : null,
+      predicted_away_score: lock && awayScore !== "" ? Number(awayScore) : null
+    });
+  });
+  return picks;
+}
+function picksSignature(picks){
+  return JSON.stringify((picks || []).slice().sort(function(a,b){ return a.match_id.localeCompare(b.match_id); }));
+}
+function acceptCurrentUi(){ acceptedSignature = picksSignature(collectAllPicks()); }
+function fmt(iso){ try { return new Date(iso).toLocaleString("es-MX",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"}); } catch(e){ return iso; } }
+function showSent(receivedAt){ lastSent = fmt(receivedAt); acceptCurrentUi(); box.style.display="block"; box.style.background="rgba(56,255,72,0.10)"; box.style.border="1px solid rgba(56,255,72,0.3)"; box.style.color="#CDECE0"; box.innerHTML = 'recibido · '+lastSent+'<br><span style="color:#6FE9DD;">puedes editar antes del cierre</span>'; sendBtn.textContent="Enviado"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; sendBtn.disabled=true; }
+function showNoChanges(){ box.style.display="block"; box.style.background="rgba(56,255,72,0.07)"; box.style.border="1px solid rgba(56,255,72,0.22)"; box.style.color="#CDECE0"; box.innerHTML = 'no hay cambios pendientes'; sendBtn.textContent="Sin cambios pendientes"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; sendBtn.disabled=true; }
+function showDirty(){ box.style.display="block"; box.style.background="rgba(255,122,89,0.10)"; box.style.border="1px solid rgba(255,122,89,0.3)"; box.style.color="#F3CFC2"; box.innerHTML = 'tienes cambios sin enviar'+(lastSent ? '<br><span class="muted">último recibido: '+lastSent+'</span>' : ''); sendBtn.textContent=lastSent ? "Reenviar predicciones" : "Enviar predicciones"; sendBtn.style.background="#0AF5E1"; sendBtn.style.color="#0E1116"; sendBtn.disabled=false; }
+function showError(msg){ box.style.display="block"; box.style.background="rgba(240,78,54,0.12)"; box.style.border="1px solid rgba(240,78,54,0.4)"; box.style.color="#F3C7C7"; box.innerHTML = 'no se pudo enviar · '+msg+'<br><span class="muted">revisa tu conexión e intenta de nuevo</span>'; sendBtn.disabled=false; sendBtn.textContent="Reintentar envío"; sendBtn.style.background="#0AF5E1"; sendBtn.style.color="#0E1116"; }
+function showRejectedNoChange(){ box.style.display="block"; box.style.background="rgba(240,78,54,0.12)"; box.style.border="1px solid rgba(240,78,54,0.4)"; box.style.color="#F3C7C7"; box.innerHTML = 'No hubo ningún cambio que enviar.'; sendBtn.disabled=true; sendBtn.textContent="Sin cambios pendientes"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; }
+function showConfirming(){ box.style.display="block"; box.style.background="rgba(255,206,31,0.10)"; box.style.border="1px solid rgba(255,206,31,0.35)"; box.style.color="#F4DE91"; box.innerHTML = 'no pudimos confirmar el resultado<br><span class="muted">usa Confirmar envío; conservaremos el mismo identificador y no duplicaremos tu captura</span>'; sendBtn.disabled=false; sendBtn.textContent="Confirmar envío"; sendBtn.style.background="#FFCE1F"; sendBtn.style.color="#0E1116"; }
+function showProjectionPending(out){ lastSent = fmt(out.received_at); acceptCurrentUi(); box.style.display="block"; box.style.background="rgba(56,255,72,0.10)"; box.style.border="1px solid rgba(56,255,72,0.3)"; box.style.color="#CDECE0"; box.innerHTML = 'predicciones recibidas · '+lastSent+'<br><span class="muted">la vista se reparará automáticamente; no necesitas capturarlas otra vez</span>'; sendBtn.textContent="Enviado"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; sendBtn.disabled=true; }
+
+//--------------------------------------------------------------
+// Transporte al receptor SIN CORS (postMessage, single-flight).
+// Apps Script no emite headers CORS, así que fetch() cross-origin
+// (GitHub Pages) no puede leer la respuesta. En su lugar hacemos un
+// POST vía <form> hacia un iframe oculto; SIN response_mode=json el
+// receptor responde con postMessageOutput_ (HTML que hace
+// parent.postMessage). El receptor ya trae XFrameOptionsMode.ALLOWALL
+// y parseRequest_ ya acepta el payload como campo de formulario.
+// Single-flight: encadenamos las peticiones para que solo haya una en
+// vuelo, así el mensaje entrante no puede confundirse de petición.
+//--------------------------------------------------------------
+var RECEIVER_TIMEOUT_MS = 15000;
+var __betzFrame = null;
+var __betzChain = Promise.resolve();
+
+function betzFrame(){
+  if (__betzFrame && __betzFrame.parentNode) return __betzFrame;
+  var f = document.createElement("iframe");
+  f.name = "betz_receiver_frame";
+  f.style.display = "none";
+  f.setAttribute("aria-hidden", "true");
+  f.setAttribute("title", "receptor");
+  document.body.appendChild(f);
+  __betzFrame = f;
+  return f;
+}
+
+function betzSend(body, urlOverride){
+  return new Promise(function(resolve, reject){
+    var action = urlOverride || APPS_SCRIPT_URL;
+    if (!action){ reject(new Error("NO_ENDPOINT")); return; }
+    var frame = betzFrame();
+    var form = null;
+    var settled = false;
+    function cleanup(){
+      window.removeEventListener("message", onMsg);
+      clearTimeout(timer);
+      if (form && form.parentNode) form.parentNode.removeChild(form);
+    }
+    function onMsg(ev){
+      if (settled) return;
+      var d = ev.data;
+      // HtmlService corre nuestro HTML en un iframe SANDBOX anidado de Google, así que
+      // ev.source NO es frame.contentWindow. Identificamos la respuesta por su marca
+      // __betz (el receptor la envuelve) e ignoramos el chatter interno del sandbox.
+      if (!d || d.__betz !== true) return;
+      settled = true; cleanup(); resolve(d.data);
+    }
+    var timer = setTimeout(function(){
+      if (settled) return;
+      settled = true; cleanup(); reject(new Error("TIMEOUT"));
+    }, RECEIVER_TIMEOUT_MS);
+    window.addEventListener("message", onMsg);
+    form = document.createElement("form");
+    form.method = "POST";
+    form.action = action;              // sin response_mode=json => respuesta por postMessage
+    form.target = frame.name;
+    form.style.display = "none";
+    var input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "payload";            // parseRequest_ lo lee como e.parameter.payload
+    input.value = JSON.stringify(body);
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+  });
+}
+
+// Cola single-flight: cada llamada espera a que termine la anterior.
+function postToReceiver(body, urlOverride){
+  var result = __betzChain.then(function(){ return betzSend(body, urlOverride); });
+  __betzChain = result.catch(function(){}); // el eslabón nunca queda rechazado
+  return result;
+}
+
+sendBtn.addEventListener("click", function(){
+  if (!CAPTURE_READY){ showError(captureBlockedMessage()); return; }           // fail-closed: sin handshake válido
+  if (!APPS_SCRIPT_URL){ showSent(new Date().toISOString()); return; }        // modo demo sin URL
+  if (!TOKEN){ showError("abre tu enlace personal con ?k=TU_LLAVE"); return; } // falta identidad
+
+  var picks = collectPicks();
+  var lockPick = picks.filter(function(p){ return p.lock; })[0];
+  if (lockPick && (!Number.isInteger(lockPick.predicted_home_score) || !Number.isInteger(lockPick.predicted_away_score) || lockPick.predicted_home_score < 0 || lockPick.predicted_away_score < 0)){
+    showError("captura un marcador válido para tu partido fijado antes de enviar"); return;
+  }
+  if (lockPick && lockPick.predicted_home_score === lockPick.predicted_away_score){
+    showError("el marcador de tu partido fijado debe predecir un ganador"); return;
+  }
+  if (lockPick){
+    var scorePick = lockPick.predicted_home_score > lockPick.predicted_away_score ? "H" : "A";
+    if (scorePick !== lockPick.pick){ showError("el marcador de tu partido fijado contradice al ganador que elegiste"); return; }
+  }
+
+  var submittedCsid = currentCsid;
+  currentCsidAttempted = true;
+  var payload = {
+    action: "submit",
+    token: TOKEN,
+    display_name: DISPLAY_NAME,
+    competition_id: COMPETITION_ID,
+    period_id: PERIOD_ID,
+    client_submission_id: submittedCsid,
+    picks: picks,
+    client_time: new Date().toISOString(),
+    meta: { user_agent: navigator.userAgent }
+  };
+
+  sendBtn.disabled = true; sendBtn.textContent = "Enviando…";
+  postToReceiver(payload)
+  .then(function(out){
+    if (out && out.ok){
+      if (currentCsid !== submittedCsid){
+        lastSent = fmt(out.received_at);
+        showDirty();
+        return;
+      }
+      if (out.projection_status === "PENDING") showProjectionPending(out);
+      else if (out.rejected && out.rejected.length) showPartial(out, picks);
+      else showSent(out.received_at);
+    } else {
+      if (out && out.error_code === "IDEMPOTENCY_CONFLICT"){
+        currentCsid = newCsid();
+        currentCsidAttempted = false;
+        loadLatest({ reset: true, onLoaded: showRejectedNoChange });
+        return;
+      }
+      if (out && out.outcome === "REJECTED_NO_CHANGE"){
+        currentCsid = newCsid();
+        currentCsidAttempted = false;
+        loadLatest({ reset: true, onLoaded: showRejectedNoChange });
+      } else {
+        var userMessage = userErrorMessage(out);
+        if (/enlace personal/i.test(userMessage)) showLoadFailure(out);
+        else showError(userMessage);
+      }
+    }
+  })
+  .catch(function(){ showConfirming(); });
+});
+
+//--------------------------------------------------------------
+// 7. Precargar último envío (load_latest)
+//--------------------------------------------------------------
+function applyPicks(picks){
+  picks.forEach(function(p){
+    var card = cardByMatch(p.match_id);
+    if (!card) return;
+    if (p.pick === "H" || p.pick === "A"){ var teamEl = card.querySelector('.team[data-pick="'+p.pick+'"]'); if (teamEl) selectTeam(teamEl); }
+    if (p.lock){
+      setLock(card, true);
+      if (Number.isInteger(p.predicted_home_score)) card.querySelector('[data-score="H"]').value = p.predicted_home_score;
+      if (Number.isInteger(p.predicted_away_score)) card.querySelector('[data-score="A"]').value = p.predicted_away_score;
+      validateLockScore(card);
+    }
+  });
+  prog();
+}
+function resetProjectionUi(){
+  matchFreeze = {};
+  var openBody = document.getElementById("open-body");
+  Array.prototype.slice.call(document.querySelectorAll(".mcard"))
+    .sort(function(a,b){ return Number(a.getAttribute("data-so")) - Number(b.getAttribute("data-so")); })
+    .forEach(function(card){
+      openBody.appendChild(card);
+      card.classList.remove("frozen", "sealed", "islock");
+      card.querySelectorAll(".team").forEach(function(team){
+        team.classList.remove("on"); team.style.pointerEvents=""; team.style.background=""; team.style.color=""; team.style.borderColor="";
+        var mono=team.querySelector(".mono"); mono.style.background=mono.getAttribute("data-c"); mono.style.color="#fff";
+      });
+      var lock=card.querySelector(".lockbtn"); lock.classList.remove("on"); lock.style.pointerEvents=""; lock.style.display="";
+      card.querySelectorAll(".scorefield input").forEach(function(input){ input.value=""; input.disabled=false; });
+      card.querySelector(".lockscore").classList.remove("show");
+      card.querySelector(".lockcap").classList.remove("show");
+      var cap=card.querySelector(".frozencap"); if (cap) cap.remove();
+    });
+  acceptedSignature = null;
+  organizeGroups();
+  prog();
+}
+function cardByMatch(matchId){
+  var found = null;
+  document.querySelectorAll(".mcard").forEach(function(c){ if (c.getAttribute("data-mid") === matchId) found = c; });
+  return found;
+}
+function markFrozen(card){
+  if (!card || card.classList.contains("frozen")) return;
+  card.classList.add("frozen");
+  card.querySelectorAll(".team, .lockbtn").forEach(function(el){ el.style.pointerEvents = "none"; });
+  card.querySelectorAll(".scorefield input").forEach(function(input){ input.disabled = true; });
+  var hasPick = !!card.querySelector(".team.on");
+  if (hasPick) card.classList.add("sealed");
+  var lb = card.querySelector(".lockbtn");
+  var isLock = lb.classList.contains("on");
+  if (isLock) card.classList.add("islock"); else lb.style.display = "none";
+  var mrow = card.querySelector(".mrow");
+  if (!card.querySelector(".frozencap")){
+    var cap = document.createElement("div"); cap.className = "frozencap";
+    cap.style.color = hasPick ? "#6FE9DD" : "#E29B8A";
+    cap.innerHTML = hasPick
+      ? icon("snowflake", 13, "") + ' <b style="font-weight:600;">congelado</b> · tu ' + (isLock ? "partido fijado" : "pick") + ' quedó registrado'
+      : icon("lock", 13, "") + ' cerrado · no registraste pick';
+    mrow.insertAdjacentElement("afterend", cap);
+  }
+}
+function applyMatchStatus(matches){
+  matches.forEach(function(m){
+    if (m && m.freeze_at) matchFreeze[m.match_id] = new Date(m.freeze_at);
+    if (m && m.is_open === false) markFrozen(cardByMatch(m.match_id));
+  });
+  tickHeader();
+}
+function organizeGroups(){
+  var openBody = document.getElementById("open-body");
+  var closedBody = document.getElementById("closed-body");
+  document.querySelectorAll("#picks-content .mcard.frozen").forEach(function(c){ closedBody.appendChild(c); });
+  assignDesktopColumnOrder(openBody);
+  var openN = openBody.querySelectorAll(".mcard").length;
+  var closedN = closedBody.querySelectorAll(".mcard").length;
+  document.getElementById("cnt-open").textContent = openN;
+  document.getElementById("cnt-closed").textContent = closedN;
+  document.getElementById("group-open").style.display = openN ? "block" : "none";
+  document.getElementById("group-closed").style.display = closedN ? "block" : "none";
+}
+function assignDesktopColumnOrder(container){
+  var cards = Array.prototype.slice.call(container.querySelectorAll(".mcard"));
+  var leftSize = Math.ceil(cards.length / 2);
+  cards.forEach(function(card, index){
+    var visualOrder = index < leftSize
+      ? (index * 2) + 1
+      : ((index - leftSize) * 2) + 2;
+    card.style.setProperty("--desktop-order", visualOrder);
+  });
+}
+function matchLabel(matchId){
+  var match = PERIOD_MATCHES.filter(function(m){ return m.m === matchId; })[0];
+  if (!match) return "el partido " + matchId;
+  return (TEAMS[match.h] || {a:match.h}).a + " vs " + (TEAMS[match.a] || {a:match.a}).a;
+}
+function periodMatchNumber(matchId){
+  for (var i=0; i<PERIOD_MATCHES.length; i++) if (PERIOD_MATCHES[i].m === matchId) return i + 1;
+  return null;
+}
+function showPartialNotice(out, attemptedPicks){
+  var frozenList = (out.rejected || []).map(function(r){ return r.match_id; }).sort(function(a,b){
+    return (periodMatchNumber(a) || 999) - (periodMatchNumber(b) || 999);
+  });
+  var rejectedLock = (attemptedPicks || []).filter(function(p){ return p.lock && frozenList.indexOf(p.match_id) !== -1; })[0];
+  lastSent = out.stored ? fmt(out.received_at) : lastSent;
+  box.style.display = "block"; box.style.background = "rgba(255,122,89,0.10)"; box.style.border = "1px solid rgba(255,122,89,0.3)"; box.style.color = "#F3CFC2";
+  box.innerHTML = "";
+  var intro = document.createElement("div");
+  intro.textContent = "Lo sentimos: al recibir tus predicciones, los siguientes partidos ya no aceptaban cambios:";
+  box.appendChild(intro);
+  var list = document.createElement("ul"); list.className = "stale-list";
+  frozenList.forEach(function(matchId){
+    var item = document.createElement("li");
+    var number = periodMatchNumber(matchId);
+    item.textContent = (number ? "Partido " + number + " de " + PERIOD_MATCHES.length : "Partido") + " → " + matchLabel(matchId) + ".";
+    list.appendChild(item);
+  });
+  box.appendChild(list);
+  var result = document.createElement("div");
+  result.textContent = out.stored ? "Los demás cambios sí fueron guardados." : "No se guardó ningún cambio.";
+  box.appendChild(result);
+  if (rejectedLock){
+    var lockResult = document.createElement("div"); lockResult.style.marginTop = "6px";
+    lockResult.textContent = "Tu partido fijado (Partido " + periodMatchNumber(rejectedLock.match_id) + ") tampoco se guardó; puedes moverlo a otro partido abierto.";
+    box.appendChild(lockResult);
+  }
+  sendBtn.textContent = "Sin cambios pendientes"; sendBtn.style.background = "#2A3038"; sendBtn.style.color = "#9BA3AE"; sendBtn.disabled = true;
+}
+function showPartial(out, attemptedPicks){
+  currentCsid = newCsid();
+  currentCsidAttempted = false;
+  loadLatest({
+    reset: true,
+    onLoaded: function(){ showPartialNotice(out, attemptedPicks); }
+  });
+}
+var revealed = false;
+function revealPicks(canSend){
+  if (!revealed){
+    revealed = true;
+    var sk = document.getElementById("picks-skeleton"); if (sk) sk.style.display = "none";
+    var pc = document.getElementById("picks-content"); if (pc) pc.style.opacity = "1";
+    organizeGroups();
+    prog();
+  }
+  if (canSend !== true) sendBtn.disabled = true;
+}
+function userErrorMessage(out){
+  var raw = (out && (out.message || out.error_code)) || "respuesta inesperada";
+  if ((out && /AUTH|TOKEN|KEY/i.test(String(out.error_code || ""))) || /llave|revocad|token/i.test(raw)) return "Este enlace personal ya no está activo. Solicita al organizador un enlace nuevo.";
+  if (out && out.error_code === "IDEMPOTENCY_CONFLICT") return "No hubo ningún cambio nuevo que guardar.";
+  return raw;
+}
+function showLoadFailure(out){
+  var msg = typeof out === "string" ? userErrorMessage({message:out}) : userErrorMessage(out);
+  box.style.display="block"; box.style.background="rgba(240,78,54,0.12)"; box.style.border="1px solid rgba(240,78,54,0.4)"; box.style.color="#F3C7C7";
+  box.textContent = msg;
+  sendBtn.textContent=/enlace personal/i.test(msg) ? "Enlace no disponible" : "Envío no disponible";
+  sendBtn.disabled=true;
+}
+function loadLatest(options){
+  options = options || {};
+  if (options.reset) resetProjectionUi();
+  if (!APPS_SCRIPT_URL){ revealPicks(true); return; }                          // demo o bloqueado sin endpoint
+  if (!TOKEN){ revealPicks(false); showLoadFailure(captureBlockedMessage()); return; }
+  postToReceiver({ action: "load_latest", token: TOKEN, competition_id: COMPETITION_ID, period_id: PERIOD_ID })
+  .then(function(out){
+    if (out && out.ok && Array.isArray(out.matches) && out.matches.length){
+      if (out.display_name) document.getElementById("greeting").textContent = "Hola, " + out.display_name;
+      if (out.found && Array.isArray(out.picks) && out.picks.length){ applyPicks(out.picks); showSent(out.received_at); }
+      else acceptCurrentUi();
+      applyMatchStatus(out.matches);
+      revealPicks(out.matches.some(function(m){ return m && m.is_open === true; }));
+      if (typeof options.onLoaded === "function") options.onLoaded(out);
+      return;
+    }
+    revealPicks(false);
+    showLoadFailure(out || "respuesta inválida del receptor");
+  })
+  .catch(function(err){ revealPicks(false); showLoadFailure(String(err.message || err)); });
+}
+document.querySelectorAll(".ghead").forEach(function(h){
+  h.addEventListener("click", function(){
+    var body = document.getElementById(this.getAttribute("data-target"));
+    var collapsed = body.style.display === "none";
+    body.style.display = collapsed ? "block" : "none";
+    this.classList.toggle("collapsed", !collapsed);
+  });
+});
+(function runSecureBootstrap(){
+  if (!window.BetzBootstrap){ CAPTURE_READY=false; CAPTURE_BLOCK_REASON="BOOTSTRAP_ERROR"; showEnvBanner(captureBlockedMessage()); revealPicks(true); return; }
+  BetzBootstrap.runBootstrap({
+    locationHref: window.location.href,
+    replaceState: function(u){ history.replaceState(null, "", u); },
+    storage: window.localStorage,
+    loadRuntime: function(){ return fetch("betz-runtime.json", { cache:"no-store" }).then(function(r){ if(!r.ok) throw new Error("no runtime"); return r.json(); }); },
+    fetchReceiverInfo: function(url){ return postToReceiver({ action:"receiver_info" }, url); }
+  }).then(function(result){ applyBootstrap(result); loadLatest(); })
+    .catch(function(){ CAPTURE_READY=false; CAPTURE_BLOCK_REASON="BOOTSTRAP_ERROR"; showEnvBanner(captureBlockedMessage()); revealPicks(true); });
+})();
+setTimeout(function(){ if (!revealed){ revealPicks(false); showLoadFailure("tiempo de espera agotado"); } }, 6000);
+</script>
+</body>
+</html>
