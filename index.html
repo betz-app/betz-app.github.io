@@ -916,7 +916,7 @@ function renderPartidos(){
     const ad=dist.get(away)||{prediction_count:0,prediction_rate:0};
     const own=(md.picks||[]).find(x=>x.user_id===state.player);
     const final=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score)
-      ? '<span class="tnum">'+md.home_score+'–'+md.away_score+'</span>'
+      ? '<span class="tnum">'+md.away_score+'–'+md.home_score+'</span>'
       : 'Pendiente';
     const ownCopy=!publishedDetails
       ? '<span class="you">Pronósticos visibles después del cierre</span>'
@@ -924,12 +924,12 @@ function renderPartidos(){
       ? '<span class="you">Pronóstico de '+escapeHtml(own.display_name||"este jugador")+': <b>'+escapeHtml(own.selected_team_id)+'</b></span>'
       : '<span class="you">Sin pronóstico</span>';
     const consensusHtml=ci
-      ? '<div class="cbar"><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span>'+
-        '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span></div><div class="clabels">'+
-        '<span><b>'+home+' '+pct(hd.prediction_rate)+'</b> · '+hd.prediction_count+'</span><span><b>'+away+' '+pct(ad.prediction_rate)+'</b> · '+ad.prediction_count+'</span></div>'
+      ? '<div class="cbar"><span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span>'+
+        '<span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div><div class="clabels">'+
+        '<span><b>'+away+' '+pct(ad.prediction_rate)+'</b> · '+ad.prediction_count+'</span><span><b>'+home+' '+pct(hd.prediction_rate)+'</b> · '+hd.prediction_count+'</span></div>'
       : '<div class="md-cap" style="margin:12px 0 2px">Consenso disponible después del cierre.</div>';
     return '<article class="mx" data-match="'+escapeHtml(id)+'"><div class="mx-top"><div class="pk-game">'+
-      '<span class="tm" data-team="'+home+'">'+home+'</span><span class="x">vs</span><span class="tm" data-team="'+away+'">'+away+'</span></div>'+
+      '<span class="tm" data-team="'+away+'">'+away+'</span><span class="x">vs</span><span class="tm" data-team="'+home+'">'+home+'</span></div>'+
       '<div class="mx-final">'+final+'</div></div>'+consensusHtml+
       '<div class="mx-meta">'+ownCopy+consensusBadge(ci,cp)+(publishedDetails?'<span class="mx-go">Ver detalle ›</span>':'')+'</div></article>';
   });
@@ -952,23 +952,23 @@ function openMatch(id){
   const isFinal=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score);
   const homeWon=isFinal&&md.home_score>md.away_score,awayWon=isFinal&&md.away_score>md.home_score;
   const score=isFinal
-    ? '<div class="md-score"><div class="md-tm'+(homeWon?' win':'')+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="sc">'+md.home_score+'</span></div>'+
-      '<span class="md-sep">–</span><div class="md-tm'+(awayWon?' win':'')+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="sc">'+md.away_score+'</span></div></div>'
-    : '<div class="md-score"><div class="md-tm"><span class="tm" data-team="'+home+'">'+home+'</span></div><span class="md-sep">vs</span><div class="md-tm"><span class="tm" data-team="'+away+'">'+away+'</span></div></div>';
+    ? '<div class="md-score"><div class="md-tm'+(awayWon?' win':'')+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="sc">'+md.away_score+'</span></div>'+
+      '<span class="md-sep">–</span><div class="md-tm'+(homeWon?' win':'')+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="sc">'+md.home_score+'</span></div></div>'
+    : '<div class="md-score"><div class="md-tm"><span class="tm" data-team="'+away+'">'+away+'</span></div><span class="md-sep">vs</span><div class="md-tm"><span class="tm" data-team="'+home+'">'+home+'</span></div></div>';
   const quarters=(md.period_scores||[]).slice().sort((a,b)=>a.period-b.period);
   const quarterTable=quarters.length
     ? '<table class="md-line"><tr><th class="tn"></th>'+quarters.map(q=>'<th>'+q.period+'</th>').join('')+'<th>T</th></tr>'+
-      '<tr><td class="tn">'+home+'</td>'+quarters.map(q=>'<td>'+q.home_score+'</td>').join('')+'<td class="tt">'+fmt(md.home_score)+'</td></tr>'+
-      '<tr><td class="tn">'+away+'</td>'+quarters.map(q=>'<td>'+q.away_score+'</td>').join('')+'<td class="tt">'+fmt(md.away_score)+'</td></tr></table>'
+      '<tr><td class="tn">'+away+'</td>'+quarters.map(q=>'<td>'+q.away_score+'</td>').join('')+'<td class="tt">'+fmt(md.away_score)+'</td></tr>'+
+      '<tr><td class="tn">'+home+'</td>'+quarters.map(q=>'<td>'+q.home_score+'</td>').join('')+'<td class="tt">'+fmt(md.home_score)+'</td></tr></table>'
     : '<div class="md-cap" style="text-align:center;margin:14px 0 2px">El marcador por cuarto no está disponible para este partido.</div>';
   const host=el("match-detail");
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
     '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
-    '<span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span><span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span></div>'+
-    '<div class="clabels"><span>'+home+' '+pct(hd.prediction_rate)+' · '+hd.prediction_count+'</span><span>'+away+' '+pct(ad.prediction_rate)+' · '+ad.prediction_count+'</span></div>'+
+    '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div>'+
+    '<div class="clabels"><span>'+away+' '+pct(ad.prediction_rate)+' · '+ad.prediction_count+'</span><span>'+home+' '+pct(hd.prediction_rate)+' · '+hd.prediction_count+'</span></div>'+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
-    '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+hd.prediction_count+'</span></button>'+
-    '<button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ad.prediction_count+'</span></button></div>'+
+    '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ad.prediction_count+'</span></button>'+
+    '<button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+hd.prediction_count+'</span></button></div>'+
     '<div class="md-hint" data-hint>Elige un equipo para ver sus jugadores.</div><div data-roster></div></div>';
   paintTeams(host); host.querySelector(".md-back").onclick=closeMatch;
   host.querySelectorAll("[data-team-sel]").forEach(button=>button.onclick=()=>{
@@ -1056,7 +1056,7 @@ function renderProfilePicks(){
       ? '<div class="pk-lock">📌 Fijado · marcador pronosticado <b>'+fmt(pick.predicted_home_score)+'–'+fmt(pick.predicted_away_score)+'</b></div>'
       : "";
     return '<div class="pk-row" data-match="'+escapeHtml(match.match_id)+'"><div class="pk-you">'+escapeHtml(chosen)+'</div>'+
-      '<div class="pk-game"><span class="tm" data-team="'+home+'">'+home+'</span><span class="x">vs</span><span class="tm" data-team="'+away+'">'+away+'</span></div>'+result+lock+'</div>';
+      '<div class="pk-game"><span class="tm" data-team="'+away+'">'+away+'</span><span class="x">vs</span><span class="tm" data-team="'+home+'">'+home+'</span></div>'+result+lock+'</div>';
   }).join("");
   const weekly=periodPlayer(period,state.player);
   const points=weekly&&weekly.score ? '<b>'+fmt(weekly.score.total_points)+'</b> pts' : "—";
