@@ -1,0 +1,388 @@
+{
+  "contract_type": "betz_competition_rules",
+  "contract_version": "0.2",
+  "competition_id": "NFL2026",
+  "ruleset_id": "NFL2026-RULES-001",
+  "publication_status": "PUBLISHED",
+  "publishable": true,
+  "language": "es-MX",
+  "audience": "REGISTERED_PARTICIPANTS",
+  "title": "Reglas BETZ NFL 2026",
+  "subtitle": "Cómo pronosticar, sumar puntos y ganar",
+  "presentation": {
+    "route": "/reglas/",
+    "load_strategy": "ON_DEMAND",
+    "maximum_scan_time_seconds": 60,
+    "frontend_behavior": "RENDER_ONLY"
+  },
+  "scope": {
+    "included": [
+      "prediction_rules",
+      "scoring",
+      "weekly_winner_resolution",
+      "season_winner_resolution",
+      "payouts",
+      "auditability"
+    ],
+    "excluded": [
+      "registration_process",
+      "registration_fee",
+      "registration_deadline",
+      "payment_receipt_process",
+      "participant_forecast"
+    ]
+  },
+  "quick_rules": [
+    {
+      "rule_id": "prediction.pick_winner",
+      "title": "Elige al ganador",
+      "body": "Selecciona al ganador de cada partido. Cada acierto suma 1 punto."
+    },
+    {
+      "rule_id": "prediction.fixed_match",
+      "title": "Partido fijado",
+      "body": "Fija un partido por jornada e indica su marcador. Si aciertas al ganador fijado, sumas 1 punto adicional."
+    },
+    {
+      "rule_id": "prediction.deadline",
+      "title": "Cierre por partido",
+      "body": "Puedes cambiar un pronóstico mientras BETZ lo muestre abierto. Al cerrar, queda fijado y ya no puede modificarse."
+    },
+    {
+      "rule_id": "modifier.pod",
+      "title": "Grupos aleatorios",
+      "body": "En cada jornada, BETZ sortea grupos equilibrados de al menos 5 jugadores. El grupo con el mejor promedio de puntos base gana +1 por integrante activo."
+    },
+    {
+      "rule_id": "modifier.perfect_week",
+      "title": "Semana perfecta",
+      "body": "En temporada regular, acertar todos los partidos de la jornada suma 1 punto adicional. No aplica en playoffs."
+    },
+    {
+      "rule_id": "modifier.postseason_score_precision",
+      "title": "Marcadores en playoffs",
+      "body": "En playoffs, cada marcador de equipo acertado y el marcador completo exacto suman puntos adicionales, aunque el ganador elegido sea incorrecto."
+    }
+  ],
+  "prediction_rules": {
+    "latest_valid_value_wins_before_close": true,
+    "closed_predictions_are_immutable": true,
+    "unanswered_pick_points": 0,
+    "fixed_match": {
+      "required_per_scoring_period": 1,
+      "predicted_score_required": true,
+      "score_must_imply_selected_winner": true,
+      "predicted_score_awards_points": false,
+      "predicted_score_usage": "TIE_BREAK_AND_POSTSEASON_MODIFIER_WHEN_APPLICABLE"
+    },
+    "postseason_scores": {
+      "required_for_every_match": true,
+      "home_and_away_scores_required": true,
+      "scores_must_be_non_negative_integers": true,
+      "scores_must_not_be_equal": true,
+      "score_must_imply_selected_winner": true,
+      "modifier_eligibility_requires_correct_winner_pick": false,
+      "missing_or_invalid_score_modifier_points": 0,
+      "official_score_basis": "FINAL_SCORE_INCLUDING_OVERTIME"
+    }
+  },
+  "scoring": {
+    "canonical_source": "config/NFL2026/scoring.json",
+    "synchronization": "PENDING_CANONICAL_MODIFIER_IMPLEMENTATION",
+    "random_group": {
+      "assignment_frequency": "EVERY_SCORING_PERIOD",
+      "assignment_method": "RANDOM_AND_BALANCED",
+      "minimum_players_per_group": 5,
+      "maximum_groups": 10,
+      "membership_is_immutable_for_period": true,
+      "score_basis": "SCORING_COMPONENT_POINTS_BEFORE_MODIFIERS",
+      "included_points": [
+        "winner_pick",
+        "lock_winner_bonus"
+      ],
+      "active_participant_definition": "Al menos un pronóstico congelado en la jornada",
+      "non_participant_behavior": "No entra al promedio y no recibe el punto adicional",
+      "winner_resolution": "El grupo o grupos con el promedio más alto",
+      "tied_winning_groups_receive_award": true,
+      "award_points_per_active_member": 1,
+      "steps": [
+        {
+          "sequence": 1,
+          "title": "BETZ sortea los grupos",
+          "body": "Al inicio de cada jornada, todos los jugadores se distribuyen al azar en grupos equilibrados de al menos 5 integrantes."
+        },
+        {
+          "sequence": 2,
+          "title": "Calcula el promedio",
+          "body": "Suma los puntos base de los integrantes activos y los divide entre quienes sí participaron."
+        },
+        {
+          "sequence": 3,
+          "title": "El mejor grupo suma +1",
+          "body": "Cada integrante activo del grupo con mayor promedio recibe 1 punto adicional. Si hay empate, ganan todos los grupos empatados."
+        }
+      ],
+      "example": {
+        "group_a": {
+          "label": "Grupo 01",
+          "member_points": [
+            5,
+            4,
+            3,
+            4,
+            4
+          ],
+          "total_points": 20,
+          "active_members": 5,
+          "average": 4
+        },
+        "group_b": {
+          "label": "Grupo 02",
+          "member_points": [
+            5,
+            3,
+            2,
+            4,
+            1
+          ],
+          "total_points": 15,
+          "active_members": 5,
+          "average": 3
+        },
+        "winner": "Grupo 01"
+      }
+    },
+    "execution_plan": [
+      {
+        "sequence": 1,
+        "unit_type": "component",
+        "unit_id": "winner_pick",
+        "points": 1,
+        "label": "Ganador acertado",
+        "explanation": "Suma 1 punto por cada ganador correctamente pronosticado."
+      },
+      {
+        "sequence": 2,
+        "unit_type": "component",
+        "unit_id": "lock_winner_bonus",
+        "points": 1,
+        "label": "Partido fijado acertado",
+        "explanation": "Suma 1 punto adicional cuando el ganador del Partido fijado es correcto."
+      },
+      {
+        "sequence": 3,
+        "unit_type": "modifier",
+        "unit_id": "random_group_modifier",
+        "points": 1,
+        "label": "Grupo aleatorio",
+        "explanation": "Cada integrante activo del grupo aleatorio con el mejor promedio de puntos base recibe 1 punto adicional."
+      },
+      {
+        "sequence": 4,
+        "unit_type": "modifier",
+        "unit_id": "perfect_week_modifier",
+        "points": 1,
+        "label": "Semana perfecta",
+        "explanation": "Durante temporada regular, acertar todos los ganadores de la jornada suma 1 punto adicional."
+      },
+      {
+        "sequence": 5,
+        "unit_type": "modifier",
+        "unit_id": "postseason_score_precision_modifier",
+        "points": null,
+        "label": "Precisión de marcador en playoffs",
+        "explanation": "Otorga puntos acumulativos por acertar el marcador visitante, el marcador local y ambos marcadores, sin depender del acierto del ganador.",
+        "configuration_status": "PENDING_IMPLEMENTATION"
+      }
+    ],
+    "postseason_score_precision": {
+      "activation": [
+        "WILD_CARD",
+        "DIVISIONAL",
+        "CONFERENCE_CHAMPIONSHIP",
+        "SUPER_BOWL"
+      ],
+      "regular_season_active": false,
+      "cumulative_awards": true,
+      "stages": [
+        {
+          "stage_id": "PLAYOFFS",
+          "includes": [
+            "WILD_CARD",
+            "DIVISIONAL",
+            "CONFERENCE_CHAMPIONSHIP"
+          ],
+          "away_score_exact_points": 1,
+          "home_score_exact_points": 1,
+          "exact_scoreline_bonus_points": 1,
+          "maximum_modifier_points_per_match": 3
+        },
+        {
+          "stage_id": "SUPER_BOWL",
+          "includes": [
+            "SUPER_BOWL"
+          ],
+          "away_score_exact_points": 2,
+          "home_score_exact_points": 2,
+          "exact_scoreline_bonus_points": 3,
+          "maximum_modifier_points_per_match": 7
+        }
+      ]
+    }
+  },
+  "weekly_winner_resolution": {
+    "tie_break_plan": [
+      {
+        "sequence": 1,
+        "criterion_id": "period_score",
+        "label": "Mayor puntuación de la jornada"
+      },
+      {
+        "sequence": 2,
+        "criterion_id": "lock_winner",
+        "label": "Partido fijado acertado"
+      },
+      {
+        "sequence": 3,
+        "criterion_id": "lock_total_points_distance",
+        "label": "Marcador fijado más cercano al total real de puntos"
+      },
+      {
+        "sequence": 4,
+        "criterion_id": "prize_split",
+        "label": "Reparto del premio si continúa el empate (golf split)"
+      }
+    ],
+    "submitted_at_is_tie_break": false
+  },
+  "season_winner_resolution": {
+    "criterion_id": "season_total_points",
+    "label": "Mayor puntuación acumulada de la temporada",
+    "additional_tie_break": {
+      "status": "PENDING_DEFINITION",
+      "display_value": "Por definir"
+    }
+  },
+  "payouts": [
+    {
+      "prize_id": "weekly_winner",
+      "label": "Ganador de la semana",
+      "status": "PENDING_DEFINITION",
+      "amount": null,
+      "currency": "MXN",
+      "display_value": "Premio por definir",
+      "payment_channel": "MoneyPool",
+      "split_when_tied": true
+    },
+    {
+      "prize_id": "season_winner",
+      "label": "Ganador de la temporada",
+      "status": "PENDING_DEFINITION",
+      "amount": null,
+      "currency": "MXN",
+      "display_value": "Premio por definir",
+      "payment_channel": "MoneyPool",
+      "split_when_tied": null
+    }
+  ],
+  "illustrative_payout_example": {
+    "example_id": "payout_example_20_entries",
+    "status": "ILLUSTRATIVE_ONLY",
+    "title": "Ejemplo ilustrativo con 20 inscripciones",
+    "entries": 20,
+    "estimated_prize_pool": 48000,
+    "weekly_prizes": {
+      "count": 17,
+      "amount_each": 1500,
+      "total": 25500,
+      "label": "Premios semanales",
+      "note": "Uno por cada semana de temporada regular"
+    },
+    "season_prizes": {
+      "count": 4,
+      "total": 22500,
+      "label": "Premios de temporada completa",
+      "award_rule": "Se habilita un lugar premiado por cada 5 inscripciones.",
+      "placements": [
+        {
+          "place": 1,
+          "amount": 10500
+        },
+        {
+          "place": 2,
+          "amount": 7000
+        },
+        {
+          "place": 3,
+          "amount": 3500
+        },
+        {
+          "place": 4,
+          "amount": 1500
+        }
+      ]
+    },
+    "total_distributed": 48000,
+    "currency": "MXN",
+    "disclaimer": "Este escenario es únicamente ilustrativo. Los montos finales dependerán del número de inscripciones confirmadas."
+  },
+  "examples": [
+    {
+      "example_id": "regular_season",
+      "title": "Ejemplo de temporada regular",
+      "facts": [
+        "Acertaste 4 ganadores: 4 puntos.",
+        "Tu Partido fijado fue correcto: +1.",
+        "Tu grupo tuvo el mejor promedio: +1.",
+        "No acertaste todos los partidos: +0 por Semana perfecta."
+      ],
+      "total_points": 6
+    },
+    {
+      "example_id": "playoff_wrong_pick_partial_score",
+      "title": "Marcador acertado con ganador incorrecto",
+      "facts": [
+        "Elegiste al local y pronosticaste 24–21.",
+        "El resultado fue local 24–27 visitante.",
+        "El ganador elegido fue incorrecto: +0 por ganador.",
+        "El marcador local fue exacto: +1 en playoffs o +2 en Super Bowl."
+      ]
+    },
+    {
+      "example_id": "super_bowl_exact_scoreline",
+      "title": "Marcador exacto del Super Bowl",
+      "facts": [
+        "Marcador visitante exacto: +2.",
+        "Marcador local exacto: +2.",
+        "Ambos marcadores exactos: +3 adicionales."
+      ],
+      "modifier_points": 7,
+      "maximum_total_points_including_existing_scoring": 10
+    }
+  ],
+  "auditability": {
+    "principle": "El frontend explica resultados publicados y nunca recalcula puntos.",
+    "chain": [
+      "ruleset_id",
+      "frozen_prediction",
+      "official_result",
+      "scoring_component_result",
+      "period_result",
+      "leaderboard"
+    ],
+    "required_scoring_references": [
+      "ruleset_id",
+      "scoring_config_sha256"
+    ]
+  },
+  "telemetry": {
+    "view_event": "rules_viewed",
+    "allowed_sources": [
+      "email",
+      "main",
+      "predictions"
+    ],
+    "non_blocking": true,
+    "contains_personal_data": false
+  }
+}
