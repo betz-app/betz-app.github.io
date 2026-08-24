@@ -198,7 +198,7 @@ function render(rules) {
           </section>
           <section class="season-payout">
             <div class="season-payout-head"><span>${esc(payout.season_prizes.count)} PREMIOS DE TEMPORADA</span><small>${esc(payout.season_prizes.award_rule)}</small></div>
-            <ol>${payout.season_prizes.placements.map((prize) => `<li><span>${esc(prize.place)}º lugar</span><strong>${mxn(prize.amount)}</strong></li>`).join("")}</ol>
+            <ol>${payout.season_prizes.placements.map((prize) => `<li><span>${esc(prize.place)}º lugar · ${esc(prize.display_percentage)}%</span><strong>${mxn(prize.amount)}</strong></li>`).join("")}</ol>
           </section>
         </div>
         <footer class="payout-example-foot"><strong>Total ilustrativo repartido: ${mxn(payout.total_distributed)}</strong><p>${esc(payout.disclaimer)}</p></footer>
