@@ -160,7 +160,7 @@ function render(rules) {
           ${precisionCard(superBowl, true)}
         </div>
         <article class="wrong-pick-example">
-          <div><p class="eyebrow">AUNQUE FALLES EL GANADOR</p><h3>${esc(wrongPick.title)}</h3><p>${esc(wrongPick.facts.join(" · "))}</p></div>
+          <div><p class="eyebrow">${esc(wrongPick.eyebrow)}</p><h3>${esc(wrongPick.title)}</h3><p>${esc(wrongPick.facts.join(" · "))}</p></div>
           <div class="result-badge">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
             <span>El marcador exacto conserva su modificador</span>
