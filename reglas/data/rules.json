@@ -1,8 +1,8 @@
 {
   "contract_type": "betz_competition_rules",
-  "contract_version": "0.2",
+  "contract_version": "0.3",
   "competition_id": "NFL2026",
-  "ruleset_id": "NFL2026-RULES-001",
+  "ruleset_id": "NFL2026-RULES-002",
   "publication_status": "PUBLISHED",
   "publishable": true,
   "language": "es-MX",
@@ -288,41 +288,45 @@
   "illustrative_payout_example": {
     "example_id": "payout_example_20_entries",
     "status": "ILLUSTRATIVE_ONLY",
-    "title": "Ejemplo ilustrativo con 20 inscripciones",
+    "title": "Ejemplo con 20 inscripciones",
     "entries": 20,
-    "estimated_prize_pool": 48000,
+    "estimated_prize_pool": 51000,
     "weekly_prizes": {
-      "count": 17,
-      "amount_each": 1500,
-      "total": 25500,
+      "count": 18,
+      "amount_each": 1400,
+      "total": 25200,
       "label": "Premios semanales",
       "note": "Uno por cada semana de temporada regular"
     },
     "season_prizes": {
       "count": 4,
-      "total": 22500,
+      "total": 25800,
       "label": "Premios de temporada completa",
       "award_rule": "Se habilita un lugar premiado por cada 5 inscripciones.",
       "placements": [
         {
           "place": 1,
-          "amount": 10500
+          "amount": 12900,
+          "display_percentage": 50
         },
         {
           "place": 2,
-          "amount": 7000
+          "amount": 7800,
+          "display_percentage": 30
         },
         {
           "place": 3,
-          "amount": 3500
+          "amount": 3700,
+          "display_percentage": 14
         },
         {
           "place": 4,
-          "amount": 1500
+          "amount": 1400,
+          "display_percentage": 6
         }
       ]
     },
-    "total_distributed": 48000,
+    "total_distributed": 51000,
     "currency": "MXN",
     "disclaimer": "Este escenario es únicamente ilustrativo. Los montos finales dependerán del número de inscripciones confirmadas."
   },
