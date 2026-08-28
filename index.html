@@ -114,6 +114,9 @@
   .pk-row:last-child{border-bottom:0}
   .pk-you{font-family:var(--display);font-weight:700;font-size:14px;color:var(--txt)}
   .pk-game{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .mx-legend{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin:-2px 0 12px;letter-spacing:.02em}
+  .mx-legend b{font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:9px;color:#8A94A6}
+  .mx-legend .x{font-size:10px;color:var(--faint);text-transform:uppercase}
   .pk-game .x{font-size:10px;color:var(--faint);text-transform:uppercase}
   .tm{--tc:#8B99A3;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.3px;color:#fff;background:var(--tc);padding:2px 7px;border-radius:5px}
   .pk-res{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;justify-self:end}
@@ -516,6 +519,7 @@
         <span class="wklabel" id="matches-period">—</span>
         <button id="matches-next" type="button" aria-label="Periodo siguiente">›</button>
       </div>
+      <div class="mx-legend">Orden: <b>Visitante</b><span class="x">vs</span><b>Local</b></div>
       <div id="matches-list"></div>
       <div class="contract-note">Los pronósticos de todos se revelan después del cierre. El marcador por cuarto aparece al finalizar el partido.</div>
     </section>
