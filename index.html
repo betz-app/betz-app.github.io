@@ -58,6 +58,31 @@
   .idrow .pod{display:inline-block;margin-top:5px;font-size:11px;color:var(--turq);
     border:1px solid var(--turq-dim);background:var(--turq-dim);padding:3px 9px;border-radius:999px;cursor:pointer;transition:transform .08s,border-color .12s}
   .idrow .pod:active{transform:scale(.96);border-color:var(--turq)}
+  /* Personal-link welcome: greeting morphs into the profile header (~doubled hold) */
+  .idrow{position:relative}
+  .idgreet{position:absolute;left:74px;right:0;top:50%;transform:translateY(-50%);opacity:0;pointer-events:none}
+  .idgreet .hi{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.1;display:block}
+  .idgreet .hi .nm{color:var(--turq)}
+  .idgreet .sub{display:block;color:var(--muted);font-size:13px;margin-top:3px}
+  .wordmark .z{position:relative}
+  .wordmark .z::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--turq);border-radius:2px;transform:scaleX(0);transform-origin:left}
+  body.welcome .wordmark .z::after{animation:zdraw .5s .1s cubic-bezier(.23,1,.32,1) forwards}
+  @keyframes zdraw{to{transform:scaleX(1)}}
+  body.welcome #p-idtext{opacity:0;transform:translateY(8px);animation:welIdIn .5s 1.75s cubic-bezier(.23,1,.32,1) forwards}
+  body.welcome #p-greet{opacity:0;transform:translateY(7px);animation:welGrIn .34s .12s cubic-bezier(.23,1,.32,1) forwards, welGrOut .40s 1.55s cubic-bezier(.4,0,.7,.2) forwards}
+  @keyframes welGrIn{to{opacity:1;transform:translateY(0)}}
+  @keyframes welGrOut{to{opacity:0;transform:translateY(-9px)}}
+  @keyframes welIdIn{to{opacity:1;transform:translateY(0)}}
+  body.welcome section[data-route="perfil"] > :not(.idrow){opacity:.32;filter:blur(2px);transform:translateY(4px);animation:welBody .55s 1.55s cubic-bezier(.23,1,.32,1) forwards}
+  @keyframes welBody{to{opacity:1;filter:none;transform:none}}
+  @media (prefers-reduced-motion: reduce){
+    body.welcome .wordmark .z::after{animation:none;transform:scaleX(1)}
+    body.welcome #p-greet{animation:welGrInR .3s forwards, welGrOutR .35s 1.55s forwards;transform:none}
+    body.welcome #p-idtext{animation:welIdInR .4s 1.75s forwards;transform:none}
+    body.welcome section[data-route="perfil"] > :not(.idrow){animation:welBodyR .4s 1.55s forwards;filter:none;transform:none}
+  }
+  @keyframes welGrInR{from{opacity:0}to{opacity:1}} @keyframes welGrOutR{to{opacity:0}}
+  @keyframes welIdInR{from{opacity:0}to{opacity:1}} @keyframes welBodyR{from{opacity:.32}to{opacity:1}}
 
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}
   .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px;text-align:center;
@@ -114,9 +139,6 @@
   .pk-row:last-child{border-bottom:0}
   .pk-you{font-family:var(--display);font-weight:700;font-size:14px;color:var(--txt)}
   .pk-game{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-  .mx-legend{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin:-2px 0 12px;letter-spacing:.02em}
-  .mx-legend b{font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:9px;color:#8A94A6}
-  .mx-legend .x{font-size:10px;color:var(--faint);text-transform:uppercase}
   .pk-game .x{font-size:10px;color:var(--faint);text-transform:uppercase}
   .tm{--tc:#8B99A3;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.3px;color:#fff;background:var(--tc);padding:2px 7px;border-radius:5px}
   .pk-res{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;justify-self:end}
@@ -478,11 +500,12 @@
     <section class="screen" data-route="perfil">
       <div class="idrow">
         <div class="avatar" id="p-av">—</div>
-        <div>
+        <div id="p-idtext">
           <div class="name" id="p-name">—</div>
           <div class="handle" id="p-handle">—</div>
           <span class="pod" id="p-cp" data-go="tabla">—</span>
         </div>
+        <div class="idgreet" id="p-greet" aria-hidden="true"><span class="hi" id="p-greet-hi">Hola</span><span class="sub" id="p-greet-sub">Bienvenido a BETZ</span></div>
       </div>
 
       <select class="team" id="player-select" aria-label="Elegir jugador"></select>
@@ -519,7 +542,6 @@
         <span class="wklabel" id="matches-period">—</span>
         <button id="matches-next" type="button" aria-label="Periodo siguiente">›</button>
       </div>
-      <div class="mx-legend">Orden: <b>Visitante</b><span class="x">vs</span><b>Local</b></div>
       <div id="matches-list"></div>
       <div class="contract-note">Los pronósticos de todos se revelan después del cierre. El marcador por cuarto aparece al finalizar el partido.</div>
     </section>
@@ -572,6 +594,39 @@
 // The relative data_path preserves any GitHub Project Pages repository prefix.
 let DATA = null;
 const DEFAULT_PLAYER = "BTO_Z";
+//--------------------------------------------------------------
+// Clarity (Microsoft) — solo PROD, inicia DESPUES del strip de la llave
+//--------------------------------------------------------------
+const CLARITY_PROJECT_ID = "y9mga9kzto";
+let __clarityOn = false;
+const __clarityOnce = new Set();
+function stripPersonalKey(){
+  try{
+    const u = new URL(location.href);
+    if(u.searchParams.has("k") || u.searchParams.has("name")){
+      u.searchParams.delete("k"); u.searchParams.delete("name");
+      history.replaceState(null, "", u.pathname + u.search + u.hash);
+    }
+  }catch(e){}
+}
+function initClarity(environment){
+  try{
+    if(__clarityOn) return;
+    if(environment !== "PROD") return;
+    if(/[?&](k|name)=/.test(location.search)) return;
+    if(!CLARITY_PROJECT_ID) return;
+    __clarityOn = true;
+    (function(c,l,a,r,i){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      const t=l.createElement(r); t.async=1; t.src="https://www.clarity.ms/tag/"+i;
+      const y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", CLARITY_PROJECT_ID);
+    betzTag("surface","read"); betzTag("env", environment);
+  }catch(e){}
+}
+function betzTag(k,v){ try{ if(__clarityOn && window.clarity && v!=null && v!=="") window.clarity("set", String(k), String(v)); }catch(e){} }
+function betzEvent(name){ try{ if(__clarityOn && window.clarity) window.clarity("event", String(name)); }catch(e){} }
+function betzEventOnce(name){ if(__clarityOnce.has(name)) return; __clarityOnce.add(name); betzEvent(name); }
 const TABS = [["tabla","Tabla"],["partidos","Partidos"],["perfil","Perfil"],["podio","Podio"],["grupos","Grupos"],["pods","Pods"]];
 
 //-----------------------------//
@@ -631,7 +686,7 @@ async function loadRuntime(){
   if(!r.ok) throw new Error("RUNTIME_HTTP_"+r.status);
   const runtime = await r.json();
   if(runtime.contract_type!=="betz_read_runtime" || runtime.contract_version!=="1.0") throw new Error("RUNTIME_CONTRACT_INVALID");
-  if(!["LAB","PROD"].includes(runtime.environment)) throw new Error("RUNTIME_ENVIRONMENT_INVALID");
+  if(!["LAB","PROD","DEV"].includes(runtime.environment)) throw new Error("RUNTIME_ENVIRONMENT_INVALID");
   if(typeof runtime.competition_id!=="string" || !runtime.competition_id) throw new Error("RUNTIME_COMPETITION_INVALID");
   if(typeof runtime.data_path!=="string" || /^(?:[a-z]+:|\/)/i.test(runtime.data_path)) throw new Error("RUNTIME_DATA_PATH_INVALID");
   const data = new URL(runtime.data_path, document.baseURI);
@@ -664,6 +719,9 @@ function go(route){
   document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active", s.dataset.route===route));
   nav.querySelectorAll("button").forEach(b=>b.classList.toggle("on", b.dataset.go===route));
   if(TABS.some(t=>t[0]===route) && location.hash!=="#/"+route) history.replaceState(null,"",location.pathname+location.search+"#/"+route);
+  if(route==="error") betzEvent("error_view");
+  else if(route==="blocked") betzEvent("blocked_view");
+  else if(TABS.some(t=>t[0]===route)) betzEvent("tab:"+route);
   window.scrollTo(0,0);
 }
 nav.addEventListener("click", e=>{ const b=e.target.closest("button"); if(b) go(b.dataset.go); });
@@ -675,6 +733,7 @@ window.addEventListener("hashchange",()=>go((location.hash||"#/perfil").replace(
 const sheet = el("sheet");
 function openSheet(key){
   const e = EXPLAIN[key]; if(!e) return;
+  betzEvent("explain_open:"+key);
   el("sheet-t").textContent = e.t;
   el("sheet-b").textContent = e.b;
   el("sheet-s").textContent = e.s || "";
@@ -692,11 +751,25 @@ function param(name){ return new URLSearchParams(location.search).get(name); }
 
 function fail(msg){ el("error-msg").textContent = msg; go("error"); }
 
+function playWelcome(name){
+  const hi=el("p-greet-hi"), sub=el("p-greet-sub");
+  if(hi){
+    if(name){ hi.innerHTML='Hola, <span class="nm">'+escapeHtml(name)+'</span>'; if(sub){ sub.textContent="Bienvenido a BETZ"; sub.hidden=false; } }
+    else { hi.textContent="Bienvenido a BETZ"; if(sub) sub.hidden=true; }
+  }
+  document.body.classList.add("welcome");
+  let done=false;
+  const stop=()=>{ if(done) return; done=true; document.body.classList.remove("welcome"); document.removeEventListener("pointerdown", stop, true); };
+  setTimeout(stop, 2450);
+  setTimeout(()=>{ if(!done) document.addEventListener("pointerdown", stop, true); }, 500);
+}
 async function boot(){
+  stripPersonalKey();
   go("loading");
   try {
     await loadRuntime();
   } catch(e){ return fail("No pudimos abrir BETZ en este momento. Intenta nuevamente."); }
+  initClarity(state.runtime && state.runtime.environment);
   try {
     state.checkpoints = await getJSON("checkpoints.json");
   } catch(e){ return fail("No pudimos cargar las jornadas disponibles."); }
@@ -709,6 +782,17 @@ async function boot(){
   }
   const friendlyRequest=param("jornada");
   const legacyRequest=param("checkpoint");
+  // Personal deep-link: ?u=<user_id>&n=<display_name> → land on that profile with a welcome.
+  const uParam=param("u");
+  let welcomeWanted=false, welcomeName="";
+  if(uParam){
+    state.player=uParam;
+    welcomeName=(param("n")||"").trim().slice(0,40);
+    welcomeWanted=true;
+    const cu=new URL(location.href);
+    cu.searchParams.delete("u"); cu.searchParams.delete("n");
+    history.replaceState(null,"",cu.pathname+cu.search+cu.hash);
+  }
   const requested=legacyRequest||calendar.find(p=>checkpointSlug(p.period_id)===friendlyRequest)?.period_id||null;
   const requestedPeriod=calendar.find(period=>period.period_id===requested);
   if((legacyRequest||friendlyRequest) && (!requestedPeriod||!requestedPeriod.available||!published.includes(requested))){
@@ -717,6 +801,7 @@ async function boot(){
   }
   state.cp = requested || current;
   if(legacyRequest) history.replaceState(null,"",publicCheckpointUrl(state.cp));
+  betzTag("period_id", state.cp);
 
   // Full calendar: internal ids stay in data attributes; unpublished periods are inert.
   const currentOrdinal=calendar.find(period=>period.period_id===current)?.period_ordinal;
@@ -736,7 +821,8 @@ async function boot(){
   try {
     await loadCheckpoint();
   } catch(e){ return fail("No pudimos cargar la jornada seleccionada."); }
-  go((location.hash||"#/perfil").replace("#/",""));
+  go(welcomeWanted ? "perfil" : (location.hash||"#/perfil").replace("#/",""));
+  if(welcomeWanted) playWelcome(welcomeName);
 }
 
 async function loadCheckpoint(){
@@ -768,7 +854,10 @@ function initials(name, id){ return String(name||id||"?").trim().slice(0,2).toUp
 function sortedRows(){
   return (state.leaderboard.leaderboard||[]).slice().sort((a,b)=> (a.rank??999)-(b.rank??999) || b.total_points-a.total_points);
 }
-function periods(){ return (state.periodResults&&state.periodResults.periods)||[]; }
+function periods(){
+  const scored=(state.periodResults&&state.periodResults.periods)||[];
+  return scored.length?scored:(state.checkpoints&&state.checkpoints.rolling_period?[state.checkpoints.rolling_period]:[]);
+}
 function activePeriod(){ return periods()[state.periodIndex]||null; }
 function selectedPeriodLabel(){ return activePeriod() ? periodLabel(activePeriod()) : checkpointLabel(state.cp); }
 function activePeriodDetails(){
@@ -920,7 +1009,7 @@ function renderPartidos(){
     const ad=dist.get(away)||{prediction_count:0,prediction_rate:0};
     const own=(md.picks||[]).find(x=>x.user_id===state.player);
     const final=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score)
-      ? '<span class="tnum">'+md.away_score+'–'+md.home_score+'</span>'
+      ? '<span class="tnum">'+md.home_score+'–'+md.away_score+'</span>'
       : 'Pendiente';
     const ownCopy=!publishedDetails
       ? '<span class="you">Pronósticos visibles después del cierre</span>'
@@ -928,12 +1017,12 @@ function renderPartidos(){
       ? '<span class="you">Pronóstico de '+escapeHtml(own.display_name||"este jugador")+': <b>'+escapeHtml(own.selected_team_id)+'</b></span>'
       : '<span class="you">Sin pronóstico</span>';
     const consensusHtml=ci
-      ? '<div class="cbar"><span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span>'+
-        '<span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div><div class="clabels">'+
-        '<span><b>'+away+' '+pct(ad.prediction_rate)+'</b> · '+ad.prediction_count+'</span><span><b>'+home+' '+pct(hd.prediction_rate)+'</b> · '+hd.prediction_count+'</span></div>'
+      ? '<div class="cbar"><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span>'+
+        '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span></div><div class="clabels">'+
+        '<span><b>'+home+' '+pct(hd.prediction_rate)+'</b> · '+hd.prediction_count+'</span><span><b>'+away+' '+pct(ad.prediction_rate)+'</b> · '+ad.prediction_count+'</span></div>'
       : '<div class="md-cap" style="margin:12px 0 2px">Consenso disponible después del cierre.</div>';
     return '<article class="mx" data-match="'+escapeHtml(id)+'"><div class="mx-top"><div class="pk-game">'+
-      '<span class="tm" data-team="'+away+'">'+away+'</span><span class="x">vs</span><span class="tm" data-team="'+home+'">'+home+'</span></div>'+
+      '<span class="tm" data-team="'+home+'">'+home+'</span><span class="x">vs</span><span class="tm" data-team="'+away+'">'+away+'</span></div>'+
       '<div class="mx-final">'+final+'</div></div>'+consensusHtml+
       '<div class="mx-meta">'+ownCopy+consensusBadge(ci,cp)+(publishedDetails?'<span class="mx-go">Ver detalle ›</span>':'')+'</div></article>';
   });
@@ -947,6 +1036,7 @@ el("matches-next").onclick=()=>setPeriod(1);
 function openMatch(id){
   const maps=matchMaps(),m=maps.context.get(id),ci=maps.intelligence.get(id),cp=maps.performance.get(id),md=periodDetailMatch(id);
   if(!m||!md) return;
+  betzEvent("match_detail_open");
   const home=m.home_team.abbreviation,away=m.away_team.abbreviation;
   const dist=new Map(((ci&&ci.distribution)||[]).map(x=>[x.team_id,x]));
   const hd=dist.get(home)||{prediction_count:0,prediction_rate:0};
@@ -956,26 +1046,27 @@ function openMatch(id){
   const isFinal=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score);
   const homeWon=isFinal&&md.home_score>md.away_score,awayWon=isFinal&&md.away_score>md.home_score;
   const score=isFinal
-    ? '<div class="md-score"><div class="md-tm'+(awayWon?' win':'')+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="sc">'+md.away_score+'</span></div>'+
-      '<span class="md-sep">–</span><div class="md-tm'+(homeWon?' win':'')+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="sc">'+md.home_score+'</span></div></div>'
-    : '<div class="md-score"><div class="md-tm"><span class="tm" data-team="'+away+'">'+away+'</span></div><span class="md-sep">vs</span><div class="md-tm"><span class="tm" data-team="'+home+'">'+home+'</span></div></div>';
+    ? '<div class="md-score"><div class="md-tm'+(homeWon?' win':'')+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="sc">'+md.home_score+'</span></div>'+
+      '<span class="md-sep">–</span><div class="md-tm'+(awayWon?' win':'')+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="sc">'+md.away_score+'</span></div></div>'
+    : '<div class="md-score"><div class="md-tm"><span class="tm" data-team="'+home+'">'+home+'</span></div><span class="md-sep">vs</span><div class="md-tm"><span class="tm" data-team="'+away+'">'+away+'</span></div></div>';
   const quarters=(md.period_scores||[]).slice().sort((a,b)=>a.period-b.period);
   const quarterTable=quarters.length
     ? '<table class="md-line"><tr><th class="tn"></th>'+quarters.map(q=>'<th>'+q.period+'</th>').join('')+'<th>T</th></tr>'+
-      '<tr><td class="tn">'+away+'</td>'+quarters.map(q=>'<td>'+q.away_score+'</td>').join('')+'<td class="tt">'+fmt(md.away_score)+'</td></tr>'+
-      '<tr><td class="tn">'+home+'</td>'+quarters.map(q=>'<td>'+q.home_score+'</td>').join('')+'<td class="tt">'+fmt(md.home_score)+'</td></tr></table>'
+      '<tr><td class="tn">'+home+'</td>'+quarters.map(q=>'<td>'+q.home_score+'</td>').join('')+'<td class="tt">'+fmt(md.home_score)+'</td></tr>'+
+      '<tr><td class="tn">'+away+'</td>'+quarters.map(q=>'<td>'+q.away_score+'</td>').join('')+'<td class="tt">'+fmt(md.away_score)+'</td></tr></table>'
     : '<div class="md-cap" style="text-align:center;margin:14px 0 2px">El marcador por cuarto no está disponible para este partido.</div>';
   const host=el("match-detail");
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
     '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
-    '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div>'+
-    '<div class="clabels"><span>'+away+' '+pct(ad.prediction_rate)+' · '+ad.prediction_count+'</span><span>'+home+' '+pct(hd.prediction_rate)+' · '+hd.prediction_count+'</span></div>'+
+    '<span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span><span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span></div>'+
+    '<div class="clabels"><span>'+home+' '+pct(hd.prediction_rate)+' · '+hd.prediction_count+'</span><span>'+away+' '+pct(ad.prediction_rate)+' · '+ad.prediction_count+'</span></div>'+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
-    '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ad.prediction_count+'</span></button>'+
-    '<button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+hd.prediction_count+'</span></button></div>'+
+    '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+hd.prediction_count+'</span></button>'+
+    '<button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ad.prediction_count+'</span></button></div>'+
     '<div class="md-hint" data-hint>Elige un equipo para ver sus jugadores.</div><div data-roster></div></div>';
   paintTeams(host); host.querySelector(".md-back").onclick=closeMatch;
   host.querySelectorAll("[data-team-sel]").forEach(button=>button.onclick=()=>{
+    betzEvent("md_roster_reveal");
     const teamId=button.dataset.teamSel;
     host.querySelectorAll("[data-team-sel]").forEach(b=>b.classList.toggle("on",b===button));
     const hint=host.querySelector("[data-hint]"); if(hint) hint.hidden=true;
@@ -983,6 +1074,7 @@ function openMatch(id){
     const roster=host.querySelector("[data-roster]");
     roster.innerHTML='<div class="avgrid">'+picks.map(p=>'<button class="avitem'+(p.user_id===DEFAULT_PLAYER?' you':'')+'" data-plr="'+escapeHtml(p.user_id)+'" type="button"><span class="av">'+escapeHtml(initials(p.display_name,p.user_id))+'</span><span class="nm">'+escapeHtml(p.display_name||p.user_id)+'</span></button>').join('')+'</div>';
     roster.querySelectorAll("[data-plr]").forEach(player=>player.onclick=()=>{
+      if(player.dataset.plr!==DEFAULT_PLAYER){ betzEvent("other_profile_open:from_match"); betzTag("viewed_others","yes"); }
       selectPlayer(player.dataset.plr);
       closeMatch();
       go("perfil");
@@ -993,7 +1085,13 @@ function openMatch(id){
 function closeMatch(){ const host=el("match-detail");host.classList.remove("on");host.innerHTML="";document.body.style.overflow=""; }
 
 function buildPlayerSelect(){
-  const rows = state.leaderboard.leaderboard||[];
+  const leaderboardRows = state.leaderboard.leaderboard||[];
+  const detail=activePeriodDetails();
+  const frozenPlayers=new Map();
+  for(const match of (detail&&detail.matches)||[]){
+    for(const pick of match.picks||[]) if(!frozenPlayers.has(pick.user_id)) frozenPlayers.set(pick.user_id,{user_id:pick.user_id,display_name:pick.display_name});
+  }
+  const rows = leaderboardRows.length?leaderboardRows:[...frozenPlayers.values()].sort((a,b)=>String(a.user_id).localeCompare(String(b.user_id)));
   const sel = el("player-select");
   sel.innerHTML = rows.length
     ? rows.map(r=>'<option value="'+r.user_id+'">'+escapeHtml(r.display_name)+'</option>').join("")
@@ -1001,7 +1099,7 @@ function buildPlayerSelect(){
   sel.disabled = !rows.length;
   if(!rows.some(r=>r.user_id===state.player)) state.player = (rows[0]||{}).user_id;
   sel.value = state.player;
-  sel.onchange = ()=>{ selectPlayer(sel.value); };
+  sel.onchange = ()=>{ if(sel.value!==DEFAULT_PLAYER){ betzEvent("other_profile_open:from_select"); betzTag("viewed_others","yes"); } selectPlayer(sel.value); };
 }
 
 function playerFrom(contract){
@@ -1053,14 +1151,16 @@ function renderProfilePicks(){
     const chosen=pick&&pick.answered ? pick.selected_team_id : "—";
     const result=!pick||!pick.answered
       ? '<span class="pk-res">sin pick</span>'
-      : pick.correct
+      : pick.correct===true
         ? '<span class="pk-res win">✓ +'+fmt(pick.points_awarded)+'</span>'
-        : '<span class="pk-res loss">✕ '+fmt(pick.points_awarded)+'</span>';
+        : pick.correct===false
+          ? '<span class="pk-res loss">✕ '+fmt(pick.points_awarded)+'</span>'
+          : '<span class="pk-res">pendiente</span>';
     const lock=pick&&pick.lock
       ? '<div class="pk-lock">📌 Fijado · marcador pronosticado <b>'+fmt(pick.predicted_home_score)+'–'+fmt(pick.predicted_away_score)+'</b></div>'
       : "";
     return '<div class="pk-row" data-match="'+escapeHtml(match.match_id)+'"><div class="pk-you">'+escapeHtml(chosen)+'</div>'+
-      '<div class="pk-game"><span class="tm" data-team="'+away+'">'+away+'</span><span class="x">vs</span><span class="tm" data-team="'+home+'">'+home+'</span></div>'+result+lock+'</div>';
+      '<div class="pk-game"><span class="tm" data-team="'+home+'">'+home+'</span><span class="x">vs</span><span class="tm" data-team="'+away+'">'+away+'</span></div>'+result+lock+'</div>';
   }).join("");
   const weekly=periodPlayer(period,state.player);
   const points=weekly&&weekly.score ? '<b>'+fmt(weekly.score.total_points)+'</b> pts' : "—";
@@ -1074,12 +1174,15 @@ function renderProfilePicks(){
 }
 
 function renderPerfil(){
-  const row = (state.leaderboard.leaderboard||[]).find(r=>r.user_id===state.player) || {};
+  const scoredRow = (state.leaderboard.leaderboard||[]).find(r=>r.user_id===state.player);
+  const frozenPick = ((activePeriodDetails()&&activePeriodDetails().matches)||[])
+    .flatMap(match=>match.picks||[]).find(pick=>pick.user_id===state.player);
+  const row = scoredRow || (frozenPick?{user_id:frozenPick.user_id,display_name:frozenPick.display_name,total_points:null,rank:null}:{});
   const hasProfile=Boolean(row.user_id);
   el("p-name").textContent = hasProfile?row.display_name:"Tu perfil aparecerá después del cierre";
   el("p-handle").textContent = "Participante";
   if(!hasProfile) el("p-handle").textContent = selectedPeriodLabel();
-  el("p-av").textContent = hasProfile?initials(row.display_name, state.player):"B";
+  el("p-av").textContent = hasProfile?initials(row.display_name, state.player):"Z";
   el("p-cp").textContent = (hasProfile?"Hasta ":"")+selectedPeriodLabel()+(hasProfile?" ›":"");
   el("p-pts").textContent = fmt(row.total_points);
   el("p-rank").textContent = fmt(row.rank);
