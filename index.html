@@ -832,15 +832,18 @@ async function loadCheckpoint(){
   state.periodResults = await getJSON(base+"/period_results.json");
   state.context = await getJSON(base+"/competition_context.json");
   state.periodDetailCache = {};
+  // Pre-freeze checkpoints publish no analytics yet — skip those fetches so the console stays clean.
+  const analyticsPublished = !/:PRE_FREEZE$/.test((state.leaderboard && state.leaderboard.cursor) || "");
   const perfIx = ["efficiency","form","longest_streak","consistency"];
-  for(const i of perfIx){ try{ state.perf[i]=await getJSON(base+"/analytics/player_performance/"+i+".json"); }catch{ state.perf[i]=null; } }
+  for(const i of perfIx){ state.perf[i]=null; if(analyticsPublished){ try{ state.perf[i]=await getJSON(base+"/analytics/player_performance/"+i+".json"); }catch{ state.perf[i]=null; } } }
   const diIx = ["contrarian_play","lock_efficiency","lock_preference","market_alignment","player_market_performance"];
-  for(const i of diIx){ try{ state.di[i]=await getJSON(base+"/analytics/decision_intelligence/players/"+i+".json"); }catch{ state.di[i]=null; } }
+  for(const i of diIx){ state.di[i]=null; if(analyticsPublished){ try{ state.di[i]=await getJSON(base+"/analytics/decision_intelligence/players/"+i+".json"); }catch{ state.di[i]=null; } } }
   for(const i of ["consensus_intelligence","consensus_performance"]){
-    try{ state.diCompetition[i]=await getJSON(base+"/analytics/decision_intelligence/competition/"+i+".json"); }
-    catch{ state.diCompetition[i]=null; }
+    state.diCompetition[i]=null;
+    if(analyticsPublished){ try{ state.diCompetition[i]=await getJSON(base+"/analytics/decision_intelligence/competition/"+i+".json"); }catch{ state.diCompetition[i]=null; } }
   }
-  try{ state.knowledge=await getJSON(base+"/analytics/football_knowledge/knowledge.json"); }catch{ state.knowledge=null; }
+  state.knowledge=null;
+  if(analyticsPublished){ try{ state.knowledge=await getJSON(base+"/analytics/football_knowledge/knowledge.json"); }catch{ state.knowledge=null; } }
   state.periodIndex = Math.max(0,(state.periodResults.periods||[]).length-1);
   await loadActivePeriodDetail();
   renderTabla();
