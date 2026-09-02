@@ -154,6 +154,29 @@
             .filter(function (id) { return !eligibleSet[String(id)]; });
     }
 
+    // Apply only a receiver-confirmed mutation to the session copy. The receiver
+    // remains authoritative; uncertain outcomes are recovered with list_groups.
+    function applyConfirmedMutation(groups, action, group, payload) {
+        var current = Array.isArray(groups) ? groups.slice() : [];
+        var groupId = group && group.group_id;
+        if (action === "delete_group") {
+            groupId = payload && payload.group_id;
+            return current.filter(function (candidate) { return candidate.group_id !== groupId; });
+        }
+        if (!groupId) throw new Error("CONFIRMED_GROUP_REQUIRED");
+        var replaced = false;
+        var next = current.map(function (candidate) {
+            if (candidate.group_id !== groupId) return candidate;
+            replaced = true;
+            return group;
+        });
+        if (!replaced) next.push(group);
+        return next.sort(function (left, right) {
+            return String(left.created_at || "").localeCompare(String(right.created_at || "")) ||
+                String(left.group_id || "").localeCompare(String(right.group_id || ""));
+        });
+    }
+
     // --- Snapshot format availability (contract §Shareable Snapshot Contract) ----
     function snapshotFormats(resolvedCount) {
         var n = Math.max(0, Number(resolvedCount) || 0);
@@ -299,6 +322,7 @@
         projectGroup: projectGroup,
         editorCandidates: editorCandidates,
         ineligibleRetainedMembers: ineligibleRetainedMembers,
+        applyConfirmedMutation: applyConfirmedMutation,
         snapshotFormats: snapshotFormats,
         snapshotFormat: snapshotFormat,
         buildSnapshotModel: buildSnapshotModel,

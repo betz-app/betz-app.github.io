@@ -1351,7 +1351,7 @@ function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<
 // only to reach the runtime-defined receiver over the postMessage transport.
 //-----------------------------//
 const SGV = window.SocialGroupsView || null;
-const sgState = { status:"IDLE", token:"", groups:null, eligible:[], selectedId:null, error:"", busy:false, pending:{}, view:"list", draftName:"", draftMembers:null };
+const sgState = { status:"IDLE", token:"", groups:null, eligible:[], selectedId:null, error:"", busy:false, pending:{}, pendingDeleteId:null, view:"list", draftName:"", draftMembers:null };
 let __sgInitStarted=false, __sgIframe=null, __sgQueue=Promise.resolve();
 
 function sgReceiverUrl(){ return (state.runtime && state.runtime.apps_script_url) || ""; }
@@ -1439,7 +1439,12 @@ async function sgMutate(action, payload, reqKey){
   try{ res=await sgPost(SGV.buildRequest(action,{ token:sgState.token, competition_id:sgCompetition(), client_request_id:crid, payload })); }
   catch(e){ uncertain=true; }
   if(uncertain){ await sgReloadGroups(); return { ok:false, uncertain:true }; }
-  if(res&&res.ok){ delete sgState.pending[reqKey]; await sgReloadGroups(); return { ok:true, group:res.group }; }
+  if(res&&res.ok){
+    delete sgState.pending[reqKey];
+    sgState.groups=SGV.applyConfirmedMutation(sgState.groups,action,res.group,payload);
+    sgState.busy=false; sgState.error=""; renderGrupos();
+    return { ok:true, group:res.group };
+  }
   delete sgState.pending[reqKey];
   if(res&&res.error_code==="INVALID_TOKEN"){ sgState.token=""; sgState.status="NEEDS_LINK"; renderGrupos(); return { ok:false, code:"INVALID_TOKEN" }; }
   if(res&&res.error_code==="IDEMPOTENCY_CONFLICT"){ await sgReloadGroups(); return { ok:false, code:"IDEMPOTENCY_CONFLICT" }; }
@@ -1475,11 +1480,17 @@ function renderGrupos(){
   host.innerHTML=sgListHtml(); sgWireList();
 }
 function sgListHtml(){
-  const groups=sgState.groups||[];
+  const loading=sgState.groups===null;
+  const groups=(sgState.groups||[]).filter(g=>g.group_id!==sgState.pendingDeleteId);
   let out="";
   if(sgState.error) out+='<div class="sg-err">'+escapeHtml(sgState.error)+'</div>';
+  if(sgState.pendingDeleteId) out+='<div class="sg-note">Eliminando grupo…</div>';
   out+='<p class="sg-note">Elige a quién seguir en esta competencia y compara sus posiciones oficiales. Solo tú ves tus grupos.</p>';
-  out+='<button class="sg-primary" type="button" data-sg="new"'+(sgState.busy?' disabled':'')+'>+ Crear grupo</button>';
+  out+='<button class="sg-primary" type="button" data-sg="new">+ Crear grupo</button>';
+  if(loading){
+    out+='<div class="sg-cta" style="margin-top:14px"><span class="ec-title">Cargando tus grupos…</span><p>Puedes comenzar a escribir el nombre mientras llegan los participantes.</p></div>';
+    return out;
+  }
   if(!groups.length){
     out+='<div class="sg-cta" style="margin-top:14px"><span class="ec-title">Aún no tienes grupos</span><p>Crea tu primera lista de rivalidad y compárala con la tabla oficial.</p></div>';
     return out;
@@ -1511,7 +1522,8 @@ function sgEditorHtml(){
   out+='<input class="sg-input" id="sg-name" type="text" maxlength="60" placeholder="Nombre del grupo" value="'+escapeHtml(sgState.draftName||"")+'" aria-label="Nombre del grupo">';
   out+='<div class="sg-count" id="sg-count">'+count+' seleccionados · mínimo 2</div>';
   if(candidates.length<2){
-    out+='<div class="sg-cta"><span class="ec-title">Aún no hay suficientes participantes activos</span><p>Cuando haya al menos dos participantes activos en la competencia podrás formar tu grupo.</p></div>';
+    if(sgState.busy) out+='<div class="sg-cta"><span class="ec-title">Cargando participantes…</span><p>En cuanto termine podrás elegirlos.</p></div>';
+    else out+='<div class="sg-cta"><span class="ec-title">Aún no hay suficientes participantes activos</span><p>Cuando haya al menos dos participantes activos en la competencia podrás formar tu grupo.</p></div>';
   } else {
     if(editing){
       const retained=SGV.ineligibleRetainedMembers((sgGroupById(sgState.selectedId)||{}).member_user_ids||[], sgState.eligible||[]);
@@ -1630,7 +1642,8 @@ function sgDetailHtml(g, proj){
 }
 function sgConfirmDelete(g){
   if(!window.confirm('¿Eliminar el grupo "'+g.name+'"? Esta acción no se puede deshacer.')) return;
-  sgMutate("delete_group",{ group_id:g.group_id },"delete:"+g.group_id).then(r=>{ if(r.ok||r.uncertain){ closeGroup(); sgState.view="list"; renderGrupos(); } });
+  sgState.pendingDeleteId=g.group_id; closeGroup(); sgState.view="list"; renderGrupos();
+  sgMutate("delete_group",{ group_id:g.group_id },"delete:"+g.group_id).then(()=>{ sgState.pendingDeleteId=null; renderGrupos(); });
 }
 
 //----- local snapshot generation (never uploaded) -----
