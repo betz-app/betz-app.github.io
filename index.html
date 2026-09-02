@@ -447,6 +447,63 @@
   @media (prefers-reduced-motion:reduce){
     .screen{animation:none}.mx,nav button,.stat,.perf .box{transition:none}
   }
+
+  /* Grupos (Social Groups) */
+  .sg-note{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:16px}
+  .sg-cta{border:1px solid var(--line);border-radius:14px;padding:22px 18px;background:var(--surface);text-align:center}
+  .sg-cta .ec-title{display:block;font-family:var(--display);font-size:16px;color:var(--txt);margin-bottom:8px}
+  .sg-cta p{font-size:12.5px;color:var(--muted);line-height:1.5;max-width:36ch;margin:0 auto}
+  .sg-cta .tag{margin-top:14px}
+  .sg-primary{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--turq);color:#04211E;border:0;border-radius:12px;padding:13px;font-family:var(--display);font-weight:700;font-size:14px;cursor:pointer;transition:transform .08s}
+  .sg-primary:active{transform:scale(.98)}
+  .sg-primary:disabled{opacity:.5;cursor:default}
+  .sg-ghost{width:100%;background:transparent;border:1px solid var(--line);color:var(--txt);border-radius:12px;padding:12px;font-family:var(--body);font-size:13px;cursor:pointer}
+  .sg-ghost:active{border-color:var(--turq);color:var(--turq)}
+  .sg-danger{color:var(--red);border-color:rgba(240,78,54,.4)}
+  .sg-danger:active{border-color:var(--red);color:var(--red)}
+  .sg-row-actions{display:flex;gap:8px;margin-top:10px}
+  .sg-row-actions .sg-ghost,.sg-row-actions .sg-primary{width:auto;flex:1;padding:10px}
+  .sg-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px;cursor:pointer;transition:border-color .12s,transform .08s}
+  .sg-card:active{transform:scale(.99);border-color:var(--turq)}
+  .sg-card .sg-name{font-family:var(--display);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .sg-card .sg-meta{font-size:11.5px;color:var(--muted);margin-top:4px}
+  .sg-card .sg-go{color:var(--turq);font-size:12px}
+  .sg-err{background:rgba(240,78,54,.08);border:1px solid rgba(240,78,54,.35);color:var(--coral);border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.4;margin-bottom:12px}
+  .sg-input{width:100%;background:var(--surface);color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-family:var(--body);font-size:14px;margin-bottom:6px}
+  .sg-input:focus{outline:none;border-color:var(--turq)}
+  .sg-count{font-size:11px;color:var(--faint);text-align:right;margin-bottom:12px}
+  .sg-picker{border:1px solid var(--line);border-radius:12px;max-height:46vh;overflow-y:auto;margin-bottom:6px;background:var(--surface)}
+  .sg-pick{display:flex;align-items:center;gap:11px;padding:11px 13px;border-bottom:1px solid var(--line);cursor:pointer;font-family:var(--body);color:inherit;width:100%;background:none;text-align:left}
+  .sg-pick:last-child{border-bottom:0}
+  .sg-pick .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-family:var(--display);color:var(--txt);background:var(--surface2);border:1px solid var(--line);flex:none}
+  .sg-pick .sg-pn{flex:1;min-width:0;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sg-pick .sg-pr{font-size:11px;color:var(--faint)}
+  .sg-pick .sg-box{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--line);flex:none;display:grid;place-items:center;font-size:12px}
+  .sg-pick.on{background:var(--turq-dim)} .sg-pick.on .sg-box{border-color:var(--turq);color:var(--turq);background:var(--turq-dim)}
+  .sg-pick.you .sg-pn{color:var(--turq)}
+  .sg-proj{margin:0 -16px}
+  .sg-phead{display:grid;grid-template-columns:34px 1fr auto auto;gap:12px;padding:8px 16px;font-size:9px;letter-spacing:.4px;text-transform:uppercase;color:var(--faint)}
+  .sg-phead .r{text-align:right}
+  .sg-prow{display:grid;grid-template-columns:34px 1fr auto auto;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line)}
+  .sg-prow .grk{font-family:var(--display);font-weight:700;font-size:15px;color:var(--muted);text-align:center}
+  .sg-prow.lead .grk{color:var(--gold)}
+  .sg-prow .pn{font-size:13.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sg-prow.lead .pn{color:var(--gold)}
+  .sg-prow .gen{font-size:11px;color:var(--faint);text-align:right;white-space:nowrap}
+  .sg-prow .pts{font-family:var(--display);font-weight:700;font-size:15px;text-align:right;font-variant-numeric:tabular-nums;min-width:40px}
+  .sg-prow.lead .pts{color:var(--gold)}
+  .sg-unres{font-size:11px;color:var(--faint);padding:10px 2px;line-height:1.5}
+  .sg-fmts{display:flex;gap:10px;margin:12px 0}
+  .sg-fmt{flex:1;background:var(--surface);border:1px solid var(--line);color:var(--txt);border-radius:12px;padding:12px 8px;cursor:pointer;font-family:var(--body);text-align:center}
+  .sg-fmt:active{border-color:var(--turq)}
+  .sg-fmt:disabled{opacity:.4;cursor:default}
+  .sg-fmt .fn{display:block;font-family:var(--display);font-weight:700;font-size:13px}
+  .sg-fmt .fd{display:block;font-size:10px;color:var(--muted);margin-top:3px}
+  #grupo-detail,#grupo-snap{position:fixed;inset:0;z-index:55;max-width:560px;margin:0 auto;background:var(--bg);display:none;flex-direction:column;overflow-y:auto}
+  #grupo-detail.on,#grupo-snap.on{display:flex}
+  .sg-snap-body{padding:18px 16px 40px;display:flex;flex-direction:column;align-items:center}
+  .sg-snap-body canvas,.sg-snap-body img{width:100%;max-width:360px;border-radius:14px;border:1px solid var(--line)}
+  .sg-snap-actions{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px;margin-top:16px}
 </style>
 </head>
 
@@ -556,11 +613,11 @@
       <div class="podio-note" id="podio-msg">—</div>
     </section>
 
-    <!-- Grupos: product boundary retained; no contract is published yet -->
+    <!-- Grupos: private, competition-scoped rivalry lists (social_groups_contract.md) -->
     <section class="screen" data-route="grupos">
       <div class="h1">Grupos</div>
-      <div class="sub">Competencias sociales persistentes.</div>
-      <div class="empty-contract"><span class="ec-title">Grupos llegará más adelante</span><p>Estamos preparando una forma sencilla de competir con tus amigos durante toda la temporada.</p><span class="tag">Próximamente</span></div>
+      <div class="sub">Tus listas privadas de rivalidad en esta competencia.</div>
+      <div id="grupos-root" aria-live="polite"></div>
     </section>
 
     <!-- Pods: weekly mechanic retained; assignment data is not public yet -->
@@ -574,6 +631,8 @@
   <nav id="nav" aria-label="Secciones"></nav>
 
   <div id="match-detail" aria-live="polite"></div>
+  <div id="grupo-detail" aria-live="polite"></div>
+  <div id="grupo-snap" aria-hidden="true"></div>
 
   <!-- Explain sheet (Analytics/Football Knowledge sources; read-only) -->
   <div class="sheet-bd" id="sheet">
@@ -587,6 +646,7 @@
 </body>
 
 <script src="football_knowledge_presenter.js"></script>
+<script src="social_groups_view.js"></script>
 <script>
 "use strict";
 // ---- same-origin data layer (no external requests, no recompute) ----
@@ -594,6 +654,9 @@
 // The relative data_path preserves any GitHub Project Pages repository prefix.
 let DATA = null;
 const DEFAULT_PLAYER = "BTO_Z";
+// Personal capability (?k), held only in memory for the Social Groups receiver.
+// Captured before the URL is stripped; never rendered, logged or sent to analytics.
+let __personalCapability = "";
 //--------------------------------------------------------------
 // Clarity (Microsoft) — solo PROD, inicia DESPUES del strip de la llave
 //--------------------------------------------------------------
@@ -603,6 +666,10 @@ const __clarityOnce = new Set();
 function stripPersonalKey(){
   try{
     const u = new URL(location.href);
+    // Capture the capability into memory BEFORE stripping, so it never rides the
+    // URL into history, referrers or analytics. Only the Social Groups receiver uses it.
+    const k = u.searchParams.get("k");
+    if(k) __personalCapability = String(k).trim();
     if(u.searchParams.has("k") || u.searchParams.has("name")){
       u.searchParams.delete("k"); u.searchParams.delete("name");
       history.replaceState(null, "", u.pathname + u.search + u.hash);
@@ -851,6 +918,7 @@ async function loadCheckpoint(){
   renderPerfil();
   renderPartidos();
   renderPodio();
+  if((location.hash||"").replace("#/","")==="grupos") sgOnEnter();
 }
 
 function initials(name, id){ return String(name||id||"?").trim().slice(0,2).toUpperCase(); }
@@ -1275,6 +1343,395 @@ function analyticsBlock(title, p){
     '<span class="pts">'+(p?'publicado':'<b>no aplica</b>')+'</span></div></div>';
 }
 function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+
+//-----------------------------//
+// Grupos (Social Groups) — private, capability-gated rivalry lists.
+// Reads the OFFICIAL leaderboard for projection; the personal capability is used
+// only to reach the runtime-defined receiver over the postMessage transport.
+//-----------------------------//
+const SGV = window.SocialGroupsView || null;
+const sgState = { status:"IDLE", token:"", groups:null, selectedId:null, error:"", busy:false, pending:{}, view:"list", draftName:"", draftMembers:null };
+let __sgInitStarted=false, __sgIframe=null, __sgQueue=Promise.resolve();
+
+function sgReceiverUrl(){ return (state.runtime && state.runtime.apps_script_url) || ""; }
+function sgCompetition(){ return (state.runtime && state.runtime.competition_id) || ""; }
+function sgEnsureIframe(){
+  if(__sgIframe && document.body.contains(__sgIframe)) return __sgIframe;
+  const f=document.createElement("iframe");
+  f.name="__sg_rx_"+Math.random().toString(36).slice(2);
+  f.style.display="none"; f.setAttribute("aria-hidden","true"); f.tabIndex=-1;
+  document.body.appendChild(f); __sgIframe=f; return f;
+}
+// Single-flight postMessage transport (the receiver exposes no CORS headers).
+function sgPost(body){
+  const run=()=> new Promise((resolve,reject)=>{
+    const url=sgReceiverUrl();
+    if(!url){ reject(new Error("RECEIVER_UNCONFIGURED")); return; }
+    const frame=sgEnsureIframe();
+    let done=false, form=null, timer=null;
+    const cleanup=()=>{ window.removeEventListener("message",onMsg); if(form&&form.parentNode) form.parentNode.removeChild(form); if(timer) clearTimeout(timer); };
+    const onMsg=(ev)=>{ if(!ev||!ev.data||ev.data.__betz!==true) return; if(done) return; done=true; cleanup(); resolve(ev.data.data); };
+    window.addEventListener("message",onMsg);
+    form=document.createElement("form");
+    form.method="POST"; form.action=url; form.target=frame.name; form.style.display="none";
+    const field=document.createElement("input");
+    field.type="hidden"; field.name="payload"; field.value=JSON.stringify(body);
+    form.appendChild(field); document.body.appendChild(form);
+    timer=setTimeout(()=>{ if(done) return; done=true; cleanup(); reject(new Error("RECEIVER_TIMEOUT")); }, 15000);
+    try{ form.submit(); }catch(e){ if(!done){ done=true; cleanup(); reject(e); } }
+  });
+  __sgQueue = __sgQueue.then(run, run);
+  return __sgQueue;
+}
+function sendReceiverInfo(){ return sgPost(SGV.buildRequest("receiver_info")); }
+
+const SG_ERR = {
+  INVALID_TOKEN:"Tu enlace personal no es válido o fue revocado. Abre BETZ desde tu enlace para administrar tus grupos.",
+  INVALID_GROUP_NAME:"Ese nombre no es válido. Usa entre 1 y 40 caracteres y evita empezar con = + - o @.",
+  MIN_GROUP_MEMBERS:"Elige al menos dos competidores.",
+  DUPLICATE_GROUP_MEMBER:"Hay competidores repetidos en la selección.",
+  INVALID_GROUP_ID:"No pudimos identificar ese grupo. Recarga e inténtalo de nuevo.",
+  GROUP_NOT_FOUND:"Ese grupo ya no está disponible.",
+  IDEMPOTENCY_CONFLICT:"Ese grupo ya existía con otro contenido. Actualizamos tu lista.",
+  COMPETITION_MISMATCH:"Esta competencia no corresponde a tu enlace."
+};
+function sgErrorCopy(res){
+  const code=res&&res.error_code;
+  return (code&&SG_ERR[code]) || "No pudimos completar la acción. Revisa tu conexión e inténtalo de nuevo.";
+}
+
+function sgOnEnter(){
+  if(!SGV){ sgState.status="UNCONFIGURED"; renderGrupos(); return; }
+  if(sgState.status==="IDLE"){ if(!state.runtime){ return; } sgInit(); return; }
+  renderGrupos();
+}
+async function sgInit(){
+  if(__sgInitStarted) return; __sgInitStarted=true;
+  if(!SGV || !SGV.runtimeReceiverConfigured(state.runtime)){ sgState.status="UNCONFIGURED"; renderGrupos(); return; }
+  sgState.status="CONNECTING"; renderGrupos();
+  let boot;
+  try{ boot=await SGV.runGroupsBootstrap({ runtime:state.runtime, incomingToken:__personalCapability, storage:window.localStorage, sendReceiverInfo }); }
+  catch(e){ sgState.status="BLOCKED"; renderGrupos(); return; }
+  __personalCapability=""; // capability consumed; do not retain in memory
+  if(boot.status==="READY"){ sgState.token=boot.token; sgState.status="READY"; sgState.view="list"; await sgReloadGroups(); }
+  else { sgState.status=boot.status; renderGrupos(); }
+}
+async function sgReloadGroups(){
+  if(!sgState.token){ renderGrupos(); return; }
+  sgState.busy=true; renderGrupos();
+  try{
+    const res=await sgPost(SGV.buildRequest("list_groups",{ token:sgState.token, competition_id:sgCompetition() }));
+    if(res&&res.ok){ sgState.groups=res.groups||[]; sgState.error=""; }
+    else if(res&&res.error_code==="INVALID_TOKEN"){ sgState.token=""; sgState.status="NEEDS_LINK"; }
+    else { sgState.error=sgErrorCopy(res); }
+  }catch(e){ sgState.error="No pudimos cargar tus grupos. Revisa tu conexión e inténtalo de nuevo."; }
+  sgState.busy=false; renderGrupos();
+}
+// Mutations: reuse the same client_request_id on retry (idempotency); on an
+// uncertain result, reload list_groups instead of inventing success.
+async function sgMutate(action, payload, reqKey){
+  if(!sgState.pending[reqKey]) sgState.pending[reqKey]=SGV.newClientRequestId();
+  const crid=sgState.pending[reqKey];
+  let res=null, uncertain=false;
+  sgState.busy=true; renderGrupos();
+  try{ res=await sgPost(SGV.buildRequest(action,{ token:sgState.token, competition_id:sgCompetition(), client_request_id:crid, payload })); }
+  catch(e){ uncertain=true; }
+  if(uncertain){ await sgReloadGroups(); return { ok:false, uncertain:true }; }
+  if(res&&res.ok){ delete sgState.pending[reqKey]; await sgReloadGroups(); return { ok:true, group:res.group }; }
+  delete sgState.pending[reqKey];
+  if(res&&res.error_code==="INVALID_TOKEN"){ sgState.token=""; sgState.status="NEEDS_LINK"; renderGrupos(); return { ok:false, code:"INVALID_TOKEN" }; }
+  if(res&&res.error_code==="IDEMPOTENCY_CONFLICT"){ await sgReloadGroups(); return { ok:false, code:"IDEMPOTENCY_CONFLICT" }; }
+  sgState.busy=false; sgState.error=sgErrorCopy(res); renderGrupos();
+  return { ok:false, code:(res&&res.error_code)||"REQUEST_REJECTED" };
+}
+
+function sgLeaderboardRows(){ return (state.leaderboard&&state.leaderboard.leaderboard&&state.leaderboard.leaderboard.length)? sortedRows() : []; }
+function sgGroupById(id){ return (sgState.groups||[]).find(g=>g.group_id===id)||null; }
+function sgPeriodLabel(){ return selectedPeriodLabel(); }
+
+//----- rendering -----
+function renderGrupos(){
+  const host=el("grupos-root"); if(!host) return;
+  if(sgState.status==="IDLE"||sgState.status==="CONNECTING"){
+    host.innerHTML='<div class="sg-cta"><span class="ec-title">Conectando tus grupos…</span><p>Estamos verificando tu enlace personal.</p></div>';
+    return;
+  }
+  if(sgState.status==="UNCONFIGURED"){
+    host.innerHTML='<div class="sg-cta"><span class="ec-title">Grupos no está disponible aquí</span><p>Esta vista no tiene configurado el servicio de Grupos. El resto de BETZ funciona con normalidad.</p></div>';
+    return;
+  }
+  if(sgState.status==="BLOCKED"){
+    host.innerHTML='<div class="sg-cta"><span class="ec-title">No pudimos conectar Grupos</span><p>No pudimos verificar el servicio de Grupos en este momento. El resto de BETZ sigue disponible.</p><button class="sg-ghost" type="button" data-sg="retry" style="margin-top:14px">Reintentar</button></div>';
+    return;
+  }
+  if(sgState.status==="NEEDS_LINK"){
+    host.innerHTML='<div class="sg-cta"><span class="ec-title">Abre BETZ con tu enlace personal</span><p>Grupos es privado: para crear y ver tus listas de rivalidad, entra a BETZ desde el enlace personal que recibiste. La Tabla, tu Perfil y los Partidos funcionan sin necesidad de enlace.</p><span class="tag">Privado</span></div>';
+    return;
+  }
+  // READY
+  if(sgState.view==="create"||sgState.view==="edit"){ host.innerHTML=sgEditorHtml(); sgWireEditor(); return; }
+  host.innerHTML=sgListHtml(); sgWireList();
+}
+function sgListHtml(){
+  const groups=sgState.groups||[];
+  let out="";
+  if(sgState.error) out+='<div class="sg-err">'+escapeHtml(sgState.error)+'</div>';
+  out+='<p class="sg-note">Elige a quién seguir en esta competencia y compara sus posiciones oficiales. Solo tú ves tus grupos.</p>';
+  out+='<button class="sg-primary" type="button" data-sg="new"'+(sgState.busy?' disabled':'')+'>+ Crear grupo</button>';
+  if(!groups.length){
+    out+='<div class="sg-cta" style="margin-top:14px"><span class="ec-title">Aún no tienes grupos</span><p>Crea tu primera lista de rivalidad y compárala con la tabla oficial.</p></div>';
+    return out;
+  }
+  out+='<div style="margin-top:14px">'+groups.map(g=>{
+    const n=(g.member_user_ids||[]).length;
+    return '<button class="sg-card" type="button" data-sg="open" data-id="'+escapeHtml(g.group_id)+'">'+
+      '<div class="sg-name">'+escapeHtml(g.name)+'<span class="sg-go">Ver ›</span></div>'+
+      '<div class="sg-meta">'+n+' competidor'+(n===1?'':'es')+'</div></button>';
+  }).join("")+'</div>';
+  return out;
+}
+function sgWireList(){
+  const host=el("grupos-root");
+  host.querySelectorAll('[data-sg="new"]').forEach(b=>b.onclick=()=>{ sgState.view="create"; sgState.draftName=""; sgState.draftMembers={}; sgState.error=""; renderGrupos(); });
+  host.querySelectorAll('[data-sg="open"]').forEach(b=>b.onclick=()=>openGroup(b.dataset.id));
+  host.querySelectorAll('[data-sg="retry"]').forEach(b=>b.onclick=()=>{ __sgInitStarted=false; sgState.status="IDLE"; sgInit(); });
+}
+function sgEditorHtml(){
+  const editing=sgState.view==="edit";
+  const rows=sgLeaderboardRows();
+  const selected=sgState.draftMembers||{};
+  const count=Object.keys(selected).filter(k=>selected[k]).length;
+  let out="";
+  if(sgState.error) out+='<div class="sg-err">'+escapeHtml(sgState.error)+'</div>';
+  out+='<button class="sg-ghost" type="button" data-sg="back" style="width:auto;margin-bottom:14px">‹ Volver</button>';
+  out+='<input class="sg-input" id="sg-name" type="text" maxlength="60" placeholder="Nombre del grupo" value="'+escapeHtml(sgState.draftName||"")+'" aria-label="Nombre del grupo">';
+  out+='<div class="sg-count" id="sg-count">'+count+' seleccionados · mínimo 2</div>';
+  if(!rows.length){
+    out+='<div class="sg-cta"><span class="ec-title">Aún no hay competidores</span><p>Los competidores aparecerán cuando la tabla tenga sus primeras posiciones.</p></div>';
+  } else {
+    out+='<div class="sg-picker">'+rows.map(r=>{
+      const on=!!selected[r.user_id];
+      const you=r.user_id===state.player?" you":"";
+      return '<button class="sg-pick'+(on?' on':'')+you+'" type="button" data-pick="'+escapeHtml(r.user_id)+'">'+
+        '<span class="av">'+escapeHtml(initials(r.display_name,r.user_id))+'</span>'+
+        '<span class="sg-pn">'+escapeHtml(r.display_name||r.user_id)+'</span>'+
+        '<span class="sg-pr">#'+fmt(r.rank)+'</span>'+
+        '<span class="sg-box">'+(on?'✓':'')+'</span></button>';
+    }).join("")+'</div>';
+  }
+  out+='<div class="sg-row-actions" style="margin-top:14px">';
+  out+='<button class="sg-primary" type="button" data-sg="save"'+(sgState.busy?' disabled':'')+'>'+(editing?'Guardar cambios':'Crear grupo')+'</button>';
+  out+='</div>';
+  return out;
+}
+function sgWireEditor(){
+  const host=el("grupos-root");
+  const nameInput=el("sg-name");
+  if(nameInput) nameInput.oninput=()=>{ sgState.draftName=nameInput.value; };
+  host.querySelectorAll('[data-pick]').forEach(b=>b.onclick=()=>{
+    const id=b.dataset.pick; sgState.draftMembers[id]=!sgState.draftMembers[id];
+    b.classList.toggle("on",sgState.draftMembers[id]);
+    b.querySelector(".sg-box").textContent=sgState.draftMembers[id]?"✓":"";
+    const c=Object.keys(sgState.draftMembers).filter(k=>sgState.draftMembers[k]).length;
+    const cnt=el("sg-count"); if(cnt) cnt.textContent=c+' seleccionados · mínimo 2';
+  });
+  host.querySelectorAll('[data-sg="back"]').forEach(b=>b.onclick=()=>{ sgState.view="list"; sgState.error=""; renderGrupos(); });
+  host.querySelectorAll('[data-sg="save"]').forEach(b=>b.onclick=sgSaveEditor);
+}
+async function sgSaveEditor(){
+  const nameCheck=SGV.normalizeName(sgState.draftName);
+  if(!nameCheck.ok){ sgState.error=SG_ERR.INVALID_GROUP_NAME; renderGrupos(); return; }
+  const ids=Object.keys(sgState.draftMembers||{}).filter(k=>sgState.draftMembers[k]);
+  const memberCheck=SGV.normalizeMemberIds(ids);
+  if(!memberCheck.ok){ sgState.error=SG_ERR[memberCheck.code]||SG_ERR.MIN_GROUP_MEMBERS; renderGrupos(); return; }
+  sgState.error="";
+  if(sgState.view==="edit"){
+    const gid=sgState.selectedId;
+    // rename if changed, then replace members if changed — each is idempotent.
+    const g=sgGroupById(gid);
+    if(g && g.name!==nameCheck.value){
+      const r=await sgMutate("rename_group",{ group_id:gid, name:nameCheck.value },"rename:"+gid+":"+nameCheck.value);
+      if(!r.ok && !r.uncertain){ return; }
+    }
+    const existing=(g&&(g.member_user_ids||[]).slice().sort())||[];
+    if(JSON.stringify(existing)!==JSON.stringify(memberCheck.value)){
+      const r=await sgMutate("replace_group_members",{ group_id:gid, member_user_ids:memberCheck.value },"replace:"+gid+":"+memberCheck.value.join(","));
+      if(!r.ok && !r.uncertain){ return; }
+    }
+    sgState.view="list"; renderGrupos();
+  } else {
+    const r=await sgMutate("create_group",{ name:nameCheck.value, member_user_ids:memberCheck.value },"create:"+nameCheck.value+":"+memberCheck.value.join(","));
+    if(r.ok || r.uncertain){ sgState.view="list"; renderGrupos(); }
+  }
+}
+
+//----- group detail overlay (projection + snapshots) -----
+function openGroup(id){
+  sgState.selectedId=id;
+  const g=sgGroupById(id); if(!g) return;
+  const host=el("grupo-detail");
+  const proj=SGV.projectGroup(g, sgLeaderboardRows());
+  host.innerHTML=sgDetailHtml(g, proj);
+  host.classList.add("on"); host.scrollTop=0; document.body.style.overflow="hidden";
+  host.querySelector(".md-back").onclick=closeGroup;
+  host.querySelector('[data-sg="edit"]').onclick=()=>{
+    sgState.view="edit"; sgState.draftName=g.name;
+    sgState.draftMembers={}; (g.member_user_ids||[]).forEach(m=>sgState.draftMembers[m]=true);
+    sgState.error=""; closeGroup(); renderGrupos();
+  };
+  host.querySelector('[data-sg="delete"]').onclick=()=>sgConfirmDelete(g);
+  host.querySelectorAll('[data-fmt]').forEach(b=>b.onclick=()=>openSnapshot(g, proj, b.dataset.fmt));
+}
+function closeGroup(){ const h=el("grupo-detail"); h.classList.remove("on"); h.innerHTML=""; document.body.style.overflow=""; }
+function sgDetailHtml(g, proj){
+  const fmts=SGV.snapshotFormats(proj.resolved_count);
+  let body='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">';
+  body+='<div class="h1">'+escapeHtml(g.name)+'</div>';
+  body+='<div class="sub">'+(g.member_user_ids||[]).length+' competidores · posiciones oficiales hasta '+escapeHtml(sgPeriodLabel())+'</div>';
+  if(proj.members.length){
+    body+='<div class="sg-proj"><div class="sg-phead"><span>Pos</span><span>Competidor</span><span class="r">Gral.</span><span class="r">Pts</span></div>';
+    body+=proj.members.map(m=>('<div class="sg-prow'+(m.group_rank===1?' lead':'')+'">'+
+      '<span class="grk">'+fmt(m.group_rank)+'</span>'+
+      '<span class="pn">'+escapeHtml(m.display_name)+'</span>'+
+      '<span class="gen">#'+fmt(m.general_rank)+'</span>'+
+      '<span class="pts tnum">'+fmt(m.total_points)+'</span></div>')).join("");
+    body+='</div>';
+  } else {
+    body+='<div class="sg-cta"><span class="ec-title">Sin posiciones todavía</span><p>Cuando estos competidores tengan puntos en la tabla oficial, aparecerán aquí.</p></div>';
+  }
+  if(proj.unresolved_ids.length){
+    body+='<div class="sg-unres">'+proj.unresolved_ids.length+' competidor(es) aún sin posición en la tabla; no se muestran hasta que la tengan.</div>';
+  }
+  // snapshots
+  body+='<div class="md-sec">Compartir</div>';
+  if(proj.can_share){
+    body+='<div class="sg-fmts">'+fmts.map(f=>('<button class="sg-fmt" type="button" data-fmt="'+f.format+'"'+(f.available?'':' disabled')+'>'+
+      '<span class="fn">'+(f.format==="HIGHLIGHTS"?"Destacados":"Top 10")+'</span>'+
+      '<span class="fd">'+(f.available?("primeros "+f.rows):(f.format==="TOP_10"?"desde 5":"desde 2"))+'</span></button>')).join("")+'</div>';
+  } else {
+    body+='<p class="sg-note">Necesitas al menos dos competidores con posición en la tabla para generar una instantánea.</p>';
+  }
+  body+='<div class="md-sec">Administrar</div>';
+  body+='<div class="sg-row-actions"><button class="sg-ghost" type="button" data-sg="edit">Editar</button>';
+  body+='<button class="sg-ghost sg-danger" type="button" data-sg="delete">Eliminar</button></div>';
+  body+='</div>';
+  return body;
+}
+function sgConfirmDelete(g){
+  if(!window.confirm('¿Eliminar el grupo "'+g.name+'"? Esta acción no se puede deshacer.')) return;
+  sgMutate("delete_group",{ group_id:g.group_id },"delete:"+g.group_id).then(r=>{ if(r.ok||r.uncertain){ closeGroup(); sgState.view="list"; renderGrupos(); } });
+}
+
+//----- local snapshot generation (never uploaded) -----
+function openSnapshot(g, proj, format){
+  const model=SGV.buildSnapshotModel(g, proj, format, { competition_id:sgCompetition(), period_label:sgPeriodLabel(), generated_at:new Date().toLocaleString("es-MX") });
+  if(!model.ok) return;
+  const canvas=sgDrawSnapshot(model);
+  const host=el("grupo-snap");
+  host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="sg-snap-body"><div id="sg-canvas-holder"></div>'+
+    '<div class="sg-snap-actions"><button class="sg-primary" type="button" data-snap="share">Compartir</button>'+
+    '<button class="sg-ghost" type="button" data-snap="download">Descargar imagen</button></div>'+
+    '<p class="sg-note" style="text-align:center;margin-top:12px">La imagen se genera en tu dispositivo y no se publica automáticamente.</p></div>';
+  host.querySelector("#sg-canvas-holder").appendChild(canvas);
+  host.classList.add("on"); host.scrollTop=0; host.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
+  const fname="betz-"+(format==="TOP_10"?"top10":"destacados")+"-"+(g.name||"grupo").replace(/[^a-z0-9]+/gi,"-").toLowerCase().slice(0,28)+".png";
+  host.querySelector(".md-back").onclick=closeSnapshot;
+  host.querySelector('[data-snap="download"]').onclick=()=>sgDownloadCanvas(canvas,fname);
+  host.querySelector('[data-snap="share"]').onclick=()=>sgShareCanvas(canvas,fname,g.name);
+}
+function closeSnapshot(){ const h=el("grupo-snap"); h.classList.remove("on"); h.innerHTML=""; h.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+function sgDrawSnapshot(model){
+  const W=720, pad=48; const rowH=76; const headH=300; const footH=190;
+  const H=headH + model.rows.length*rowH + footH;
+  const c=document.createElement("canvas"); c.width=W; c.height=H;
+  const x=c.getContext("2d");
+  x.fillStyle="#0A0E12"; x.fillRect(0,0,W,H);
+  x.fillStyle="#0AF5E1"; x.fillRect(0,0,W,8);
+  // wordmark
+  x.font="700 44px Arvo, Georgia, serif"; x.textBaseline="alphabetic";
+  x.fillStyle="#E8EEF1"; x.fillText("BET",pad,86); const bw=x.measureText("BET").width;
+  x.fillStyle="#0AF5E1"; x.fillText("Z",pad+bw,86);
+  // group name
+  x.fillStyle="#E8EEF1"; x.font="700 40px Arvo, Georgia, serif";
+  sgWrapText(x, model.group_name, pad, 160, W-2*pad, 46, 2);
+  // format + competition/period
+  x.fillStyle="#8B99A3"; x.font="600 22px Inter, system-ui, sans-serif";
+  const fmtLabel=(model.format==="TOP_10"?"Top 10":"Destacados");
+  x.fillText(fmtLabel+" · "+model.competition_id+(model.period_label?(" · "+model.period_label):""), pad, 232);
+  // column header
+  x.fillStyle="#5C6A73"; x.font="600 18px Inter, system-ui, sans-serif";
+  x.fillText("POS", pad, 286); x.fillText("COMPETIDOR", pad+70, 286);
+  x.textAlign="right"; x.fillText("GRAL.", W-pad-120, 286); x.fillText("PTS", W-pad, 286); x.textAlign="left";
+  // rows
+  let y=headH;
+  model.rows.forEach(m=>{
+    const lead=m.group_rank===1;
+    if(lead){ x.fillStyle="rgba(255,206,31,0.08)"; x.fillRect(pad-14,y-4,W-2*(pad-14),rowH-10); }
+    x.fillStyle=lead?"#FFCE1F":"#8B99A3"; x.font="700 34px Arvo, Georgia, serif";
+    x.fillText(String(m.group_rank), pad, y+40);
+    x.fillStyle=lead?"#FFCE1F":"#E8EEF1"; x.font="700 28px Inter, system-ui, sans-serif";
+    const name=sgClip(x, m.display_name, W-2*pad-260);
+    x.fillText(name, pad+70, y+40);
+    x.textAlign="right";
+    x.fillStyle="#5C6A73"; x.font="600 22px Inter, system-ui, sans-serif";
+    x.fillText("#"+(m.general_rank==null?"—":m.general_rank), W-pad-120, y+40);
+    x.fillStyle=lead?"#FFCE1F":"#E8EEF1"; x.font="700 30px Arvo, Georgia, serif";
+    x.fillText(String(m.total_points==null?"—":m.total_points), W-pad, y+40);
+    x.textAlign="left";
+    x.strokeStyle="#26333D"; x.lineWidth=1; x.beginPath(); x.moveTo(pad,y+rowH-8); x.lineTo(W-pad,y+rowH-8); x.stroke();
+    y+=rowH;
+  });
+  // phrase
+  y+=28; x.fillStyle="#0AF5E1"; x.font="700 30px Arvo, Georgia, serif";
+  sgWrapText(x, model.phrase, pad, y+6, W-2*pad, 38, 2);
+  // footer generated time
+  x.fillStyle="#5C6A73"; x.font="500 18px Inter, system-ui, sans-serif";
+  x.fillText("Generado "+model.generated_at, pad, H-32);
+  return c;
+}
+function sgClip(ctx, text, maxW){
+  text=String(text==null?"":text); if(ctx.measureText(text).width<=maxW) return text;
+  let t=text; while(t.length>1 && ctx.measureText(t+"…").width>maxW) t=t.slice(0,-1);
+  return t+"…";
+}
+function sgWrapText(ctx, text, xp, yp, maxW, lh, maxLines){
+  const words=String(text==null?"":text).split(/\s+/); let line="", lines=[];
+  for(const w of words){ const test=line?line+" "+w:w; if(ctx.measureText(test).width>maxW && line){ lines.push(line); line=w; } else line=test; }
+  if(line) lines.push(line);
+  if(lines.length>maxLines){ lines=lines.slice(0,maxLines); lines[maxLines-1]=sgClip(ctx,lines[maxLines-1],maxW); }
+  lines.forEach((ln,i)=>ctx.fillText(ln, xp, yp+i*lh));
+}
+function sgDownloadCanvas(canvas, filename){
+  try{
+    canvas.toBlob(blob=>{
+      if(!blob) return;
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement("a"); a.href=url; a.download=filename;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(()=>URL.revokeObjectURL(url), 4000);
+    }, "image/png");
+  }catch(e){}
+}
+function sgShareCanvas(canvas, filename, groupName){
+  const finish=()=>{};
+  try{
+    canvas.toBlob(async blob=>{
+      if(!blob){ return; }
+      const file=new File([blob], filename, { type:"image/png" });
+      if(navigator.canShare && navigator.canShare({ files:[file] }) && navigator.share){
+        try{ await navigator.share({ files:[file], text:SGV.SHARE_PHRASE, title:groupName||"BETZ" }); return; }
+        catch(e){ if(e && e.name==="AbortError") return; }
+      }
+      sgDownloadCanvas(canvas, filename); // recovery: plain download
+    }, "image/png");
+  }catch(e){ sgDownloadCanvas(canvas, filename); }
+}
+
+// Enter Grupos lazily from any navigation path.
+nav.addEventListener("click", e=>{ const b=e.target.closest("button"); if(b && b.dataset.go==="grupos") sgOnEnter(); });
+document.addEventListener("click", e=>{ const g=e.target.closest('[data-go="grupos"]'); if(g && !g.closest("#nav")) sgOnEnter(); });
+window.addEventListener("hashchange", ()=>{ if((location.hash||"").replace("#/","")==="grupos") sgOnEnter(); });
 
 boot();
 </script>
