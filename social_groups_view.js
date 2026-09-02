@@ -125,6 +125,35 @@
         };
     }
 
+    // --- Editor candidate list (pre-leaderboard) --------------------------------
+    // Candidates come from the receiver's eligible_participants (ACTIVE Players), NOT the
+    // leaderboard, so a group can be built before the first leaderboard. A leaderboard
+    // position, when it exists, is attached as auxiliary info; when it does not, no rank,
+    // points or victory text is invented.
+    function editorCandidates(eligible, leaderboardRows) {
+        var rankById = {};
+        (Array.isArray(leaderboardRows) ? leaderboardRows : []).forEach(function (r) {
+            if (r && r.user_id != null) rankById[String(r.user_id)] = (r.rank != null ? r.rank : null);
+        });
+        return (Array.isArray(eligible) ? eligible : []).map(function (p) {
+            var id = String(p.user_id);
+            return {
+                user_id: p.user_id,
+                display_name: p.display_name != null ? p.display_name : p.user_id,
+                general_rank: Object.prototype.hasOwnProperty.call(rankById, id) ? rankById[id] : null
+            };
+        });
+    }
+
+    // Members a persisted group still holds that are no longer eligible (e.g. revoked).
+    // Surfaced to the owner on edit; never silently included in a replacement.
+    function ineligibleRetainedMembers(currentMemberIds, eligible) {
+        var eligibleSet = {};
+        (Array.isArray(eligible) ? eligible : []).forEach(function (p) { eligibleSet[String(p.user_id)] = true; });
+        return (Array.isArray(currentMemberIds) ? currentMemberIds : [])
+            .filter(function (id) { return !eligibleSet[String(id)]; });
+    }
+
     // --- Snapshot format availability (contract §Shareable Snapshot Contract) ----
     function snapshotFormats(resolvedCount) {
         var n = Math.max(0, Number(resolvedCount) || 0);
@@ -268,6 +297,8 @@
         normalizeName: normalizeName,
         normalizeMemberIds: normalizeMemberIds,
         projectGroup: projectGroup,
+        editorCandidates: editorCandidates,
+        ineligibleRetainedMembers: ineligibleRetainedMembers,
         snapshotFormats: snapshotFormats,
         snapshotFormat: snapshotFormat,
         buildSnapshotModel: buildSnapshotModel,

@@ -1351,7 +1351,7 @@ function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({"&":"&amp;","<
 // only to reach the runtime-defined receiver over the postMessage transport.
 //-----------------------------//
 const SGV = window.SocialGroupsView || null;
-const sgState = { status:"IDLE", token:"", groups:null, selectedId:null, error:"", busy:false, pending:{}, view:"list", draftName:"", draftMembers:null };
+const sgState = { status:"IDLE", token:"", groups:null, eligible:[], selectedId:null, error:"", busy:false, pending:{}, view:"list", draftName:"", draftMembers:null };
 let __sgInitStarted=false, __sgIframe=null, __sgQueue=Promise.resolve();
 
 function sgReceiverUrl(){ return (state.runtime && state.runtime.apps_script_url) || ""; }
@@ -1391,6 +1391,7 @@ const SG_ERR = {
   INVALID_GROUP_NAME:"Ese nombre no es válido. Usa entre 1 y 40 caracteres y evita empezar con = + - o @.",
   MIN_GROUP_MEMBERS:"Elige al menos dos competidores.",
   DUPLICATE_GROUP_MEMBER:"Hay competidores repetidos en la selección.",
+  INELIGIBLE_GROUP_MEMBER:"Uno de los competidores ya no está activo. Actualizamos la lista para que puedas elegir nuevamente.",
   INVALID_GROUP_ID:"No pudimos identificar ese grupo. Recarga e inténtalo de nuevo.",
   GROUP_NOT_FOUND:"Ese grupo ya no está disponible.",
   IDEMPOTENCY_CONFLICT:"Ese grupo ya existía con otro contenido. Actualizamos tu lista.",
@@ -1422,7 +1423,7 @@ async function sgReloadGroups(){
   sgState.busy=true; renderGrupos();
   try{
     const res=await sgPost(SGV.buildRequest("list_groups",{ token:sgState.token, competition_id:sgCompetition() }));
-    if(res&&res.ok){ sgState.groups=res.groups||[]; sgState.error=""; }
+    if(res&&res.ok){ sgState.groups=res.groups||[]; sgState.eligible=res.eligible_participants||[]; sgState.error=""; }
     else if(res&&res.error_code==="INVALID_TOKEN"){ sgState.token=""; sgState.status="NEEDS_LINK"; }
     else { sgState.error=sgErrorCopy(res); }
   }catch(e){ sgState.error="No pudimos cargar tus grupos. Revisa tu conexión e inténtalo de nuevo."; }
@@ -1499,7 +1500,9 @@ function sgWireList(){
 }
 function sgEditorHtml(){
   const editing=sgState.view==="edit";
-  const rows=sgLeaderboardRows();
+  // Candidates come from eligible_participants (ACTIVE Players), not the leaderboard,
+  // so a group can be built before the first leaderboard is published.
+  const candidates=SGV.editorCandidates(sgState.eligible||[], sgLeaderboardRows());
   const selected=sgState.draftMembers||{};
   const count=Object.keys(selected).filter(k=>selected[k]).length;
   let out="";
@@ -1507,16 +1510,21 @@ function sgEditorHtml(){
   out+='<button class="sg-ghost" type="button" data-sg="back" style="width:auto;margin-bottom:14px">‹ Volver</button>';
   out+='<input class="sg-input" id="sg-name" type="text" maxlength="60" placeholder="Nombre del grupo" value="'+escapeHtml(sgState.draftName||"")+'" aria-label="Nombre del grupo">';
   out+='<div class="sg-count" id="sg-count">'+count+' seleccionados · mínimo 2</div>';
-  if(!rows.length){
-    out+='<div class="sg-cta"><span class="ec-title">Aún no hay competidores</span><p>Los competidores aparecerán cuando la tabla tenga sus primeras posiciones.</p></div>';
+  if(candidates.length<2){
+    out+='<div class="sg-cta"><span class="ec-title">Aún no hay suficientes participantes activos</span><p>Cuando haya al menos dos participantes activos en la competencia podrás formar tu grupo.</p></div>';
   } else {
-    out+='<div class="sg-picker">'+rows.map(r=>{
-      const on=!!selected[r.user_id];
-      const you=r.user_id===state.player?" you":"";
-      return '<button class="sg-pick'+(on?' on':'')+you+'" type="button" data-pick="'+escapeHtml(r.user_id)+'">'+
-        '<span class="av">'+escapeHtml(initials(r.display_name,r.user_id))+'</span>'+
-        '<span class="sg-pn">'+escapeHtml(r.display_name||r.user_id)+'</span>'+
-        '<span class="sg-pr">#'+fmt(r.rank)+'</span>'+
+    if(editing){
+      const retained=SGV.ineligibleRetainedMembers((sgGroupById(sgState.selectedId)||{}).member_user_ids||[], sgState.eligible||[]);
+      if(retained.length) out+='<div class="sg-err">'+retained.length+' integrante(s) ya no están activos y no se incluirán al guardar.</div>';
+    }
+    out+='<div class="sg-picker">'+candidates.map(c=>{
+      const on=!!selected[c.user_id];
+      const you=c.user_id===state.player?" you":"";
+      const pos=(c.general_rank!=null)?('#'+fmt(c.general_rank)):'';
+      return '<button class="sg-pick'+(on?' on':'')+you+'" type="button" data-pick="'+escapeHtml(c.user_id)+'">'+
+        '<span class="av">'+escapeHtml(initials(c.display_name,c.user_id))+'</span>'+
+        '<span class="sg-pn">'+escapeHtml(c.display_name||c.user_id)+'</span>'+
+        '<span class="sg-pr">'+pos+'</span>'+
         '<span class="sg-box">'+(on?'✓':'')+'</span></button>';
     }).join("")+'</div>';
   }
@@ -1577,7 +1585,9 @@ function openGroup(id){
   host.querySelector(".md-back").onclick=closeGroup;
   host.querySelector('[data-sg="edit"]').onclick=()=>{
     sgState.view="edit"; sgState.draftName=g.name;
-    sgState.draftMembers={}; (g.member_user_ids||[]).forEach(m=>sgState.draftMembers[m]=true);
+    sgState.draftMembers={};
+    const eligSet={}; (sgState.eligible||[]).forEach(p=>eligSet[String(p.user_id)]=true);
+    (g.member_user_ids||[]).forEach(m=>{ if(eligSet[String(m)]) sgState.draftMembers[m]=true; });
     sgState.error=""; closeGroup(); renderGrupos();
   };
   host.querySelector('[data-sg="delete"]').onclick=()=>sgConfirmDelete(g);
