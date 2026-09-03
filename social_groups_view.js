@@ -145,6 +145,61 @@
         });
     }
 
+    function searchText(value) {
+        return String(value == null ? "" : value)
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase()
+            .trim();
+    }
+
+    function filterEditorCandidates(candidates, query, selected) {
+        var q = searchText(query);
+        var chosen = selected || {};
+        return (Array.isArray(candidates) ? candidates : [])
+            .filter(function (candidate) {
+                return !q || searchText(String(candidate.display_name || "") + " " + String(candidate.user_id || "")).indexOf(q) !== -1;
+            })
+            .slice()
+            .sort(function (left, right) {
+                return Number(Boolean(chosen[right.user_id])) - Number(Boolean(chosen[left.user_id]));
+            });
+    }
+
+    function groupCardPreview(group, leaderboardRows, viewerUserId, eligibleParticipants) {
+        var projection = projectGroup(group, leaderboardRows);
+        var viewerId = String(viewerUserId || "");
+        var memberIds = (group && Array.isArray(group.member_user_ids)) ? group.member_user_ids.map(String) : [];
+        var viewerIsMember = Boolean(viewerId) && memberIds.indexOf(viewerId) !== -1;
+        var viewerRow = projection.members.filter(function (member) { return String(member.user_id) === viewerId; })[0] || null;
+        var names = {};
+        (Array.isArray(eligibleParticipants) ? eligibleParticipants : []).forEach(function (participant) {
+            names[String(participant.user_id)] = participant.display_name;
+        });
+        var hasPositions = projection.members.length > 0;
+        var rows = hasPositions ? projection.members.slice(0, 3).map(function (member) {
+            return Object.assign({}, member, { is_viewer: String(member.user_id) === viewerId });
+        }) : memberIds.slice(0, 3).map(function (memberId) {
+            return {
+                user_id: memberId,
+                display_name: names[memberId] || memberId,
+                group_rank: null,
+                general_rank: null,
+                total_points: null,
+                is_viewer: memberId === viewerId
+            };
+        });
+        return {
+            has_positions: hasPositions,
+            rows: rows,
+            remaining_count: Math.max(0, memberIds.length - rows.length),
+            viewer_is_member: viewerIsMember,
+            viewer_in_preview: rows.some(function (row) { return row.is_viewer; }),
+            viewer_row: viewerRow,
+            unresolved_count: projection.unresolved_ids.length
+        };
+    }
+
     // Members a persisted group still holds that are no longer eligible (e.g. revoked).
     // Surfaced to the owner on edit; never silently included in a replacement.
     function ineligibleRetainedMembers(currentMemberIds, eligible) {
@@ -321,6 +376,9 @@
         normalizeMemberIds: normalizeMemberIds,
         projectGroup: projectGroup,
         editorCandidates: editorCandidates,
+        searchText: searchText,
+        filterEditorCandidates: filterEditorCandidates,
+        groupCardPreview: groupCardPreview,
         ineligibleRetainedMembers: ineligibleRetainedMembers,
         applyConfirmedMutation: applyConfirmedMutation,
         snapshotFormats: snapshotFormats,
