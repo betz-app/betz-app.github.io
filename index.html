@@ -529,14 +529,21 @@
   .sg-fmt:disabled{opacity:.4;cursor:default}
   .sg-fmt .fn{display:block;font-family:var(--display);font-weight:700;font-size:13px}
   .sg-fmt .fd{display:block;font-size:10px;color:var(--muted);margin-top:3px}
-  #grupo-detail,#grupo-snap{position:fixed;inset:0;z-index:55;max-width:560px;margin:0 auto;background:var(--bg);display:none;flex-direction:column;overflow-y:auto}
+  #grupo-detail{position:fixed;inset:0;z-index:55;background:var(--bg);display:none;flex-direction:column;overflow:hidden}
+  #grupo-snap{position:fixed;inset:0;z-index:55;max-width:560px;margin:0 auto;background:var(--bg);display:none;flex-direction:column;overflow-y:auto}
   #grupo-detail.on,#grupo-snap.on{display:flex}
+  .sg-overlay-panel{width:100%;min-height:100%;background:var(--bg);overflow-y:auto}
+  .sg-desktop-close{display:none}
   .sg-snap-body{padding:18px 16px 40px;display:flex;flex-direction:column;align-items:center}
   .sg-snap-body canvas,.sg-snap-body img{width:100%;max-width:360px;border-radius:14px;border:1px solid var(--line)}
   .sg-snap-actions{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px;margin-top:16px}
   @media (min-width:900px){
-    body.groups-wide{max-width:1120px}
-    .sg-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    .sg-grid{width:min(1120px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+    #grupo-detail{padding:32px;align-items:center;justify-content:center;background:rgba(3,6,9,.78);backdrop-filter:blur(5px)}
+    .sg-overlay-panel{width:min(760px,100%);min-height:0;max-height:calc(100vh - 64px);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.48)}
+    .sg-overlay-panel .md-top{justify-content:flex-end}
+    .sg-mobile-back{display:none}
+    .sg-desktop-close{display:inline}
   }
 </style>
 </head>
@@ -665,7 +672,7 @@
   <nav id="nav" aria-label="Secciones"></nav>
 
   <div id="match-detail" aria-live="polite"></div>
-  <div id="grupo-detail" aria-live="polite"></div>
+  <div id="grupo-detail" aria-live="polite" aria-hidden="true"></div>
   <div id="grupo-snap" aria-hidden="true"></div>
 
   <!-- Explain sheet (Analytics/Football Knowledge sources; read-only) -->
@@ -817,7 +824,6 @@ const nav = el("nav");
 nav.innerHTML = TABS.map(([r,l])=>'<button data-go="'+r+'">'+(ICONS[r]||"")+'<span>'+l+'</span></button>').join("");
 function go(route){
   if(!TABS.some(t=>t[0]===route) && !["loading","error","blocked"].includes(route)) route="perfil";
-  document.body.classList.toggle("groups-wide",route==="grupos");
   document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active", s.dataset.route===route));
   nav.querySelectorAll("button").forEach(b=>b.classList.toggle("on", b.dataset.go===route));
   if(TABS.some(t=>t[0]===route) && location.hash!=="#/"+route) history.replaceState(null,"",location.pathname+location.search+"#/"+route);
@@ -1653,13 +1659,18 @@ async function sgSaveEditor(){
 }
 
 //----- group detail overlay (projection + snapshots) -----
+let __sgDetailReturnFocus=null;
+function sgDetailEscape(e){ if(e.key==="Escape"&&el("grupo-detail").classList.contains("on")) closeGroup(); }
 function openGroup(id){
   sgState.selectedId=id;
   const g=sgGroupById(id); if(!g) return;
   const host=el("grupo-detail");
   const proj=SGV.projectGroup(g, sgLeaderboardRows());
-  host.innerHTML=sgDetailHtml(g, proj);
-  host.classList.add("on"); host.scrollTop=0; document.body.style.overflow="hidden";
+  __sgDetailReturnFocus=document.activeElement;
+  host.innerHTML='<div class="sg-overlay-panel sg-detail-panel" role="dialog" aria-modal="true" aria-label="Detalle de '+escapeHtml(g.name)+'">'+sgDetailHtml(g, proj)+'</div>';
+  host.classList.add("on"); host.setAttribute("aria-hidden","false"); host.scrollTop=0; document.body.style.overflow="hidden";
+  host.onclick=e=>{ if(e.target===host) closeGroup(); };
+  document.removeEventListener("keydown",sgDetailEscape); document.addEventListener("keydown",sgDetailEscape);
   host.querySelector(".md-back").onclick=closeGroup;
   host.querySelector('[data-sg="edit"]').onclick=()=>{
     sgState.view="edit"; sgState.draftName=g.name; sgState.search="";
@@ -1671,10 +1682,15 @@ function openGroup(id){
   host.querySelector('[data-sg="delete"]').onclick=()=>sgConfirmDelete(g);
   host.querySelectorAll('[data-fmt]').forEach(b=>b.onclick=()=>openSnapshot(g, proj, b.dataset.fmt));
 }
-function closeGroup(){ const h=el("grupo-detail"); h.classList.remove("on"); h.innerHTML=""; document.body.style.overflow=""; }
+function closeGroup(){
+  const h=el("grupo-detail"); h.classList.remove("on"); h.setAttribute("aria-hidden","true"); h.innerHTML=""; h.onclick=null;
+  document.removeEventListener("keydown",sgDetailEscape); document.body.style.overflow="";
+  if(__sgDetailReturnFocus&&__sgDetailReturnFocus.isConnected) __sgDetailReturnFocus.focus();
+  __sgDetailReturnFocus=null;
+}
 function sgDetailHtml(g, proj){
   const fmts=SGV.snapshotFormats(proj.resolved_count);
-  let body='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">';
+  let body='<div class="md-top"><button class="md-back" type="button" aria-label="Cerrar detalle"><span class="sg-mobile-back">‹ Volver</span><span class="sg-desktop-close">Cerrar ×</span></button></div><div class="md-body">';
   body+='<div class="h1">'+escapeHtml(g.name)+'</div>';
   body+='<div class="sub">'+(g.member_user_ids||[]).length+' competidores · posiciones oficiales hasta '+escapeHtml(sgPeriodLabel())+'</div>';
   if(proj.members.length){
