@@ -36,7 +36,8 @@
     var RECEIVER_INFO_ACTION = "receiver_info";
     var GROUP_ACTIONS = ["list_groups", "create_group", "rename_group", "replace_group_members", "delete_group"];
     var MUTATION_ACTIONS = ["create_group", "rename_group", "replace_group_members", "delete_group"];
-    var ALLOWED_ACTIONS = [RECEIVER_INFO_ACTION].concat(GROUP_ACTIONS);
+    var GROUPS_INFO_ACTION = "social_groups_info";
+    var ALLOWED_ACTIONS = [RECEIVER_INFO_ACTION, GROUPS_INFO_ACTION].concat(GROUP_ACTIONS);
 
     function includes(list, value) { return list.indexOf(value) !== -1; }
 
@@ -282,7 +283,7 @@
     function buildRequest(action, context) {
         if (!isAllowedAction(action)) throw new Error("SOCIAL_GROUPS_ACTION_NOT_ALLOWED");
         context = context || {};
-        if (action === RECEIVER_INFO_ACTION) return { action: RECEIVER_INFO_ACTION }; // token-less handshake
+        if (action === RECEIVER_INFO_ACTION || action === GROUPS_INFO_ACTION) return { action: action }; // token-less handshake
         if (!isValidToken(context.token)) throw new Error("SOCIAL_GROUPS_TOKEN_INVALID");
         var request = {
             action: action,

@@ -449,6 +449,7 @@
   }
 
   /* Grupos (Social Groups) */
+  .screen[data-route="grupos"]{animation:none}
   .sg-note{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:16px}
   .sg-cta{border:1px solid var(--line);border-radius:14px;padding:22px 18px;background:var(--surface);text-align:center}
   .sg-cta .ec-title{display:block;font-family:var(--display);font-size:16px;color:var(--txt);margin-bottom:8px}
@@ -466,7 +467,10 @@
   .sg-list-actions{display:flex;justify-content:flex-end;margin:-4px 0 14px}
   .sg-new{width:auto;padding:9px 13px;color:var(--turq);border-color:rgba(10,245,225,.34);font-weight:600}
   .sg-grid{display:grid;grid-template-columns:1fr;gap:12px}
-  .sg-card{width:100%;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;color:inherit;text-align:left;font-family:var(--body);cursor:pointer;transition:border-color 160ms ease,transform 160ms var(--ease-out)}
+  .sg-card{width:100%;min-width:0;min-height:238px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;color:inherit;text-align:left;font-family:var(--body);cursor:pointer;transition:border-color 160ms ease,transform 160ms var(--ease-out)}
+  .sg-card .sg-name,.sg-card .sg-card-preview,.sg-card .sg-card-viewer{width:100%}
+  .sg-card .sg-name{overflow-wrap:anywhere;line-height:1.35}
+  .sg-card .sg-go,.sg-card-row .sg-you{flex-shrink:0;white-space:nowrap}
   .sg-card:active{transform:scale(.99);border-color:var(--turq)}
   .sg-card .sg-name{font-family:var(--display);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:space-between;gap:8px}
   .sg-card .sg-meta{font-size:11.5px;color:var(--muted);margin-top:4px}
@@ -479,11 +483,11 @@
   .sg-card-row .cname-text{overflow:hidden;text-overflow:ellipsis}
   .sg-card-row .cscore{text-align:right;font-family:var(--display);font-weight:700;font-size:13px}
   .sg-card-row .cgeneral{display:block;color:var(--faint);font-family:var(--body);font-size:8.5px;font-weight:500;margin-top:1px}
-  .sg-card-row.lead{grid-template-columns:38px minmax(0,1fr) auto;min-height:50px;margin:1px -2px 4px;padding:8px 7px;background:linear-gradient(90deg,rgba(255,206,31,.13),rgba(255,206,31,.02));border-left:3px solid var(--gold);border-bottom-color:rgba(255,206,31,.25)}
+  .sg-card-row.lead{grid-template-columns:34px minmax(0,1fr) auto;gap:6px;min-height:50px;margin:1px -2px 4px;padding:8px 7px;background:linear-gradient(90deg,rgba(255,206,31,.13),rgba(255,206,31,.02));border-left:3px solid var(--gold);border-bottom-color:rgba(255,206,31,.25)}
   .sg-card-row.lead .crank,.sg-card-row.lead .cname,.sg-card-row.lead .cscore{color:var(--gold)}
-  .sg-card-row.lead .crank{font-size:25px;letter-spacing:-1px}
-  .sg-card-row.lead .cname{font-family:var(--display);font-size:15px;font-weight:700}
-  .sg-card-row.lead .cscore{font-size:20px}
+  .sg-card-row.lead .crank{font-size:30px;letter-spacing:-1px}
+  .sg-card-row.lead .cname{font-family:var(--display);font-size:13px;font-weight:700}
+  .sg-card-row.lead .cscore{font-size:19px}
   .sg-you{display:inline-flex;align-items:center;border:1px solid rgba(10,245,225,.45);border-radius:999px;padding:1px 5px;color:var(--turq);font-family:var(--body);font-size:8px;font-weight:800;letter-spacing:.5px;line-height:1.35;flex:none}
   .sg-card-row.you:not(.lead){box-shadow:inset 2px 0 var(--turq)}
   .sg-card-more,.sg-card-wait{font-size:10.5px;color:var(--faint);padding:8px 5px 1px}
@@ -537,8 +541,31 @@
   .sg-snap-body{padding:18px 16px 40px;display:flex;flex-direction:column;align-items:center}
   .sg-snap-body canvas,.sg-snap-body img{width:100%;max-width:360px;border-radius:14px;border:1px solid var(--line)}
   .sg-snap-actions{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px;margin-top:16px}
+  .sg-loading-status{min-height:24px;display:flex;align-items:center;color:var(--muted);font-size:11px;margin:0 0 10px;gap:8px}
+  .sg-loading-status::before{content:"";width:5px;height:5px;flex-shrink:0;border-radius:50%;background:var(--turq)}
+  .sg-skeleton{cursor:default;position:relative;isolation:isolate}
+  .sg-skeleton::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 15%,rgba(139,153,163,.1) 50%,transparent 85%);transform:translateX(-100%);animation:sg-shimmer 1600ms linear infinite;pointer-events:none}
+  .sg-skeleton .sk-bar{display:block;height:10px;border-radius:4px;background:var(--surface2);width:65%;margin:6px 0}
+  .sg-skeleton .sk-title{height:16px;width:58%;margin-bottom:11px}
+  .sg-skeleton .sk-meta{width:38%;height:8px}
+  .sg-skeleton .sg-card-preview{margin-top:16px}
+  .sg-skeleton .sg-card-row{height:38px;grid-template-columns:24px minmax(0,1fr) 24px}
+  .sg-skeleton .sk-rank{width:18px;height:16px}
+  .sg-skeleton .sk-score{width:22px}
+  .sg-skeleton .sk-foot{margin-top:16px;width:76%;height:8px}
+  .sg-skeleton:nth-child(2){display:none}
+  .sg-loaded{animation:sg-fade 160ms var(--ease-out) both}
+  .sg-loading{animation:sg-fade 200ms var(--ease-out) both}
+  @keyframes sg-shimmer{to{transform:translateX(100%)}}
+  @keyframes sg-fade{from{opacity:0}to{opacity:1}}
+  @media (min-width:700px){
+    .sg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .sg-skeleton:nth-child(2){display:flex}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .sg-skeleton::after{animation:none;transform:none;opacity:.35}
+  }
   @media (min-width:900px){
-    .sg-grid{width:min(1120px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
     #grupo-detail{padding:32px;align-items:center;justify-content:center;background:rgba(3,6,9,.78);backdrop-filter:blur(5px)}
     .sg-overlay-panel{width:min(760px,100%);min-height:0;max-height:calc(100vh - 64px);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.48)}
     .sg-overlay-panel .md-top{justify-content:flex-end}
@@ -926,6 +953,11 @@ async function boot(){
   requestAnimationFrame(()=>el("cpbar").querySelector(".fbtn.on")?.scrollIntoView({ block:"nearest", inline:"center" }));
 
   el("hdr-cp").textContent = checkpointLabel(state.cp);
+  // Start private loading only on an explicitly selected, validated Groups route.
+  // It does not wait for unrelated public analytics and never delays public tabs.
+  if(!welcomeWanted && (location.hash||"").replace("#/","")==="grupos"){
+    go("grupos"); sgOnEnter();
+  }
   try {
     await loadCheckpoint();
   } catch(e){ return fail("No pudimos cargar la jornada seleccionada."); }
@@ -935,25 +967,31 @@ async function boot(){
 
 async function loadCheckpoint(){
   const base = "checkpoints/"+state.cp;
-  if(!state.teams){ try{ state.teams=await getJSON("catalog/teams.json"); }catch{ state.teams=null; } }
-  state.leaderboard = await getJSON(base+"/leaderboard.json");
-  state.periodResults = await getJSON(base+"/period_results.json");
-  state.context = await getJSON(base+"/competition_context.json");
+  const [teams, leaderboard, periodResults, context] = await Promise.all([
+    state.teams || getJSON("catalog/teams.json").catch(()=>null),
+    getJSON(base+"/leaderboard.json"),
+    getJSON(base+"/period_results.json"),
+    getJSON(base+"/competition_context.json")
+  ]);
+  Object.assign(state,{teams,leaderboard,periodResults,context});
   state.periodDetailCache = {};
+  state.periodIndex = Math.max(0,(state.periodResults.periods||[]).length-1);
+  if((location.hash||"").replace("#/","")==="grupos") renderGrupos();
   // Pre-freeze checkpoints publish no analytics yet — skip those fetches so the console stays clean.
   const analyticsPublished = !/:PRE_FREEZE$/.test((state.leaderboard && state.leaderboard.cursor) || "");
   const perfIx = ["efficiency","form","longest_streak","consistency"];
-  for(const i of perfIx){ state.perf[i]=null; if(analyticsPublished){ try{ state.perf[i]=await getJSON(base+"/analytics/player_performance/"+i+".json"); }catch{ state.perf[i]=null; } } }
   const diIx = ["contrarian_play","lock_efficiency","lock_preference","market_alignment","player_market_performance"];
-  for(const i of diIx){ state.di[i]=null; if(analyticsPublished){ try{ state.di[i]=await getJSON(base+"/analytics/decision_intelligence/players/"+i+".json"); }catch{ state.di[i]=null; } } }
-  for(const i of ["consensus_intelligence","consensus_performance"]){
-    state.diCompetition[i]=null;
-    if(analyticsPublished){ try{ state.diCompetition[i]=await getJSON(base+"/analytics/decision_intelligence/competition/"+i+".json"); }catch{ state.diCompetition[i]=null; } }
-  }
-  state.knowledge=null;
-  if(analyticsPublished){ try{ state.knowledge=await getJSON(base+"/analytics/football_knowledge/knowledge.json"); }catch{ state.knowledge=null; } }
-  state.periodIndex = Math.max(0,(state.periodResults.periods||[]).length-1);
-  await loadActivePeriodDetail();
+  const loadOptional=async (target,key,rel)=>{
+    target[key]=null;
+    if(analyticsPublished) target[key]=await getJSON(base+"/analytics/"+rel).catch(()=>null);
+  };
+  await Promise.all([
+    ...perfIx.map(i=>loadOptional(state.perf,i,"player_performance/"+i+".json")),
+    ...diIx.map(i=>loadOptional(state.di,i,"decision_intelligence/players/"+i+".json")),
+    ...["consensus_intelligence","consensus_performance"].map(i=>loadOptional(state.diCompetition,i,"decision_intelligence/competition/"+i+".json")),
+    loadOptional(state,"knowledge","football_knowledge/knowledge.json"),
+    loadActivePeriodDetail()
+  ]);
   renderTabla();
   buildPlayerSelect();
   renderPerfil();
@@ -1425,7 +1463,7 @@ function sgPost(body){
   __sgQueue = __sgQueue.then(run, run);
   return __sgQueue;
 }
-function sendReceiverInfo(){ return sgPost(SGV.buildRequest("receiver_info")); }
+function sendReceiverInfo(){ return sgPost(SGV.buildRequest("social_groups_info")); }
 
 const SG_ERR = {
   INVALID_TOKEN:"Tu enlace personal no es válido o fue revocado. Abre BETZ desde tu enlace para administrar tus grupos.",
@@ -1451,7 +1489,7 @@ function sgOnEnter(){
 async function sgInit(){
   if(__sgInitStarted) return; __sgInitStarted=true;
   if(!SGV || !SGV.runtimeReceiverConfigured(state.runtime)){ sgState.status="UNCONFIGURED"; renderGrupos(); return; }
-  sgState.status="CONNECTING"; renderGrupos();
+  sgState.status="CONNECTING"; sgStartLoading(); renderGrupos();
   let boot;
   try{ boot=await SGV.runGroupsBootstrap({ runtime:state.runtime, incomingToken:__personalCapability, storage:window.localStorage, sendReceiverInfo }); }
   catch(e){ sgState.status="BLOCKED"; renderGrupos(); return; }
@@ -1461,10 +1499,11 @@ async function sgInit(){
 }
 async function sgReloadGroups(){
   if(!sgState.token){ renderGrupos(); return; }
+  if(sgState.groups===null) sgStartLoading();
   sgState.busy=true; renderGrupos();
   try{
     const res=await sgPost(SGV.buildRequest("list_groups",{ token:sgState.token, competition_id:sgCompetition() }));
-    if(res&&res.ok){ sgState.groups=res.groups||[]; sgState.eligible=res.eligible_participants||[]; sgState.viewerId=res.viewer_user_id||""; sgState.error=""; }
+    if(res&&res.ok){ sgState.animateLoaded=sgState.groups===null && Date.now()-__sgLoadingStarted>200; sgState.groups=res.groups||[]; sgState.eligible=res.eligible_participants||[]; sgState.viewerId=res.viewer_user_id||""; sgState.error=""; }
     else if(res&&res.error_code==="INVALID_TOKEN"){ sgState.token=""; sgState.status="NEEDS_LINK"; }
     else { sgState.error=sgErrorCopy(res); }
   }catch(e){ sgState.error="No pudimos cargar tus grupos. Revisa tu conexión e inténtalo de nuevo."; }
@@ -1498,10 +1537,35 @@ function sgGroupById(id){ return (sgState.groups||[]).find(g=>g.group_id===id)||
 function sgPeriodLabel(){ return selectedPeriodLabel(); }
 
 //----- rendering -----
+let __sgLoadingStarted=0, __sgLoadingTimers=[];
+function sgLoadingCopy(){
+  const elapsed=Date.now()-__sgLoadingStarted;
+  return elapsed>=7000 ? "El juego no espera. Tus listas se están tomando su tiempo…" : elapsed>=2000 ? "Cada rival en su lugar. Ya casi…" : "Preparando el terreno…";
+}
+function sgStartLoading(){
+  if(__sgLoadingStarted) return;
+  __sgLoadingStarted=Date.now();
+  __sgLoadingTimers=[2000,7000].map(delay=>setTimeout(()=>{
+    const status=el("sg-loading-status"); if(status) status.textContent=sgLoadingCopy();
+  },delay));
+}
+function sgStopLoading(){
+  __sgLoadingTimers.forEach(clearTimeout); __sgLoadingTimers=[]; __sgLoadingStarted=0;
+}
+function sgListChrome(){
+  return '<p class="sg-note">Elige a quién seguir en esta competencia y compara sus posiciones oficiales. Solo tú ves tus grupos.</p><div class="sg-list-actions"><button class="sg-ghost sg-new" type="button" data-sg="new"'+(sgState.status!=="READY"?' disabled':'')+'>+ Nuevo grupo</button></div>';
+}
+function sgLoadingHtml(){
+  const skeleton='<div class="sg-card sg-skeleton" aria-hidden="true"><span class="sk-bar sk-title"></span><span class="sk-bar sk-meta"></span><div class="sg-card-preview">'+Array.from({length:3},()=>'<div class="sg-card-row"><span class="sk-bar sk-rank"></span><span class="sk-bar"></span><span class="sk-bar sk-score"></span></div>').join("")+'</div><span class="sk-bar sk-foot"></span></div>';
+  return '<div id="sg-loading-status" class="sg-loading-status" role="status" aria-live="polite">'+sgLoadingCopy()+'</div><div class="sg-grid sg-loading" aria-busy="true">'+skeleton+skeleton+'</div>';
+}
 function renderGrupos(){
   const host=el("grupos-root"); if(!host) return;
+  const loading=sgState.status==="CONNECTING" || (sgState.status==="READY" && (sgState.groups===null || !state.leaderboard) && !sgState.error);
+  if(!loading) sgStopLoading();
   if(sgState.status==="IDLE"||sgState.status==="CONNECTING"){
-    host.innerHTML='<div class="sg-cta"><span class="ec-title">Conectando tus grupos…</span><p>Estamos verificando tu enlace personal.</p></div>';
+    if(host.querySelector("#sg-loading-status")) return;
+    host.innerHTML=sgListChrome()+sgLoadingHtml();
     return;
   }
   if(sgState.status==="UNCONFIGURED"){
@@ -1510,6 +1574,7 @@ function renderGrupos(){
   }
   if(sgState.status==="BLOCKED"){
     host.innerHTML='<div class="sg-cta"><span class="ec-title">No pudimos conectar Grupos</span><p>No pudimos verificar el servicio de Grupos en este momento. El resto de BETZ sigue disponible.</p><button class="sg-ghost" type="button" data-sg="retry" style="margin-top:14px">Reintentar</button></div>';
+    sgWireList();
     return;
   }
   if(sgState.status==="NEEDS_LINK"){
@@ -1518,30 +1583,34 @@ function renderGrupos(){
   }
   // READY
   if(sgState.view==="create"||sgState.view==="edit"){ host.innerHTML=sgEditorHtml(); sgWireEditor(); return; }
-  host.innerHTML=sgListHtml(); sgWireList();
+  if(loading && host.querySelector("#sg-loading-status")){
+    const button=host.querySelector('[data-sg="new"]'); if(button) button.disabled=false;
+    sgWireList(); return;
+  }
+  host.innerHTML=sgListHtml(); sgState.animateLoaded=false; sgWireList();
 }
 function sgListHtml(){
-  const loading=sgState.groups===null;
+  const loading=sgState.groups===null || !state.leaderboard;
   const groups=(sgState.groups||[]).filter(g=>g.group_id!==sgState.pendingDeleteId);
   let out="";
   if(sgState.error) out+='<div class="sg-err">'+escapeHtml(sgState.error)+'</div>';
   if(sgState.pendingDeleteId) out+='<div class="sg-note">Eliminando grupo…</div>';
-  out+='<p class="sg-note">Elige a quién seguir en esta competencia y compara sus posiciones oficiales. Solo tú ves tus grupos.</p>';
-  out+='<div class="sg-list-actions"><button class="sg-ghost sg-new" type="button" data-sg="new">+ Nuevo grupo</button></div>';
+  out+=sgListChrome();
   if(loading){
-    out+='<div class="sg-cta" style="margin-top:14px"><span class="ec-title">Cargando tus grupos…</span><p>Puedes comenzar a escribir el nombre mientras llegan los participantes.</p></div>';
+    out+=sgState.error ? '<button class="sg-ghost" type="button" data-sg="retry">Reintentar</button>' : sgLoadingHtml();
     return out;
   }
   if(!groups.length){
     out+='<div class="sg-cta" style="margin-top:14px"><span class="ec-title">Aún no tienes grupos</span><p>Crea tu primera lista de rivalidad y compárala con la tabla oficial.</p></div>';
     return out;
   }
-  out+='<div class="sg-grid">'+groups.map(sgCardHtml).join("")+'</div>';
+  const rows=sgLeaderboardRows();
+  out+='<div class="sg-grid'+(sgState.animateLoaded?' sg-loaded':'')+'">'+groups.map(g=>sgCardHtml(g,rows)).join("")+'</div>';
   return out;
 }
-function sgCardHtml(g){
+function sgCardHtml(g,leaderboardRows){
   const n=(g.member_user_ids||[]).length;
-  const preview=SGV.groupCardPreview(g,sgLeaderboardRows(),sgState.viewerId,sgState.eligible||[]);
+  const preview=SGV.groupCardPreview(g,leaderboardRows,sgState.viewerId,sgState.eligible||[]);
   let rows=preview.rows.map(row=>{
     const lead=row.group_rank===1;
     const you=row.is_viewer;
