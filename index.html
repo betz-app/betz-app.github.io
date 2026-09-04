@@ -430,6 +430,7 @@
   .consensus-result.bad{color:var(--coral);border-color:rgba(240,78,54,.35)}
   .consensus-result.split{color:var(--gold);border-color:rgba(255,206,31,.35)}
   .contract-note{font-size:11px;color:var(--faint);line-height:1.5;margin-top:12px}
+  .result-correction{margin:10px 0 2px;padding:8px 10px;border-radius:8px;background:rgba(255,206,31,.08);border:1px solid rgba(255,206,31,.28);color:var(--gold);font-size:11px;text-align:center}
   .podgrid .box{position:relative}
   .podgrid .box.you{border-color:var(--turq)}
   .podgrid .box .pmedal{position:absolute;top:6px;left:8px;font-family:var(--display);font-weight:700;font-size:12px;color:var(--gold)}
@@ -791,7 +792,7 @@ const EXPLAIN = {
 const state = {
   runtime:null, checkpoints:null, cp:null, leaderboard:null, periodResults:null,
   context:null, periodDetailCache:{}, perf:{}, di:{}, diCompetition:{}, knowledge:null, teams:null,
-  player:DEFAULT_PLAYER, periodIndex:0
+  viewer:DEFAULT_PLAYER, player:DEFAULT_PLAYER, periodIndex:0
 };
 
 function checkpointLabel(id){
@@ -921,6 +922,7 @@ async function boot(){
   const uParam=param("u");
   let welcomeWanted=false, welcomeName="";
   if(uParam){
+    state.viewer=uParam;
     state.player=uParam;
     welcomeName=(param("n")||"").trim().slice(0,40);
     welcomeWanted=true;
@@ -1025,10 +1027,17 @@ function periodLabel(p){
   const labels={"Wild Card":"Wild Card","Divisional":"Divisional","Conference Championship":"Final de Conferencia","Super Bowl":"Super Bowl"};
   return labels[p.season_type]||p.season_type||"Temporada";
 }
+function periodCheckpointId(p){
+  if(!p) return state.cp;
+  if(p.season_type==="Regular Season" && Number.isInteger(p.week)) return "REG-"+p.week;
+  const ids={"Wild Card":"WC","Divisional":"DIV","Conference Championship":"CC","Super Bowl":"SB"};
+  return ids[p.season_type]||state.cp;
+}
 function periodPlayer(p,userId){ return p&&Array.isArray(p.players)?p.players.find(x=>x.user_id===userId):null; }
 async function loadActivePeriodDetail(){
   const p=activePeriod(); if(!p||state.periodDetailCache[p.period_id]) return;
-  const base="checkpoints/"+state.cp+"/periods/"+encodeURIComponent(p.period_id)+"/details.json";
+  const checkpointId=periodCheckpointId(p);
+  const base="checkpoints/"+encodeURIComponent(checkpointId)+"/periods/"+encodeURIComponent(checkpointId)+"/details.json";
   state.periodDetailCache[p.period_id]=await getJSON(base);
 }
 async function setPeriod(delta){
@@ -1054,7 +1063,7 @@ function leaderboardRowsHtml(rows,pointsField){
     const lead=rank===1?'<span class="lead">va ganando</span>':"";
     return '<div class="lbr'+you+'" data-plr="'+escapeHtml(id)+'">'+
       '<span class="'+rkCls+'">'+fmt(rank)+'</span><span class="'+avCls+'">'+escapeHtml(initials(name,id))+'</span>'+
-      '<span class="nm">'+escapeHtml(name)+(id===DEFAULT_PLAYER?'<span class="you-tag">· tú</span>':'')+'</span>'+
+      '<span class="nm">'+escapeHtml(name)+(id===state.viewer?'<span class="you-tag">· tú</span>':'')+'</span>'+
       '<div class="rt">'+lead+'<span class="pw tnum">'+fmt(points)+'</span></div></div>';
   }).join("");
 }
@@ -1085,14 +1094,14 @@ function selectPlayer(userId){
 }
 
 function renderPodio(){
-  const rows = sortedRows().slice(0,3);
-  el("podio-sub").textContent = rows.length?"Las tres mejores posiciones hasta "+selectedPeriodLabel()+".":"El podio aparecerá con los primeros resultados.";
+  const rows = sortedRows().filter((row,index)=>(row.rank??index+1)<=3);
+  el("podio-sub").textContent = rows.length?"Las tres mejores posiciones hasta "+selectedPeriodLabel()+"; los empates se muestran completos.":"El podio aparecerá con los primeros resultados.";
   const order=rows.length===3?[rows[1],rows[0],rows[2]]:rows;
   el("podium").innerHTML=order.map(r=>{
     const rank=r.rank||rows.indexOf(r)+1;
-    const you=r.user_id===state.player?" you":"";
+    const you=r.user_id===state.viewer?" you":"";
     return '<button class="pod-step p'+rank+you+'" data-plr="'+escapeHtml(r.user_id)+'"><span class="pmedal">'+rank+'</span>'+
-      '<span class="pnm">'+escapeHtml(r.display_name)+(r.user_id===DEFAULT_PLAYER?'<span class="yt"> · tú</span>':'')+'</span>'+
+      '<span class="pnm">'+escapeHtml(r.display_name)+(r.user_id===state.viewer?'<span class="yt"> · tú</span>':'')+'</span>'+
       '<span class="pbote tnum">'+fmt(r.total_points)+' pts</span><span class="ppts">al corte</span></button>';
   }).join("");
   el("podium").querySelectorAll("[data-plr]").forEach(x=> x.onclick=()=>{ selectPlayer(x.dataset.plr); go("perfil"); });
@@ -1205,9 +1214,12 @@ function openMatch(id){
       '<tr><td class="tn">'+home+'</td>'+quarters.map(q=>'<td>'+q.home_score+'</td>').join('')+'<td class="tt">'+fmt(md.home_score)+'</td></tr>'+
       '<tr><td class="tn">'+away+'</td>'+quarters.map(q=>'<td>'+q.away_score+'</td>').join('')+'<td class="tt">'+fmt(md.away_score)+'</td></tr></table>'
     : '<div class="md-cap" style="text-align:center;margin:14px 0 2px">El marcador por cuarto no está disponible para este partido.</div>';
+  const correctionNote=md.correction&&md.correction.corrected
+    ? '<div class="result-correction">Resultado corregido · Anterior: '+away+' '+fmt(md.correction.previous_away_score)+'–'+fmt(md.correction.previous_home_score)+' '+home+'</div>'
+    : '';
   const host=el("match-detail");
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
-    '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
+    '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+correctionNote+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
     '<span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span><span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span></div>'+
     '<div class="clabels"><span>'+home+' '+pct(hd.prediction_rate)+' · '+hd.prediction_count+'</span><span>'+away+' '+pct(ad.prediction_rate)+' · '+ad.prediction_count+'</span></div>'+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
@@ -1222,9 +1234,9 @@ function openMatch(id){
     const hint=host.querySelector("[data-hint]"); if(hint) hint.hidden=true;
     const picks=(md.picks||[]).filter(p=>p.answered&&p.selected_team_id===teamId);
     const roster=host.querySelector("[data-roster]");
-    roster.innerHTML='<div class="avgrid">'+picks.map(p=>'<button class="avitem'+(p.user_id===DEFAULT_PLAYER?' you':'')+'" data-plr="'+escapeHtml(p.user_id)+'" type="button"><span class="av">'+escapeHtml(initials(p.display_name,p.user_id))+'</span><span class="nm">'+escapeHtml(p.display_name||p.user_id)+'</span></button>').join('')+'</div>';
+    roster.innerHTML='<div class="avgrid">'+picks.map(p=>'<button class="avitem'+(p.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(p.user_id)+'" type="button"><span class="av">'+escapeHtml(initials(p.display_name,p.user_id))+'</span><span class="nm">'+escapeHtml(p.display_name||p.user_id)+'</span></button>').join('')+'</div>';
     roster.querySelectorAll("[data-plr]").forEach(player=>player.onclick=()=>{
-      if(player.dataset.plr!==DEFAULT_PLAYER){ betzEvent("other_profile_open:from_match"); betzTag("viewed_others","yes"); }
+      if(player.dataset.plr!==state.viewer){ betzEvent("other_profile_open:from_match"); betzTag("viewed_others","yes"); }
       selectPlayer(player.dataset.plr);
       closeMatch();
       go("perfil");
@@ -1249,7 +1261,7 @@ function buildPlayerSelect(){
   sel.disabled = !rows.length;
   if(!rows.some(r=>r.user_id===state.player)) state.player = (rows[0]||{}).user_id;
   sel.value = state.player;
-  sel.onchange = ()=>{ if(sel.value!==DEFAULT_PLAYER){ betzEvent("other_profile_open:from_select"); betzTag("viewed_others","yes"); } selectPlayer(sel.value); };
+  sel.onchange = ()=>{ if(sel.value!==state.viewer){ betzEvent("other_profile_open:from_select"); betzTag("viewed_others","yes"); } selectPlayer(sel.value); };
 }
 
 function playerFrom(contract){
@@ -1361,7 +1373,7 @@ function renderPerfil(){
   el("p-chips").innerHTML = chips.join("");
 
   // Narrative: published factual numbers only (no recomputation, no invented tiers).
-  const selfVoice = state.player===DEFAULT_PLAYER;
+  const selfVoice = state.player===state.viewer;
   const voice = selfVoice
     ? { subject:"Tú", favoriteVerb:"eliges", lockVerb:"aciertas", possessive:"tus" }
     : { subject:escapeHtml(row.display_name||state.player), favoriteVerb:"elige", lockVerb:"acierta", possessive:"sus" };
