@@ -1,6 +1,6 @@
 {
   "contract_type": "betz_competition_rules",
-  "contract_version": "0.3",
+  "contract_version": "0.4",
   "competition_id": "NFL2026",
   "ruleset_id": "NFL2026-RULES-002",
   "publication_status": "PUBLISHED",
@@ -12,7 +12,7 @@
   "presentation": {
     "route": "/reglas/",
     "load_strategy": "ON_DEMAND",
-    "maximum_scan_time_seconds": 60,
+    "maximum_scan_time_seconds": 30,
     "frontend_behavior": "RENDER_ONLY"
   },
   "scope": {
@@ -259,77 +259,30 @@
     "criterion_id": "season_total_points",
     "label": "Mayor puntuación acumulada de la temporada",
     "additional_tie_break": {
-      "status": "PENDING_DEFINITION",
-      "display_value": "Por definir"
+      "status": "DEFINED",
+      "criterion_id": "golf_split",
+      "display_value": "Los empatados comparten por igual la suma de los premios de los lugares que ocupan. El siguiente jugador salta esos lugares. Las posiciones posteriores al cuarto aportan $0."
     }
   },
   "payouts": [
     {
       "prize_id": "weekly_winner",
       "label": "Ganador de la semana",
-      "status": "PENDING_DEFINITION",
-      "amount": null,
+      "status": "CONFIRMED",
+      "amount": 1000,
       "currency": "MXN",
-      "display_value": "Premio por definir",
-      "payment_channel": "MoneyPool",
+      "display_value": "$1,000 por semana de temporada regular",
       "split_when_tied": true
     },
     {
-      "prize_id": "season_winner",
-      "label": "Ganador de la temporada",
-      "status": "PENDING_DEFINITION",
-      "amount": null,
+      "prize_id": "season_placements",
+      "label": "Clasificación final",
+      "status": "CONFIRMED",
       "currency": "MXN",
-      "display_value": "Premio por definir",
-      "payment_channel": "MoneyPool",
-      "split_when_tied": null
+      "display_value": "1.º $14,000 · 2.º $7,000 · 3.º $3,000 · 4.º $3,000",
+      "split_when_tied": true
     }
   ],
-  "illustrative_payout_example": {
-    "example_id": "payout_example_20_entries",
-    "status": "ILLUSTRATIVE_ONLY",
-    "title": "Ejemplo con 20 inscripciones",
-    "entries": 20,
-    "estimated_prize_pool": 51000,
-    "weekly_prizes": {
-      "count": 18,
-      "amount_each": 1400,
-      "total": 25200,
-      "label": "Premios semanales",
-      "note": "Uno por cada semana de temporada regular"
-    },
-    "season_prizes": {
-      "count": 4,
-      "total": 25800,
-      "label": "Premios de temporada completa",
-      "award_rule": "Se habilita un lugar premiado por cada 5 inscripciones.",
-      "placements": [
-        {
-          "place": 1,
-          "amount": 12900,
-          "display_percentage": 50
-        },
-        {
-          "place": 2,
-          "amount": 7800,
-          "display_percentage": 30
-        },
-        {
-          "place": 3,
-          "amount": 3700,
-          "display_percentage": 14
-        },
-        {
-          "place": 4,
-          "amount": 1400,
-          "display_percentage": 6
-        }
-      ]
-    },
-    "total_distributed": 51000,
-    "currency": "MXN",
-    "disclaimer": "Este escenario es únicamente ilustrativo. Los montos finales dependerán del número de inscripciones confirmadas."
-  },
   "examples": [
     {
       "example_id": "regular_season",
@@ -389,5 +342,40 @@
     ],
     "non_blocking": true,
     "contains_personal_data": false
+  },
+  "confirmed_payout": {
+    "status": "CONFIRMED",
+    "entries": 17,
+    "collected": 51000,
+    "administration": 6000,
+    "prize_pool": 45000,
+    "currency": "MXN",
+    "weekly_prizes": {
+      "count": 18,
+      "amount_each": 1000,
+      "total": 18000,
+      "postseason_amount": 0
+    },
+    "season_prizes": {
+      "total": 27000,
+      "placements": [
+        {
+          "place": 1,
+          "amount": 14000
+        },
+        {
+          "place": 2,
+          "amount": 7000
+        },
+        {
+          "place": 3,
+          "amount": 3000
+        },
+        {
+          "place": 4,
+          "amount": 3000
+        }
+      ]
+    }
   }
 }

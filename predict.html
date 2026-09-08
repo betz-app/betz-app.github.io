@@ -98,6 +98,12 @@
 .app.betz-reveal{animation:bzPage .6s cubic-bezier(.16,1,.3,1)}
 @keyframes bzPage{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#betz-splash,#betz-splash *{animation:none!important;transition:opacity .2s linear!important}}
+  #betz-home{min-height:48px;padding:6px 10px;border:1px solid rgba(10,245,225,.35);border-radius:10px;gap:8px}
+  #betz-home svg{height:40px!important}
+  #betz-home::after{content:"Ir a la app";font-size:11px;color:var(--muted)}
+  #profile-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;margin:8px 0;border:1px solid var(--brand);border-radius:10px;color:var(--brand);font-weight:600;text-decoration:none}
+  #profile-link[hidden]{display:none}
+  #profile-link:focus-visible,#betz-home:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
 </head>
 <body>
@@ -117,6 +123,7 @@
       <div style="text-align:right;"><div style="font-size:11px;" class="muted"><span id="next-match">—</span> cierra en</div><div id="count" class="count">—</div></div>
     </div>
     <h1 id="greeting">Hola</h1>
+    <a id="profile-link" hidden>Ir a mi perfil →</a>
     <div class="info"><span data-ic="lock-open" data-sz="17" data-col="#6FE9DD"></span><span>Puedes editar cada partido hasta 10 min antes de su inicio</span></div>
     <div class="info sub"><span data-ic="eye-off" data-sz="15" data-col="#6B7280"></span><span>tus picks son confidenciales hasta el cierre</span></div>
   </div>
@@ -741,6 +748,17 @@ function showLoadFailure(out){
   sendBtn.textContent=/enlace personal/i.test(msg) ? "Enlace no disponible" : "Envío no disponible";
   sendBtn.disabled=true;
 }
+function updateProfileNavigation(out){
+  if (!out || out.ok !== true || typeof out.user_id !== "string" || !out.user_id) return;
+  var url = new URL("./", window.location.href);
+  url.searchParams.set("u", out.user_id);
+  if (out.display_name) url.searchParams.set("n", out.display_name);
+  url.hash = "/perfil";
+  var profile = document.getElementById("profile-link");
+  profile.href = url.href;
+  profile.hidden = false;
+  document.getElementById("betz-home").href = url.href;
+}
 function loadLatest(options){
   options = options || {};
   if (options.reset) resetProjectionUi();
@@ -748,6 +766,7 @@ function loadLatest(options){
   if (!TOKEN){ revealPicks(false); showLoadFailure(captureBlockedMessage()); return; }
   postToReceiver({ action: "load_latest", token: TOKEN, competition_id: COMPETITION_ID, period_id: PERIOD_ID })
   .then(function(out){
+    updateProfileNavigation(out);
     if (out && out.ok && Array.isArray(out.matches) && out.matches.length){
       if (out.display_name) document.getElementById("greeting").textContent = "Hola, " + out.display_name;
       if (out.found && Array.isArray(out.picks) && out.picks.length){ applyPicks(out.picks); showSent(out.received_at); }

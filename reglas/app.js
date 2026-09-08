@@ -60,7 +60,7 @@ function render(rules) {
   const regular = rules.scoring.execution_plan.filter((item) => item.sequence <= 4);
   const [playoffs, superBowl] = rules.scoring.postseason_score_precision.stages;
   const randomGroup = rules.scoring.random_group;
-  const payout = rules.illustrative_payout_example;
+  const payout = rules.confirmed_payout;
   const regularExample = rules.examples.find((example) => example.example_id === "regular_season");
   const wrongPick = rules.examples.find((example) => example.example_id === "playoff_wrong_pick_partial_score");
   const superExample = rules.examples.find((example) => example.example_id === "super_bowl_exact_scoreline");
@@ -70,7 +70,7 @@ function render(rules) {
     <section class="hero shell" aria-labelledby="page-title">
       <div>
         <p class="eyebrow">REGLAS · ${esc(rules.competition_id)}</p>
-        <h1 id="page-title">Entiende el juego<span> en 60 segundos.</span></h1>
+        <h1 id="page-title">Entiende el juego<span> en 30 segundos.</span></h1>
         <p class="hero-intro">Elige ganadores, fija tu partido clave y acumula puntos durante toda la temporada.</p>
         <nav class="anchor-nav" aria-label="Contenido de las reglas">
           <a href="#esencial">Lo esencial</a>
@@ -88,6 +88,22 @@ function render(rules) {
         ${scoreCard("Semana perfecta", regular[3])}
         <p>Los puntos se acumulan durante toda la temporada.</p>
       </aside>
+    </section>
+
+    <section class="content-section shell" id="premios">
+      <div class="section-heading"><p class="eyebrow">PREMIOS CONFIRMADOS · MXN</p><h2>${mxn(payout.prize_pool)} en juego</h2><p>17 participantes. Un reparto definido, sin montos estimados.</p></div>
+      <article class="payout-example">
+        <div class="payout-breakdown">
+          <section class="weekly-payout"><span>TEMPORADA REGULAR · 18 SEMANAS</span><strong>${mxn(payout.weekly_prizes.amount_each)}</strong><p>Por semana, para el ganador o los ganadores empatados después del desempate semanal.</p><small>Total semanal: ${mxn(payout.weekly_prizes.total)}</small><p><strong>En postemporada no hay premio semanal.</strong></p></section>
+          <section class="season-payout"><div class="season-payout-head"><span>CLASIFICACIÓN FINAL</span><small>Temporada regular + postemporada</small></div><ol>${payout.season_prizes.placements.map(prize => `<li><span>${esc(prize.place)}º lugar</span><strong>${mxn(prize.amount)}</strong></li>`).join("")}</ol><p>Total final: ${mxn(payout.season_prizes.total)}</p></section>
+        </div>
+        <footer class="payout-example-foot"><strong>Todo el pozo se reparte: $18,000 + $27,000 = $45,000 MXN.</strong><p>Los premios corresponden a resultados definitivos; las posiciones actuales no representan premios ganados ni pagos realizados.</p></footer>
+      </article>
+      <details class="payout-example"><summary>De dónde sale el pozo y cómo se reparten los empates</summary>
+        <div class="payout-example-foot"><h3>Cuentas claras</h3><p>17 inscripciones: <strong>$51,000</strong> recaudados. Administración: <strong>$6,000</strong>. Pozo neto: <strong>$45,000 MXN</strong>, destinado íntegramente a los premios publicados arriba.</p>
+        <h3>Empates finales: golf-split</h3><p>Se suman los premios de los lugares ocupados por los empatados y se dividen por igual. El siguiente jugador salta esos lugares. Las posiciones posteriores al cuarto aportan $0.</p><p><strong>Ejemplo:</strong> dos empatados en segundo ocupan 2.º y 3.º: ($7,000 + $3,000) ÷ 2 = <strong>$5,000 cada uno</strong>. El siguiente queda cuarto y recibe $3,000.</p><p>Dos empatados en cuarto comparten $3,000: $1,500 cada uno.</p>
+        <h3>Empates semanales</h3><p>Primero se aplican los <a href="#desempates">criterios del Partido fijado</a>. Si continúa el empate, los ganadores comparten por igual los $1,000 de esa semana; el pozo no aumenta.</p></div>
+      </details>
     </section>
 
     <section class="content-section shell" id="esencial">
@@ -176,33 +192,6 @@ function render(rules) {
       <ol class="tie-list">
         ${rules.weekly_winner_resolution.tie_break_plan.map((criterion) => `<li><span>${two(criterion.sequence)}</span><p>${esc(criterion.label)}</p></li>`).join("")}
       </ol>
-    </section>
-
-    <section class="content-section shell" id="premios">
-      <div class="section-heading"><p class="eyebrow">RECONOCIMIENTO</p><h2>Premios</h2><p>El reparto definitivo se publicará aquí para que todos lo vean.</p></div>
-      <div class="prize-grid">
-        ${rules.payouts.map((prize, index) => `
-          <article class="prize-card"><span>${index === 0 ? "TEMPORADA REGULAR" : "TEMPORADA COMPLETA"}</span><h3>${esc(prize.label)}</h3><p>${esc(prize.display_value)}</p></article>`).join("")}
-      </div>
-      <article class="payout-example">
-        <header class="payout-example-head">
-          <div><p class="eyebrow">EJEMPLO ILUSTRATIVO</p><h3>${esc(payout.title)}</h3></div>
-          <div class="payout-pool"><span>BOLSA ESTIMADA</span><strong>${mxn(payout.estimated_prize_pool)}</strong></div>
-        </header>
-        <div class="payout-breakdown">
-          <section class="weekly-payout">
-            <span>${esc(payout.weekly_prizes.count)} PREMIOS SEMANALES</span>
-            <strong>${mxn(payout.weekly_prizes.amount_each)}</strong>
-            <p>${esc(payout.weekly_prizes.note)}</p>
-            <small>Total: ${mxn(payout.weekly_prizes.total)}</small>
-          </section>
-          <section class="season-payout">
-            <div class="season-payout-head"><span>${esc(payout.season_prizes.count)} PREMIOS DE TEMPORADA</span><small>${esc(payout.season_prizes.award_rule)}</small></div>
-            <ol>${payout.season_prizes.placements.map((prize) => `<li><span>${esc(prize.place)}º lugar · ${esc(prize.display_percentage)}%</span><strong>${mxn(prize.amount)}</strong></li>`).join("")}</ol>
-          </section>
-        </div>
-        <footer class="payout-example-foot"><strong>Total ilustrativo repartido: ${mxn(payout.total_distributed)}</strong><p>${esc(payout.disclaimer)}</p></footer>
-      </article>
     </section>
 
     <section class="trust-section">
