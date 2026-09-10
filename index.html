@@ -188,7 +188,7 @@
   .wknav button:disabled{opacity:.35;cursor:default}
   .wknav .wklabel{font-family:var(--display);font-size:15px;min-width:96px;text-align:center}
   .mx{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:12px}
-  .mx-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
+  .mx-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
   .mx-final{font-size:12px;color:var(--muted);font-family:var(--display);font-weight:700;white-space:nowrap}
   .mx-final .tnum{color:var(--txt)}
   .cbar{height:8px;border-radius:5px;overflow:hidden;display:flex;background:var(--surface2)}
@@ -695,7 +695,7 @@
         <button id="matches-next" type="button" aria-label="Periodo siguiente">›</button>
       </div>
       <div id="matches-list"></div>
-      <div class="contract-note">Los pronósticos de todos se revelan después del cierre. El marcador por cuarto aparece al finalizar el partido.</div>
+      <div class="contract-note">Los pronósticos se revelan después del cierre. El desglose por cuartos se muestra cuando está disponible en la fuente.</div>
     </section>
 
     <!-- Podio: standings top of the current cut (champion/prizes revealed at close, not in this surface) -->
@@ -728,7 +728,7 @@
     <section class="screen" data-route="pods">
       <div class="h1">Pods</div>
       <div class="sub">Tu grupo semanal aleatorio · modificador social.</div>
-      <div class="empty-contract"><span class="ec-title">Tu pod semanal llegará pronto</span><p>Aquí podrás conocer a sus integrantes, su promedio y cuándo ganó el modificador.</p><span class="tag">Próximamente</span></div>
+      <div id="pods-content">La asignación todavía no está publicada.</div>
     </section>
   </main>
 
@@ -1034,6 +1034,9 @@ async function loadCheckpoint(){
     const published=await getJSON("consensus.json").catch(()=>null);
     const candidate=published&&published.competition_id==="NFL2026"&&published.periods&&published.periods[state.cp];
     if(candidate) state.frozenConsensus=candidate;
+    const pods=await getJSON("pods.json").catch(()=>null);
+    state.publicPods=pods&&pods.competition_id==="NFL2026"?pods.periods[state.cp]:null;
+    renderPods();
   }
   renderTabla();
   buildPlayerSelect();
@@ -1134,6 +1137,31 @@ function selectPlayer(userId){
   renderPerfil();
 }
 
+function renderPods(){
+  const host=el("pods-content"),period=state.publicPods;
+  if(!period){host.textContent="La asignación de esta jornada todavía no está publicada.";return;}
+  if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar pods en esta jornada.";return;}
+  const resolved=period.resolution_status==="resolved",pods=period.pods||[];
+  const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
+  const average=p=>resolved&&p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{maximumFractionDigits:2}):"—";
+  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(p.pod_id)+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span><span class="pg-sub">'+(resolved?p.participating_member_count+'/'+p.members.length+' participaron':p.members.length+' integrantes · resultados pendientes')+'</span></button>';
+  host.innerHTML='<p class="pod-cap">'+escapeHtml(selectedPeriodLabel())+' · Asignación original.</p>'+
+   (mine?'<div class="pod-label">Tu pod</div><div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
+   '<div class="pod-label">'+(mine?'Otros pods':'Pods de la jornada')+'</div><div class="podgrid">'+pods.filter(p=>p!==mine).map(p=>card(p,false)).join('')+'</div><div id="pod-inline"></div>'+
+   '<p class="pod-cap">El promedio usa puntos base de quienes participaron, antes de modificadores. Los ausentes no promedian ni reciben el modificador. Los ganadores aparecen con la resolución oficial.</p>';
+  host.querySelectorAll("[data-pod]").forEach(button=>button.onclick=()=>{
+   const p=pods.find(p=>p.pod_id===button.dataset.pod),wasOpen=button.getAttribute("aria-expanded")==="true";
+   host.querySelectorAll("[data-pod]").forEach(b=>b.setAttribute("aria-expanded","false"));
+   for(const id of ["my-pod-inline","pod-inline"]){if(el(id))el(id).innerHTML="";}
+   if(wasOpen)return;
+   button.setAttribute("aria-expanded","true");
+   const slot=el(p===mine?"my-pod-inline":"pod-inline");
+   slot.innerHTML='<div class="pod-h"><span class="pod-name">'+escapeHtml(p.pod_id)+'</span><span>Promedio: '+average(p)+'</span></div>'+
+    (resolved&&p.won?'<div class="pod-mod">★ Ganó el modificador. Solo sus integrantes participantes reciben los puntos publicados.</div>':'')+
+    '<div class="pod-card">'+p.members.map(m=>'<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="av">'+escapeHtml(initials(m.display_name,m.user_id))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+(resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):'No participó · fuera del promedio'):'Resultados pendientes')+'</span></span><span class="mpts">'+(resolved&&m.score!==null?fmt(m.score):'—')+'</span></button>').join('')+'</div>';
+   slot.querySelectorAll("[data-plr]").forEach(b=>b.onclick=()=>{selectPlayer(b.dataset.plr);go("perfil");});
+  });
+}
 function renderPodio(){
   const ranked = sortedRows().map((row,index)=>({...row,rank:row.rank??index+1}));
   const groups = podiumRankGroups(ranked);
@@ -1219,7 +1247,7 @@ function matchMaps(){
   const performance=seasonPerspective(state.diCompetition.consensus_performance);
   return {
     intelligence:new Map([...(intelligence&&intelligence.matches||[]),...(frozen&&frozen.matches||[])].map(m=>[m.match_id,m])),
-    performance:new Map(((performance&&performance.matches)||[]).map(m=>[m.match_id,m])),
+    performance:new Map([...(performance&&performance.matches||[]),...(frozen&&frozen.matches||[]).filter(m=>typeof m.correct==="boolean")].map(m=>[m.match_id,m])),
     context:new Map(((state.context&&state.context.matches)||[]).map(m=>[m.match_id,m]))
   };
 }
@@ -1255,7 +1283,7 @@ function renderPartidos(){
     const ad=dist.get(away)||{prediction_count:0,prediction_rate:0};
     const own=(md.picks||[]).find(x=>x.user_id===state.player);
     const final=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score)
-      ? '<span class="tnum">'+md.home_score+'–'+md.away_score+'</span>'
+      ? '<strong class="tnum" style="font-size:20px">'+away+' '+md.away_score+' – '+home+' '+md.home_score+'</strong><div style="color:var(--turq);font-size:12px">'+(md.home_score===md.away_score?'Final · Empate':'Final · Ganó '+(md.home_score>md.away_score?home:away))+'</div>'
       : 'Pendiente';
     const ownCopy=!publishedDetails
       ? '<span class="you">Pronósticos visibles después del cierre</span>'
@@ -1288,7 +1316,7 @@ function openMatch(id){
   const hd=dist.get(home)||{prediction_count:0,prediction_rate:0};
   const ad=dist.get(away)||{prediction_count:0,prediction_rate:0};
   const insight=!ci?"El consenso todavía no está publicado.":ci.sample_status==="insufficient"?"Aún no hay suficientes pronósticos para establecer consenso.":ci.consensus_status==="split"?"La comunidad quedó partida en dos.":
-    (cp?(cp.correct?"La mayoría leyó correctamente al ganador.":"La mayoría se fue con el lado equivocado."):"El consenso quedó publicado sin resultado evaluable.");
+    (cp?(cp.correct?"La mayoría acertó: ganó el favorito de la comunidad.":"La mayoría falló: ganó el otro equipo."):"El consenso está publicado; su evaluación está pendiente.");
   const isFinal=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score);
   const homeWon=isFinal&&md.home_score>md.away_score,awayWon=isFinal&&md.away_score>md.home_score;
   const score=isFinal
@@ -1306,7 +1334,8 @@ function openMatch(id){
     : '';
   const host=el("match-detail");
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
-    '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+correctionNote+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
+    '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+correctionNote+
+    (ci&&ci.result_summary?'<div class="md-narr"><span class="lbl">Resumen del resultado</span>'+escapeHtml(ci.result_summary)+'</div>':'')+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
     '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div>'+
     '<div class="clabels"><span>'+away+' '+(ci?pct(ad.prediction_rate):'—')+' · '+ (ci?ad.prediction_count:'—') +'</span><span>'+home+' '+(ci?pct(hd.prediction_rate):'—')+' · '+ (ci?hd.prediction_count:'—') +'</span></div>'+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
