@@ -1014,6 +1014,12 @@ async function loadCheckpoint(){
     loadOptional(state,"knowledge","football_knowledge/knowledge.json"),
     loadActivePeriodDetail()
   ]);
+  state.frozenConsensus=null;
+  if(state.runtime&&state.runtime.environment==="PROD"){
+    const published=await getJSON("consensus.json").catch(()=>null);
+    const candidate=published&&published.competition_id==="NFL2026"&&published.periods&&published.periods[state.cp];
+    if(candidate) state.frozenConsensus=candidate;
+  }
   renderTabla();
   buildPlayerSelect();
   renderPerfil();
@@ -1160,9 +1166,10 @@ function seasonPerspective(contract){
 }
 function matchMaps(){
   const intelligence=seasonPerspective(state.diCompetition.consensus_intelligence);
+  const frozen=state.frozenConsensus;
   const performance=seasonPerspective(state.diCompetition.consensus_performance);
   return {
-    intelligence:new Map(((intelligence&&intelligence.matches)||[]).map(m=>[m.match_id,m])),
+    intelligence:new Map([...(intelligence&&intelligence.matches||[]),...(frozen&&frozen.matches||[])].map(m=>[m.match_id,m])),
     performance:new Map(((performance&&performance.matches)||[]).map(m=>[m.match_id,m])),
     context:new Map(((state.context&&state.context.matches)||[]).map(m=>[m.match_id,m]))
   };
@@ -1231,7 +1238,7 @@ function openMatch(id){
   const dist=new Map(((ci&&ci.distribution)||[]).map(x=>[x.team_id,x]));
   const hd=dist.get(home)||{prediction_count:0,prediction_rate:0};
   const ad=dist.get(away)||{prediction_count:0,prediction_rate:0};
-  const insight=!ci?"El consenso todavía no está publicado.":ci.consensus_status==="split"?"La comunidad quedó partida en dos.":
+  const insight=!ci?"El consenso todavía no está publicado.":ci.sample_status==="insufficient"?"Aún no hay suficientes pronósticos para establecer consenso.":ci.consensus_status==="split"?"La comunidad quedó partida en dos.":
     (cp?(cp.correct?"La mayoría leyó correctamente al ganador.":"La mayoría se fue con el lado equivocado."):"El consenso quedó publicado sin resultado evaluable.");
   const isFinal=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score);
   const homeWon=isFinal&&md.home_score>md.away_score,awayWon=isFinal&&md.away_score>md.home_score;
@@ -1252,10 +1259,10 @@ function openMatch(id){
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
     '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+correctionNote+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
     '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div>'+
-    '<div class="clabels"><span>'+away+' '+pct(ad.prediction_rate)+' · '+ad.prediction_count+'</span><span>'+home+' '+pct(hd.prediction_rate)+' · '+hd.prediction_count+'</span></div>'+
+    '<div class="clabels"><span>'+away+' '+(ci?pct(ad.prediction_rate):'—')+' · '+ (ci?ad.prediction_count:'—') +'</span><span>'+home+' '+(ci?pct(hd.prediction_rate):'—')+' · '+ (ci?hd.prediction_count:'—') +'</span></div>'+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
-    '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ad.prediction_count+'</span></button>'+
-    '<button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+hd.prediction_count+'</span></button></div>'+
+    '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ (ci?ad.prediction_count:'—') +'</span></button>'+
+    '<button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+ (ci?hd.prediction_count:'—') +'</span></button></div>'+
     '<div class="md-hint" data-hint>Elige un equipo para ver sus jugadores.</div><div data-roster></div></div>';
   paintTeams(host); host.querySelector(".md-back").onclick=closeMatch;
   host.querySelectorAll("[data-team-sel]").forEach(button=>button.onclick=()=>{
