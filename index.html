@@ -297,7 +297,7 @@
 
   /* Pods */
   .pod-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:14px}
-  .pod-h{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)}
+  .pod-h{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid var(--line)}
   .pod-name{font-family:var(--display);font-size:16px;color:var(--turq)}
   .pod-wk{font-size:12px;color:var(--muted);margin-left:6px}
   .pod-avg{text-align:right}
@@ -337,7 +337,7 @@
   .pod-label{font-family:var(--display);font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:4px 2px 10px}
   #my-pod{margin-bottom:8px}
   #my-pod-inline:empty{display:none} #my-pod-inline{margin-bottom:18px}
-  .mypod-card{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer;color:inherit;font-family:var(--body);border:1px solid var(--turq);border-radius:12px;padding:13px 15px;background:rgba(10,245,225,.05)}
+  .mypod-card{width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer;color:inherit;font-family:var(--body);border:1px solid var(--turq);border-radius:12px;padding:13px 15px;background:rgba(10,245,225,.05)}
   .mypod-card:active{transform:scale(.995)}
   .mypod-card.won{border-color:rgba(255,206,31,.6);box-shadow:inset 0 0 0 1px rgba(10,245,225,.4);background:rgba(255,206,31,.05)}
   .mypod-card.active{box-shadow:0 0 0 1px var(--turq)}
@@ -726,7 +726,7 @@
 
     <!-- Pods: weekly mechanic retained; assignment data is not public yet -->
     <section class="screen" data-route="pods">
-      <div class="h1">Pods</div>
+      <div class="h1">Grupos de la jornada</div>
       <div class="sub">Tu grupo semanal aleatorio · modificador social.</div>
       <div id="pods-content">La asignación todavía no está publicada.</div>
     </section>
@@ -798,7 +798,7 @@ function initClarity(environment){
 function betzTag(k,v){ try{ if(__clarityOn && window.clarity && v!=null && v!=="") window.clarity("set", String(k), String(v)); }catch(e){} }
 function betzEvent(name){ try{ if(__clarityOn && window.clarity) window.clarity("event", String(name)); }catch(e){} }
 function betzEventOnce(name){ if(__clarityOnce.has(name)) return; __clarityOnce.add(name); betzEvent(name); }
-const TABS = [["tabla","Tabla"],["partidos","Partidos"],["perfil","Perfil"],["podio","Podio"],["grupos","Grupos"],["pods","Pods"]];
+const TABS = [["tabla","Tabla"],["partidos","Partidos"],["perfil","Perfil"],["podio","Podio"],["grupos","Mis grupos"],["pods","Grupos"]];
 
 //-----------------------------//
 // Visual metadata (from the approved prototype; inline, no external assets)
@@ -1137,17 +1137,45 @@ function selectPlayer(userId){
   renderPerfil();
 }
 
+function provisionalGroups(period, detail){
+  if(period.resolution_status === "resolved") return period.pods;
+  if(!detail) return period.pods;
+  const matches=detail.matches||[];
+  const evaluated=matches.some(m=>Number.isInteger(m.home_score)&&Number.isInteger(m.away_score));
+  const groups=period.pods.map(p=>{
+    const members=p.members.map(member=>{
+      let participated=false,score=0,missing=false;
+      for(const match of matches){
+        const pick=(match.picks||[]).find(p=>p.user_id===member.user_id&&p.answered===true);
+        if(!pick) continue;
+        participated=true;
+        if(Number.isInteger(match.home_score)&&Number.isInteger(match.away_score)){
+          if(Number.isFinite(pick.points_awarded)) score+=pick.points_awarded;
+          else missing=true;
+        }
+      }
+      return {...member,participated,score:participated&&!missing?score:null};
+    });
+    const active=members.filter(m=>m.participated);
+    const pod_score=active.length&&active.every(m=>m.score!==null)?active.reduce((s,m)=>s+m.score,0)/active.length:null;
+    return {...p,members,pod_score,participating_member_count:active.length,provisional:true};
+  });
+  const calculable=groups.filter(p=>p.pod_score!==null);
+  const best=calculable.length?Math.max(...calculable.map(p=>p.pod_score)):null;
+  return groups.map(p=>({...p,leading:evaluated&&calculable.length===groups.length&&best!==null&&p.pod_score===best}));
+}
 function renderPods(){
   const host=el("pods-content"),period=state.publicPods;
   if(!period){host.textContent="La asignación de esta jornada todavía no está publicada.";return;}
-  if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar pods en esta jornada.";return;}
-  const resolved=period.resolution_status==="resolved",pods=period.pods||[];
+  if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar grupos en esta jornada.";return;}
+  const resolved=period.resolution_status==="resolved",pods=provisionalGroups(period,activePeriodDetails());
+  const groupName=p=>"Grupo "+(Number(p.pod_id.replace(/^POD/i,""))||p.pod_id);
   const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
-  const average=p=>resolved&&p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{maximumFractionDigits:2}):"—";
-  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(p.pod_id)+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span><span class="pg-sub">'+(resolved?p.participating_member_count+'/'+p.members.length+' participaron':p.members.length+' integrantes · resultados pendientes')+'</span></button>';
+  const average=p=>p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{maximumFractionDigits:2}):"Pendiente";
+  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(groupName(p))+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span><span class="pg-sub">'+(resolved?(p.won?'Ganador de la jornada · ':'')+p.participating_member_count+'/'+p.members.length+' participaron':(p.leading?'Lidera provisionalmente':'Promedio provisional')+' · '+p.members.length+' integrantes')+'</span></button>';
   host.innerHTML='<p class="pod-cap">'+escapeHtml(selectedPeriodLabel())+' · Asignación original.</p>'+
-   (mine?'<div class="pod-label">Tu pod</div><div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
-   '<div class="pod-label">'+(mine?'Otros pods':'Pods de la jornada')+'</div><div class="podgrid">'+pods.filter(p=>p!==mine).map(p=>card(p,false)).join('')+'</div><div id="pod-inline"></div>'+
+   (mine?'<div class="pod-label">Tu grupo</div><div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
+   '<div class="pod-label">'+(mine?'Otros grupos':'Grupos de la jornada')+'</div><div class="podgrid">'+pods.filter(p=>p!==mine).map(p=>card(p,false)).join('')+'</div><div id="pod-inline"></div>'+
    '<p class="pod-cap">El promedio usa puntos base de quienes participaron, antes de modificadores. Los ausentes no promedian ni reciben el modificador. Los ganadores aparecen con la resolución oficial.</p>';
   host.querySelectorAll("[data-pod]").forEach(button=>button.onclick=()=>{
    const p=pods.find(p=>p.pod_id===button.dataset.pod),wasOpen=button.getAttribute("aria-expanded")==="true";
@@ -1156,9 +1184,9 @@ function renderPods(){
    if(wasOpen)return;
    button.setAttribute("aria-expanded","true");
    const slot=el(p===mine?"my-pod-inline":"pod-inline");
-   slot.innerHTML='<div class="pod-h"><span class="pod-name">'+escapeHtml(p.pod_id)+'</span><span>Promedio: '+average(p)+'</span></div>'+
+   slot.innerHTML='<div class="pod-h"><span class="pod-name">'+escapeHtml(groupName(p))+'</span><span>Promedio'+(resolved?' oficial':' provisional')+': '+average(p)+'</span></div>'+
     (resolved&&p.won?'<div class="pod-mod">★ Ganó el modificador. Solo sus integrantes participantes reciben los puntos publicados.</div>':'')+
-    '<div class="pod-card">'+p.members.map(m=>'<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="av">'+escapeHtml(initials(m.display_name,m.user_id))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+(resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):'No participó · fuera del promedio'):'Resultados pendientes')+'</span></span><span class="mpts">'+(resolved&&m.score!==null?fmt(m.score):'—')+'</span></button>').join('')+'</div>';
+    '<div class="pod-card">'+p.members.map(m=>'<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="av">'+escapeHtml(initials(m.display_name,m.user_id))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+(resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):'No participó · fuera del promedio'):(m.participated?'Puntos base publicados · provisional':'Sin participación publicada'))+'</span></span><span class="mpts">'+(m.score!==null?fmt(m.score):'Pendiente')+'</span></button>').join('')+'</div>';
    slot.querySelectorAll("[data-plr]").forEach(b=>b.onclick=()=>{selectPlayer(b.dataset.plr);go("perfil");});
   });
 }
@@ -1335,7 +1363,7 @@ function openMatch(id){
   const host=el("match-detail");
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
     '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+correctionNote+
-    (ci&&ci.result_summary?'<div class="md-narr"><span class="lbl">Resumen del resultado</span>'+escapeHtml(ci.result_summary)+'</div>':'')+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
+    (md.headline?'<div class="md-headline"><span class="lbl">Titular del proveedor</span>'+escapeHtml(md.headline)+'</div>':'')+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
     '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div>'+
     '<div class="clabels"><span>'+away+' '+(ci?pct(ad.prediction_rate):'—')+' · '+ (ci?ad.prediction_count:'—') +'</span><span>'+home+' '+(ci?pct(hd.prediction_rate):'—')+' · '+ (ci?hd.prediction_count:'—') +'</span></div>'+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
