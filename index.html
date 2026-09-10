@@ -338,6 +338,12 @@
   #my-pod{margin-bottom:8px}
   #my-pod-inline:empty{display:none} #my-pod-inline{margin-bottom:18px}
   .mypod-card{width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;text-align:left;cursor:pointer;color:inherit;font-family:var(--body);border:1px solid var(--turq);border-radius:12px;padding:13px 15px;background:rgba(10,245,225,.05)}
+  .mypod-card{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;padding:20px;margin-bottom:16px}
+  .mypod-card .pg-name{font-family:var(--display);font-size:20px;font-weight:700}
+  .mypod-card .pg-avg{font-family:var(--display);font-size:40px;line-height:1.15;font-weight:700;font-variant-numeric:tabular-nums;margin-top:8px}
+  .mypod-card .pg-caption{font-size:12px;color:var(--muted)}
+  .mypod-card .pg-sub{font-size:12px;color:var(--muted);margin-top:8px}
+  .mypod-card:focus-visible,.podg:focus-visible{outline:2px solid var(--turq);outline-offset:3px}
   .mypod-card:active{transform:scale(.995)}
   .mypod-card.won{border-color:rgba(255,206,31,.6);box-shadow:inset 0 0 0 1px rgba(10,245,225,.4);background:rgba(255,206,31,.05)}
   .mypod-card.active{box-shadow:0 0 0 1px var(--turq)}
@@ -1171,10 +1177,10 @@ function renderPods(){
   const resolved=period.resolution_status==="resolved",pods=provisionalGroups(period,activePeriodDetails());
   const groupName=p=>"Grupo "+(Number(p.pod_id.replace(/^POD/i,""))||p.pod_id);
   const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
-  const average=p=>p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{maximumFractionDigits:2}):"Pendiente";
-  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(groupName(p))+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span><span class="pg-sub">'+(resolved?(p.won?'Ganador de la jornada · ':'')+p.participating_member_count+'/'+p.members.length+' participaron':(p.leading?'Lidera provisionalmente':'Promedio provisional')+' · '+p.members.length+' integrantes')+'</span></button>';
+  const average=p=>p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{minimumFractionDigits:2,maximumFractionDigits:2}):"Pendiente";
+  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(groupName(p))+(own?' · Tu grupo':'')+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span>'+(own?'<span class="pg-caption">Promedio '+(resolved?'oficial':'provisional')+'</span>':'')+'<span class="pg-sub">'+(resolved?(p.won?'Ganador de la jornada · ':'')+p.participating_member_count+'/'+p.members.length+' participaron':(p.leading?'Lidera provisionalmente · ':own?'':'Promedio provisional · ')+p.members.length+' integrantes')+'</span></button>';
   host.innerHTML='<p class="pod-cap">'+escapeHtml(selectedPeriodLabel())+' · Asignación original.</p>'+
-   (mine?'<div class="pod-label">Tu grupo</div><div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
+   (mine?'<div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
    '<div class="pod-label">'+(mine?'Otros grupos':'Grupos de la jornada')+'</div><div class="podgrid">'+pods.filter(p=>p!==mine).map(p=>card(p,false)).join('')+'</div><div id="pod-inline"></div>'+
    '<p class="pod-cap">El promedio usa puntos base de quienes participaron, antes de modificadores. Los ausentes no promedian ni reciben el modificador. Los ganadores aparecen con la resolución oficial.</p>';
   host.querySelectorAll("[data-pod]").forEach(button=>button.onclick=()=>{
