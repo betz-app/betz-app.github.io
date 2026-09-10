@@ -374,6 +374,21 @@
   .pod-step .pbote{font-family:var(--display);font-weight:700;font-size:13px}
   .pod-step.p1 .pbote{color:var(--gold);font-size:15px}
   .pod-step .ppts{font-size:10px;color:var(--faint)}
+  .pod-step.tie{padding-left:8px;padding-right:8px}
+  .pod-step.p2.tie,.pod-step.p3.tie{min-height:132px}
+  .pod-tie-avatars{display:flex;align-items:center;justify-content:center;min-height:34px;margin:3px 0 1px}
+  .pod-tie-av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:9px;font-weight:700;color:var(--txt);background:var(--surface2);border:2px solid var(--surface)}
+  .pod-tie-av+.pod-tie-av{margin-left:-7px}
+  .pod-step.p1 .pod-tie-av{border-color:#332d16}
+  .pod-tie-more{background:var(--line);color:var(--txt)}
+  .pod-step .pod-tie-hint{font-size:9.5px;color:var(--turq);margin-top:1px}
+  .pod-tie-list{display:flex;flex-direction:column;gap:7px;margin-top:8px}
+  .pod-tie-player{width:100%;display:grid;grid-template-columns:32px 1fr auto 12px;align-items:center;gap:10px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:9px 10px;color:var(--txt);font-family:var(--body);text-align:left;cursor:pointer}
+  .pod-tie-player:active{transform:scale(.99);border-color:var(--turq)}
+  .pod-tie-player .av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:10px;font-weight:700;background:var(--surface);border:1px solid var(--line)}
+  .pod-tie-player .nm{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+  .pod-tie-player .yt{color:var(--turq);font-size:10px;margin-left:4px}
+  .pod-tie-player .pts{font-family:var(--display);font-weight:700;font-size:12px;white-space:nowrap}
   .podio-note{font-size:10.5px;color:var(--faint);text-align:center;margin-bottom:20px;line-height:1.5}
   .winhead{display:grid;grid-template-columns:38px 26px 1fr 62px 62px;gap:9px;align-items:baseline;padding:14px 4px 8px}
   .winhead .wh-title{grid-column:1/4;font-family:var(--display);font-size:14px;color:var(--txt)}
@@ -1121,19 +1136,34 @@ function selectPlayer(userId){
 
 function renderPodio(){
   const ranked = sortedRows().map((row,index)=>({...row,rank:row.rank??index+1}));
-  const rows = ranked.filter(row=>row.rank<=3);
+  const groups = podiumRankGroups(ranked);
   const fourth = ranked.filter(row=>row.rank===4);
   const third = ranked.find(row=>row.rank===3);
-  el("podio-sub").textContent = rows.length?"Posiciones hasta "+selectedPeriodLabel()+". La clasificación final se define al terminar la temporada; los empates se muestran completos.":"El podio aparecerá con los primeros resultados.";
-  const order=rows.length===3?[rows[1],rows[0],rows[2]]:rows;
-  el("podium").innerHTML=order.map(r=>{
-    const rank=r.rank||rows.indexOf(r)+1;
-    const you=r.user_id===state.viewer?" you":"";
-    return '<button class="pod-step p'+rank+you+'" data-plr="'+escapeHtml(r.user_id)+'"><span class="pmedal">'+rank+'</span>'+
-      '<span class="pnm">'+escapeHtml(r.display_name)+(r.user_id===state.viewer?'<span class="yt"> · tú</span>':'')+'</span>'+
-      '<span class="pbote tnum">'+fmt(r.total_points)+' pts</span><span class="ppts">al corte</span></button>';
+  el("podio-sub").textContent = groups.length?"Posiciones hasta "+selectedPeriodLabel()+". La clasificación final se define al terminar la temporada; los empates comparten una sola posición.":"El podio aparecerá con los primeros resultados.";
+  const order=groups.length===3?[groups[1],groups[0],groups[2]]:groups;
+  el("podium").innerHTML=order.map(group=>{
+    const rank=group.rank;
+    const players=group.players;
+    if(players.length===1){
+      const r=players[0];
+      const you=r.user_id===state.viewer?" you":"";
+      return '<button class="pod-step p'+rank+you+'" data-plr="'+escapeHtml(r.user_id)+'"><span class="pmedal">'+rank+'</span>'+
+        '<span class="pnm">'+escapeHtml(r.display_name)+(r.user_id===state.viewer?'<span class="yt"> · tú</span>':'')+'</span>'+
+        '<span class="pbote tnum">'+podiumPointsLabel(r.total_points)+'</span><span class="ppts">al corte</span></button>';
+    }
+    const you=players.some(r=>r.user_id===state.viewer)?" you":"";
+    const preview=players.slice(0,3).map(r=>'<span class="pod-tie-av" title="'+escapeHtml(r.display_name||r.user_id)+'">'+escapeHtml(initials(r.display_name,r.user_id))+'</span>').join("");
+    const more=players.length>3?'<span class="pod-tie-av pod-tie-more">+'+(players.length-3)+'</span>':"";
+    return '<button class="pod-step p'+rank+' tie'+you+'" data-podium-rank="'+rank+'"><span class="pmedal">'+rank+'</span>'+
+      '<span class="pod-tie-avatars" aria-hidden="true">'+preview+more+'</span>'+
+      '<span class="pnm">'+players.length+' empatados'+(you?'<span class="yt"> · tú</span>':'')+'</span>'+
+      '<span class="pbote tnum">'+podiumPointsLabel(players[0].total_points)+'</span><span class="pod-tie-hint">Ver competidores ›</span></button>';
   }).join("");
   el("podium").querySelectorAll("[data-plr]").forEach(x=> x.onclick=()=>{ selectPlayer(x.dataset.plr); go("perfil"); });
+  el("podium").querySelectorAll("[data-podium-rank]").forEach(x=>x.onclick=()=>{
+    const group=groups.find(g=>String(g.rank)===String(x.dataset.podiumRank));
+    if(group) openPodiumTie(group.rank,group.players);
+  });
   el("podium-fourth").innerHTML=fourth.map(r=>{
     const gap=third?Number(third.total_points)-Number(r.total_points):NaN;
     const detail=Number.isFinite(gap)&&gap>=0?"A "+fmt(gap)+" pts del tercero":"al corte";
@@ -1153,9 +1183,28 @@ function renderPodio(){
   }
   el("period-winners").innerHTML=winners.join("");
   el("period-winners").querySelectorAll("[data-plr]").forEach(x=>x.onclick=()=>{selectPlayer(x.dataset.plr);go("perfil");});
-  el("podio-msg").textContent=rows.length
+  el("podio-msg").textContent=groups.length
     ? "El campeón y los premios se confirman al cierre. Esta pantalla presenta posiciones y ganadores ya publicados, sin estado de pago."
     : "La competencia todavía no tiene posiciones publicadas.";
+}
+
+function podiumRankGroups(ranked){
+  return [1,2,3].map(rank=>({rank,players:ranked.filter(row=>row.rank===rank)})).filter(group=>group.players.length);
+}
+function podiumPointsLabel(value){ return fmt(value)+" "+(Number(value)===1?"pt":"pts"); }
+function openPodiumTie(rank,players){
+  if(!Array.isArray(players)||players.length<2) return;
+  betzEvent("podium_tie_open:"+rank);
+  el("sheet-t").textContent="#"+fmt(rank)+" · "+players.length+" empatados";
+  el("sheet-b").innerHTML='<span class="pod-tie-list">'+players.map(r=>
+    '<button class="pod-tie-player" type="button" data-podium-player="'+escapeHtml(r.user_id)+'"><span class="av">'+escapeHtml(initials(r.display_name,r.user_id))+'</span>'+
+    '<span class="nm"><strong>'+escapeHtml(r.display_name||r.user_id)+'</strong>'+(r.user_id===state.viewer?'<span class="yt">tú</span>':'')+'</span>'+
+    '<span class="pts tnum">'+podiumPointsLabel(r.total_points)+'</span><span aria-hidden="true">›</span></button>').join("")+'</span>';
+  el("sheet-s").textContent="Posición publicada compartida · mismo puntaje";
+  sheet.classList.add("on");
+  el("sheet-b").querySelectorAll("[data-podium-player]").forEach(x=>x.onclick=()=>{
+    sheet.classList.remove("on"); selectPlayer(x.dataset.podiumPlayer); go("perfil");
+  });
 }
 
 //-----------------------------//
