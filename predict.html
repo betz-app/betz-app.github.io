@@ -655,6 +655,10 @@ function applyMatchStatus(matches){
     if (m && m.is_open === false) markFrozen(cardByMatch(m.match_id));
   });
   tickHeader();
+  // The receiver may respond after the initial reveal or after a projection reset.
+  // Cards already frozen above do not trigger tickHeader's moved branch.
+  organizeGroups();
+  prog();
 }
 function organizeGroups(){
   var openBody = document.getElementById("open-body");
