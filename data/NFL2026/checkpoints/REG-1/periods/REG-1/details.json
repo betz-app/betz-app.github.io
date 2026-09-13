@@ -1,8 +1,8 @@
 {
   "contract_type": "betz_read_period_detail",
-  "contract_version": "1.1",
+  "contract_version": "1.2",
   "competition_id": "NFL2026",
-  "cursor": "2026-09-13T20:15:01.000Z",
+  "cursor": "REG010",
   "period": {
     "period_id": "REG-1",
     "season_type": "Regular Season",
@@ -224,7 +224,8 @@
             "correct": true
           }
         ],
-        "headline": "Seahawks pick off Drake Maye 3 times to beat Patriots 13-10 in Super Bowl rematch"
+        "headline": "Seahawks pick off Drake Maye 3 times to beat Patriots 13-10 in Super Bowl rematch",
+        "correction": null
       },
       {
         "match_id": "REG002",
@@ -442,14 +443,36 @@
             "correct": false
           }
         ],
-        "headline": "49ers rout Rams 27-7 in NFL's first Australia game behind Brock Purdy's 3 TD passes"
+        "headline": "49ers rout Rams 27-7 in NFL's first Australia game behind Brock Purdy's 3 TD passes",
+        "correction": null
       },
       {
         "match_id": "REG003",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 20,
+        "away_score": 13,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 3,
+            "away_score": 7
+          },
+          {
+            "period": 2,
+            "home_score": 10,
+            "away_score": 0
+          },
+          {
+            "period": 3,
+            "home_score": 0,
+            "away_score": 3
+          },
+          {
+            "period": 4,
+            "home_score": 7,
+            "away_score": 3
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -459,8 +482,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -470,8 +493,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -481,8 +504,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -492,8 +515,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -503,8 +526,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "EZC",
@@ -514,8 +537,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -525,8 +548,8 @@
             "lock": true,
             "predicted_home_score": 20,
             "predicted_away_score": 17,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -536,8 +559,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -547,8 +570,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -558,8 +581,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -569,8 +592,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "LJMV",
@@ -580,8 +603,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -591,8 +614,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -602,8 +625,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -613,8 +636,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -624,8 +647,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -635,18 +658,40 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": "T.J. Watt's late pick-6 pushes sluggish Steelers past injury-laden Falcons 20-13",
+        "correction": null
       },
       {
         "match_id": "REG004",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 23,
+        "away_score": 41,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 6,
+            "away_score": 14
+          },
+          {
+            "period": 2,
+            "home_score": 7,
+            "away_score": 17
+          },
+          {
+            "period": 3,
+            "home_score": 3,
+            "away_score": 0
+          },
+          {
+            "period": 4,
+            "home_score": 7,
+            "away_score": 10
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -656,8 +701,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -667,8 +712,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -678,8 +723,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -689,8 +734,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -700,8 +745,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "EZC",
@@ -711,8 +756,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -722,8 +767,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -733,8 +778,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -744,8 +789,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -755,8 +800,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -766,8 +811,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "LJMV",
@@ -777,8 +822,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -788,8 +833,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -799,8 +844,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -810,8 +855,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -821,8 +866,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -832,18 +877,40 @@
             "lock": true,
             "predicted_home_score": 17,
             "predicted_away_score": 27,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": "Derrick Henry's rushes for 3 TDs and Lamar Jackson lights up the Colts in the Ravens' 41-23 win",
+        "correction": null
       },
       {
         "match_id": "REG005",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 31,
+        "away_score": 36,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 7,
+            "away_score": 3
+          },
+          {
+            "period": 2,
+            "home_score": 14,
+            "away_score": 21
+          },
+          {
+            "period": 3,
+            "home_score": 0,
+            "away_score": 3
+          },
+          {
+            "period": 4,
+            "home_score": 10,
+            "away_score": 9
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -853,8 +920,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -864,8 +931,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -875,8 +942,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -886,8 +953,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -897,8 +964,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "EZC",
@@ -908,8 +975,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GABOBC",
@@ -919,8 +986,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -930,8 +997,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -941,8 +1008,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -952,8 +1019,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -963,8 +1030,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "LJMV",
@@ -974,8 +1041,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -985,8 +1052,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -996,8 +1063,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -1007,8 +1074,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -1018,8 +1085,8 @@
             "lock": true,
             "predicted_home_score": 17,
             "predicted_away_score": 28,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -1029,18 +1096,40 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": "Josh Allen connects with Joshua Palmer for a late TD and Bills beat Texans 36-31 in wild opener",
+        "correction": null
       },
       {
         "match_id": "REG006",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 37,
+        "away_score": 59,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 7,
+            "away_score": 14
+          },
+          {
+            "period": 2,
+            "home_score": 17,
+            "away_score": 17
+          },
+          {
+            "period": 3,
+            "home_score": 7,
+            "away_score": 14
+          },
+          {
+            "period": 4,
+            "home_score": 6,
+            "away_score": 14
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -1050,8 +1139,8 @@
             "lock": true,
             "predicted_home_score": 14,
             "predicted_away_score": 24,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -1061,8 +1150,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -1072,8 +1161,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -1083,8 +1172,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -1094,8 +1183,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "EZC",
@@ -1105,8 +1194,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -1116,8 +1205,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -1127,8 +1216,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -1138,8 +1227,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -1149,8 +1238,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -1160,8 +1249,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "LJMV",
@@ -1171,8 +1260,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -1182,8 +1271,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -1193,8 +1282,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -1204,8 +1293,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -1215,8 +1304,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -1226,18 +1315,40 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG007",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 34,
+        "away_score": 10,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 14,
+            "away_score": 0
+          },
+          {
+            "period": 2,
+            "home_score": 10,
+            "away_score": 0
+          },
+          {
+            "period": 3,
+            "home_score": 10,
+            "away_score": 3
+          },
+          {
+            "period": 4,
+            "home_score": 0,
+            "away_score": 7
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -1247,8 +1358,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -1258,8 +1369,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -1269,8 +1380,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -1280,8 +1391,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -1291,8 +1402,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "EZC",
@@ -1302,8 +1413,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -1313,8 +1424,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -1324,8 +1435,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -1335,8 +1446,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -1346,8 +1457,8 @@
             "lock": true,
             "predicted_home_score": 34,
             "predicted_away_score": 14,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -1357,8 +1468,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "LJMV",
@@ -1368,8 +1479,8 @@
             "lock": true,
             "predicted_home_score": 28,
             "predicted_away_score": 21,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -1379,8 +1490,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -1390,8 +1501,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -1401,8 +1512,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -1412,8 +1523,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -1423,18 +1534,45 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": "Trevor Lawrence throws 4 TD passes as the Jaguars rout the Browns 34-10 in season opener",
+        "correction": null
       },
       {
         "match_id": "REG008",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 31,
+        "away_score": 30,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 7,
+            "away_score": 0
+          },
+          {
+            "period": 2,
+            "home_score": 0,
+            "away_score": 0
+          },
+          {
+            "period": 3,
+            "home_score": 14,
+            "away_score": 14
+          },
+          {
+            "period": 4,
+            "home_score": 3,
+            "away_score": 10
+          },
+          {
+            "period": 5,
+            "home_score": 7,
+            "away_score": 6
+          }
+        ],
+        "overtime": true,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -1444,8 +1582,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -1455,8 +1593,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -1466,8 +1604,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -1477,8 +1615,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -1488,8 +1626,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "EZC",
@@ -1499,8 +1637,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -1510,8 +1648,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -1521,8 +1659,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -1532,8 +1670,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -1543,8 +1681,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -1554,8 +1692,8 @@
             "lock": true,
             "predicted_home_score": 31,
             "predicted_away_score": 20,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 2,
+            "correct": true
           },
           {
             "user_id": "LJMV",
@@ -1565,8 +1703,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -1576,8 +1714,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -1587,8 +1725,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -1598,8 +1736,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -1609,8 +1747,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -1620,18 +1758,40 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG009",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 10,
+        "away_score": 23,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 3,
+            "away_score": 7
+          },
+          {
+            "period": 2,
+            "home_score": 0,
+            "away_score": 3
+          },
+          {
+            "period": 3,
+            "home_score": 0,
+            "away_score": 10
+          },
+          {
+            "period": 4,
+            "home_score": 7,
+            "away_score": 3
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -1641,8 +1801,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "BTO_Z",
@@ -1652,8 +1812,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -1663,8 +1823,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -1674,8 +1834,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -1685,8 +1845,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "EZC",
@@ -1696,8 +1856,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GABOBC",
@@ -1707,8 +1867,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -1718,8 +1878,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GSG",
@@ -1729,8 +1889,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "HZE",
@@ -1740,8 +1900,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "JMTZCELIZ",
@@ -1751,8 +1911,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "LJMV",
@@ -1762,8 +1922,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -1773,8 +1933,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "NSA",
@@ -1784,8 +1944,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "PACOT",
@@ -1795,8 +1955,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -1806,8 +1966,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "YEU",
@@ -1817,18 +1977,40 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           }
         ],
-        "headline": null
+        "headline": "Breece Hall powers Jets past Titans 23-10 in a dominant season opener against their former coach",
+        "correction": null
       },
       {
         "match_id": "REG010",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 33,
+        "away_score": 27,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 14,
+            "away_score": 3
+          },
+          {
+            "period": 2,
+            "home_score": 10,
+            "away_score": 7
+          },
+          {
+            "period": 3,
+            "home_score": 3,
+            "away_score": 10
+          },
+          {
+            "period": 4,
+            "home_score": 6,
+            "away_score": 7
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -1838,8 +2020,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -1849,8 +2031,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -1860,8 +2042,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -1871,8 +2053,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -1882,8 +2064,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "EZC",
@@ -1893,8 +2075,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -1904,8 +2086,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -1915,8 +2097,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "GSG",
@@ -1926,8 +2108,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "HZE",
@@ -1937,8 +2119,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "JMTZCELIZ",
@@ -1948,8 +2130,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "LJMV",
@@ -1959,8 +2141,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -1970,8 +2152,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "NSA",
@@ -1981,8 +2163,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PACOT",
@@ -1992,8 +2174,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -2003,8 +2185,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -2014,18 +2196,25 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           }
         ],
-        "headline": null
+        "headline": "Bengals force 4 turnovers, Burrow throws for TD in 33-27 win over the Buccaneers",
+        "correction": null
       },
       {
         "match_id": "REG011",
         "home_score": null,
         "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 7,
+            "away_score": 7
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -2214,14 +2403,22 @@
             "points_awarded": null,
             "correct": null
           }
-        ]
+        ],
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG012",
         "home_score": null,
         "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 0,
+            "away_score": 9
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -2410,14 +2607,22 @@
             "points_awarded": null,
             "correct": null
           }
-        ]
+        ],
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG013",
         "home_score": null,
         "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 7,
+            "away_score": 0
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -2606,14 +2811,22 @@
             "points_awarded": null,
             "correct": null
           }
-        ]
+        ],
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG014",
         "home_score": null,
         "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 0,
+            "away_score": 3
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -2802,7 +3015,9 @@
             "points_awarded": null,
             "correct": null
           }
-        ]
+        ],
+        "headline": null,
+        "correction": null
       }
     ]
   }
