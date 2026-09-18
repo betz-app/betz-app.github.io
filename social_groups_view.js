@@ -32,9 +32,9 @@
     var SHARE_PHRASE = "Ten la razón. ¡Cóbrasela a todos!";
 
     // The only actions this client may ever transmit. receiver_info is token-less;
-    // the five operations are the contracted Social Group surface. Nothing else.
+    // the six operations are the contracted Social Group surface. Nothing else.
     var RECEIVER_INFO_ACTION = "receiver_info";
-    var GROUP_ACTIONS = ["list_groups", "create_group", "rename_group", "replace_group_members", "delete_group"];
+    var GROUP_ACTIONS = ["list_groups", "list_pick_statuses", "create_group", "rename_group", "replace_group_members", "delete_group"];
     var MUTATION_ACTIONS = ["create_group", "rename_group", "replace_group_members", "delete_group"];
     var GROUPS_INFO_ACTION = "social_groups_info";
     var ALLOWED_ACTIONS = [RECEIVER_INFO_ACTION, GROUPS_INFO_ACTION].concat(GROUP_ACTIONS);

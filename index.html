@@ -317,6 +317,9 @@
   .pod-mem.absent{opacity:.55}
   .pod-mem.absent .mpts{color:var(--faint)}
   .pod-cap{font-size:10.5px;color:var(--faint);margin:8px 2px 16px}
+  .period-status-note{display:none;margin:0 0 14px;padding:11px 13px;border-radius:12px;border:1px solid rgba(255,206,31,.35);background:rgba(255,206,31,.08);color:var(--txt);font-size:12.5px;line-height:1.45}
+  .period-status-note.on{display:block}
+  .period-status-note b{color:var(--gold)}
   .pod-mod{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-left:3px solid var(--turq);border-radius:10px;padding:13px 15px;font-size:13px;line-height:1.5;color:var(--txt)}
   .pod-mod .lbl{display:block;font-size:9.5px;color:var(--turq);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
   .pod-mod b{color:var(--turq)}
@@ -615,6 +618,7 @@
   <main>
     <!-- Checkpoint selector (published checkpoints only) -->
     <div class="filters" id="cpbar" aria-label="Jornadas de la temporada"></div>
+    <div class="period-status-note" id="period-status-note" role="status"></div>
 
     <!-- Loading state -->
     <section class="screen" data-route="loading">
@@ -835,7 +839,9 @@ const EXPLAIN = {
 const state = {
   runtime:null, checkpoints:null, cp:null, leaderboard:null, periodResults:null,
   context:null, periodDetailCache:{}, perf:{}, di:{}, diCompetition:{}, knowledge:null, teams:null,
-  viewer:DEFAULT_PLAYER, player:DEFAULT_PLAYER, periodIndex:0
+  viewer:DEFAULT_PLAYER, player:DEFAULT_PLAYER, periodIndex:0,
+  capturePeriodId:null, periodSettlements:null, publicPodsPeriodId:null,
+  podPickStatuses:null, podPickStatusesPeriodId:null
 };
 
 function checkpointLabel(id){
@@ -879,6 +885,13 @@ async function loadRuntime(){
 async function getJSON(rel){
   // rel is relative to the data base (no leading slash), resolved same-origin.
   const url = new URL(rel, DATA);
+  const r = await fetch(url, { credentials:"omit", cache:"no-store" });
+  if(!r.ok) throw new Error("HTTP "+r.status+" "+rel);
+  return r.json();
+}
+async function getRootJSON(rel){
+  const url = new URL(rel, document.baseURI);
+  if(url.origin!==location.origin) throw new Error("ROOT_CROSS_ORIGIN_BLOCKED");
   const r = await fetch(url, { credentials:"omit", cache:"no-store" });
   if(!r.ok) throw new Error("HTTP "+r.status+" "+rel);
   return r.json();
@@ -952,6 +965,16 @@ async function boot(){
   try {
     state.checkpoints = await getJSON("checkpoints.json");
   } catch(e){ return fail("No pudimos cargar las jornadas disponibles."); }
+  const [captureRuntime, settlements] = await Promise.all([
+    getRootJSON("betz-runtime.json").catch(()=>null),
+    getJSON("period-settlements.json").catch(()=>null)
+  ]);
+  if(captureRuntime && captureRuntime.environment==="PROD" && captureRuntime.competition_id==="NFL2026"){
+    state.capturePeriodId=captureRuntime.period_id||null;
+  }
+  if(settlements && settlements.contract_type==="betz_period_settlements" && settlements.competition_id==="NFL2026"){
+    state.periodSettlements=settlements;
+  }
 
   const published = state.checkpoints.checkpoints.map(c=>c.period_id);
   const calendar = state.checkpoints.calendar||[];
@@ -980,6 +1003,7 @@ async function boot(){
     return go("blocked");
   }
   state.cp = requested || current;
+  renderSettlementStatus();
   if(legacyRequest) history.replaceState(null,"",publicCheckpointUrl(state.cp));
   betzTag("period_id", state.cp);
 
@@ -1043,7 +1067,9 @@ async function loadCheckpoint(){
     const candidate=published&&published.competition_id==="NFL2026"&&published.periods&&published.periods[state.cp];
     if(candidate) state.frozenConsensus=candidate;
     const pods=await getJSON("pods.json").catch(()=>null);
-    state.publicPods=pods&&pods.competition_id==="NFL2026"?pods.periods[state.cp]:null;
+    const upcoming=state.capturePeriodId&&pods&&pods.periods&&pods.periods[state.capturePeriodId];
+    state.publicPodsPeriodId=upcoming?state.capturePeriodId:state.cp;
+    state.publicPods=pods&&pods.competition_id==="NFL2026"?pods.periods[state.publicPodsPeriodId]:null;
     renderPods();
   }
   renderTabla();
@@ -1052,6 +1078,18 @@ async function loadCheckpoint(){
   renderPartidos();
   renderPodio();
   if((location.hash||"").replace("#/","")==="grupos") sgOnEnter();
+}
+
+function renderSettlementStatus(){
+  const host=el("period-status-note");
+  const period=state.periodSettlements&&state.periodSettlements.periods&&state.periodSettlements.periods[state.cp];
+  if(!host)return;
+  if(!period||period.settlement_status!=="PENDING_DECISION"){
+    host.classList.remove("on"); host.textContent=""; return;
+  }
+  const count=(period.pending_match_ids||[]).length;
+  host.innerHTML='<b>'+escapeHtml(checkpointLabel(state.cp))+' pendiente.</b> '+count+' partido'+(count===1?'':'s')+' pospuesto'+(count===1?'':'s')+'. Los puntos y posiciones son provisionales; todavía no hay ganador semanal.';
+  host.classList.add("on");
 }
 
 function initials(name, id){ return String(name||id||"?").trim().slice(0,2).toUpperCase(); }
@@ -1176,12 +1214,13 @@ function renderPods(){
   const host=el("pods-content"),period=state.publicPods;
   if(!period){host.textContent="La asignación de esta jornada todavía no está publicada.";return;}
   if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar grupos en esta jornada.";return;}
-  const resolved=period.resolution_status==="resolved",pods=provisionalGroups(period,activePeriodDetails());
+  const resolved=period.resolution_status==="resolved",isUpcoming=state.publicPodsPeriodId&&state.publicPodsPeriodId!==state.cp;
+  const pods=provisionalGroups(period,isUpcoming?null:activePeriodDetails());
   const groupName=p=>"Grupo "+(Number(p.pod_id.replace(/^POD/i,""))||p.pod_id);
   const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
   const average=p=>p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{minimumFractionDigits:2,maximumFractionDigits:2}):"Pendiente";
   const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(groupName(p))+(own?' · Tu grupo':'')+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span>'+(own?'<span class="pg-caption">Promedio '+(resolved?'oficial':'provisional')+'</span>':'')+'<span class="pg-sub">'+(resolved?(p.won?'Ganador de la jornada · ':'')+p.participating_member_count+'/'+p.members.length+' participaron':(p.leading?'Lidera provisionalmente · ':own?'':'Promedio provisional · ')+p.members.length+' integrantes')+'</span></button>';
-  host.innerHTML='<p class="pod-cap">'+escapeHtml(selectedPeriodLabel())+' · Asignación original.</p>'+
+  host.innerHTML='<p class="pod-cap">'+escapeHtml(checkpointLabel(state.publicPodsPeriodId||state.cp))+(isUpcoming?' · Próxima jornada':'')+' · Asignación original.</p>'+
    (mine?'<div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
    '<div class="pod-label">'+(mine?'Otros grupos':'Grupos de la jornada')+'</div><div class="podgrid">'+pods.filter(p=>p!==mine).map(p=>card(p,false)).join('')+'</div><div id="pod-inline"></div>'+
    '<p class="pod-cap">El promedio usa puntos base de quienes participaron, antes de modificadores. Los ausentes no promedian ni reciben el modificador. Los ganadores aparecen con la resolución oficial.</p>';
@@ -1192,9 +1231,16 @@ function renderPods(){
    if(wasOpen)return;
    button.setAttribute("aria-expanded","true");
    const slot=el(p===mine?"my-pod-inline":"pod-inline");
+   const pickStatusFor=m=>state.podPickStatuses&&state.podPickStatusesPeriodId===state.publicPodsPeriodId?state.podPickStatuses[m.user_id]:null;
+   const memberStatus=m=>{
+    const pickStatus=pickStatusFor(m);
+    if(pickStatus==="SUBMITTED")return "Pick enviado";
+    if(pickStatus==="PENDING")return "Pick pendiente";
+    return resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):'No participó · fuera del promedio'):(m.participated?'Puntos base publicados · provisional':'Sin participación publicada');
+   };
    slot.innerHTML='<div class="pod-h"><span class="pod-name">'+escapeHtml(groupName(p))+'</span><span>Promedio'+(resolved?' oficial':' provisional')+': '+average(p)+'</span></div>'+
     (resolved&&p.won?'<div class="pod-mod">★ Ganó el modificador. Solo sus integrantes participantes reciben los puntos publicados.</div>':'')+
-    '<div class="pod-card">'+p.members.map(m=>'<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="av">'+escapeHtml(initials(m.display_name,m.user_id))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+(resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):'No participó · fuera del promedio'):(m.participated?'Puntos base publicados · provisional':'Sin participación publicada'))+'</span></span><span class="mpts">'+(m.score!==null?fmt(m.score):'Pendiente')+'</span></button>').join('')+'</div>';
+    '<div class="pod-card">'+p.members.map(m=>'<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="av">'+escapeHtml(initials(m.display_name,m.user_id))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+escapeHtml(memberStatus(m))+'</span></span><span class="mpts">'+(m.score!==null?fmt(m.score):'Pendiente')+'</span></button>').join('')+'</div>';
    slot.querySelectorAll("[data-plr]").forEach(b=>b.onclick=()=>{selectPlayer(b.dataset.plr);go("perfil");});
   });
 }
@@ -1655,6 +1701,7 @@ function sgErrorCopy(res){
 function sgOnEnter(){
   if(!SGV){ sgState.status="UNCONFIGURED"; renderGrupos(); return; }
   if(sgState.status==="IDLE"){ if(!state.runtime){ return; } sgInit(); return; }
+  if(sgState.status==="READY"&&sgState.groups===null){ sgReloadGroups(); return; }
   renderGrupos();
 }
 async function sgInit(){
@@ -1679,6 +1726,32 @@ async function sgReloadGroups(){
     else { sgState.error=sgErrorCopy(res); }
   }catch(e){ sgState.error="No pudimos cargar tus grupos. Revisa tu conexión e inténtalo de nuevo."; }
   sgState.busy=false; renderGrupos();
+}
+
+async function loadPodPickStatuses(){
+  const periodId=state.publicPodsPeriodId;
+  if(!periodId||!state.publicPods||!SGV||state.podPickStatusesPeriodId===periodId)return;
+  if(!sgState.token){
+    if(!SGV.runtimeReceiverConfigured(state.runtime))return;
+    let boot;
+    try{ boot=await SGV.runGroupsBootstrap({ runtime:state.runtime, incomingToken:__personalCapability, storage:window.localStorage, sendReceiverInfo }); }
+    catch(e){ return; }
+    __personalCapability="";
+    if(boot.status!=="READY")return;
+    sgState.token=boot.token; sgState.status="READY"; __sgInitStarted=true;
+  }
+  try{
+    const res=await sgPost(SGV.buildRequest("list_pick_statuses",{
+      token:sgState.token, competition_id:sgCompetition(), payload:{ period_id:periodId }
+    }));
+    if(!res||!res.ok||res.period_id!==periodId||!Array.isArray(res.pick_statuses))return;
+    state.podPickStatuses={};
+    res.pick_statuses.forEach(item=>{
+      if(item&&item.user_id&&["SUBMITTED","PENDING"].includes(item.pick_status))state.podPickStatuses[item.user_id]=item.pick_status;
+    });
+    state.podPickStatusesPeriodId=periodId;
+    renderPods();
+  }catch(e){}
 }
 // Mutations: reuse the same client_request_id on retry (idempotency); on an
 // uncertain result, reload list_groups instead of inventing success.
@@ -2083,9 +2156,9 @@ function sgShareCanvas(canvas, filename, groupName){
 }
 
 // Enter Grupos lazily from any navigation path.
-nav.addEventListener("click", e=>{ const b=e.target.closest("button"); if(b && b.dataset.go==="grupos") sgOnEnter(); });
+nav.addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b)return; if(b.dataset.go==="grupos")sgOnEnter(); if(b.dataset.go==="pods")loadPodPickStatuses(); });
 document.addEventListener("click", e=>{ const g=e.target.closest('[data-go="grupos"]'); if(g && !g.closest("#nav")) sgOnEnter(); });
-window.addEventListener("hashchange", ()=>{ if((location.hash||"").replace("#/","")==="grupos") sgOnEnter(); });
+window.addEventListener("hashchange", ()=>{ const route=(location.hash||"").replace("#/",""); if(route==="grupos")sgOnEnter(); if(route==="pods")loadPodPickStatuses(); });
 
 boot();
 </script>
