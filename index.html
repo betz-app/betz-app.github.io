@@ -305,10 +305,13 @@
   .pod-avg{text-align:right}
   .pod-avg .pk{display:block;font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.4px}
   .pod-avg .pv{font-family:var(--display);font-weight:700;font-size:16px}
-  .pod-mem{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:11px;padding:11px 15px;border-bottom:1px solid var(--line)}
+  .pod-table-head,.pod-mem{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:11px}
+  .pod-table-head{padding:8px 15px;background:var(--surface2);color:var(--faint);font-size:9px;text-transform:uppercase;letter-spacing:.4px;border-bottom:1px solid var(--line)}
+  .pod-mem{padding:11px 15px;border-bottom:1px solid var(--line)}
   .pod-mem:last-child{border-bottom:0}
   .pod-mem[data-plr]{cursor:pointer}
-  .pod-mem .av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-family:var(--display);color:var(--txt);background:var(--surface2);border:1px solid var(--line)}
+  .pod-mem .pod-rank{width:40px;padding:6px 0;border-radius:8px;text-align:center;font-family:var(--display);font-size:12px;font-weight:700;color:var(--turq);background:var(--turq-dim);font-variant-numeric:tabular-nums}
+  .pod-mem .pod-rank.unranked{color:var(--faint);background:var(--surface2)}
   .pod-mem .mn{font-size:14px}
   .pod-mem .you-tag{color:var(--muted);font-size:12px;margin-left:5px}
   .pod-mem .mstat{font-size:10px;color:var(--faint);margin-top:2px}
@@ -1210,12 +1213,20 @@ function provisionalGroups(period, detail){
   const best=calculable.length?Math.max(...calculable.map(p=>p.pod_score)):null;
   return groups.map(p=>({...p,leading:evaluated&&calculable.length===groups.length&&best!==null&&p.pod_score===best}));
 }
+function podGeneralRankByUser(leaderboardRows){
+  const ranks=new Map();
+  (Array.isArray(leaderboardRows)?leaderboardRows:[]).forEach(row=>{
+    if(row&&row.user_id!=null&&row.rank!=null)ranks.set(String(row.user_id),row.rank);
+  });
+  return ranks;
+}
 function renderPods(){
   const host=el("pods-content"),period=state.publicPods;
   if(!period){host.textContent="La asignación de esta jornada todavía no está publicada.";return;}
   if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar grupos en esta jornada.";return;}
   const resolved=period.resolution_status==="resolved",isUpcoming=state.publicPodsPeriodId&&state.publicPodsPeriodId!==state.cp;
   const pods=provisionalGroups(period,isUpcoming?null:activePeriodDetails());
+  const generalRanks=podGeneralRankByUser(sortedRows());
   const groupName=p=>"Grupo "+(Number(p.pod_id.replace(/^POD/i,""))||p.pod_id);
   const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
   const average=p=>p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{minimumFractionDigits:2,maximumFractionDigits:2}):"Pendiente";
@@ -1240,7 +1251,7 @@ function renderPods(){
    };
    slot.innerHTML='<div class="pod-h"><span class="pod-name">'+escapeHtml(groupName(p))+'</span><span>Promedio'+(resolved?' oficial':' provisional')+': '+average(p)+'</span></div>'+
     (resolved&&p.won?'<div class="pod-mod">★ Ganó el modificador. Solo sus integrantes participantes reciben los puntos publicados.</div>':'')+
-    '<div class="pod-card">'+p.members.map(m=>'<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="av">'+escapeHtml(initials(m.display_name,m.user_id))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+escapeHtml(memberStatus(m))+'</span></span><span class="mpts">'+(m.score!==null?fmt(m.score):'Pendiente')+'</span></button>').join('')+'</div>';
+    '<div class="pod-card"><div class="pod-table-head" aria-hidden="true"><span>Tabla</span><span>Participante</span><span>Puntos</span></div>'+p.members.map(m=>{const rank=generalRanks.get(String(m.user_id));return '<button type="button" style="width:100%;background:transparent;color:inherit;text-align:left;border:0" class="pod-mem'+(m.user_id===state.viewer?' you':'')+'" data-plr="'+escapeHtml(m.user_id)+'"><span class="pod-rank'+(rank==null?' unranked':'')+'" aria-label="'+(rank==null?'Sin posición en la tabla general':'Posición '+escapeHtml(rank)+' en la tabla general')+'">'+(rank==null?'—':'#'+fmt(rank))+'</span><span class="mn">'+escapeHtml(m.display_name)+(m.user_id===state.viewer?' · tú':'')+'<span class="mstat" style="display:block">'+escapeHtml(memberStatus(m))+'</span></span><span class="mpts">'+(m.score!==null?fmt(m.score):'Pendiente')+'</span></button>';}).join('')+'</div><p class="pod-cap">El número # corresponde a la tabla general acumulada.</p>';
    slot.querySelectorAll("[data-plr]").forEach(b=>b.onclick=()=>{selectPlayer(b.dataset.plr);go("perfil");});
   });
 }
