@@ -870,6 +870,7 @@ function publicCheckpointUrl(id){
 
 async function loadRuntime(){
   const url = new URL("betz-read-runtime.json", document.baseURI);
+  url.searchParams.set("_", Date.now());
   const r = await fetch(url, { credentials:"omit", cache:"no-store" });
   if(!r.ok) throw new Error("RUNTIME_HTTP_"+r.status);
   const runtime = await r.json();
@@ -887,7 +888,14 @@ async function loadRuntime(){
 
 async function getJSON(rel){
   // rel is relative to the data base (no leading slash), resolved same-origin.
+  // Cache-buster: GitHub Pages caching can serve a stale copy of one JSON file
+  // for a few minutes after a fresh publish while a sibling JSON file (fetched
+  // in the same page load) already reflects the new state -- producing a
+  // "torn read" across files (e.g. checkpoints.json says REG-2 but
+  // period_results.json/consensus.json still answer with old data, or vice
+  // versa). A unique query string per request forces a fresh fetch every time.
   const url = new URL(rel, DATA);
+  url.searchParams.set("_", Date.now());
   const r = await fetch(url, { credentials:"omit", cache:"no-store" });
   if(!r.ok) throw new Error("HTTP "+r.status+" "+rel);
   return r.json();
@@ -895,6 +903,7 @@ async function getJSON(rel){
 async function getRootJSON(rel){
   const url = new URL(rel, document.baseURI);
   if(url.origin!==location.origin) throw new Error("ROOT_CROSS_ORIGIN_BLOCKED");
+  url.searchParams.set("_", Date.now());
   const r = await fetch(url, { credentials:"omit", cache:"no-store" });
   if(!r.ok) throw new Error("HTTP "+r.status+" "+rel);
   return r.json();
@@ -1047,7 +1056,12 @@ async function loadCheckpoint(){
   ]);
   Object.assign(state,{teams,leaderboard,periodResults,context});
   state.periodDetailCache = {};
-  state.periodIndex = Math.max(0,(state.periodResults.periods||[]).length-1);
+  const scoredPeriods=(state.periodResults.periods||[]).slice();
+  const rollingPeriod=state.checkpoints&&state.checkpoints.rolling_period;
+  const checkpointIdForPeriod=period=>period&&period.season_type==="Regular Season"&&Number.isInteger(period.week)?"REG-"+period.week:period&&({"Wild Card":"WC","Divisional":"DIV","Conference Championship":"CC","Super Bowl":"SB"})[period.season_type];
+  if(rollingPeriod&&!scoredPeriods.some(period=>checkpointIdForPeriod(period)===checkpointIdForPeriod(rollingPeriod))) scoredPeriods.push(rollingPeriod);
+  const selectedPeriodIndex=scoredPeriods.findIndex(period=>checkpointIdForPeriod(period)===state.cp);
+  state.periodIndex = selectedPeriodIndex>=0?selectedPeriodIndex:Math.max(0,scoredPeriods.length-1);
   if((location.hash||"").replace("#/","")==="grupos") renderGrupos();
   // Pre-freeze checkpoints publish no analytics yet — skip those fetches so the console stays clean.
   const analyticsPublished = !/:PRE_FREEZE$/.test((state.leaderboard && state.leaderboard.cursor) || "");
@@ -1100,8 +1114,10 @@ function sortedRows(){
   return (state.leaderboard.leaderboard||[]).slice().sort((a,b)=> (a.rank??999)-(b.rank??999) || b.total_points-a.total_points);
 }
 function periods(){
-  const scored=(state.periodResults&&state.periodResults.periods)||[];
-  return scored.length?scored:(state.checkpoints&&state.checkpoints.rolling_period?[state.checkpoints.rolling_period]:[]);
+  const scored=((state.periodResults&&state.periodResults.periods)||[]).slice();
+  const rolling=state.checkpoints&&state.checkpoints.rolling_period;
+  if(rolling&&!scored.some(period=>periodCheckpointId(period)===periodCheckpointId(rolling))) scored.push(rolling);
+  return scored;
 }
 function activePeriod(){ return periods()[state.periodIndex]||null; }
 function selectedPeriodLabel(){ return activePeriod() ? periodLabel(activePeriod()) : checkpointLabel(state.cp); }
@@ -1171,8 +1187,8 @@ function renderTabla(){
   const p=activePeriod();
   periodNav("tabla-period","tabla-prev","tabla-next");
   const weekly=(p&&p.players||[]).slice().sort((a,b)=>(a.score_rank??999)-(b.score_rank??999)||String(a.user_id).localeCompare(String(b.user_id)));
-  el("weekly-leaderboard").innerHTML=leaderboardRowsHtml(weekly,r=>r.score&&r.score.total_points);
-  el("weekly-note").textContent=p?fmt(p.evaluated_match_count)+" partidos evaluados · "+(p.resolution&&p.resolution.winner_ids||[]).length+" ganador(es)":"Sin jornada publicada";
+  el("weekly-leaderboard").innerHTML=leaderboardRowsHtml(weekly,r=>r.score&&r.score.total_points)||'<div class="empty-contract"><span class="ec-title">Jornada en curso</span><p>La clasificación semanal se publica al quedar resuelta la jornada.</p></div>';
+  el("weekly-note").textContent=weekly.length?fmt(p.evaluated_match_count)+" partidos evaluados · "+(p.resolution&&p.resolution.winner_ids||[]).length+" ganador(es)":"Clasificación semanal pendiente";
   for(const host of [el("leaderboard"),el("weekly-leaderboard")]) host.querySelectorAll("[data-plr]").forEach(x=>x.onclick=()=>{selectPlayer(x.dataset.plr);go("perfil");});
 }
 
@@ -1344,8 +1360,8 @@ function matchMaps(){
     context:new Map(((state.context&&state.context.matches)||[]).map(m=>[m.match_id,m]))
   };
 }
-function scheduledMatchesForCheckpoint(){
-  const regular=/^REG-(\d+)$/.exec(String(state.cp||""));
+function scheduledMatchesForCheckpoint(period){
+  const regular=/^REG-(\d+)$/.exec(String(periodCheckpointId(period)||""));
   if(!regular) return [];
   const week=Number(regular[1]);
   return ((state.context&&state.context.matches)||[])
@@ -1366,10 +1382,15 @@ function renderPartidos(){
   periodNav("matches-period","matches-prev","matches-next");
   const maps=matchMaps(),detail=activePeriodDetails();
   const publishedDetails=Boolean(detail);
-  const visibleMatches=publishedDetails?detail.matches:scheduledMatchesForCheckpoint();
+  const publishedMatches=new Map(((detail&&detail.matches)||[]).map(match=>[match.match_id,match]));
+  const scheduled=scheduledMatchesForCheckpoint(activePeriod());
+  const scheduledIds=new Set(scheduled.map(match=>match.match_id));
+  const visibleMatches=scheduled.map(match=>publishedMatches.get(match.match_id)||match)
+    .concat(((detail&&detail.matches)||[]).filter(match=>!scheduledIds.has(match.match_id)));
   const cards=(visibleMatches||[]).map(md=>{
     const id=md.match_id,m=maps.context.get(id),ci=maps.intelligence.get(id),cp=maps.performance.get(id);
     if(!m) return "";
+    const matchPublished=publishedMatches.has(id);
     const home=m.home_team.abbreviation,away=m.away_team.abbreviation;
     const dist=new Map(((ci&&ci.distribution)||[]).map(x=>[x.team_id,x]));
     const hd=dist.get(home)||{prediction_count:0,prediction_rate:0};
@@ -1378,7 +1399,7 @@ function renderPartidos(){
     const final=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score)
       ? '<strong class="tnum" style="font-size:20px">'+away+' '+md.away_score+' – '+home+' '+md.home_score+'</strong><div style="color:var(--turq);font-size:12px">'+(md.home_score===md.away_score?'Final · Empate':'Final · Ganó '+(md.home_score>md.away_score?home:away))+'</div>'
       : 'Pendiente';
-    const ownCopy=!publishedDetails
+    const ownCopy=!matchPublished
       ? '<span class="you">Pronósticos visibles después del cierre</span>'
       : own&&own.answered
       ? '<span class="you">Pronóstico de '+escapeHtml(own.display_name||"este jugador")+': <b>'+escapeHtml(own.selected_team_id)+'</b></span>'
@@ -1391,11 +1412,11 @@ function renderPartidos(){
     return '<article class="mx" data-match="'+escapeHtml(id)+'"><div class="mx-top"><div class="pk-game">'+
       '<span class="tm" data-team="'+away+'">'+away+'</span><span class="x">vs</span><span class="tm" data-team="'+home+'">'+home+'</span></div>'+
       '<div class="mx-final">'+final+'</div></div>'+consensusHtml+
-      '<div class="mx-meta">'+ownCopy+consensusBadge(ci,cp)+(publishedDetails?'<span class="mx-go">Ver detalle ›</span>':'')+'</div></article>';
+      '<div class="mx-meta">'+ownCopy+consensusBadge(ci,cp)+(matchPublished?'<span class="mx-go">Ver detalle ›</span>':'')+'</div></article>';
   });
   el("matches-list").innerHTML=cards.join("")||'<div class="empty-contract"><span class="ec-title">Sin partidos publicados</span><p>Este periodo todavía no tiene consenso visible.</p></div>';
   paintTeams(el("matches-list"));
-  if(publishedDetails) el("matches-list").querySelectorAll("[data-match]").forEach(x=>x.onclick=()=>openMatch(x.dataset.match));
+  if(publishedDetails) el("matches-list").querySelectorAll("[data-match]").forEach(x=>{if(publishedMatches.has(x.dataset.match))x.onclick=()=>openMatch(x.dataset.match);});
 }
 el("matches-prev").onclick=()=>setPeriod(-1);
 el("matches-next").onclick=()=>setPeriod(1);
