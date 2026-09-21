@@ -1176,6 +1176,39 @@ function leaderboardRowsHtml(rows,pointsField){
       '<div class="rt">'+lead+'<span class="pw tnum">'+fmt(points)+'</span></div></div>';
   }).join("");
 }
+function provisionalWeeklyTable(detail){
+  const matches=(detail&&detail.matches)||[];
+  const evaluated=matches.filter(match=>Number.isInteger(match.home_score)&&Number.isInteger(match.away_score));
+  if(!evaluated.length) return { rows:[], evaluated_match_count:0, applicable_match_count:matches.length };
+
+  // These standings are derived only in the browser from already-published
+  // pick scores. They never persist a weekly result or declare a winner.
+  const rowsByUser=new Map();
+  const addPlayer=(userId,displayName)=>{
+    if(!userId) return null;
+    if(!rowsByUser.has(userId)) rowsByUser.set(userId,{user_id:userId,display_name:displayName||userId,score:{total_points:0}});
+    return rowsByUser.get(userId);
+  };
+  for(const row of (state.leaderboard.leaderboard||[])) addPlayer(row.user_id,row.display_name);
+  for(const match of matches){
+    const matchPublished=Number.isInteger(match.home_score)&&Number.isInteger(match.away_score);
+    for(const pick of (match.picks||[])){
+      if(pick.answered!==true) continue;
+      const row=addPlayer(pick.user_id,pick.display_name);
+      if(matchPublished&&Number.isFinite(pick.points_awarded)) row.score.total_points+=pick.points_awarded;
+    }
+  }
+  const rows=[...rowsByUser.values()].sort((a,b)=>
+    b.score.total_points-a.score.total_points||String(a.user_id).localeCompare(String(b.user_id))
+  );
+  let previousPoints=null,previousRank=0;
+  rows.forEach((row,index)=>{
+    row.score_rank=row.score.total_points===previousPoints?previousRank:index+1;
+    previousPoints=row.score.total_points;
+    previousRank=row.score_rank;
+  });
+  return { rows, evaluated_match_count:evaluated.length, applicable_match_count:matches.length };
+}
 function renderTabla(){
   const rows = sortedRows();
   const selected=rows.find(r=>r.user_id===state.player)||rows[0]||{};
@@ -1186,9 +1219,15 @@ function renderTabla(){
 
   const p=activePeriod();
   periodNav("tabla-period","tabla-prev","tabla-next");
-  const weekly=(p&&p.players||[]).slice().sort((a,b)=>(a.score_rank??999)-(b.score_rank??999)||String(a.user_id).localeCompare(String(b.user_id)));
-  el("weekly-leaderboard").innerHTML=leaderboardRowsHtml(weekly,r=>r.score&&r.score.total_points)||'<div class="empty-contract"><span class="ec-title">Jornada en curso</span><p>La clasificación semanal se publica al quedar resuelta la jornada.</p></div>';
-  el("weekly-note").textContent=weekly.length?fmt(p.evaluated_match_count)+" partidos evaluados · "+(p.resolution&&p.resolution.winner_ids||[]).length+" ganador(es)":"Clasificación semanal pendiente";
+  const official=(p&&p.players||[]).slice().sort((a,b)=>(a.score_rank??999)-(b.score_rank??999)||String(a.user_id).localeCompare(String(b.user_id)));
+  const provisional=official.length?null:provisionalWeeklyTable(activePeriodDetails());
+  const weekly=official.length?official:(provisional&&provisional.rows||[]);
+  el("weekly-leaderboard").innerHTML=leaderboardRowsHtml(weekly,r=>r.score&&r.score.total_points)||'<div class="empty-contract"><span class="ec-title">Jornada en curso</span><p>La tabla aparecerá al publicarse el primer resultado.</p></div>';
+  el("weekly-note").textContent=official.length
+    ? fmt(p.evaluated_match_count)+" partidos evaluados · "+(p.resolution&&p.resolution.winner_ids||[]).length+" ganador(es)"
+    : weekly.length
+      ? "Clasificación provisional · "+fmt(provisional.evaluated_match_count)+" de "+fmt(provisional.applicable_match_count)+" partidos evaluados · sin ganador oficial"
+      : "Clasificación semanal pendiente";
   for(const host of [el("leaderboard"),el("weekly-leaderboard")]) host.querySelectorAll("[data-plr]").forEach(x=>x.onclick=()=>{selectPlayer(x.dataset.plr);go("perfil");});
 }
 
