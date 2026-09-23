@@ -146,7 +146,7 @@
   .pk-res{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;justify-self:end}
   .pk-res.win{color:var(--green);background:rgba(47,227,138,.15)}
   .pk-res.loss{color:var(--coral);background:rgba(240,78,54,.15)}
-  .pk-lock{grid-column:1 / 3;margin-top:6px;font-size:11px;color:var(--gold);display:flex;align-items:center;gap:5px}
+  .pk-lock{grid-column:1 / -1;margin-top:6px;font-size:11px;color:var(--turq);display:flex;align-items:center;gap:5px}
   .pk-lock b{color:var(--txt)} .pk-lock .ok{color:var(--green)}
   .perf{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0 20px}
   .perf .box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px;text-align:center;cursor:pointer;transition:border-color .12s,transform .08s}
@@ -450,6 +450,50 @@
   .sheet p{color:var(--muted);font-size:13.5px;line-height:1.55}
   .sheet .src{display:block;margin-top:12px;font-size:11px;color:var(--faint)}
 
+  /* Comparar picks (misma jornada, solo partidos congelados; datos públicos de details.json) */
+  .cmp-btn{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);color:var(--txt);font:600 12px var(--body);padding:6px 10px;border-radius:999px;cursor:pointer}
+  .cmp-btn:active{transform:scale(.97)}
+  .cmp-btn svg{width:14px;height:14px}
+  .cmp-btn[hidden],.cmp-new[hidden],.cmp-callout[hidden]{display:none}
+  .cmp-new{font:700 9px/1 var(--body);letter-spacing:.5px;text-transform:uppercase;color:#04211E;background:var(--turq);padding:3px 6px;border-radius:999px}
+  .cmp-callout{display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(10,245,225,.35);background:var(--turq-dim);border-radius:12px;padding:10px 12px;margin-bottom:12px;font-size:12px;line-height:1.4}
+  .cmp-callout b{font-family:var(--display);font-size:13px;display:block;margin-bottom:2px}
+  .cmp-callout button{margin-left:auto;background:none;border:0;color:var(--muted);font-size:18px;line-height:1;cursor:pointer;padding:0 2px}
+  .cmp-actions{display:flex;gap:12px;align-items:center}
+  .cmp-actions button{background:none;border:0;font:600 12px var(--body);cursor:pointer;padding:2px 0}
+  .cmp-actions .chg{color:var(--turq)} .cmp-actions .out{color:var(--muted)}
+  .vs-tot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+  .vs-side{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .vs-side.r{align-items:flex-end;text-align:right}
+  .vs-side .nm{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .vs-side .v{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05;color:var(--txt)}
+  .vs-side.a .v{color:var(--turq)}
+  .vs-side .v small{font:600 11px var(--body);color:var(--muted);margin-left:3px}
+  .vs-mid{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;text-align:center}
+  .vs-mid .lead{display:block;margin-top:3px;font:700 10px var(--body);color:var(--txt);text-transform:none;letter-spacing:0}
+  .vs-sum{display:flex;gap:6px;padding:0 14px 12px;flex-wrap:wrap}
+  .vs-sum span{font-size:11px;color:var(--muted);background:var(--surface2);border-radius:999px;padding:3px 9px}
+  .vs-sum b{color:var(--txt)}
+  .wk-body.cmp .pk-row{grid-template-columns:minmax(0,1fr) 16px 74px;gap:8px}
+  .wk-body.cmp .pk-head{grid-template-columns:minmax(0,1fr) 74px}
+  .wk-body.cmp .pk-head .r3{justify-self:end}
+  .cmp-dot{font-size:12px;font-weight:700;text-align:center;color:var(--faint)}
+  .cmp-dot.w{color:var(--green)} .cmp-dot.l{color:var(--coral)}
+  .cmp-rival{display:flex;align-items:center;justify-content:flex-end;gap:5px}
+  .cmp-rival .none{font-size:11px;color:var(--faint);text-align:right}
+  .cmp-note{font-size:10.5px;color:var(--faint);text-align:center;padding:8px 0 2px}
+  #cmp-sheet .sheet{max-height:78vh;display:flex;flex-direction:column}
+  .cmp-sub{color:var(--muted);font-size:12px;line-height:1.4;margin:-4px 0 10px}
+  .cmp-search{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 11px;color:var(--txt);font:13px var(--body);margin-bottom:6px}
+  .cmp-list{overflow:auto;display:flex;flex-direction:column;min-height:0}
+  .cmp-plr{display:flex;align-items:center;gap:10px;padding:10px 4px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--txt);font:13px var(--body);text-align:left;cursor:pointer;width:100%}
+  .cmp-plr:last-child{border-bottom:0}
+  .cmp-plr:disabled{opacity:.4;cursor:default}
+  .cmp-plr .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-family:var(--display);color:#04211E;background:linear-gradient(135deg,var(--turq),#0bd3c3);flex:none}
+  .cmp-plr .yt{color:var(--faint)}
+  .cmp-plr .p{margin-left:auto;font-size:12px;color:var(--muted)} .cmp-plr .p b{color:var(--txt)}
+  .cmp-empty{font-size:12px;color:var(--muted);padding:10px 4px}
+
   /* Recovered product states */
   .season-summary{cursor:default}
   .season-summary:active{transform:none}
@@ -686,7 +730,8 @@
       <div class="chips" id="p-chips"></div>
       <div class="narr" id="p-di"></div>
 
-      <div class="sec-title"><h2>Sus pronósticos</h2><span class="hint">después del cierre</span></div>
+      <div class="cmp-callout" id="cmp-callout" hidden><div><b>Nuevo: compara tus picks</b>Elige a cualquier jugador y ve dónde coinciden y dónde se ganó o perdió la jornada.</div><button type="button" id="cmp-callout-x" aria-label="Cerrar aviso">×</button></div>
+      <div class="sec-title"><h2>Sus pronósticos</h2><button class="cmp-btn" id="cmp-open" type="button" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16M17 4v16M3 8h8M13 16h8"/></svg>Comparar<span class="cmp-new" id="cmp-new" hidden>Nuevo</span></button></div>
       <div id="p-picks"></div>
 
       <div class="sec-title" style="margin-top:8px"><h2>Cómo juega</h2><span class="hint">su temporada</span></div>
@@ -752,6 +797,17 @@
   <div id="match-detail" aria-live="polite"></div>
   <div id="grupo-detail" aria-live="polite" aria-hidden="true"></div>
   <div id="grupo-snap" aria-hidden="true"></div>
+
+  <!-- Comparar: elegir rival (jugadores con picks congelados en la jornada seleccionada) -->
+  <div class="sheet-bd" id="cmp-sheet" role="dialog" aria-modal="true" aria-labelledby="cmp-sheet-t">
+    <div class="sheet">
+      <div class="grip"></div>
+      <h3 id="cmp-sheet-t">Comparar con…</h3>
+      <p class="cmp-sub" id="cmp-sheet-sub"></p>
+      <input class="cmp-search" id="cmp-search" type="search" placeholder="Buscar jugador" autocomplete="off">
+      <div class="cmp-list" id="cmp-list"></div>
+    </div>
+  </div>
 
   <!-- Explain sheet (Analytics/Football Knowledge sources; read-only) -->
   <div class="sheet-bd" id="sheet">
@@ -844,7 +900,8 @@ const state = {
   context:null, periodDetailCache:{}, perf:{}, di:{}, diCompetition:{}, knowledge:null, teams:null,
   viewer:DEFAULT_PLAYER, player:DEFAULT_PLAYER, periodIndex:0,
   capturePeriodId:null, periodSettlements:null, publicPodsPeriodId:null,
-  podPickStatuses:null, podPickStatusesPeriodId:null
+  podPickStatuses:null, podPickStatusesPeriodId:null,
+  viewerKnown:false, rival:null
 };
 
 function checkpointLabel(id){
@@ -1002,11 +1059,17 @@ async function boot(){
   if(uParam){
     state.viewer=uParam;
     state.player=uParam;
+    state.viewerKnown=true;
+    rememberViewer(uParam);
     welcomeName=(param("n")||"").trim().slice(0,40);
     welcomeWanted=true;
     const cu=new URL(location.href);
     cu.searchParams.delete("u"); cu.searchParams.delete("n");
     history.replaceState(null,"",cu.pathname+cu.search+cu.hash);
+  }
+  if(!uParam){
+    const remembered=recallViewer();
+    if(remembered){ state.viewer=remembered; state.player=remembered; state.viewerKnown=true; }
   }
   const requested=legacyRequest||calendar.find(p=>checkpointSlug(p.period_id)===friendlyRequest)?.period_id||null;
   const requestedPeriod=calendar.find(period=>period.period_id===requested);
@@ -1236,6 +1299,7 @@ el("tabla-next").onclick=()=>setPeriod(1);
 
 function selectPlayer(userId){
   state.player = userId;
+  state.rival = null;
   const sel = el("player-select"); if(sel) sel.value = userId;
   renderTabla();
   renderPerfil();
@@ -1569,10 +1633,12 @@ const CONTRARIAN_TIER_LABELS = {
 //-----------------------------//
 function renderProfilePicks(){
   const host=el("p-picks"),period=activePeriod(),detail=activePeriodDetails();
+  renderCompareEntry(Boolean(period&&detail));
   if(!period||!detail){
     host.innerHTML='<div class="fk-empty"><b>Sin jornada publicada</b>No hay picks congelados disponibles para este corte.</div>';
     return;
   }
+  if(state.rival) return renderProfileCompare(host,period,detail);
   const maps=matchMaps();
   const rows=(detail.matches||[]).map(match=>{
     const context=maps.context.get(match.match_id);
@@ -1593,7 +1659,7 @@ function renderProfilePicks(){
           ? '<span class="pk-res loss">✕ '+fmt(pick.points_awarded)+'</span>'
           : '<span class="pk-res">pendiente</span>';
     const lock=pick&&pick.lock
-      ? '<div class="pk-lock">📌 Fijado · marcador pronosticado <b>'+fmt(pick.predicted_home_score)+'–'+fmt(pick.predicted_away_score)+'</b></div>'
+      ? '<div class="pk-lock">📌 Fijado · marcador pronosticado <b>'+fmt(pick.predicted_away_score)+'–'+fmt(pick.predicted_home_score)+'</b></div>'
       : "";
     return '<div class="pk-row" data-match="'+escapeHtml(match.match_id)+'"><div class="pk-game">'+
       teamBadge(away)+'<span class="x">vs</span>'+teamBadge(home)+'</div>'+result+lock+'</div>';
@@ -1609,6 +1675,131 @@ function renderProfilePicks(){
     openMatch(row.dataset.match);
   });
 }
+
+//-----------------------------//
+// Comparar picks: jugador del perfil (A) vs rival (B), jornada seleccionada.
+// Solo datos públicos de details.json (partidos ya congelados) + period_results.
+// El "yo" es el user_id PÚBLICO de ?u= recordado en el dispositivo (nunca la llave ?k).
+//-----------------------------//
+const COMPARE_NEW_PERIOD = "REG-3";   // "Nuevo" solo mientras la captura abierta es REG-3
+function viewerStorageKey(){
+  const rt=state.runtime||{};
+  return "betz_viewer:"+String(rt.environment||"")+":"+String(rt.competition_id||"");
+}
+function rememberViewer(userId){ try{ window.localStorage.setItem(viewerStorageKey(), String(userId)); }catch(e){} }
+function recallViewer(){
+  try{ const v=window.localStorage.getItem(viewerStorageKey()); return v&&v.trim()?v.trim().slice(0,80):""; }catch(e){ return ""; }
+}
+function compareIsNew(){ return state.capturePeriodId===COMPARE_NEW_PERIOD; }
+function compareCalloutDismissed(){ try{ return window.localStorage.getItem("betz_compare_new_seen:"+COMPARE_NEW_PERIOD)==="1"; }catch(e){ return false; } }
+function dismissCompareCallout(){ try{ window.localStorage.setItem("betz_compare_new_seen:"+COMPARE_NEW_PERIOD,"1"); }catch(e){} el("cmp-callout").hidden=true; }
+function periodPickers(detail){
+  const seen=new Map();
+  for(const match of (detail&&detail.matches)||[]) for(const pick of match.picks||[]){
+    if(pick.answered===true && !seen.has(pick.user_id)) seen.set(pick.user_id,{user_id:pick.user_id,display_name:pick.display_name||pick.user_id});
+  }
+  return [...seen.values()];
+}
+function playerDisplayName(userId){
+  const detail=activePeriodDetails();
+  for(const match of (detail&&detail.matches)||[]){ const pick=(match.picks||[]).find(x=>x.user_id===userId); if(pick&&pick.display_name) return pick.display_name; }
+  const row=(state.leaderboard&&state.leaderboard.leaderboard||[]).find(r=>r.user_id===userId);
+  return row&&row.display_name||userId;
+}
+function weeklyPoints(period,userId){
+  const row=periodPlayer(period,userId);
+  return row&&row.score&&row.score.total_points!=null ? row.score.total_points : null;
+}
+function renderCompareEntry(available){
+  const btn=el("cmp-open"), fresh=compareIsNew();
+  btn.hidden=!available||Boolean(state.rival);
+  el("cmp-new").hidden=!fresh;
+  el("cmp-callout").hidden=!(available&&fresh&&!state.rival&&!compareCalloutDismissed());
+}
+function startCompare(){
+  betzEvent("compare_open");
+  if(compareIsNew()) dismissCompareCallout();
+  // Perfil ajeno + "yo" conocido: atajo directo contra mí. Si no, lista.
+  if(state.viewerKnown && state.player!==state.viewer){ setRival(state.viewer); return; }
+  openCompareSheet();
+}
+function setRival(userId){
+  state.rival=userId||null;
+  if(userId){ betzEvent("compare_set"); betzTag("compared","yes"); }
+  renderProfilePicks();
+}
+function openCompareSheet(){
+  el("cmp-search").value="";
+  el("cmp-sheet-sub").textContent="Picks de "+playerDisplayName(state.player)+" contra otro jugador · "+selectedPeriodLabel()+".";
+  renderCompareList();
+  el("cmp-sheet").classList.add("on");
+}
+function closeCompareSheet(){ el("cmp-sheet").classList.remove("on"); }
+function renderCompareList(){
+  const period=activePeriod(), detail=activePeriodDetails();
+  const q=el("cmp-search").value.trim().toLowerCase();
+  const list=periodPickers(detail)
+    .filter(p=>!q||String(p.display_name).toLowerCase().includes(q))
+    .sort((a,b)=>(state.viewerKnown&&b.user_id===state.viewer)-(state.viewerKnown&&a.user_id===state.viewer)||String(a.display_name).localeCompare(String(b.display_name),"es"));
+  el("cmp-list").innerHTML=list.length ? list.map(p=>{
+    const me=state.viewerKnown&&p.user_id===state.viewer, pts=weeklyPoints(period,p.user_id);
+    return '<button class="cmp-plr" type="button" data-rival="'+escapeHtml(p.user_id)+'"'+(p.user_id===state.player?' disabled':'')+'>'+
+      '<span class="av">'+escapeHtml(initials(p.display_name,p.user_id))+'</span>'+
+      '<span class="nm">'+escapeHtml(p.display_name)+(me?'<span class="yt"> (tú)</span>':'')+'</span>'+
+      '<span class="p">'+(pts==null?'—':'<b>'+fmt(pts)+'</b> pts')+'</span></button>';
+  }).join("") : '<div class="cmp-empty">No hay jugadores con ese nombre en esta jornada.</div>';
+}
+function renderProfileCompare(host,period,detail){
+  const maps=matchMaps(), A=state.player, B=state.rival;
+  const nameA=playerDisplayName(A), nameB=playerDisplayName(B);
+  let same=0,diff=0,none=0;
+  const mark=pick=>{
+    if(!pick||!pick.answered) return '<span class="cmp-dot">–</span>';
+    if(pick.correct===true) return '<span class="cmp-dot w" aria-label="acertó">✓</span>';
+    if(pick.correct===false) return '<span class="cmp-dot l" aria-label="falló">✕</span>';
+    return '<span class="cmp-dot" aria-label="pendiente">·</span>';
+  };
+  const lockLine=(pick,name)=>pick&&pick.lock
+    ? '<div class="pk-lock">📌 '+escapeHtml(name)+' fijó · <b>'+fmt(pick.predicted_away_score)+'–'+fmt(pick.predicted_home_score)+'</b></div>' : "";
+  const rows=(detail.matches||[]).map(match=>{
+    const context=maps.context.get(match.match_id);
+    if(!context) return "";
+    const pa=(match.picks||[]).find(x=>x.user_id===A), pb=(match.picks||[]).find(x=>x.user_id===B);
+    const home=context.home_team.abbreviation, away=context.away_team.abbreviation;
+    const a=pa&&pa.answered?pa.selected_team_id:null, b=pb&&pb.answered?pb.selected_team_id:null;
+    if(!b) none++; else if(a===b) same++; else diff++;
+    const badge=team=>'<span class="tm'+(a===team?' pick':'')+'" data-team="'+escapeHtml(team)+'"'+(a===team?' aria-label="'+escapeHtml(team)+', pick de '+escapeHtml(nameA)+'"':'')+'>'+escapeHtml(team)+'</span>';
+    const rival=b
+      ? '<span class="tm" data-team="'+escapeHtml(b)+'" aria-label="'+escapeHtml(b)+', pick de '+escapeHtml(nameB)+'">'+escapeHtml(b)+'</span>'+mark(pb)
+      : '<span class="none">sin pick</span>';
+    return '<div class="pk-row" data-match="'+escapeHtml(match.match_id)+'"><div class="pk-game">'+badge(away)+'<span class="x">vs</span>'+badge(home)+'</div>'+
+      mark(pa)+'<span class="cmp-rival">'+rival+'</span>'+lockLine(pa,nameA)+lockLine(pb,nameB)+'</div>';
+  }).join("");
+  const sa=weeklyPoints(period,A), sb=weeklyPoints(period,B);
+  const lead=(sa==null||sb==null)?"":(sa===sb?"Empate":(sa>sb?nameA:nameB)+" +"+fmt(Math.abs(sa-sb)));
+  const side=(cls,name,pts)=>'<div class="vs-side '+cls+'"><span class="nm">'+escapeHtml(name)+'</span><span class="v tnum">'+fmt(pts)+(pts==null?'':'<small>pts</small>')+'</span></div>';
+  host.innerHTML='<div class="wk open"><div class="wk-head"><div class="l"><span class="wname">'+escapeHtml(periodLabel(period))+'</span></div>'+
+    '<div class="cmp-actions"><button type="button" class="chg" data-cmp="change">Cambiar</button><button type="button" class="out" data-cmp="exit" aria-label="Salir de la comparación">Salir ✕</button></div></div>'+
+    '<div class="vs-tot">'+side("a",nameA,sa)+'<div class="vs-mid">vs'+(lead?'<span class="lead">'+escapeHtml(lead)+'</span>':'')+'</div>'+side("r",nameB,sb)+'</div>'+
+    '<div class="vs-sum"><span>Coinciden <b>'+same+'</b></span><span>Difieren <b>'+diff+'</b></span>'+(none?'<span>Sin pick <b>'+none+'</b></span>':'')+'</div>'+
+    '<div class="wk-body cmp"><div class="pk-legend"><span class="pk-legend-mark" aria-hidden="true"></span><span>pick de '+escapeHtml(nameA)+'</span></div>'+
+    '<div class="pk-head"><span>Partido</span><span class="r3">'+escapeHtml(nameB)+'</span></div>'+rows+
+    '<div class="cmp-note">Solo se comparan partidos ya cerrados.</div></div></div>';
+  paintTeams(host);
+  host.querySelector('[data-cmp="change"]').onclick=openCompareSheet;
+  host.querySelector('[data-cmp="exit"]').onclick=()=>setRival(null);
+  host.querySelectorAll("[data-match]").forEach(row=>row.onclick=()=>{
+    go("partidos");
+    openMatch(row.dataset.match);
+  });
+}
+el("cmp-open").onclick=startCompare;
+el("cmp-callout-x").onclick=dismissCompareCallout;
+el("cmp-search").oninput=renderCompareList;
+el("cmp-sheet").addEventListener("click", e=>{
+  if(e.target===el("cmp-sheet")){ closeCompareSheet(); return; }
+  const b=e.target.closest("[data-rival]"); if(b&&!b.disabled){ closeCompareSheet(); setRival(b.dataset.rival); }
+});
 
 function renderPerfil(){
   el("my-predictions-nav").hidden = state.player !== state.viewer;
