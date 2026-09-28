@@ -51,7 +51,7 @@
     {
       "rule_id": "modifier.pod",
       "title": "Grupos aleatorios",
-      "body": "En cada jornada, BETZ sortea grupos equilibrados de al menos 5 jugadores. El grupo con el mejor promedio de puntos base gana +1 por integrante activo."
+      "body": "En cada jornada, BETZ sortea grupos equilibrados de al menos 5 jugadores. El grupo con el mejor promedio de puntos base gana +1 por cada integrante que participó. Un integrante activo que no participe cuenta como 0 en el promedio y no recibe el punto."
     },
     {
       "rule_id": "modifier.perfect_week",
@@ -101,7 +101,8 @@
         "lock_winner_bonus"
       ],
       "active_participant_definition": "Al menos un pronóstico congelado en la jornada",
-      "non_participant_behavior": "No entra al promedio y no recibe el punto adicional",
+      "non_participant_behavior": "Mientras siga activo, cuenta como 0 en el promedio y no recibe el punto adicional",
+      "future_draw_exclusion_after_consecutive_absences": 3,
       "winner_resolution": "El grupo o grupos con el promedio más alto",
       "tied_winning_groups_receive_award": true,
       "award_points_per_active_member": 1,
@@ -114,12 +115,12 @@
         {
           "sequence": 2,
           "title": "Calcula el promedio",
-          "body": "Suma los puntos base de los integrantes activos y los divide entre quienes sí participaron."
+          "body": "Suma los puntos base de quienes participaron y cuenta como 0 a cada integrante activo ausente. El total se divide entre todos los integrantes activos asignados al grupo."
         },
         {
           "sequence": 3,
           "title": "El mejor grupo suma +1",
-          "body": "Cada integrante activo del grupo con mayor promedio recibe 1 punto adicional. Si hay empate, ganan todos los grupos empatados."
+          "body": "Cada integrante que participó en el grupo con mayor promedio recibe 1 punto adicional. Los ausentes no lo reciben. Si hay empate, ganan todos los grupos empatados."
         }
       ],
       "example": {

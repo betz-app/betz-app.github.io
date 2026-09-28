@@ -1312,6 +1312,7 @@ function selectPlayer(userId){
 function provisionalGroups(period, detail){
   if(period.resolution_status === "resolved") return period.pods;
   if(!detail) return period.pods;
+  const absenceCountsAsZero=period.non_participant_average_policy==="include_as_zero";
   const matches=detail.matches||[];
   const evaluated=matches.some(m=>Number.isInteger(m.home_score)&&Number.isInteger(m.away_score));
   const groups=period.pods.map(p=>{
@@ -1326,11 +1327,12 @@ function provisionalGroups(period, detail){
           else missing=true;
         }
       }
-      return {...member,participated,score:participated&&!missing?score:null};
+      return {...member,participated,included_in_pod_average:participated||absenceCountsAsZero,score:participated&&!missing?score:null};
     });
     const active=members.filter(m=>m.participated);
-    const pod_score=active.length&&active.every(m=>m.score!==null)?active.reduce((s,m)=>s+m.score,0)/active.length:null;
-    return {...p,members,pod_score,participating_member_count:active.length,provisional:true};
+    const averageMembers=members.filter(m=>m.included_in_pod_average);
+    const pod_score=averageMembers.length&&active.every(m=>m.score!==null)?active.reduce((s,m)=>s+m.score,0)/averageMembers.length:null;
+    return {...p,members,pod_score,participating_member_count:active.length,average_member_count:averageMembers.length,provisional:true};
   });
   const calculable=groups.filter(p=>p.pod_score!==null);
   const best=calculable.length?Math.max(...calculable.map(p=>p.pod_score)):null;
@@ -1348,16 +1350,17 @@ function renderPods(){
   if(!period){host.textContent="La asignación de esta jornada todavía no está publicada.";return;}
   if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar grupos en esta jornada.";return;}
   const resolved=period.resolution_status==="resolved",isUpcoming=state.publicPodsPeriodId&&state.publicPodsPeriodId!==state.cp;
+  const absenceCountsAsZero=period.non_participant_average_policy==="include_as_zero";
   const pods=provisionalGroups(period,isUpcoming?null:activePeriodDetails());
   const generalRanks=podGeneralRankByUser(sortedRows());
   const groupName=p=>"Grupo "+(Number(p.pod_id.replace(/^POD/i,""))||p.pod_id);
   const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
   const average=p=>p.pod_score!==null?Number(p.pod_score).toLocaleString("es-MX",{minimumFractionDigits:2,maximumFractionDigits:2}):"Pendiente";
-  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(groupName(p))+(own?' · Tu grupo':'')+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span>'+(own?'<span class="pg-caption">Promedio '+(resolved?'oficial':'provisional')+'</span>':'')+'<span class="pg-sub">'+(resolved?(p.won?'Ganador de la jornada · ':'')+p.participating_member_count+'/'+p.members.length+' participaron':(p.leading?'Lidera provisionalmente · ':own?'':'Promedio provisional · ')+p.members.length+' integrantes')+'</span></button>';
+  const card=(p,own)=>'<button type="button" class="'+(own?'mypod-card':'podg')+'" data-pod="'+escapeHtml(p.pod_id)+'" aria-expanded="false"><span class="pg-name">'+escapeHtml(groupName(p))+(own?' · Tu grupo':'')+(resolved&&p.won?' ★':'')+'</span><span class="pg-avg">'+average(p)+'</span>'+(own?'<span class="pg-caption">Promedio '+(resolved?'oficial':'provisional')+'</span>':'')+'<span class="pg-sub">'+(resolved?(p.won?'Ganador de la jornada · ':'')+p.participating_member_count+'/'+p.members.length+' participaron'+(absenceCountsAsZero?' · promedio entre '+p.average_member_count:''):(p.leading?'Lidera provisionalmente · ':own?'':'Promedio provisional · ')+p.members.length+' integrantes')+'</span></button>';
   host.innerHTML='<p class="pod-cap">'+escapeHtml(checkpointLabel(state.publicPodsPeriodId||state.cp))+(isUpcoming?' · Próxima jornada':'')+' · Asignación original.</p>'+
    (mine?'<div id="my-pod">'+card(mine,true)+'</div><div id="my-pod-inline"></div>':'')+
    '<div class="pod-label">'+(mine?'Otros grupos':'Grupos de la jornada')+'</div><div class="podgrid">'+pods.filter(p=>p!==mine).map(p=>card(p,false)).join('')+'</div><div id="pod-inline"></div>'+
-   '<p class="pod-cap">El promedio usa puntos base de quienes participaron, antes de modificadores. Los ausentes no promedian ni reciben el modificador. Los ganadores aparecen con la resolución oficial.</p>';
+   '<p class="pod-cap">'+(absenceCountsAsZero?'El promedio usa los puntos base antes de modificadores y cuenta como 0 a cada integrante que no participó. El ausente no recibe el modificador.':'El promedio usa puntos base de quienes participaron, antes de modificadores. Los ausentes no promedian ni reciben el modificador.')+' Los ganadores aparecen con la resolución oficial.</p>';
   host.querySelectorAll("[data-pod]").forEach(button=>button.onclick=()=>{
    const p=pods.find(p=>p.pod_id===button.dataset.pod),wasOpen=button.getAttribute("aria-expanded")==="true";
    host.querySelectorAll("[data-pod]").forEach(b=>b.setAttribute("aria-expanded","false"));
@@ -1370,7 +1373,7 @@ function renderPods(){
     const pickStatus=pickStatusFor(m);
     if(pickStatus==="SUBMITTED")return "Pick enviado";
     if(pickStatus==="PENDING")return "Pick pendiente";
-    return resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):'No participó · fuera del promedio'):(m.participated?'Puntos base publicados · provisional':'Sin participación publicada');
+    return resolved?(m.participated?'Modificador: +'+fmt(m.modifier_points):(m.included_in_pod_average?'No participó · cuenta 0 en el promedio':'No participó · fuera del promedio')):(m.participated?'Puntos base publicados · provisional':(absenceCountsAsZero?'Sin participación · cuenta 0 provisionalmente':'Sin participación publicada · fuera del promedio'));
    };
    slot.innerHTML='<div class="pod-h"><span class="pod-name">'+escapeHtml(groupName(p))+'</span><span>Promedio'+(resolved?' oficial':' provisional')+': '+average(p)+'</span></div>'+
     (resolved&&p.won?'<div class="pod-mod">★ Ganó el modificador. Solo sus integrantes participantes reciben los puntos publicados.</div>':'')+

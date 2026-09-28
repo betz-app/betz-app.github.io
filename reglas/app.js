@@ -151,9 +151,9 @@ function render(rules) {
             ${sampleGroup(randomGroup.example.group_a, randomGroup.example.winner)}
             ${sampleGroup(randomGroup.example.group_b, randomGroup.example.winner)}
           </div>
-          <div class="group-award"><span>${esc(randomGroup.example.winner)}</span><strong>+${esc(randomGroup.award_points_per_active_member)} para cada integrante activo</strong></div>
+          <div class="group-award"><span>${esc(randomGroup.example.winner)}</span><strong>+${esc(randomGroup.award_points_per_active_member)} para cada integrante que participó</strong></div>
         </div>
-        <p class="group-footnote">Si alguien no participa en la jornada, no baja el promedio: queda fuera del cálculo y tampoco recibe el punto del grupo.</p>
+        <p class="group-footnote">Mientras siga activo, quien no participe cuenta como 0 y baja el promedio de su grupo; tampoco recibe el punto. Después de 3 ausencias consecutivas queda fuera de los siguientes sorteos.</p>
       </article>
 
       <article class="example-card">
