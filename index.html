@@ -125,6 +125,8 @@
   .wk-head .l{display:flex;align-items:center;gap:9px}
   .wk-head .wname{font-family:var(--display);font-size:14px}
   .wk-head .pts{font-size:12px;color:var(--muted)} .wk-head .pts b{color:var(--txt)}
+  .wk-head .pts.provisional{display:flex;flex-direction:column;align-items:flex-end;line-height:1.15}
+  .wk-head .pts.provisional small{font-size:9px;color:var(--faint);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
   .wk-body{display:none;border-top:1px solid var(--line);padding:6px 14px 12px}
   .wk.open .wk-body{display:block}
   .wk.locked .wk-head{color:var(--muted)}
@@ -469,6 +471,7 @@
   .vs-side .v{font-family:var(--display);font-weight:700;font-size:26px;line-height:1.05;color:var(--txt)}
   .vs-side.a .v{color:var(--turq)}
   .vs-side .v small{font:600 11px var(--body);color:var(--muted);margin-left:3px}
+  .vs-side .sub{font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.04em}
   .vs-mid{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px;text-align:center}
   .vs-mid .lead{display:block;margin-top:3px;font:700 10px var(--body);color:var(--txt);text-transform:none;letter-spacing:0}
   .vs-sum{display:flex;gap:6px;padding:0 14px 12px;flex-wrap:wrap}
@@ -491,7 +494,8 @@
   .cmp-plr:disabled{opacity:.4;cursor:default}
   .cmp-plr .av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:700;font-family:var(--display);color:#04211E;background:linear-gradient(135deg,var(--turq),#0bd3c3);flex:none}
   .cmp-plr .yt{color:var(--faint)}
-  .cmp-plr .p{margin-left:auto;font-size:12px;color:var(--muted)} .cmp-plr .p b{color:var(--txt)}
+  .cmp-plr .p{margin-left:auto;font-size:12px;color:var(--muted);text-align:right} .cmp-plr .p b{color:var(--txt)}
+  .cmp-plr .p small{display:block;font-size:9px;color:var(--faint)}
   .cmp-empty{font-size:12px;color:var(--muted);padding:10px 4px}
 
   /* Recovered product states */
@@ -1664,9 +1668,9 @@ function renderProfilePicks(){
     return '<div class="pk-row" data-match="'+escapeHtml(match.match_id)+'"><div class="pk-game">'+
       teamBadge(away)+'<span class="x">vs</span>'+teamBadge(home)+'</div>'+result+lock+'</div>';
   }).join("");
-  const weekly=periodPlayer(period,state.player);
-  const points=weekly&&weekly.score ? '<b>'+fmt(weekly.score.total_points)+'</b> pts' : "—";
-  host.innerHTML='<div class="wk open"><div class="wk-head"><div class="l"><span class="wname">'+escapeHtml(periodLabel(period))+'</span></div><span class="pts tnum">'+points+'</span></div>'+
+  const score=weeklyPoints(period,state.player,detail);
+  const points=score ? '<b>'+fmt(score.points)+'</b> pts'+(score.provisional?'<small>subtotal provisional</small>':'') : "—";
+  host.innerHTML='<div class="wk open"><div class="wk-head"><div class="l"><span class="wname">'+escapeHtml(periodLabel(period))+'</span></div><span class="pts tnum'+(score&&score.provisional?' provisional':'')+'">'+points+'</span></div>'+
     '<div class="wk-body"><div class="pk-legend" aria-label="El contorno turquesa identifica tu pick"><span class="pk-legend-mark" aria-hidden="true"></span><span>tu pick</span></div>'+
     '<div class="pk-head"><span>Partido</span><span class="r3">Resultado</span></div>'+rows+'</div></div>';
   paintTeams(host);
@@ -1700,15 +1704,28 @@ function periodPickers(detail){
   }
   return [...seen.values()];
 }
+function publishedPointsSubtotal(detail,userId){
+  let points=0,evaluatedMatchCount=0;
+  for(const match of (detail&&detail.matches)||[]){
+    const pick=(match.picks||[]).find(x=>x.user_id===userId);
+    if(!pick||pick.answered!==true||!Number.isFinite(pick.points_awarded)) continue;
+    points+=pick.points_awarded;
+    evaluatedMatchCount++;
+  }
+  return evaluatedMatchCount ? {points,provisional:true,evaluated_match_count:evaluatedMatchCount} : null;
+}
 function playerDisplayName(userId){
   const detail=activePeriodDetails();
   for(const match of (detail&&detail.matches)||[]){ const pick=(match.picks||[]).find(x=>x.user_id===userId); if(pick&&pick.display_name) return pick.display_name; }
   const row=(state.leaderboard&&state.leaderboard.leaderboard||[]).find(r=>r.user_id===userId);
   return row&&row.display_name||userId;
 }
-function weeklyPoints(period,userId){
+function weeklyPoints(period,userId,detail){
   const row=periodPlayer(period,userId);
-  return row&&row.score&&row.score.total_points!=null ? row.score.total_points : null;
+  if(row&&row.score&&row.score.total_points!=null){
+    return {points:row.score.total_points,provisional:false,evaluated_match_count:period.evaluated_match_count||null};
+  }
+  return publishedPointsSubtotal(detail,userId);
 }
 function renderCompareEntry(available){
   const btn=el("cmp-open"), fresh=compareIsNew();
@@ -1742,11 +1759,11 @@ function renderCompareList(){
     .filter(p=>!q||String(p.display_name).toLowerCase().includes(q))
     .sort((a,b)=>(state.viewerKnown&&b.user_id===state.viewer)-(state.viewerKnown&&a.user_id===state.viewer)||String(a.display_name).localeCompare(String(b.display_name),"es"));
   el("cmp-list").innerHTML=list.length ? list.map(p=>{
-    const me=state.viewerKnown&&p.user_id===state.viewer, pts=weeklyPoints(period,p.user_id);
+    const me=state.viewerKnown&&p.user_id===state.viewer, score=weeklyPoints(period,p.user_id,detail);
     return '<button class="cmp-plr" type="button" data-rival="'+escapeHtml(p.user_id)+'"'+(p.user_id===state.player?' disabled':'')+'>'+
       '<span class="av">'+escapeHtml(initials(p.display_name,p.user_id))+'</span>'+
       '<span class="nm">'+escapeHtml(p.display_name)+(me?'<span class="yt"> (tú)</span>':'')+'</span>'+
-      '<span class="p">'+(pts==null?'—':'<b>'+fmt(pts)+'</b> pts')+'</span></button>';
+      '<span class="p">'+(!score?'—':'<b>'+fmt(score.points)+'</b> pts'+(score.provisional?'<small>subtotal provisional</small>':''))+'</span></button>';
   }).join("") : '<div class="cmp-empty">No hay jugadores con ese nombre en esta jornada.</div>';
 }
 function renderProfileCompare(host,period,detail){
@@ -1775,16 +1792,17 @@ function renderProfileCompare(host,period,detail){
     return '<div class="pk-row" data-match="'+escapeHtml(match.match_id)+'"><div class="pk-game">'+badge(away)+'<span class="x">vs</span>'+badge(home)+'</div>'+
       mark(pa)+'<span class="cmp-rival">'+rival+'</span>'+lockLine(pa,nameA)+lockLine(pb,nameB)+'</div>';
   }).join("");
-  const sa=weeklyPoints(period,A), sb=weeklyPoints(period,B);
+  const scoreA=weeklyPoints(period,A,detail), scoreB=weeklyPoints(period,B,detail);
+  const sa=scoreA&&scoreA.points, sb=scoreB&&scoreB.points;
   const lead=(sa==null||sb==null)?"":(sa===sb?"Empate":(sa>sb?nameA:nameB)+" +"+fmt(Math.abs(sa-sb)));
-  const side=(cls,name,pts)=>'<div class="vs-side '+cls+'"><span class="nm">'+escapeHtml(name)+'</span><span class="v tnum">'+fmt(pts)+(pts==null?'':'<small>pts</small>')+'</span></div>';
+  const side=(cls,name,score)=>'<div class="vs-side '+cls+'"><span class="nm">'+escapeHtml(name)+'</span><span class="v tnum">'+fmt(score&&score.points)+(!score?'':'<small>pts</small>')+'</span>'+(score&&score.provisional?'<span class="sub">subtotal provisional</span>':'')+'</div>';
   host.innerHTML='<div class="wk open"><div class="wk-head"><div class="l"><span class="wname">'+escapeHtml(periodLabel(period))+'</span></div>'+
     '<div class="cmp-actions"><button type="button" class="chg" data-cmp="change">Cambiar</button><button type="button" class="out" data-cmp="exit" aria-label="Salir de la comparación">Salir ✕</button></div></div>'+
-    '<div class="vs-tot">'+side("a",nameA,sa)+'<div class="vs-mid">vs'+(lead?'<span class="lead">'+escapeHtml(lead)+'</span>':'')+'</div>'+side("r",nameB,sb)+'</div>'+
+    '<div class="vs-tot">'+side("a",nameA,scoreA)+'<div class="vs-mid">vs'+(lead?'<span class="lead">'+escapeHtml(lead)+'</span>':'')+'</div>'+side("r",nameB,scoreB)+'</div>'+
     '<div class="vs-sum"><span>Coinciden <b>'+same+'</b></span><span>Difieren <b>'+diff+'</b></span>'+(none?'<span>Sin pick <b>'+none+'</b></span>':'')+'</div>'+
     '<div class="wk-body cmp"><div class="pk-legend"><span class="pk-legend-mark" aria-hidden="true"></span><span>pick de '+escapeHtml(nameA)+'</span></div>'+
     '<div class="pk-head"><span>Partido</span><span class="r3">'+escapeHtml(nameB)+'</span></div>'+rows+
-    '<div class="cmp-note">Solo se comparan partidos ya cerrados.</div></div></div>';
+    '<div class="cmp-note">El subtotal provisional suma solo puntos ya publicados; no define al ganador de la jornada.</div></div></div>';
   paintTeams(host);
   host.querySelector('[data-cmp="change"]').onclick=openCompareSheet;
   host.querySelector('[data-cmp="exit"]').onclick=()=>setRival(null);
