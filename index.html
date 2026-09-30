@@ -903,7 +903,7 @@ const state = {
   runtime:null, checkpoints:null, cp:null, leaderboard:null, periodResults:null,
   context:null, periodDetailCache:{}, perf:{}, di:{}, diCompetition:{}, knowledge:null, teams:null,
   viewer:DEFAULT_PLAYER, player:DEFAULT_PLAYER, periodIndex:0,
-  capturePeriodId:null, periodSettlements:null, publicPodsPeriodId:null,
+  capturePeriodId:null, periodSettlements:null, publicPodsProjection:null, publicPodsPeriodId:null,
   podPickStatuses:null, podPickStatusesPeriodId:null,
   viewerKnown:false, rival:null
 };
@@ -979,11 +979,62 @@ function pct(v){ return Number.isFinite(v) ? (Math.round(v*1000)/10)+"%" : "—"
 //-----------------------------//
 const nav = el("nav");
 nav.innerHTML = TABS.map(([r,l])=>'<button data-go="'+r+'">'+(ICONS[r]||"")+'<span>'+l+'</span></button>').join("");
+function currentRoute(){ return (location.hash||"#/perfil").replace("#/",""); }
+function podPeriodAvailable(periodId){
+  const periods=state.publicPodsProjection&&state.publicPodsProjection.periods;
+  return Boolean(periods&&periods[periodId]);
+}
+function selectorCurrentPeriodId(){
+  return state.capturePeriodId||(state.checkpoints&&state.checkpoints.current_period_id)||null;
+}
+function podPeriodIsUpcoming(periodId){
+  const calendar=(state.checkpoints&&state.checkpoints.calendar)||[];
+  const current=selectorCurrentPeriodId();
+  const selected=calendar.find(period=>period.period_id===periodId);
+  const currentPeriod=calendar.find(period=>period.period_id===current);
+  return Boolean(selected&&currentPeriod&&selected.period_ordinal>currentPeriod.period_ordinal);
+}
+function renderCheckpointBar(route=currentRoute()){
+  if(!state.checkpoints)return;
+  const calendar=state.checkpoints.calendar||[];
+  const published=new Set((state.checkpoints.checkpoints||[]).map(checkpoint=>checkpoint.period_id));
+  const current=selectorCurrentPeriodId();
+  const currentOrdinal=calendar.find(period=>period.period_id===current)?.period_ordinal;
+  const podsRoute=route==="pods";
+  const selected=podsRoute?(state.publicPodsPeriodId||state.cp):state.cp;
+  el("cpbar").innerHTML=calendar.map(period=>{
+    const pid=period.period_id,isCurrent=pid===current,isSelected=pid===selected;
+    const available=podsRoute?podPeriodAvailable(pid):period.available&&published.has(pid);
+    const classes="fbtn"+(isSelected?" on":"")+(isCurrent?" current":"");
+    const tag=isCurrent?"Actual":"";
+    const periodTag=tag?'<span class="fnow">'+tag+'</span>':"";
+    const availability=available?"":' disabled aria-disabled="true"';
+    const unavailableLabel=period.period_ordinal>currentOrdinal?"; próxima":"; no disponible";
+    const aria=checkpointLabel(pid)+(isCurrent?", actual":tag?", próxima":available?"":unavailableLabel);
+    return '<button class="'+classes+'" data-cp="'+pid+'" aria-label="'+escapeHtml(aria)+'"'+availability+'><span>'+escapeHtml(checkpointLabel(pid))+'</span>'+periodTag+'</button>';
+  }).join("");
+  el("hdr-cp").textContent=checkpointLabel(selected);
+  const settlementNote=el("period-status-note");
+  if(settlementNote)settlementNote.hidden=podsRoute;
+  requestAnimationFrame(()=>el("cpbar").querySelector(".fbtn.on")?.scrollIntoView({ block:"nearest", inline:"center" }));
+}
+function selectPodPeriod(periodId){
+  const period=state.publicPodsProjection&&state.publicPodsProjection.periods&&state.publicPodsProjection.periods[periodId];
+  if(!period)return;
+  state.publicPodsPeriodId=periodId;
+  state.publicPods=period;
+  state.podPickStatuses=null;
+  state.podPickStatusesPeriodId=null;
+  renderCheckpointBar("pods");
+  renderPods();
+  loadPodPickStatuses();
+}
 function go(route){
   if(!TABS.some(t=>t[0]===route) && !["loading","error","blocked"].includes(route)) route="perfil";
   document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active", s.dataset.route===route));
   nav.querySelectorAll("button").forEach(b=>b.classList.toggle("on", b.dataset.go===route));
   if(TABS.some(t=>t[0]===route) && location.hash!=="#/"+route) history.replaceState(null,"",location.pathname+location.search+"#/"+route);
+  if(TABS.some(t=>t[0]===route))renderCheckpointBar(route);
   if(route==="error") betzEvent("error_view");
   else if(route==="blocked") betzEvent("blocked_view");
   else if(TABS.some(t=>t[0]===route)) betzEvent("tab:"+route);
@@ -1038,15 +1089,19 @@ async function boot(){
   try {
     state.checkpoints = await getJSON("checkpoints.json");
   } catch(e){ return fail("No pudimos cargar las jornadas disponibles."); }
-  const [captureRuntime, settlements] = await Promise.all([
+  const [captureRuntime, settlements, podsProjection] = await Promise.all([
     getRootJSON("betz-runtime.json").catch(()=>null),
-    getJSON("period-settlements.json").catch(()=>null)
+    getJSON("period-settlements.json").catch(()=>null),
+    state.runtime&&state.runtime.environment==="PROD"?getJSON("pods.json").catch(()=>null):null
   ]);
   if(captureRuntime && captureRuntime.environment==="PROD" && captureRuntime.competition_id==="NFL2026"){
     state.capturePeriodId=captureRuntime.period_id||null;
   }
   if(settlements && settlements.contract_type==="betz_period_settlements" && settlements.competition_id==="NFL2026"){
     state.periodSettlements=settlements;
+  }
+  if(podsProjection && podsProjection.contract_type==="betz_public_pods" && podsProjection.competition_id==="NFL2026"){
+    state.publicPodsProjection=podsProjection;
   }
 
   const published = state.checkpoints.checkpoints.map(c=>c.period_id);
@@ -1057,6 +1112,7 @@ async function boot(){
   }
   const friendlyRequest=param("jornada");
   const legacyRequest=param("checkpoint");
+  const initialRoute=currentRoute();
   // Personal deep-link: ?u=<user_id>&n=<display_name> → land on that profile with a welcome.
   const uParam=param("u");
   let welcomeWanted=false, welcomeName="";
@@ -1077,30 +1133,27 @@ async function boot(){
   }
   const requested=legacyRequest||calendar.find(p=>checkpointSlug(p.period_id)===friendlyRequest)?.period_id||null;
   const requestedPeriod=calendar.find(period=>period.period_id===requested);
-  if((legacyRequest||friendlyRequest) && (!requestedPeriod||!requestedPeriod.available||!published.includes(requested))){
+  const checkpointRequestValid=Boolean(requestedPeriod&&requestedPeriod.available&&published.includes(requested));
+  const podsRequestValid=Boolean(initialRoute==="pods"&&requestedPeriod&&podPeriodAvailable(requested));
+  if((legacyRequest||friendlyRequest) && !checkpointRequestValid && !podsRequestValid){
     el("blocked-msg").textContent = "La jornada solicitada todavía no está disponible.";
     return go("blocked");
   }
-  state.cp = requested || current;
+  state.cp = checkpointRequestValid?requested:current;
+  state.publicPodsPeriodId=podsRequestValid?requested:state.cp;
+  state.publicPods=state.publicPodsProjection&&state.publicPodsProjection.periods?state.publicPodsProjection.periods[state.publicPodsPeriodId]||null:null;
   renderSettlementStatus();
-  if(legacyRequest) history.replaceState(null,"",publicCheckpointUrl(state.cp));
+  if(legacyRequest) history.replaceState(null,"",publicCheckpointUrl(podsRequestValid?requested:state.cp));
   betzTag("period_id", state.cp);
 
-  // Full calendar: internal ids stay in data attributes; unpublished periods are inert.
-  const currentOrdinal=calendar.find(period=>period.period_id===current)?.period_ordinal;
-  el("cpbar").innerHTML = calendar.map(period=>{
-    const pid=period.period_id,isCurrent=pid===current,isSelected=pid===state.cp;
-    const classes="fbtn"+(isSelected?" on":"")+(isCurrent?" current":"");
-    const currentTag=isCurrent?'<span class="fnow">Actual</span>':"";
-    const availability=period.available?"":' disabled aria-disabled="true"';
-    const unavailableLabel=period.period_ordinal>currentOrdinal?"; próxima":"; no disponible";
-    const aria=checkpointLabel(pid)+(isCurrent?", actual":period.available?"":unavailableLabel);
-    return '<button class="'+classes+'" data-cp="'+pid+'" aria-label="'+escapeHtml(aria)+'"'+availability+'><span>'+escapeHtml(checkpointLabel(pid))+'</span>'+currentTag+'</button>';
-  }).join("");
-  el("cpbar").addEventListener("click", e=>{ const b=e.target.closest("[data-cp]"); if(b&&!b.disabled){ location.href=publicCheckpointUrl(b.dataset.cp); }});
-  requestAnimationFrame(()=>el("cpbar").querySelector(".fbtn.on")?.scrollIntoView({ block:"nearest", inline:"center" }));
-
-  el("hdr-cp").textContent = checkpointLabel(state.cp);
+  // Result views expose published checkpoints; Pods additionally exposes periods present in pods.json.
+  renderCheckpointBar(initialRoute);
+  el("cpbar").addEventListener("click", e=>{
+    const b=e.target.closest("[data-cp]");
+    if(!b||b.disabled)return;
+    if(currentRoute()==="pods")selectPodPeriod(b.dataset.cp);
+    else location.href=publicCheckpointUrl(b.dataset.cp);
+  });
   // Start private loading only on an explicitly selected, validated Groups route.
   // It does not wait for unrelated public analytics and never delays public tabs.
   if(!welcomeWanted && (location.hash||"").replace("#/","")==="grupos"){
@@ -1150,10 +1203,9 @@ async function loadCheckpoint(){
     const published=await getJSON("consensus.json").catch(()=>null);
     const candidate=published&&published.competition_id==="NFL2026"&&published.periods&&published.periods[state.cp];
     if(candidate) state.frozenConsensus=candidate;
-    const pods=await getJSON("pods.json").catch(()=>null);
-    const upcoming=state.capturePeriodId&&pods&&pods.periods&&pods.periods[state.capturePeriodId];
-    state.publicPodsPeriodId=upcoming?state.capturePeriodId:state.cp;
-    state.publicPods=pods&&pods.competition_id==="NFL2026"?pods.periods[state.publicPodsPeriodId]:null;
+    const pods=state.publicPodsProjection;
+    state.publicPodsPeriodId=state.publicPodsPeriodId||state.cp;
+    state.publicPods=pods&&pods.periods?pods.periods[state.publicPodsPeriodId]||null:null;
     renderPods();
   }
   renderTabla();
@@ -1349,9 +1401,10 @@ function renderPods(){
   const host=el("pods-content"),period=state.publicPods;
   if(!period){host.textContent="La asignación de esta jornada todavía no está publicada.";return;}
   if(period.assignment_status==="insufficient_players"){host.textContent="No hay suficientes participantes para formar grupos en esta jornada.";return;}
-  const resolved=period.resolution_status==="resolved",isUpcoming=state.publicPodsPeriodId&&state.publicPodsPeriodId!==state.cp;
+  const resolved=period.resolution_status==="resolved",isUpcoming=podPeriodIsUpcoming(state.publicPodsPeriodId);
   const absenceCountsAsZero=period.non_participant_average_policy==="include_as_zero";
-  const pods=provisionalGroups(period,isUpcoming?null:activePeriodDetails());
+  const selectedDetails=state.publicPodsPeriodId===state.cp?activePeriodDetails():null;
+  const pods=provisionalGroups(period,selectedDetails);
   const generalRanks=podGeneralRankByUser(sortedRows());
   const groupName=p=>"Grupo "+(Number(p.pod_id.replace(/^POD/i,""))||p.pod_id);
   const mine=pods.find(p=>p.members.some(m=>m.user_id===state.viewer));
