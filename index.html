@@ -130,6 +130,14 @@
   .wk-body{display:none;border-top:1px solid var(--line);padding:6px 14px 12px}
   .wk.open .wk-body{display:block}
   .wk.locked .wk-head{color:var(--muted)}
+  .pk-sum{margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface2)}
+  .pk-sum .ps-title{font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+  .pk-sum .ps-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:12.5px;padding:3px 0;color:var(--muted)}
+  .pk-sum .ps-row b{font-family:var(--display);font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
+  .pk-sum .ps-row.extra b{color:var(--turq)}
+  .pk-sum .ps-row.total{margin-top:5px;padding-top:7px;border-top:1px solid var(--line);color:var(--txt);font-weight:700}
+  .pk-sum .ps-row.total b{color:var(--gold);font-size:14px}
+  .pk-sum .ps-note{font-size:10.5px;color:var(--faint);line-height:1.45;margin-top:4px}
   .lockmsg{font-size:12px;color:var(--faint);padding:12px 2px;display:flex;align-items:center;gap:8px}
 
   .pk-legend{display:flex;align-items:center;gap:7px;padding:2px 2px 8px;font-size:10.5px;color:var(--muted)}
@@ -1872,7 +1880,8 @@ function renderProfilePicks(){
   const points=score ? '<b>'+fmt(score.points)+'</b> pts'+(score.provisional?'<small>subtotal provisional</small>':'') : "—";
   host.innerHTML='<div class="wk open"><div class="wk-head"><div class="l"><span class="wname">'+escapeHtml(periodLabel(period))+'</span></div><span class="pts tnum'+(score&&score.provisional?' provisional':'')+'">'+points+'</span></div>'+
     '<div class="wk-body"><div class="pk-legend" aria-label="El contorno turquesa identifica tu pick"><span class="pk-legend-mark" aria-hidden="true"></span><span>tu pick</span></div>'+
-    '<div class="pk-head"><span>Partido</span><span class="r3">Resultado</span></div>'+rows+'</div></div>';
+    '<div class="pk-head"><span>Partido</span><span class="r3">Resultado</span></div>'+rows+
+    weeklyBreakdownHtml(weeklyBreakdownModel(period,state.player,detail))+'</div></div>';
   paintTeams(host);
   host.querySelectorAll("[data-match]").forEach(row=>row.onclick=()=>{
     go("partidos");
@@ -1903,6 +1912,42 @@ function periodPickers(detail){
     if(pick.answered===true && !seen.has(pick.user_id)) seen.set(pick.user_id,{user_id:pick.user_id,display_name:pick.display_name||pick.user_id});
   }
   return [...seen.values()];
+}
+// Weekly points breakdown for the profile. Published periods show the persisted
+// Scoring split (components + each awarded Modifier = total); nothing is
+// recomputed. Rolling periods only state that extras are decided at close.
+const MODIFIER_LABELS={
+  random_group_modifier:"Punto de grupo · mejor promedio de la jornada",
+  perfect_week_modifier:"Semana perfecta"
+};
+function weeklyBreakdownModel(period,userId,detail){
+  const row=periodPlayer(period,userId);
+  const score=row&&row.score;
+  if(score&&score.total_points!=null){
+    const modifiers=(Array.isArray(score.modifiers)?score.modifiers:[])
+      .filter(m=>m&&Number.isFinite(m.points_awarded)&&m.points_awarded!==0)
+      .map(m=>({label:MODIFIER_LABELS[m.modifier_id]||"Puntos extra",points:m.points_awarded}));
+    const extra=modifiers.reduce((sum,m)=>sum+m.points,0);
+    const base=Number.isFinite(score.component_points)?score.component_points:score.total_points-extra;
+    return {provisional:false,base,modifiers,total:score.total_points};
+  }
+  const subtotal=publishedPointsSubtotal(detail,userId);
+  return subtotal?{provisional:true,base:subtotal.points,modifiers:[],total:null}:null;
+}
+function weeklyBreakdownHtml(model){
+  if(!model) return "";
+  const signed=value=>(value>0?"+":"")+fmt(value);
+  if(model.provisional){
+    return '<div class="pk-sum"><div class="ps-title">Cómo se forman sus puntos</div>'+
+      '<div class="ps-row"><span>Pronósticos y partido fijado (hasta ahora)</span><b>'+fmt(model.base)+'</b></div>'+
+      '<div class="ps-note">El punto de grupo y la semana perfecta se definen al cerrar la jornada; todavía no se suman.</div></div>';
+  }
+  const extras=model.modifiers.length
+    ? model.modifiers.map(m=>'<div class="ps-row extra"><span>'+escapeHtml(m.label)+'</span><b>'+signed(m.points)+'</b></div>').join("")
+    : '<div class="ps-row"><span>Puntos extra (grupo, semana perfecta)</span><b>0</b></div>';
+  return '<div class="pk-sum"><div class="ps-title">Cómo se forman sus puntos</div>'+
+    '<div class="ps-row"><span>Pronósticos y partido fijado</span><b>'+fmt(model.base)+'</b></div>'+extras+
+    '<div class="ps-row total"><span>Total de la jornada</span><b>'+fmt(model.total)+'</b></div></div>';
 }
 function publishedPointsSubtotal(detail,userId){
   let points=0,evaluatedMatchCount=0;
