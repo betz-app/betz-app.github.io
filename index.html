@@ -291,6 +291,27 @@
   .lbr .rt{display:flex;align-items:center;gap:10px;justify-self:end}
   .lbr .lead{font-size:10px;color:var(--turq);border:1px solid var(--turq);border-radius:999px;padding:2px 9px;white-space:nowrap}
   .lbr .pw{font-family:var(--display);font-weight:700;font-size:16px;min-width:24px;text-align:right}
+  /* Weekly table: real columns so the Lock Match result and distance line up under their header */
+  .lbr.wkr,.lbr-head{grid-template-columns:22px 32px minmax(0,1fr) 62px 34px 30px;column-gap:10px}
+  .lbr-head{display:grid;align-items:end;row-gap:3px;padding:10px 16px 7px;border-bottom:1px solid var(--line);font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.5px}
+  .lbr-head .hgroup{grid-column:4 / 6;grid-row:1;text-align:center;color:var(--muted);font-weight:700;padding-bottom:3px;border-bottom:1px solid var(--line)}
+  .lbr-head .hname{grid-column:3;grid-row:2}
+  .lbr-head .hres{grid-column:4;grid-row:2;text-align:center}
+  .lbr-head .hdist{grid-column:5;grid-row:2;text-align:center}
+  .lbr-head .hpts{grid-column:6;grid-row:2;text-align:right}
+  .lbr.wkr{padding-top:11px;padding-bottom:11px}
+  .lbr.wkr.you{padding-left:13px}
+  .lbr.wkr .nmw{min-width:0}
+  .lbr.wkr .nm{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lbr.wkr .lead{display:inline-block;margin-top:4px;font-size:9px;padding:1px 7px}
+  .lbr .lead.won{color:var(--gold);border-color:var(--gold)}
+  .lbr.wkr .lkr,.lbr.wkr .lkd{text-align:center;font-variant-numeric:tabular-nums}
+  .lbr.wkr .lkr i{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;font-style:normal;font-size:12px;font-weight:700}
+  .lbr.wkr .lkr .ok{color:var(--green);background:rgba(47,227,138,.15)}
+  .lbr.wkr .lkr .no{color:var(--coral);background:rgba(240,78,54,.15)}
+  .lbr.wkr .lkd{font-size:13px;color:var(--muted)}
+  .lbr.wkr .lk-none{color:var(--faint)}
+  .lbr.wkr .pw{min-width:0}
   .lbr.you{background:var(--turq-dim);border-left:3px solid var(--turq);padding-left:13px}
   .lbr.you .rk{color:var(--turq)}
   .lbr.hidden{display:none} .lb.expanded .lbr.hidden{display:grid}
@@ -412,6 +433,13 @@
   .winlist{display:flex;flex-direction:column}
   .winrow{display:grid;grid-template-columns:38px 26px 1fr 62px 62px;align-items:center;gap:9px;padding:11px 4px;border-bottom:1px solid var(--line);cursor:pointer}
   .winrow:last-child{border-bottom:0}
+  .prizerow{display:grid;grid-template-columns:26px 1fr auto auto;align-items:center;gap:9px;padding:11px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+  .prizerow:last-child{border-bottom:0}
+  .prizerow .av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:700;font-family:var(--display);color:var(--txt);background:var(--surface2);border:1px solid var(--line)}
+  .prizerow .wnm{font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .prizerow .pwk{font-size:11px;color:var(--muted);white-space:nowrap}
+  .prizerow .pamt{font-family:var(--display);font-weight:700;font-size:14px;color:var(--gold);text-align:right;min-width:62px}
+  .prize-note{font-size:10.5px;color:var(--faint);margin:6px 0 22px}
   .winrow .wwk{font-family:var(--display);font-weight:700;font-size:12px;color:var(--muted)}
   .winrow .av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:700;font-family:var(--display);color:var(--txt);background:var(--surface2);border:1px solid var(--line)}
   .winrow .wnm{font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -701,6 +729,7 @@
       </div>
       <div class="lb period-section" id="weekly-leaderboard"></div>
       <div class="period-note" id="weekly-note">—</div>
+      <div class="period-note" id="weekly-lock-note" hidden>Resultado: si acertó al ganador de su partido fijado. Dist.: diferencia entre el total de puntos que pronosticó y el total real (menor es mejor). «–» = sin resultado todavía o sin partido fijado. Solo desempata la jornada.</div>
 
       <div class="sec-title"><h2>Tabla acumulada</h2><span class="hint" id="tabla-sub">—</span></div>
       <div class="lb" id="leaderboard"></div>
@@ -776,6 +805,11 @@
         <p>Empates: golf-split. Posiciones actuales, no premios adjudicados.</p>
         <a style="color:inherit;text-underline-offset:3px" href="reglas/#premios">Ver el reparto de $45,000 y los desempates →</a>
       </aside>
+      <div id="prize-totals-block" hidden>
+        <div class="sec-title"><h2>Premios semanales ganados</h2><span class="hint">acumulado</span></div>
+        <div class="winlist" id="prize-totals"></div>
+        <div class="prize-note">Suma de los premios semanales según los resultados publicados; un empate que persiste reparte el premio por igual. No indica estado de pago.</div>
+      </div>
       <div class="sec-title"><h2>Ganadores por jornada</h2><span class="hint">resultado publicado</span></div>
       <div class="winlist" id="period-winners"></div>
       <div class="podio-note" id="podio-msg">—</div>
@@ -1279,21 +1313,102 @@ function periodNav(labelId,prevId,nextId){
   el(prevId).disabled=state.periodIndex<=0;
   el(nextId).disabled=state.periodIndex>=periods().length-1;
 }
-function leaderboardRowsHtml(rows,pointsField){
+function leaderboardRowsHtml(rows,pointsField,extraHtml,leadHtml){
   return rows.map((r,i)=>{
-    const rank=r.rank??r.score_rank??i+1;
+    const rank=r.display_rank??r.rank??r.score_rank??i+1;
     const id=r.user_id;
     const name=r.display_name||id;
     const points=pointsField(r);
     const you=id===state.player?" you":"";
     const rkCls=rank===1?"rk gold":"rk";
     const avCls=rank===1?"av ring":"av";
-    const lead=rank===1?'<span class="lead">va ganando</span>':"";
+    const lead=leadHtml?leadHtml(r,rank):(rank===1?'<span class="lead">va ganando</span>':"");
+    if(extraHtml){
+      // Weekly layout: leader tag under the name, then the extra columns, then points.
+      return '<div class="lbr wkr'+you+'" data-plr="'+escapeHtml(id)+'">'+
+        '<span class="'+rkCls+'">'+fmt(rank)+'</span><span class="'+avCls+'">'+escapeHtml(initials(name,id))+'</span>'+
+        '<span class="nmw"><span class="nm">'+escapeHtml(name)+(id===state.viewer?'<span class="you-tag">· tú</span>':'')+'</span>'+lead+'</span>'+
+        extraHtml(r)+'<span class="pw tnum">'+fmt(points)+'</span></div>';
+    }
     return '<div class="lbr'+you+'" data-plr="'+escapeHtml(id)+'">'+
       '<span class="'+rkCls+'">'+fmt(rank)+'</span><span class="'+avCls+'">'+escapeHtml(initials(name,id))+'</span>'+
       '<span class="nm">'+escapeHtml(name)+(id===state.viewer?'<span class="you-tag">· tú</span>':'')+'</span>'+
       '<div class="rt">'+lead+'<span class="pw tnum">'+fmt(points)+'</span></div></div>';
   }).join("");
+}
+// Weekly prize display. The amount is the confirmed payout configuration
+// (rules: $1,000 per regular-season week, split equally when the tie persists).
+// Winners come only from the published resolution; nothing is re-resolved here.
+const WEEKLY_PRIZE_MXN=1000;
+function fmtMoney(amount){
+  const value=Math.round(Number(amount)*100)/100;
+  if(!Number.isFinite(value)) return "—";
+  return "$"+value.toLocaleString("en-US",Number.isInteger(value)?{}:{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function weeklyPrizeShare(period){
+  const winners=(period&&period.resolution&&period.resolution.winner_ids)||[];
+  if(!period||period.season_type!=="Regular Season"||!winners.length) return null;
+  return WEEKLY_PRIZE_MXN/winners.length;
+}
+// Lock Match evidence for the weekly table. Prefers the published official
+// lock_match evidence; while a period is still rolling it derives the same two
+// facts from already-published details (frozen lock pick + official score).
+function lockMatchInfo(period,detail,userId){
+  const official=(periodPlayer(period,userId)||{}).lock_match;
+  if(official&&typeof official.eligible==="boolean"){
+    if(!official.eligible) return {state:"none"};
+    if(typeof official.winner_correct==="boolean"&&Number.isInteger(official.total_points_distance)){
+      return {state:"final",correct:official.winner_correct,distance:official.total_points_distance};
+    }
+  }
+  const periodResolved=!!(period&&Array.isArray(period.players)&&period.players.length);
+  for(const match of (detail&&detail.matches)||[]){
+    const pick=(match.picks||[]).find(x=>x.user_id===userId&&x.answered===true&&x.lock===true);
+    if(!pick) continue;
+    const scored=Number.isInteger(match.home_score)&&Number.isInteger(match.away_score);
+    const predicted=Number.isInteger(pick.predicted_home_score)&&Number.isInteger(pick.predicted_away_score);
+    if(!scored||!predicted||typeof pick.correct!=="boolean") return {state:"pending"};
+    return {state:"final",correct:pick.correct,
+      distance:Math.abs((pick.predicted_home_score+pick.predicted_away_score)-(match.home_score+match.away_score))};
+  }
+  return {state:periodResolved?"none":"pending"};
+}
+function lockCellsHtml(info){
+  if(!info||info.state!=="final"){
+    const why=info&&info.state==="pending"?"Su partido fijado aún no tiene resultado":"Sin partido fijado";
+    return '<span class="lkr lk-none" title="'+why+'">–</span><span class="lkd lk-none" title="'+why+'">–</span>';
+  }
+  const label=info.correct?"Acertó al ganador de su partido fijado":"No acertó al ganador de su partido fijado";
+  return '<span class="lkr" title="'+label+'"><i class="'+(info.correct?"ok":"no")+'" aria-label="'+label+'">'+(info.correct?"✓":"✕")+'</i></span>'+
+    '<span class="lkd" title="Distancia al total real de puntos">'+fmt(info.distance)+'</span>';
+}
+// Provisional weekly leader(s) among the players tied on top points, mirroring
+// the published weekly criteria with what is known so far: valid Lock Match,
+// then correct Lock winner, then smallest total-points distance. A Lock Match
+// without an official score yet cannot lead a tie. Display only: the official
+// winner always comes from the published resolution.
+function provisionalWeeklyLeaders(topRows,infoOf){
+  let candidates=topRows.map(row=>({id:row.user_id,info:infoOf(row.user_id)||{state:"none"}}));
+  const withLock=candidates.filter(c=>c.info.state!=="none");
+  if(withLock.length) candidates=withLock;
+  const correct=candidates.filter(c=>c.info.state==="final"&&c.info.correct===true);
+  if(correct.length) candidates=correct;
+  const measurable=candidates.filter(c=>c.info.state==="final"&&Number.isFinite(c.info.distance));
+  if(measurable.length){
+    const minimum=Math.min(...measurable.map(c=>c.info.distance));
+    candidates=measurable.filter(c=>c.info.distance===minimum);
+  }
+  return new Set(candidates.map(c=>c.id));
+}
+// Weekly rows in display order. Players tied on top points who are not the
+// leader(s)/winner(s) are listed right after them with the next position.
+function weeklyDisplayRows(rows,leaderIds){
+  const pointsRank=row=>row.score_rank??999;
+  const top=rows.filter(row=>pointsRank(row)===1);
+  const leaders=top.filter(row=>leaderIds.has(row.user_id));
+  const split=leaders.length>0&&leaders.length<top.length;
+  return rows.map(row=>({...row,display_rank:split&&pointsRank(row)===1&&!leaderIds.has(row.user_id)?leaders.length+1:pointsRank(row)}))
+    .sort((a,b)=>a.display_rank-b.display_rank||pointsRank(a)-pointsRank(b)||String(a.user_id).localeCompare(String(b.user_id)));
 }
 function provisionalWeeklyTable(detail){
   const matches=(detail&&detail.matches)||[];
@@ -1341,7 +1456,19 @@ function renderTabla(){
   const official=(p&&p.players||[]).slice().sort((a,b)=>(a.score_rank??999)-(b.score_rank??999)||String(a.user_id).localeCompare(String(b.user_id)));
   const provisional=official.length?null:provisionalWeeklyTable(activePeriodDetails());
   const weekly=official.length?official:(provisional&&provisional.rows||[]);
-  el("weekly-leaderboard").innerHTML=leaderboardRowsHtml(weekly,r=>r.score&&r.score.total_points)||'<div class="empty-contract"><span class="ec-title">Jornada en curso</span><p>La tabla aparecerá al publicarse el primer resultado.</p></div>';
+  const weeklyDetail=activePeriodDetails();
+  const weeklyLockInfo=new Map(weekly.map(r=>[r.user_id,lockMatchInfo(p,weeklyDetail,r.user_id)]));
+  // Closed period: the published winners lead and are tagged "ganó".
+  // Rolling period: the provisional tie-break leader(s) are tagged "va ganando".
+  const weeklyLeaderIds=official.length
+    ? new Set((p&&p.resolution&&p.resolution.winner_ids)||[])
+    : provisionalWeeklyLeaders(weekly.filter(r=>(r.score_rank??999)===1),id=>weeklyLockInfo.get(id));
+  const weeklyRows=weeklyDisplayRows(weekly,weeklyLeaderIds);
+  const weeklyLead=r=>!weeklyLeaderIds.has(r.user_id)?"":official.length?'<span class="lead won">ganó</span>':'<span class="lead">va ganando</span>';
+  el("weekly-lock-note").hidden=!weekly.length;
+  const weeklyHead='<div class="lbr-head" aria-hidden="true"><span class="hgroup">Partido fijado</span><span class="hname">Jugador</span>'+
+    '<span class="hres">Resultado</span><span class="hdist">Dist.</span><span class="hpts">Pts</span></div>';
+  el("weekly-leaderboard").innerHTML=(weekly.length?weeklyHead:"")+leaderboardRowsHtml(weeklyRows,r=>r.score&&r.score.total_points,r=>lockCellsHtml(weeklyLockInfo.get(r.user_id)),weeklyLead)||'<div class="empty-contract"><span class="ec-title">Jornada en curso</span><p>La tabla aparecerá al publicarse el primer resultado.</p></div>';
   el("weekly-note").textContent=official.length
     ? fmt(p.evaluated_match_count)+" partidos evaluados · "+(p.resolution&&p.resolution.winner_ids||[]).length+" ganador(es)"
     : weekly.length
@@ -1473,16 +1600,33 @@ function renderPodio(){
   }).join("");
   el("podium-fourth").querySelectorAll("[data-plr]").forEach(x=>x.onclick=()=>{selectPlayer(x.dataset.plr);go("perfil");});
   const winners=[];
+  const prizeTotals=new Map();
   for(const p of periods().slice().reverse()){
-    for(const id of (p.resolution&&p.resolution.winner_ids)||[]){
+    const winnerIds=(p.resolution&&p.resolution.winner_ids)||[];
+    const share=weeklyPrizeShare(p);
+    for(const id of winnerIds){
       const pr=periodPlayer(p,id)||{};
+      if(share!==null){
+        const total=prizeTotals.get(id)||{user_id:id,display_name:pr.display_name||id,amount:0,weeks:0};
+        total.amount+=share; total.weeks+=1;
+        prizeTotals.set(id,total);
+      }
+      const split=share!==null&&winnerIds.length>1?'<span class="done">reparto ÷'+winnerIds.length+'</span>':"";
       winners.push('<div class="winrow" data-plr="'+escapeHtml(id)+'"><span class="wwk">'+escapeHtml(periodLabel(p).replace("Jornada ","J"))+'</span>'+
-        '<span class="av">'+escapeHtml(initials(pr.display_name,id))+'</span><span class="wnm">'+escapeHtml(pr.display_name||id)+'</span>'+
-        '<span class="wsem tnum">'+fmt(pr.score&&pr.score.total_points)+' pts</span><span class="wacc">✓</span></div>');
+        '<span class="av">'+escapeHtml(initials(pr.display_name,id))+'</span><span class="wnm">'+escapeHtml(pr.display_name||id)+split+'</span>'+
+        '<span class="wsem tnum">'+fmt(pr.score&&pr.score.total_points)+' pts</span><span class="wacc tnum">'+(share!==null?fmtMoney(share):"✓")+'</span></div>');
     }
   }
   el("period-winners").innerHTML=winners.join("");
   el("period-winners").querySelectorAll("[data-plr]").forEach(x=>x.onclick=()=>{selectPlayer(x.dataset.plr);go("perfil");});
+  const totals=[...prizeTotals.values()].sort((a,b)=>b.amount-a.amount||String(a.display_name).localeCompare(String(b.display_name)));
+  el("prize-totals-block").hidden=!totals.length;
+  el("prize-totals").innerHTML=totals.map(t=>'<div class="prizerow" data-plr="'+escapeHtml(t.user_id)+'">'+
+    '<span class="av">'+escapeHtml(initials(t.display_name,t.user_id))+'</span>'+
+    '<span class="wnm">'+escapeHtml(t.display_name)+(t.user_id===state.viewer?' · tú':'')+'</span>'+
+    '<span class="pwk">'+t.weeks+(t.weeks===1?' jornada':' jornadas')+'</span>'+
+    '<span class="pamt tnum">'+fmtMoney(t.amount)+'</span></div>').join("");
+  el("prize-totals").querySelectorAll("[data-plr]").forEach(x=>x.onclick=()=>{selectPlayer(x.dataset.plr);go("perfil");});
   el("podio-msg").textContent=groups.length
     ? "El campeón y los premios se confirman al cierre. Esta pantalla presenta posiciones y ganadores ya publicados, sin estado de pago."
     : "La competencia todavía no tiene posiciones publicadas.";
