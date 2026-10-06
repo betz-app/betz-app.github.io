@@ -25,6 +25,9 @@
   .matchseq{margin:0 0 8px 2px;color:#7F8A9A;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
   .mrow{display:flex;align-items:center;gap:8px;}
   .team{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:600;color:#C3C9D2;background:var(--bg);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:9px 6px;cursor:pointer;transition:all .15s ease;}
+  /* Pick halo: brand ring + glow so dark-colored teams (PIT, LV...) read as selected. !important beats the inline team border color. */
+  .team.on{border-color:var(--brand) !important;box-shadow:0 0 0 1.5px var(--brand),0 0 14px rgba(10,245,225,0.45);}
+  .mcard.frozen .team.on{box-shadow:0 0 0 1.5px rgba(10,245,225,0.7);}
   .mono{display:inline-flex;align-items:center;justify-content:center;min-width:36px;padding:4px 7px;border-radius:6px;color:#fff;font-family:'Graduate',serif;font-size:12px;letter-spacing:.5px;border:1px solid rgba(255,255,255,0.18);line-height:1;}
   .vs{font-size:11px;color:#6B7280;}
   .mlabels{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
