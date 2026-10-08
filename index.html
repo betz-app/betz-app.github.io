@@ -58,6 +58,12 @@
   .idrow .pod{display:inline-block;margin-top:5px;font-size:11px;color:var(--turq);
     border:1px solid var(--turq-dim);background:var(--turq-dim);padding:3px 9px;border-radius:999px;cursor:pointer;transition:transform .08s,border-color .12s}
   .idrow .pod:active{transform:scale(.96);border-color:var(--turq)}
+  /* Chip de alerta del perfil: solo aparece cuando hay algo pendiente (menos ruido) */
+  .idrow .pickchip{margin-left:6px;display:inline-flex;align-items:center;gap:5px}
+  .idrow .pickchip[hidden]{display:none}
+  .idrow .pickchip.pending{color:var(--coral);border-color:rgba(255,138,102,.45);background:rgba(255,138,102,.10)}
+  .idrow .pickchip.nolock{color:var(--muted);border-color:var(--line);background:transparent;cursor:default}
+  .idrow span.pickchip.pending{cursor:default}
   /* Personal-link welcome: greeting morphs into the profile header (~doubled hold) */
   .idrow{position:relative}
   .idgreet{position:absolute;left:74px;right:0;top:50%;transform:translateY(-50%);opacity:0;pointer-events:none}
@@ -751,7 +757,7 @@
         <div id="p-idtext">
           <div class="name" id="p-name">—</div>
           <div class="handle" id="p-handle">—</div>
-          <span class="pod" id="p-cp" data-go="tabla">—</span>
+          <span class="pod" id="p-cp" data-go="tabla">—</span><span class="pod pickchip" id="p-nolock" hidden></span><span id="p-pickchip-slot"></span>
         </div>
         <div class="idgreet" id="p-greet" aria-hidden="true"><span class="hi" id="p-greet-hi">Hola</span><span class="sub" id="p-greet-sub">Bienvenido a BETZ</span></div>
       </div>
@@ -2076,6 +2082,8 @@ function renderPerfil(){
   if(!hasProfile) el("p-handle").textContent = selectedPeriodLabel();
   el("p-av").textContent = hasProfile?initials(row.display_name, state.player):"Z";
   el("p-cp").textContent = (hasProfile?"Hasta ":"")+selectedPeriodLabel()+(hasProfile?" ›":"");
+  renderPickChips(hasProfile);
+  loadProfilePickStatuses();
   el("p-pts").textContent = fmt(row.total_points);
   el("p-rank").textContent = fmt(row.rank);
   const weekly=periodPlayer(activePeriod(),state.player);
@@ -2253,6 +2261,73 @@ async function sgReloadGroups(){
   sgState.busy=false; renderGrupos();
 }
 
+// Alertas del perfil (solo frontend, sin ampliar el receptor).
+// 1) "Jornada N · picks pendientes": antes del cierre, para la jornada en captura, usando
+//    list_pick_statuses (solo dice SUBMITTED/PENDING; no revela picks ni si hay fijado).
+//    Solo lo ve quien tiene su llave guardada; un visitante sin llave no consulta al receptor.
+// 2) "Jornada N · sin partido fijado": hecho público, solo cuando la jornada ya se resolvió.
+// Si todo está en orden no se muestra ningún chip.
+let __pickStatusTokenPromise=null;
+function hasStoredPersonalToken(){
+  if(sgState.token||(SGV&&SGV.isValidToken(__personalCapability)))return true;
+  try{ return !!(SGV&&state.runtime&&SGV.isValidToken(window.localStorage.getItem(SGV.tokenStorageKey(state.runtime)))); }
+  catch(e){ return false; }
+}
+function ensurePickStatusToken(){
+  if(sgState.token)return Promise.resolve(true);
+  if(!SGV||!SGV.runtimeReceiverConfigured(state.runtime))return Promise.resolve(false);
+  if(!__pickStatusTokenPromise){
+    __pickStatusTokenPromise=SGV.runGroupsBootstrap({ runtime:state.runtime, incomingToken:__personalCapability, storage:window.localStorage, sendReceiverInfo })
+      .then(boot=>{
+        __personalCapability="";
+        if(sgState.token)return true;
+        if(!boot||boot.status!=="READY")return false;
+        sgState.token=boot.token; sgState.status="READY"; __sgInitStarted=true;
+        return true;
+      })
+      .catch(()=>false)
+      .then(ok=>{ if(!ok)__pickStatusTokenPromise=null; return ok; });
+  }
+  return __pickStatusTokenPromise;
+}
+async function loadProfilePickStatuses(){
+  const periodId=state.capturePeriodId;
+  if(!periodId||state.profilePickStatusesPeriodId===periodId||state.profilePickStatusesLoading)return;
+  if(!hasStoredPersonalToken())return;
+  state.profilePickStatusesLoading=true;
+  try{
+    if(!(await ensurePickStatusToken()))return;
+    const res=await sgPost(SGV.buildRequest("list_pick_statuses",{
+      token:sgState.token, competition_id:sgCompetition(), payload:{ period_id:periodId }
+    }));
+    if(!res||!res.ok||res.period_id!==periodId||!Array.isArray(res.pick_statuses))return;
+    const map={};
+    res.pick_statuses.forEach(item=>{ if(item&&item.user_id&&["SUBMITTED","PENDING"].includes(item.pick_status))map[item.user_id]=item.pick_status; });
+    state.profilePickStatuses=map;
+    state.profilePickStatusesPeriodId=periodId;
+    renderPickChips();
+  }catch(e){}
+  finally{ state.profilePickStatusesLoading=false; }
+}
+function renderPickChips(hasProfile){
+  if(hasProfile===undefined)hasProfile=!!el("p-name")&&el("p-name").dataset.hasProfile==="1";
+  else el("p-name").dataset.hasProfile=hasProfile?"1":"0";
+  const nolock=el("p-nolock");
+  const period=activePeriod();
+  const info=hasProfile&&period?lockMatchInfo(period,activePeriodDetails(),state.player):null;
+  if(info&&info.state==="none"){
+    nolock.hidden=false;
+    nolock.textContent=periodLabel(period)+" · sin partido fijado";
+  } else { nolock.hidden=true; nolock.textContent=""; }
+  const slot=el("p-pickchip-slot");
+  const capture=state.capturePeriodId;
+  const pending=capture&&state.profilePickStatusesPeriodId===capture&&state.profilePickStatuses&&state.profilePickStatuses[state.player]==="PENDING";
+  if(!pending){ slot.innerHTML=""; return; }
+  const label=escapeHtml(checkpointLabel(capture))+" · picks pendientes";
+  slot.innerHTML=state.player===state.viewer
+    ? '<a class="pod pickchip pending" href="predict.html">'+label+' ›</a>'
+    : '<span class="pod pickchip pending">'+label+'</span>';
+}
 async function loadPodPickStatuses(){
   const periodId=state.publicPodsPeriodId;
   if(!periodId||!state.publicPods||!SGV||state.podPickStatusesPeriodId===periodId)return;

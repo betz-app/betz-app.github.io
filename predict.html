@@ -81,6 +81,13 @@
   .stale-list li{padding:5px 8px;border-radius:7px;background:rgba(255,255,255,0.035);break-inside:avoid;}
   @media (min-width:760px){.stale-list{display:block;column-count:2;column-gap:8px;}.stale-list li{margin-bottom:4px;}}
   .disclaimer{text-align:center;font-size:11px;color:#565B64;padding:8px 20px 18px;line-height:1.5;}
+  .pickalert{display:none;align-items:center;gap:10px;border-radius:12px;padding:10px 12px;margin:2px 0 10px;font-size:13px;line-height:1.35;}
+  .pickalert.show{display:flex;}
+  .pickalert b{display:block;font-weight:600;color:var(--text);}
+  .pickalert span.sub{display:block;font-size:12px;color:var(--muted);}
+  .pickalert.coral{background:rgba(255,122,89,0.10);border:1px solid rgba(255,122,89,0.35);}
+  .pickalert.gold{background:rgba(255,206,31,0.08);border:1px solid rgba(255,206,31,0.35);}
+  .pickalert.turq{background:rgba(10,245,225,0.06);border:1px solid rgba(111,233,221,0.30);}
   .warn{background:rgba(255,122,89,0.12);border:1px solid rgba(255,122,89,0.35);color:#F3CFC2;font-size:12px;border-radius:10px;padding:10px 12px;margin:0 18px 10px;display:none;}
 /* --- BETZ logomotion splash --- */
 #betz-splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 80% at 50% 42%,#12171e 0%,#0b0e13 55%,#080a0d 100%);transition:opacity .6s cubic-bezier(.76,0,.24,1),transform .8s cubic-bezier(.76,0,.24,1),filter .6s cubic-bezier(.76,0,.24,1)}
@@ -134,6 +141,7 @@
   <div id="cfgwarn" class="warn">Falta configurar <code>APPS_SCRIPT_URL</code> arriba del &lt;script&gt;. La página muestra el flujo pero no enviará al Sheet.</div>
 
   <div class="pad" style="padding-top:6px;">
+    <div id="pick-alert" class="pickalert" role="status" aria-live="polite"></div>
     <div class="row between" style="padding:6px 4px 10px;">
       <span class="muted" style="font-size:13px;">tus picks de la semana</span>
       <span id="prog" style="font-size:13px;font-weight:600;color:var(--gold);"></span>
@@ -348,7 +356,7 @@ function newCsid(){ return "csid-" + ((window.crypto && crypto.randomUUID) ? cry
 var currentCsid = newCsid();
 var currentCsidAttempted = false;
 var acceptedSignature = null;
-function prog(){ var n=0; document.querySelectorAll(".mcard").forEach(function(c){ if (c.querySelector(".team.on")) n++; }); document.getElementById("prog").textContent = n+" de "+PERIOD_MATCHES.length; }
+function prog(){ var n=0; document.querySelectorAll(".mcard").forEach(function(c){ if (c.querySelector(".team.on")) n++; }); document.getElementById("prog").textContent = n+" de "+PERIOD_MATCHES.length; updatePickAlert(); }
 function edited(){
   prog();
   if (currentCsidAttempted) {
@@ -477,11 +485,40 @@ function collectAllPicks(){
 function picksSignature(picks){
   return JSON.stringify((picks || []).slice().sort(function(a,b){ return a.match_id.localeCompare(b.match_id); }));
 }
-function acceptCurrentUi(){ acceptedSignature = picksSignature(collectAllPicks()); }
+function acceptCurrentUi(){ acceptedSignature = picksSignature(collectAllPicks()); updatePickAlert(); }
+// Alerta de picks (solo frontend, solo la jornada activa tras cargar del receptor).
+// Muestra UN aviso, el de mayor prioridad: sin enviar > cambios sin enviar > sin partido fijado > faltan picks.
+// Fijar sigue siendo opcional: el aviso no bloquea el envío.
+function updatePickAlert(){
+  var el = document.getElementById("pick-alert");
+  if (!el) return;
+  var openCards = Array.prototype.slice.call(document.querySelectorAll(".mcard:not(.frozen)"));
+  if (acceptedSignature === null || VIEW_PERIOD_ID !== ACTIVE_PERIOD_ID || !openCards.length){ el.className = "pickalert"; el.innerHTML = ""; return; }
+  var dirty = picksSignature(collectAllPicks()) !== acceptedSignature;
+  var hasLock = !!document.querySelector(".mcard .lockbtn.on");
+  var missing = openCards.filter(function(c){ return !c.querySelector(".team.on"); }).length;
+  var tone, ic, title, sub;
+  if (!lastSent){
+    tone = "coral"; ic = "alert-triangle"; title = "Aún no envías tus picks";
+    sub = "Solo cuentan los picks que envíes antes del cierre de cada partido.";
+  } else if (dirty){
+    tone = "coral"; ic = "alert-triangle"; title = "Tienes cambios sin enviar";
+    sub = "Último recibido: " + lastSent;
+  } else if (!hasLock){
+    tone = "gold"; ic = "pin"; title = "Sin partido fijado";
+    sub = "Opcional · " + (openCards.length === 1 ? "queda 1 partido abierto" : "quedan " + openCards.length + " partidos abiertos") + " para fijar";
+  } else if (missing){
+    tone = "turq"; ic = "lock-open"; title = missing === 1 ? "Te falta 1 pick" : "Te faltan " + missing + " picks";
+    sub = "De los partidos que siguen abiertos.";
+  } else { el.className = "pickalert"; el.innerHTML = ""; return; }
+  var col = { coral:"#FF7A59", gold:"#FFCE1F", turq:"#6FE9DD" }[tone];
+  el.className = "pickalert show " + tone;
+  el.innerHTML = '<span style="flex:none;display:inline-flex;">' + icon(ic, 18, col) + '</span><div><b>' + title + '</b><span class="sub">' + sub + '</span></div>';
+}
 function fmt(iso){ try { return new Date(iso).toLocaleString("es-MX",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",second:"2-digit"}); } catch(e){ return iso; } }
 function showSent(receivedAt){ lastSent = fmt(receivedAt); acceptCurrentUi(); box.style.display="block"; box.style.background="rgba(56,255,72,0.10)"; box.style.border="1px solid rgba(56,255,72,0.3)"; box.style.color="#CDECE0"; box.innerHTML = 'recibido · '+lastSent+'<br><span style="color:#6FE9DD;">puedes editar antes del cierre</span>'; sendBtn.textContent="Enviado"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; sendBtn.disabled=true; }
 function showNoChanges(){ box.style.display="block"; box.style.background="rgba(56,255,72,0.07)"; box.style.border="1px solid rgba(56,255,72,0.22)"; box.style.color="#CDECE0"; box.innerHTML = 'no hay cambios pendientes'; sendBtn.textContent="Sin cambios pendientes"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; sendBtn.disabled=true; }
-function showDirty(){ box.style.display="block"; box.style.background="rgba(255,122,89,0.10)"; box.style.border="1px solid rgba(255,122,89,0.3)"; box.style.color="#F3CFC2"; box.innerHTML = 'tienes cambios sin enviar'+(lastSent ? '<br><span class="muted">último recibido: '+lastSent+'</span>' : ''); sendBtn.textContent=lastSent ? "Reenviar predicciones" : "Enviar predicciones"; sendBtn.style.background="#0AF5E1"; sendBtn.style.color="#0E1116"; sendBtn.disabled=false; }
+function showDirty(){ setTimeout(updatePickAlert, 0); box.style.display="block"; box.style.background="rgba(255,122,89,0.10)"; box.style.border="1px solid rgba(255,122,89,0.3)"; box.style.color="#F3CFC2"; box.innerHTML = 'tienes cambios sin enviar'+(lastSent ? '<br><span class="muted">último recibido: '+lastSent+'</span>' : ''); sendBtn.textContent=lastSent ? "Reenviar predicciones" : "Enviar predicciones"; sendBtn.style.background="#0AF5E1"; sendBtn.style.color="#0E1116"; sendBtn.disabled=false; }
 function showError(msg){ box.style.display="block"; box.style.background="rgba(240,78,54,0.12)"; box.style.border="1px solid rgba(240,78,54,0.4)"; box.style.color="#F3C7C7"; box.innerHTML = 'no se pudo enviar · '+msg+'<br><span class="muted">revisa tu conexión e intenta de nuevo</span>'; sendBtn.disabled=false; sendBtn.textContent="Reintentar envío"; sendBtn.style.background="#0AF5E1"; sendBtn.style.color="#0E1116"; }
 function showRejectedNoChange(){ box.style.display="block"; box.style.background="rgba(240,78,54,0.12)"; box.style.border="1px solid rgba(240,78,54,0.4)"; box.style.color="#F3C7C7"; box.innerHTML = 'No hubo ningún cambio que enviar.'; sendBtn.disabled=true; sendBtn.textContent="Sin cambios pendientes"; sendBtn.style.background="#2A3038"; sendBtn.style.color="#9BA3AE"; }
 function showConfirming(){ box.style.display="block"; box.style.background="rgba(255,206,31,0.10)"; box.style.border="1px solid rgba(255,206,31,0.35)"; box.style.color="#F4DE91"; box.innerHTML = 'no pudimos confirmar el resultado<br><span class="muted">usa Confirmar envío; conservaremos el mismo identificador y no duplicaremos tu captura</span>'; sendBtn.disabled=false; sendBtn.textContent="Confirmar envío"; sendBtn.style.background="#FFCE1F"; sendBtn.style.color="#0E1116"; }
