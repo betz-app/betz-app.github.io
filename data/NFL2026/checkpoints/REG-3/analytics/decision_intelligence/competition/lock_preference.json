@@ -1,0 +1,777 @@
+{
+  "contract_type": "decision_intelligence_competition_indicator",
+  "contract_version": "1.0",
+  "competition_id": "NFL2026",
+  "freeze_cursor": "REG048",
+  "evaluation_cursor": "REG048",
+  "freeze_mode": "rolling",
+  "analytics_id": "decision_intelligence",
+  "indicator_id": "lock_preference",
+  "perspectives": [
+    {
+      "perspective_id": "week:all",
+      "season_type": "Regular Season",
+      "week": 3,
+      "result": {
+        "observed_periods": 1,
+        "eligible_lock_opportunities": 17,
+        "valid_locks": 14,
+        "missing_locks": 3,
+        "coverage_rate": 0.823529,
+        "minimum_sample": 9,
+        "sample_status": "sufficient",
+        "ranking_limit": 3,
+        "ranking_status": "no_clear_ranking",
+        "preference_status": "not_applicable",
+        "top_lock_teams": [],
+        "distribution": [
+          {
+            "rank": 1,
+            "team_id": "KC",
+            "lock_count": 7,
+            "lock_share": 0.5,
+            "periods_with_locks": 1,
+            "evaluated_locks": 7,
+            "correct_locks": 7,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 2,
+            "team_id": "PHI",
+            "lock_count": 2,
+            "lock_share": 0.142857,
+            "periods_with_locks": 1,
+            "evaluated_locks": 2,
+            "correct_locks": 0,
+            "incorrect_locks": 2,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 3,
+            "team_id": "CAR",
+            "lock_count": 1,
+            "lock_share": 0.071429,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 3,
+            "team_id": "HOU",
+            "lock_count": 1,
+            "lock_share": 0.071429,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 3,
+            "team_id": "LAR",
+            "lock_count": 1,
+            "lock_share": 0.071429,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 3,
+            "team_id": "SEA",
+            "lock_count": 1,
+            "lock_share": 0.071429,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 3,
+            "team_id": "SF",
+            "lock_count": 1,
+            "lock_share": 0.071429,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 1,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          }
+        ],
+        "primary_insight": {
+          "insight_code": "COMMUNITY_WEEKLY_LOCK_CHOICES_UNCLEAR"
+        }
+      },
+      "matches": [
+        {
+          "match_id": "REG035",
+          "period_id": "033_REG033",
+          "user_id": "DIEGOMAGANA",
+          "lock_team_id": "CAR",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG037",
+          "period_id": "033_REG033",
+          "user_id": "LJMV",
+          "lock_team_id": "HOU",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "BTO_Z",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "CHIEFS_FAN",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "HZE",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "JMTZCELIZ",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "NSA",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "PEPE_SANCHEZ",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "YEU",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG042",
+          "period_id": "033_REG033",
+          "user_id": "GABOBC",
+          "lock_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG043",
+          "period_id": "033_REG033",
+          "user_id": "ADOLFO_LOZANO",
+          "lock_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG047",
+          "period_id": "033_REG033",
+          "user_id": "MARIOVILLARREAL",
+          "lock_team_id": "LAR",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG048",
+          "period_id": "033_REG033",
+          "user_id": "GOLDEN_EAGLE",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG048",
+          "period_id": "033_REG033",
+          "user_id": "PACOT",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "perspective_id": "season:all",
+      "result": {
+        "observed_periods": 3,
+        "eligible_lock_opportunities": 51,
+        "valid_locks": 38,
+        "missing_locks": 13,
+        "coverage_rate": 0.745098,
+        "minimum_sample": 26,
+        "sample_status": "sufficient",
+        "ranking_limit": 5,
+        "ranking_status": "available",
+        "preference_status": "preference_available",
+        "top_lock_teams": [
+          {
+            "rank": 1,
+            "team_id": "KC",
+            "lock_count": 9,
+            "lock_share": 0.236842,
+            "periods_with_locks": 3,
+            "evaluated_locks": 9,
+            "correct_locks": 9,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 2,
+            "team_id": "PHI",
+            "lock_count": 6,
+            "lock_share": 0.157895,
+            "periods_with_locks": 3,
+            "evaluated_locks": 6,
+            "correct_locks": 4,
+            "incorrect_locks": 2,
+            "pending_locks": 0,
+            "efficiency": 0.666667
+          }
+        ],
+        "distribution": [
+          {
+            "rank": 1,
+            "team_id": "KC",
+            "lock_count": 9,
+            "lock_share": 0.236842,
+            "periods_with_locks": 3,
+            "evaluated_locks": 9,
+            "correct_locks": 9,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 2,
+            "team_id": "PHI",
+            "lock_count": 6,
+            "lock_share": 0.157895,
+            "periods_with_locks": 3,
+            "evaluated_locks": 6,
+            "correct_locks": 4,
+            "incorrect_locks": 2,
+            "pending_locks": 0,
+            "efficiency": 0.666667
+          },
+          {
+            "rank": 3,
+            "team_id": "SF",
+            "lock_count": 5,
+            "lock_share": 0.131579,
+            "periods_with_locks": 2,
+            "evaluated_locks": 5,
+            "correct_locks": 5,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 4,
+            "team_id": "LAC",
+            "lock_count": 3,
+            "lock_share": 0.078947,
+            "periods_with_locks": 1,
+            "evaluated_locks": 3,
+            "correct_locks": 0,
+            "incorrect_locks": 3,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 5,
+            "team_id": "BAL",
+            "lock_count": 2,
+            "lock_share": 0.052632,
+            "periods_with_locks": 2,
+            "evaluated_locks": 2,
+            "correct_locks": 1,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0.5
+          },
+          {
+            "rank": 5,
+            "team_id": "JAX",
+            "lock_count": 2,
+            "lock_share": 0.052632,
+            "periods_with_locks": 1,
+            "evaluated_locks": 2,
+            "correct_locks": 2,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 5,
+            "team_id": "LAR",
+            "lock_count": 2,
+            "lock_share": 0.052632,
+            "periods_with_locks": 2,
+            "evaluated_locks": 2,
+            "correct_locks": 1,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0.5
+          },
+          {
+            "rank": 8,
+            "team_id": "BUF",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 1,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 8,
+            "team_id": "CAR",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 8,
+            "team_id": "CHI",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 1,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 8,
+            "team_id": "DAL",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 1,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 8,
+            "team_id": "DET",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 1,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 8,
+            "team_id": "HOU",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 8,
+            "team_id": "PIT",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 1,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 8,
+            "team_id": "SEA",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          },
+          {
+            "rank": 8,
+            "team_id": "TB",
+            "lock_count": 1,
+            "lock_share": 0.026316,
+            "periods_with_locks": 1,
+            "evaluated_locks": 1,
+            "correct_locks": 0,
+            "incorrect_locks": 1,
+            "pending_locks": 0,
+            "efficiency": 0
+          }
+        ],
+        "primary_insight": {
+          "insight_code": "COMMUNITY_LOCK_PREFERENCE_AVAILABLE"
+        }
+      },
+      "matches": [
+        {
+          "match_id": "REG003",
+          "period_id": "001_REG001",
+          "user_id": "GABOBC",
+          "lock_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG004",
+          "period_id": "001_REG001",
+          "user_id": "YEU",
+          "lock_team_id": "BAL",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG005",
+          "period_id": "001_REG001",
+          "user_id": "PEPE_SANCHEZ",
+          "lock_team_id": "BUF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG006",
+          "period_id": "001_REG001",
+          "user_id": "ADOLFO_LOZANO",
+          "lock_team_id": "CHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG007",
+          "period_id": "001_REG001",
+          "user_id": "HZE",
+          "lock_team_id": "JAX",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG007",
+          "period_id": "001_REG001",
+          "user_id": "LJMV",
+          "lock_team_id": "JAX",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG008",
+          "period_id": "001_REG001",
+          "user_id": "JMTZCELIZ",
+          "lock_team_id": "DET",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG011",
+          "period_id": "001_REG001",
+          "user_id": "BTO_Z",
+          "lock_team_id": "LAC",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG011",
+          "period_id": "001_REG001",
+          "user_id": "CHIEFS_FAN",
+          "lock_team_id": "LAC",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG011",
+          "period_id": "001_REG001",
+          "user_id": "NSA",
+          "lock_team_id": "LAC",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG014",
+          "period_id": "001_REG001",
+          "user_id": "MARIOVILLARREAL",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG016",
+          "period_id": "001_REG001",
+          "user_id": "PACOT",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG019",
+          "period_id": "017_REG017",
+          "user_id": "ADOLFO_LOZANO",
+          "lock_team_id": "BAL",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG024",
+          "period_id": "017_REG017",
+          "user_id": "NSA",
+          "lock_team_id": "TB",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG025",
+          "period_id": "017_REG017",
+          "user_id": "MARIOVILLARREAL",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG025",
+          "period_id": "017_REG017",
+          "user_id": "PACOT",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG025",
+          "period_id": "017_REG017",
+          "user_id": "PEPE_SANCHEZ",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG029",
+          "period_id": "017_REG017",
+          "user_id": "GABOBC",
+          "lock_team_id": "DAL",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG030",
+          "period_id": "017_REG017",
+          "user_id": "BTO_Z",
+          "lock_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG030",
+          "period_id": "017_REG017",
+          "user_id": "JMTZCELIZ",
+          "lock_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG030",
+          "period_id": "017_REG017",
+          "user_id": "LJMV",
+          "lock_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG030",
+          "period_id": "017_REG017",
+          "user_id": "YEU",
+          "lock_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG031",
+          "period_id": "017_REG017",
+          "user_id": "CHIEFS_FAN",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG032",
+          "period_id": "017_REG017",
+          "user_id": "HZE",
+          "lock_team_id": "LAR",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG035",
+          "period_id": "033_REG033",
+          "user_id": "DIEGOMAGANA",
+          "lock_team_id": "CAR",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG037",
+          "period_id": "033_REG033",
+          "user_id": "LJMV",
+          "lock_team_id": "HOU",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "BTO_Z",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "CHIEFS_FAN",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "HZE",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "JMTZCELIZ",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "NSA",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "PEPE_SANCHEZ",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG039",
+          "period_id": "033_REG033",
+          "user_id": "YEU",
+          "lock_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG042",
+          "period_id": "033_REG033",
+          "user_id": "GABOBC",
+          "lock_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG043",
+          "period_id": "033_REG033",
+          "user_id": "ADOLFO_LOZANO",
+          "lock_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG047",
+          "period_id": "033_REG033",
+          "user_id": "MARIOVILLARREAL",
+          "lock_team_id": "LAR",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG048",
+          "period_id": "033_REG033",
+          "user_id": "GOLDEN_EAGLE",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG048",
+          "period_id": "033_REG033",
+          "user_id": "PACOT",
+          "lock_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "correct": false
+        }
+      ]
+    }
+  ]
+}
