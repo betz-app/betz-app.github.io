@@ -209,10 +209,27 @@
   .mx-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}
   .mx-final{font-size:12px;color:var(--muted);font-family:var(--display);font-weight:700;white-space:nowrap}
   .mx-final .tnum{color:var(--txt)}
-  .cbar{height:8px;border-radius:5px;overflow:hidden;display:flex;background:var(--surface2)}
-  .cbar span{height:100%;background:#8B99A3}
-  .clabels{display:flex;justify-content:space-between;font-size:11px;margin-top:5px;color:var(--muted)}
+  .consensus-viz{--reveal-delay:0ms}
+  .clabels{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:7px;font-size:11px;margin-bottom:6px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .clabels .away-label{grid-column:1;min-width:0}
+  .clabels .home-label{grid-column:3;min-width:0;text-align:right}
   .clabels b{color:var(--txt)}
+  .cbar-tie{grid-column:2;color:var(--turq);font-size:8.5px;font-weight:700;letter-spacing:.45px}
+  .consensus-winner{display:inline-block;margin-left:3px;color:var(--turq);font-size:10px;font-weight:800;opacity:0;transition:opacity 140ms var(--ease-out) calc(var(--reveal-delay) + 260ms)}
+  .cbar{position:relative;height:10px;border:1px solid rgba(232,238,241,.3);border-radius:999px;overflow:hidden;display:flex;background:var(--surface2)}
+  .cbar-segment{--tc:#8B99A3;position:relative;height:100%;overflow:hidden}
+  .cbar-fill{display:block;width:100%;height:100%;background-color:var(--tc);transition:clip-path 260ms var(--ease-out) var(--reveal-delay)}
+  .cbar-segment.away .cbar-fill{clip-path:inset(0 100% 0 0)}
+  .cbar-segment.home .cbar-fill{clip-path:inset(0 0 0 100%)}
+  .cbar-segment.minority .cbar-fill{background-image:repeating-linear-gradient(135deg,rgba(232,238,241,.18) 0 1px,transparent 1px 4px)}
+  .cbar-segment.winner::after{content:"";position:absolute;inset:0;border:1px solid var(--turq);opacity:0;pointer-events:none;transition:opacity 140ms var(--ease-out) calc(var(--reveal-delay) + 260ms)}
+  .cbar-divider{position:absolute;z-index:2;top:-1px;bottom:-1px;width:2px;background:var(--turq);transform:translateX(-1px);opacity:0;transition:opacity 110ms var(--ease-out) calc(var(--reveal-delay) + 205ms)}
+  .consensus-viz.is-revealed .cbar-fill{clip-path:inset(0)}
+  .consensus-viz.is-revealed .cbar-divider,.consensus-viz.is-revealed .cbar-segment.winner::after,.consensus-viz.is-revealed .consensus-winner{opacity:1}
+  .consensus-empty{height:27px;border:1px dashed rgba(139,153,163,.3);border-radius:8px;background:rgba(26,36,44,.36);display:grid;place-items:center;color:var(--faint);font-size:10.5px}
+  @media (prefers-reduced-motion:reduce){
+    .cbar-fill,.cbar-divider,.cbar-segment.winner::after,.consensus-winner{transition:none!important}
+  }
   .mx-meta{font-size:11.5px;color:var(--muted);margin-top:9px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
   .mx-meta .you b{color:var(--turq)}
   .divided{color:var(--gold);border:1px solid rgba(255,206,31,.3);background:rgba(255,206,31,.1);padding:1px 7px;border-radius:999px;font-size:9.5px;text-transform:uppercase;letter-spacing:.3px}
@@ -1691,7 +1708,46 @@ function scheduledMatchesForCheckpoint(period){
 }
 function paintTeams(scope){
   scope.querySelectorAll(".tm[data-team]").forEach(x=>{const c=TEAM_COLORS[x.dataset.team];if(c)x.style.setProperty("--tc",c);});
-  scope.querySelectorAll(".cbar span[data-team]").forEach(x=>{const c=TEAM_COLORS[x.dataset.team];if(c)x.style.background=c;});
+  scope.querySelectorAll(".cbar-segment[data-team]").forEach(x=>{const c=TEAM_COLORS[x.dataset.team];if(c)x.style.setProperty("--tc",c);});
+}
+function consensusEmptyHtml(copy){
+  return '<div class="consensus-empty">'+escapeHtml(copy)+'</div>';
+}
+function consensusBarHtml(away,home,ad,hd,winnerTeam){
+  const awayRate=Math.max(0,Math.min(1,Number(ad&&ad.prediction_rate)||0));
+  const homeRate=Math.max(0,Math.min(1,Number(hd&&hd.prediction_rate)||0));
+  const rawAwayCount=Number(ad&&ad.prediction_count),rawHomeCount=Number(hd&&hd.prediction_count);
+  const awayCount=Number.isFinite(rawAwayCount)?Math.max(0,rawAwayCount):0;
+  const homeCount=Number.isFinite(rawHomeCount)?Math.max(0,rawHomeCount):0;
+  if(awayCount+homeCount===0) return consensusEmptyHtml("Sin votos publicados");
+  const both=awayRate>0&&homeRate>0,tied=both&&Math.abs(awayRate-homeRate)<1e-9;
+  const sideClass=(rate,other)=>tied?"":rate>other?" majority":" minority";
+  const winnerClass=team=>winnerTeam===team?" winner":"";
+  const winnerMark=team=>winnerTeam===team?'<span class="consensus-winner" aria-label="Ganó">✓</span>':"";
+  const segment=(team,side,rate,other)=>rate<=0?"":'<span class="cbar-segment '+side+sideClass(rate,other)+winnerClass(team)+'" data-team="'+escapeHtml(team)+'" style="width:'+Math.round(rate*10000)/100+'%" aria-hidden="true"><span class="cbar-fill"></span></span>';
+  const divider=both?'<span class="cbar-divider" style="left:'+Math.round(awayRate*10000)/100+'%" aria-hidden="true"></span>':"";
+  const tieLabel=tied?'<span class="cbar-tie">DIVIDIDO</span>':"";
+  const winnerCopy=winnerTeam?', ganó '+escapeHtml(winnerTeam):"";
+  return '<div class="consensus-viz"><div class="clabels"><span class="away-label"><b>'+escapeHtml(away)+' '+pct(awayRate)+'</b> · '+awayCount+winnerMark(away)+'</span>'+tieLabel+
+    '<span class="home-label">'+homeCount+' · <b>'+pct(homeRate)+' '+escapeHtml(home)+'</b>'+winnerMark(home)+'</span></div>'+
+    '<div class="cbar" role="img" aria-label="Consenso: '+escapeHtml(away)+' '+pct(awayRate)+', '+escapeHtml(home)+' '+pct(homeRate)+winnerCopy+'">'+
+    segment(away,"away",awayRate,homeRate)+segment(home,"home",homeRate,awayRate)+divider+'</div></div>';
+}
+function revealConsensusBars(scope){
+  if(scope.__consensusRevealObserver) scope.__consensusRevealObserver.disconnect();
+  const visualizations=[...scope.querySelectorAll(".consensus-viz")];
+  if(!visualizations.length) return;
+  const reveal=(viz,index=0)=>{viz.style.setProperty("--reveal-delay",Math.min(index,3)*40+"ms");viz.classList.add("is-revealed");};
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window)){
+    visualizations.forEach(reveal); return;
+  }
+  const observer=new IntersectionObserver(entries=>{
+    entries.filter(entry=>entry.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top).forEach((entry,index)=>{
+      reveal(entry.target,index); observer.unobserve(entry.target);
+    });
+  },{threshold:.35});
+  scope.__consensusRevealObserver=observer;
+  visualizations.forEach(viz=>observer.observe(viz));
 }
 function consensusBadge(ci,cp){
   if(!ci) return '<span class="consensus-result">sin consenso publicado</span>';
@@ -1717,7 +1773,9 @@ function renderPartidos(){
     const hd=dist.get(home)||{prediction_count:0,prediction_rate:0};
     const ad=dist.get(away)||{prediction_count:0,prediction_rate:0};
     const own=(md.picks||[]).find(x=>x.user_id===state.player);
-    const final=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score)
+    const isFinal=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score);
+    const winnerTeam=isFinal&&md.home_score!==md.away_score?(md.home_score>md.away_score?home:away):"";
+    const final=isFinal
       ? '<strong class="tnum" style="font-size:20px">'+away+' '+md.away_score+' – '+home+' '+md.home_score+'</strong><div style="color:var(--turq);font-size:12px">'+(md.home_score===md.away_score?'Final · Empate':'Final · Ganó '+(md.home_score>md.away_score?home:away))+'</div>'
       : 'Pendiente';
     const ownCopy=!matchPublished
@@ -1725,11 +1783,7 @@ function renderPartidos(){
       : own&&own.answered
       ? '<span class="you">Pronóstico de '+escapeHtml(own.display_name||"este jugador")+': <b>'+escapeHtml(own.selected_team_id)+'</b></span>'
       : '<span class="you">Sin pronóstico</span>';
-    const consensusHtml=ci
-      ? '<div class="cbar"><span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span>'+
-        '<span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div><div class="clabels">'+
-        '<span><b>'+away+' '+pct(ad.prediction_rate)+'</b> · '+ad.prediction_count+'</span><span><b>'+home+' '+pct(hd.prediction_rate)+'</b> · '+hd.prediction_count+'</span></div>'
-      : '<div class="md-cap" style="margin:12px 0 2px">Consenso disponible después del cierre.</div>';
+    const consensusHtml=ci?consensusBarHtml(away,home,ad,hd,winnerTeam):consensusEmptyHtml("Sin consenso publicado");
     return '<article class="mx" data-match="'+escapeHtml(id)+'"><div class="mx-top"><div class="pk-game">'+
       '<span class="tm" data-team="'+away+'">'+away+'</span><span class="x">vs</span><span class="tm" data-team="'+home+'">'+home+'</span></div>'+
       '<div class="mx-final">'+final+'</div></div>'+consensusHtml+
@@ -1737,6 +1791,7 @@ function renderPartidos(){
   });
   el("matches-list").innerHTML=cards.join("")||'<div class="empty-contract"><span class="ec-title">Sin partidos publicados</span><p>Este periodo todavía no tiene consenso visible.</p></div>';
   paintTeams(el("matches-list"));
+  revealConsensusBars(el("matches-list"));
   if(publishedDetails) el("matches-list").querySelectorAll("[data-match]").forEach(x=>{if(publishedMatches.has(x.dataset.match))x.onclick=()=>openMatch(x.dataset.match);});
 }
 el("matches-prev").onclick=()=>setPeriod(-1);
@@ -1754,6 +1809,8 @@ function openMatch(id){
     (cp?(cp.correct?"La mayoría acertó: ganó el favorito de la comunidad.":"La mayoría falló: ganó el otro equipo."):"El consenso está publicado; su evaluación está pendiente.");
   const isFinal=Number.isInteger(md.home_score)&&Number.isInteger(md.away_score);
   const homeWon=isFinal&&md.home_score>md.away_score,awayWon=isFinal&&md.away_score>md.home_score;
+  const winnerTeam=awayWon?away:homeWon?home:"";
+  const consensusHtml=ci?consensusBarHtml(away,home,ad,hd,winnerTeam):consensusEmptyHtml("Sin consenso publicado");
   const score=isFinal
     ? '<div class="md-score"><div class="md-tm'+(awayWon?' win':'')+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="sc">'+md.away_score+'</span></div>'+
       '<span class="md-sep">–</span><div class="md-tm'+(homeWon?' win':'')+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="sc">'+md.home_score+'</span></div></div>'
@@ -1770,9 +1827,7 @@ function openMatch(id){
   const host=el("match-detail");
   host.innerHTML='<div class="md-top"><button class="md-back" type="button">‹ Volver</button></div><div class="md-body">'+
     '<div class="md-status">'+escapeHtml(periodLabel(activePeriod()))+' · '+(isFinal?'Final':'Pendiente')+'</div>'+score+correctionNote+
-    (md.headline?'<div class="md-headline"><span class="lbl">Titular del proveedor</span>'+escapeHtml(md.headline)+'</div>':'')+quarterTable+'<div class="md-sec">Consenso</div><div class="cbar">'+
-    '<span data-team="'+away+'" style="width:'+Math.round(ad.prediction_rate*100)+'%"></span><span data-team="'+home+'" style="width:'+Math.round(hd.prediction_rate*100)+'%"></span></div>'+
-    '<div class="clabels"><span>'+away+' '+(ci?pct(ad.prediction_rate):'—')+' · '+ (ci?ad.prediction_count:'—') +'</span><span>'+home+' '+(ci?pct(hd.prediction_rate):'—')+' · '+ (ci?hd.prediction_count:'—') +'</span></div>'+
+    (md.headline?'<div class="md-headline"><span class="lbl">Titular del proveedor</span>'+escapeHtml(md.headline)+'</div>':'')+quarterTable+'<div class="md-sec">Consenso</div>'+consensusHtml+
     '<div class="md-narr"><span class="lbl">La comunidad en este partido</span>'+escapeHtml(insight)+'</div>'+
     '<div class="md-sec">¿Quién eligió a…?</div><div class="md-sel"><button data-team-sel="'+away+'"><span class="tm" data-team="'+away+'">'+away+'</span><span class="n">'+ (ci?ad.prediction_count:'—') +'</span></button>'+
     '<button data-team-sel="'+home+'"><span class="tm" data-team="'+home+'">'+home+'</span><span class="n">'+ (ci?hd.prediction_count:'—') +'</span></button></div>'+
@@ -1793,7 +1848,7 @@ function openMatch(id){
       go("perfil");
     });
   });
-  host.classList.add("on"); host.scrollTop=0; document.body.style.overflow="hidden";
+  host.classList.add("on"); revealConsensusBars(host); host.scrollTop=0; document.body.style.overflow="hidden";
 }
 function closeMatch(){ const host=el("match-detail");host.classList.remove("on");host.innerHTML="";document.body.style.overflow=""; }
 
