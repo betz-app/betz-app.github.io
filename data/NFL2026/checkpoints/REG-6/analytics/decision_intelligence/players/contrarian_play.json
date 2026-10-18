@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG089",
-  "evaluation_cursor": "REG089",
+  "freeze_cursor": "REG091",
+  "evaluation_cursor": "REG091",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "contrarian_play",
@@ -17,21 +17,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 9,
-            "contrarian_picks": 1,
+            "classified_matches": 12,
+            "aligned_picks": 10,
+            "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.9,
-            "contrarian_rate": 0.1,
-            "aligned_evaluated_matches": 9,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.333333,
-            "contrarian_evaluated_matches": 1,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 4,
+            "aligned_efficiency": 0.4,
+            "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.333333,
+            "contrarian_advantage": -0.4,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -115,6 +115,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "LV",
+              "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -122,21 +138,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 80,
-            "aligned_picks": 62,
-            "contrarian_picks": 18,
+            "classified_matches": 82,
+            "aligned_picks": 63,
+            "contrarian_picks": 19,
             "neutral_picks": 0,
             "missing_predictions": 9,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.775,
-            "contrarian_rate": 0.225,
-            "aligned_evaluated_matches": 62,
-            "aligned_correct_matches": 39,
-            "aligned_efficiency": 0.629032,
-            "contrarian_evaluated_matches": 18,
+            "aligned_rate": 0.768293,
+            "contrarian_rate": 0.231707,
+            "aligned_evaluated_matches": 63,
+            "aligned_correct_matches": 40,
+            "aligned_efficiency": 0.634921,
+            "contrarian_evaluated_matches": 19,
             "contrarian_correct_matches": 9,
-            "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.129032,
+            "contrarian_efficiency": 0.473684,
+            "contrarian_advantage": -0.161237,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -851,6 +867,22 @@
               "match_id": "REG089",
               "pick_team_id": "LAR",
               "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "LV",
+              "relation": "contrarian",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -860,21 +892,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 80,
-            "aligned_picks": 62,
-            "contrarian_picks": 18,
+            "classified_matches": 82,
+            "aligned_picks": 63,
+            "contrarian_picks": 19,
             "neutral_picks": 0,
             "missing_predictions": 9,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.775,
-            "contrarian_rate": 0.225,
-            "aligned_evaluated_matches": 62,
-            "aligned_correct_matches": 39,
-            "aligned_efficiency": 0.629032,
-            "contrarian_evaluated_matches": 18,
+            "aligned_rate": 0.768293,
+            "contrarian_rate": 0.231707,
+            "aligned_evaluated_matches": 63,
+            "aligned_correct_matches": 40,
+            "aligned_efficiency": 0.634921,
+            "contrarian_evaluated_matches": 19,
             "contrarian_correct_matches": 9,
-            "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.129032,
+            "contrarian_efficiency": 0.473684,
+            "contrarian_advantage": -0.161237,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -1589,6 +1621,22 @@
               "match_id": "REG089",
               "pick_team_id": "LAR",
               "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "LV",
+              "relation": "contrarian",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -1606,21 +1654,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 9,
+            "classified_matches": 12,
+            "aligned_picks": 11,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.9,
-            "contrarian_rate": 0.1,
-            "aligned_evaluated_matches": 9,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.333333,
+            "aligned_rate": 0.916667,
+            "contrarian_rate": 0.083333,
+            "aligned_evaluated_matches": 11,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.454545,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.333333,
+            "contrarian_advantage": -0.454545,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -1704,6 +1752,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -1711,21 +1775,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 79,
+            "classified_matches": 91,
+            "aligned_picks": 81,
             "contrarian_picks": 10,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.88764,
-            "contrarian_rate": 0.11236,
-            "aligned_evaluated_matches": 79,
-            "aligned_correct_matches": 48,
-            "aligned_efficiency": 0.607595,
+            "aligned_rate": 0.89011,
+            "contrarian_rate": 0.10989,
+            "aligned_evaluated_matches": 81,
+            "aligned_correct_matches": 50,
+            "aligned_efficiency": 0.617284,
             "contrarian_evaluated_matches": 10,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.107595,
+            "contrarian_advantage": -0.117284,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -2443,27 +2507,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 79,
+            "classified_matches": 91,
+            "aligned_picks": 81,
             "contrarian_picks": 10,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.88764,
-            "contrarian_rate": 0.11236,
-            "aligned_evaluated_matches": 79,
-            "aligned_correct_matches": 48,
-            "aligned_efficiency": 0.607595,
+            "aligned_rate": 0.89011,
+            "contrarian_rate": 0.10989,
+            "aligned_evaluated_matches": 81,
+            "aligned_correct_matches": 50,
+            "aligned_efficiency": 0.617284,
             "contrarian_evaluated_matches": 10,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.107595,
+            "contrarian_advantage": -0.117284,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -3181,6 +3261,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -3195,17 +3291,17 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 10,
+            "classified_matches": 12,
+            "aligned_picks": 12,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 10,
-            "aligned_correct_matches": 4,
-            "aligned_efficiency": 0.4,
+            "aligned_evaluated_matches": 12,
+            "aligned_correct_matches": 6,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -3293,6 +3389,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -3300,21 +3412,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 81,
+            "classified_matches": 91,
+            "aligned_picks": 83,
             "contrarian_picks": 8,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.910112,
-            "contrarian_rate": 0.089888,
-            "aligned_evaluated_matches": 81,
-            "aligned_correct_matches": 50,
-            "aligned_efficiency": 0.617284,
+            "aligned_rate": 0.912088,
+            "contrarian_rate": 0.087912,
+            "aligned_evaluated_matches": 83,
+            "aligned_correct_matches": 52,
+            "aligned_efficiency": 0.626506,
             "contrarian_evaluated_matches": 8,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.625,
-            "contrarian_advantage": 0.007716,
+            "contrarian_advantage": -0.001506,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "NO_CLEAR_DECISION_EDGE"
@@ -4032,27 +4144,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 81,
+            "classified_matches": 91,
+            "aligned_picks": 83,
             "contrarian_picks": 8,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.910112,
-            "contrarian_rate": 0.089888,
-            "aligned_evaluated_matches": 81,
-            "aligned_correct_matches": 50,
-            "aligned_efficiency": 0.617284,
+            "aligned_rate": 0.912088,
+            "contrarian_rate": 0.087912,
+            "aligned_evaluated_matches": 83,
+            "aligned_correct_matches": 52,
+            "aligned_efficiency": 0.626506,
             "contrarian_evaluated_matches": 8,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.625,
-            "contrarian_advantage": 0.007716,
+            "contrarian_advantage": -0.001506,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "NO_CLEAR_DECISION_EDGE"
@@ -4770,6 +4898,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -4784,17 +4928,17 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 1,
-            "aligned_picks": 1,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 9,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 1,
-            "aligned_correct_matches": 0,
-            "aligned_efficiency": 0,
+            "aligned_evaluated_matches": 3,
+            "aligned_correct_matches": 2,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -4882,6 +5026,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -4889,21 +5049,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 69,
-            "aligned_picks": 48,
+            "classified_matches": 71,
+            "aligned_picks": 50,
             "contrarian_picks": 21,
             "neutral_picks": 0,
             "missing_predictions": 20,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.695652,
-            "contrarian_rate": 0.304348,
-            "aligned_evaluated_matches": 48,
-            "aligned_correct_matches": 32,
-            "aligned_efficiency": 0.666667,
+            "aligned_rate": 0.704225,
+            "contrarian_rate": 0.295775,
+            "aligned_evaluated_matches": 50,
+            "aligned_correct_matches": 34,
+            "aligned_efficiency": 0.68,
             "contrarian_evaluated_matches": 21,
             "contrarian_correct_matches": 10,
             "contrarian_efficiency": 0.47619,
-            "contrarian_advantage": -0.190477,
+            "contrarian_advantage": -0.20381,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -5621,27 +5781,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 69,
-            "aligned_picks": 48,
+            "classified_matches": 71,
+            "aligned_picks": 50,
             "contrarian_picks": 21,
             "neutral_picks": 0,
             "missing_predictions": 20,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.695652,
-            "contrarian_rate": 0.304348,
-            "aligned_evaluated_matches": 48,
-            "aligned_correct_matches": 32,
-            "aligned_efficiency": 0.666667,
+            "aligned_rate": 0.704225,
+            "contrarian_rate": 0.295775,
+            "aligned_evaluated_matches": 50,
+            "aligned_correct_matches": 34,
+            "aligned_efficiency": 0.68,
             "contrarian_evaluated_matches": 21,
             "contrarian_correct_matches": 10,
             "contrarian_efficiency": 0.47619,
-            "contrarian_advantage": -0.190477,
+            "contrarian_advantage": -0.20381,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -6359,6 +6535,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -6373,21 +6565,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.375,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 1,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": 0.125,
+            "contrarian_advantage": 0,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -6471,6 +6663,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -6478,21 +6686,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 71,
+            "classified_matches": 91,
+            "aligned_picks": 73,
             "contrarian_picks": 18,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.797753,
-            "contrarian_rate": 0.202247,
-            "aligned_evaluated_matches": 71,
-            "aligned_correct_matches": 41,
-            "aligned_efficiency": 0.577465,
+            "aligned_rate": 0.802198,
+            "contrarian_rate": 0.197802,
+            "aligned_evaluated_matches": 73,
+            "aligned_correct_matches": 43,
+            "aligned_efficiency": 0.589041,
             "contrarian_evaluated_matches": 18,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.388889,
-            "contrarian_advantage": -0.188576,
+            "contrarian_advantage": -0.200152,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -7210,27 +7418,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 71,
+            "classified_matches": 91,
+            "aligned_picks": 73,
             "contrarian_picks": 18,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.797753,
-            "contrarian_rate": 0.202247,
-            "aligned_evaluated_matches": 71,
-            "aligned_correct_matches": 41,
-            "aligned_efficiency": 0.577465,
+            "aligned_rate": 0.802198,
+            "contrarian_rate": 0.197802,
+            "aligned_evaluated_matches": 73,
+            "aligned_correct_matches": 43,
+            "aligned_efficiency": 0.589041,
             "contrarian_evaluated_matches": 18,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.388889,
-            "contrarian_advantage": -0.188576,
+            "contrarian_advantage": -0.200152,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -7948,6 +8172,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -7962,21 +8202,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 4,
-            "aligned_efficiency": 0.5,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 6,
+            "aligned_efficiency": 0.6,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 2,
             "contrarian_efficiency": 1,
-            "contrarian_advantage": 0.5,
+            "contrarian_advantage": 0.4,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -8060,6 +8300,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -8067,21 +8323,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 72,
-            "aligned_picks": 51,
+            "classified_matches": 74,
+            "aligned_picks": 53,
             "contrarian_picks": 21,
             "neutral_picks": 0,
             "missing_predictions": 17,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.708333,
-            "contrarian_rate": 0.291667,
-            "aligned_evaluated_matches": 51,
-            "aligned_correct_matches": 31,
-            "aligned_efficiency": 0.607843,
+            "aligned_rate": 0.716216,
+            "contrarian_rate": 0.283784,
+            "aligned_evaluated_matches": 53,
+            "aligned_correct_matches": 33,
+            "aligned_efficiency": 0.622642,
             "contrarian_evaluated_matches": 21,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.333333,
-            "contrarian_advantage": -0.27451,
+            "contrarian_advantage": -0.289309,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -8796,6 +9052,22 @@
               "match_id": "REG089",
               "pick_team_id": "ARI",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
@@ -8805,21 +9077,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 72,
-            "aligned_picks": 51,
+            "classified_matches": 74,
+            "aligned_picks": 53,
             "contrarian_picks": 21,
             "neutral_picks": 0,
             "missing_predictions": 17,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.708333,
-            "contrarian_rate": 0.291667,
-            "aligned_evaluated_matches": 51,
-            "aligned_correct_matches": 31,
-            "aligned_efficiency": 0.607843,
+            "aligned_rate": 0.716216,
+            "contrarian_rate": 0.283784,
+            "aligned_evaluated_matches": 53,
+            "aligned_correct_matches": 33,
+            "aligned_efficiency": 0.622642,
             "contrarian_evaluated_matches": 21,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.333333,
-            "contrarian_advantage": -0.27451,
+            "contrarian_advantage": -0.289309,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -9534,6 +9806,22 @@
               "match_id": "REG089",
               "pick_team_id": "ARI",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
@@ -9551,24 +9839,24 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 5,
+            "classified_matches": 12,
+            "aligned_picks": 7,
             "contrarian_picks": 5,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.5,
-            "contrarian_rate": 0.5,
-            "aligned_evaluated_matches": 5,
-            "aligned_correct_matches": 2,
-            "aligned_efficiency": 0.4,
+            "aligned_rate": 0.583333,
+            "contrarian_rate": 0.416667,
+            "aligned_evaluated_matches": 7,
+            "aligned_correct_matches": 4,
+            "aligned_efficiency": 0.571429,
             "contrarian_evaluated_matches": 5,
             "contrarian_correct_matches": 3,
             "contrarian_efficiency": 0.6,
-            "contrarian_advantage": 0.2,
+            "contrarian_advantage": 0.028571,
             "tier": "balanced",
             "primary_insight": {
-              "insight_code": "CONTRARIAN_PAYS_OFF"
+              "insight_code": "NO_CLEAR_DECISION_EDGE"
             }
           },
           "matches": [
@@ -9651,6 +9939,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -9658,21 +9962,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 67,
+            "classified_matches": 91,
+            "aligned_picks": 69,
             "contrarian_picks": 22,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.752809,
-            "contrarian_rate": 0.247191,
-            "aligned_evaluated_matches": 67,
-            "aligned_correct_matches": 41,
-            "aligned_efficiency": 0.61194,
+            "aligned_rate": 0.758242,
+            "contrarian_rate": 0.241758,
+            "aligned_evaluated_matches": 69,
+            "aligned_correct_matches": 43,
+            "aligned_efficiency": 0.623188,
             "contrarian_evaluated_matches": 22,
             "contrarian_correct_matches": 10,
             "contrarian_efficiency": 0.454545,
-            "contrarian_advantage": -0.157395,
+            "contrarian_advantage": -0.168643,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -10390,27 +10694,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 67,
+            "classified_matches": 91,
+            "aligned_picks": 69,
             "contrarian_picks": 22,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.752809,
-            "contrarian_rate": 0.247191,
-            "aligned_evaluated_matches": 67,
-            "aligned_correct_matches": 41,
-            "aligned_efficiency": 0.61194,
+            "aligned_rate": 0.758242,
+            "contrarian_rate": 0.241758,
+            "aligned_evaluated_matches": 69,
+            "aligned_correct_matches": 43,
+            "aligned_efficiency": 0.623188,
             "contrarian_evaluated_matches": 22,
             "contrarian_correct_matches": 10,
             "contrarian_efficiency": 0.454545,
-            "contrarian_advantage": -0.157395,
+            "contrarian_advantage": -0.168643,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -11128,6 +11448,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -11142,21 +11478,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.375,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 1,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": 0.125,
+            "contrarian_advantage": 0,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -11240,6 +11576,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -11247,21 +11599,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 74,
-            "aligned_picks": 66,
+            "classified_matches": 76,
+            "aligned_picks": 68,
             "contrarian_picks": 8,
             "neutral_picks": 0,
             "missing_predictions": 15,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.891892,
-            "contrarian_rate": 0.108108,
-            "aligned_evaluated_matches": 66,
-            "aligned_correct_matches": 42,
-            "aligned_efficiency": 0.636364,
+            "aligned_rate": 0.894737,
+            "contrarian_rate": 0.105263,
+            "aligned_evaluated_matches": 68,
+            "aligned_correct_matches": 44,
+            "aligned_efficiency": 0.647059,
             "contrarian_evaluated_matches": 8,
             "contrarian_correct_matches": 4,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.136364,
+            "contrarian_advantage": -0.147059,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -11979,27 +12331,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 74,
-            "aligned_picks": 66,
+            "classified_matches": 76,
+            "aligned_picks": 68,
             "contrarian_picks": 8,
             "neutral_picks": 0,
             "missing_predictions": 15,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.891892,
-            "contrarian_rate": 0.108108,
-            "aligned_evaluated_matches": 66,
-            "aligned_correct_matches": 42,
-            "aligned_efficiency": 0.636364,
+            "aligned_rate": 0.894737,
+            "contrarian_rate": 0.105263,
+            "aligned_evaluated_matches": 68,
+            "aligned_correct_matches": 44,
+            "aligned_efficiency": 0.647059,
             "contrarian_evaluated_matches": 8,
             "contrarian_correct_matches": 4,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.136364,
+            "contrarian_advantage": -0.147059,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -12717,6 +13085,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -12731,21 +13115,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 9,
+            "classified_matches": 12,
+            "aligned_picks": 11,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.9,
-            "contrarian_rate": 0.1,
-            "aligned_evaluated_matches": 9,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.333333,
+            "aligned_rate": 0.916667,
+            "contrarian_rate": 0.083333,
+            "aligned_evaluated_matches": 11,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.454545,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.333333,
+            "contrarian_advantage": -0.454545,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -12829,6 +13213,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -12836,21 +13236,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 76,
+            "classified_matches": 91,
+            "aligned_picks": 78,
             "contrarian_picks": 13,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.853933,
-            "contrarian_rate": 0.146067,
-            "aligned_evaluated_matches": 76,
-            "aligned_correct_matches": 45,
-            "aligned_efficiency": 0.592105,
+            "aligned_rate": 0.857143,
+            "contrarian_rate": 0.142857,
+            "aligned_evaluated_matches": 78,
+            "aligned_correct_matches": 47,
+            "aligned_efficiency": 0.602564,
             "contrarian_evaluated_matches": 13,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.461538,
-            "contrarian_advantage": -0.130567,
+            "contrarian_advantage": -0.141026,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -13568,27 +13968,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 76,
+            "classified_matches": 91,
+            "aligned_picks": 78,
             "contrarian_picks": 13,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.853933,
-            "contrarian_rate": 0.146067,
-            "aligned_evaluated_matches": 76,
-            "aligned_correct_matches": 45,
-            "aligned_efficiency": 0.592105,
+            "aligned_rate": 0.857143,
+            "contrarian_rate": 0.142857,
+            "aligned_evaluated_matches": 78,
+            "aligned_correct_matches": 47,
+            "aligned_efficiency": 0.602564,
             "contrarian_evaluated_matches": 13,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.461538,
-            "contrarian_advantage": -0.130567,
+            "contrarian_advantage": -0.141026,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -14306,6 +14722,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -14320,21 +14752,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 2,
-            "aligned_efficiency": 0.25,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 4,
+            "aligned_efficiency": 0.4,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.25,
+            "contrarian_advantage": -0.4,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -14418,6 +14850,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -14425,21 +14873,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 71,
+            "classified_matches": 91,
+            "aligned_picks": 73,
             "contrarian_picks": 18,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.797753,
-            "contrarian_rate": 0.202247,
-            "aligned_evaluated_matches": 71,
-            "aligned_correct_matches": 47,
-            "aligned_efficiency": 0.661972,
+            "aligned_rate": 0.802198,
+            "contrarian_rate": 0.197802,
+            "aligned_evaluated_matches": 73,
+            "aligned_correct_matches": 49,
+            "aligned_efficiency": 0.671233,
             "contrarian_evaluated_matches": 18,
             "contrarian_correct_matches": 12,
             "contrarian_efficiency": 0.666667,
-            "contrarian_advantage": 0.004695,
+            "contrarian_advantage": -0.004566,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "NO_CLEAR_DECISION_EDGE"
@@ -15157,27 +15605,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 71,
+            "classified_matches": 91,
+            "aligned_picks": 73,
             "contrarian_picks": 18,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.797753,
-            "contrarian_rate": 0.202247,
-            "aligned_evaluated_matches": 71,
-            "aligned_correct_matches": 47,
-            "aligned_efficiency": 0.661972,
+            "aligned_rate": 0.802198,
+            "contrarian_rate": 0.197802,
+            "aligned_evaluated_matches": 73,
+            "aligned_correct_matches": 49,
+            "aligned_efficiency": 0.671233,
             "contrarian_evaluated_matches": 18,
             "contrarian_correct_matches": 12,
             "contrarian_efficiency": 0.666667,
-            "contrarian_advantage": 0.004695,
+            "contrarian_advantage": -0.004566,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "NO_CLEAR_DECISION_EDGE"
@@ -15895,6 +16359,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -15909,21 +16389,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 2,
-            "aligned_efficiency": 0.25,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 4,
+            "aligned_efficiency": 0.4,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.25,
+            "contrarian_advantage": -0.4,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -16007,6 +16487,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -16014,21 +16510,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 73,
+            "classified_matches": 91,
+            "aligned_picks": 75,
             "contrarian_picks": 16,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.820225,
-            "contrarian_rate": 0.179775,
-            "aligned_evaluated_matches": 73,
-            "aligned_correct_matches": 42,
-            "aligned_efficiency": 0.575342,
+            "aligned_rate": 0.824176,
+            "contrarian_rate": 0.175824,
+            "aligned_evaluated_matches": 75,
+            "aligned_correct_matches": 44,
+            "aligned_efficiency": 0.586667,
             "contrarian_evaluated_matches": 16,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.375,
-            "contrarian_advantage": -0.200342,
+            "contrarian_advantage": -0.211667,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -16746,27 +17242,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 73,
+            "classified_matches": 91,
+            "aligned_picks": 75,
             "contrarian_picks": 16,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.820225,
-            "contrarian_rate": 0.179775,
-            "aligned_evaluated_matches": 73,
-            "aligned_correct_matches": 42,
-            "aligned_efficiency": 0.575342,
+            "aligned_rate": 0.824176,
+            "contrarian_rate": 0.175824,
+            "aligned_evaluated_matches": 75,
+            "aligned_correct_matches": 44,
+            "aligned_efficiency": 0.586667,
             "contrarian_evaluated_matches": 16,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.375,
-            "contrarian_advantage": -0.200342,
+            "contrarian_advantage": -0.211667,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -17484,6 +17996,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -17498,21 +18026,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 9,
+            "classified_matches": 12,
+            "aligned_picks": 11,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.9,
-            "contrarian_rate": 0.1,
-            "aligned_evaluated_matches": 9,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.333333,
+            "aligned_rate": 0.916667,
+            "contrarian_rate": 0.083333,
+            "aligned_evaluated_matches": 11,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.454545,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.333333,
+            "contrarian_advantage": -0.454545,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -17596,6 +18124,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -17603,21 +18147,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 72,
+            "classified_matches": 91,
+            "aligned_picks": 74,
             "contrarian_picks": 17,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.808989,
-            "contrarian_rate": 0.191011,
-            "aligned_evaluated_matches": 72,
-            "aligned_correct_matches": 41,
-            "aligned_efficiency": 0.569444,
+            "aligned_rate": 0.813187,
+            "contrarian_rate": 0.186813,
+            "aligned_evaluated_matches": 74,
+            "aligned_correct_matches": 43,
+            "aligned_efficiency": 0.581081,
             "contrarian_evaluated_matches": 17,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.352941,
-            "contrarian_advantage": -0.216503,
+            "contrarian_advantage": -0.22814,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -18335,27 +18879,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 72,
+            "classified_matches": 91,
+            "aligned_picks": 74,
             "contrarian_picks": 17,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.808989,
-            "contrarian_rate": 0.191011,
-            "aligned_evaluated_matches": 72,
-            "aligned_correct_matches": 41,
-            "aligned_efficiency": 0.569444,
+            "aligned_rate": 0.813187,
+            "contrarian_rate": 0.186813,
+            "aligned_evaluated_matches": 74,
+            "aligned_correct_matches": 43,
+            "aligned_efficiency": 0.581081,
             "contrarian_evaluated_matches": 17,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.352941,
-            "contrarian_advantage": -0.216503,
+            "contrarian_advantage": -0.22814,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -19073,6 +19633,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -19087,21 +19663,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.375,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 1,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": 0.125,
+            "contrarian_advantage": 0,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -19185,6 +19761,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -19192,21 +19784,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 79,
+            "classified_matches": 91,
+            "aligned_picks": 81,
             "contrarian_picks": 10,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.88764,
-            "contrarian_rate": 0.11236,
-            "aligned_evaluated_matches": 79,
-            "aligned_correct_matches": 47,
-            "aligned_efficiency": 0.594937,
+            "aligned_rate": 0.89011,
+            "contrarian_rate": 0.10989,
+            "aligned_evaluated_matches": 81,
+            "aligned_correct_matches": 49,
+            "aligned_efficiency": 0.604938,
             "contrarian_evaluated_matches": 10,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.094937,
+            "contrarian_advantage": -0.104938,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -19924,27 +20516,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 79,
+            "classified_matches": 91,
+            "aligned_picks": 81,
             "contrarian_picks": 10,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.88764,
-            "contrarian_rate": 0.11236,
-            "aligned_evaluated_matches": 79,
-            "aligned_correct_matches": 47,
-            "aligned_efficiency": 0.594937,
+            "aligned_rate": 0.89011,
+            "contrarian_rate": 0.10989,
+            "aligned_evaluated_matches": 81,
+            "aligned_correct_matches": 49,
+            "aligned_efficiency": 0.604938,
             "contrarian_evaluated_matches": 10,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.094937,
+            "contrarian_advantage": -0.104938,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -20662,6 +21270,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -20676,21 +21300,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 2,
-            "aligned_efficiency": 0.25,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 4,
+            "aligned_efficiency": 0.4,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.25,
+            "contrarian_advantage": -0.4,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -20774,6 +21398,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -20781,21 +21421,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 72,
+            "classified_matches": 91,
+            "aligned_picks": 74,
             "contrarian_picks": 17,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.808989,
-            "contrarian_rate": 0.191011,
-            "aligned_evaluated_matches": 72,
-            "aligned_correct_matches": 43,
-            "aligned_efficiency": 0.597222,
+            "aligned_rate": 0.813187,
+            "contrarian_rate": 0.186813,
+            "aligned_evaluated_matches": 74,
+            "aligned_correct_matches": 45,
+            "aligned_efficiency": 0.608108,
             "contrarian_evaluated_matches": 17,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.411765,
-            "contrarian_advantage": -0.185457,
+            "contrarian_advantage": -0.196343,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -21513,27 +22153,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 72,
+            "classified_matches": 91,
+            "aligned_picks": 74,
             "contrarian_picks": 17,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.808989,
-            "contrarian_rate": 0.191011,
-            "aligned_evaluated_matches": 72,
-            "aligned_correct_matches": 43,
-            "aligned_efficiency": 0.597222,
+            "aligned_rate": 0.813187,
+            "contrarian_rate": 0.186813,
+            "aligned_evaluated_matches": 74,
+            "aligned_correct_matches": 45,
+            "aligned_efficiency": 0.608108,
             "contrarian_evaluated_matches": 17,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.411765,
-            "contrarian_advantage": -0.185457,
+            "contrarian_advantage": -0.196343,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -22251,6 +22907,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -22265,21 +22937,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 4,
-            "aligned_efficiency": 0.5,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 6,
+            "aligned_efficiency": 0.6,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 2,
             "contrarian_efficiency": 1,
-            "contrarian_advantage": 0.5,
+            "contrarian_advantage": 0.4,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -22363,6 +23035,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -22370,21 +23058,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 69,
+            "classified_matches": 91,
+            "aligned_picks": 71,
             "contrarian_picks": 20,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.775281,
-            "contrarian_rate": 0.224719,
-            "aligned_evaluated_matches": 69,
-            "aligned_correct_matches": 44,
-            "aligned_efficiency": 0.637681,
+            "aligned_rate": 0.78022,
+            "contrarian_rate": 0.21978,
+            "aligned_evaluated_matches": 71,
+            "aligned_correct_matches": 46,
+            "aligned_efficiency": 0.647887,
             "contrarian_evaluated_matches": 20,
             "contrarian_correct_matches": 12,
             "contrarian_efficiency": 0.6,
-            "contrarian_advantage": -0.037681,
+            "contrarian_advantage": -0.047887,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "NO_CLEAR_DECISION_EDGE"
@@ -23102,27 +23790,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 69,
+            "classified_matches": 91,
+            "aligned_picks": 71,
             "contrarian_picks": 20,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.775281,
-            "contrarian_rate": 0.224719,
-            "aligned_evaluated_matches": 69,
-            "aligned_correct_matches": 44,
-            "aligned_efficiency": 0.637681,
+            "aligned_rate": 0.78022,
+            "contrarian_rate": 0.21978,
+            "aligned_evaluated_matches": 71,
+            "aligned_correct_matches": 46,
+            "aligned_efficiency": 0.647887,
             "contrarian_evaluated_matches": 20,
             "contrarian_correct_matches": 12,
             "contrarian_efficiency": 0.6,
-            "contrarian_advantage": -0.037681,
+            "contrarian_advantage": -0.047887,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "NO_CLEAR_DECISION_EDGE"
@@ -23840,6 +24544,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -23854,21 +24574,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 9,
+            "classified_matches": 12,
+            "aligned_picks": 11,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.9,
-            "contrarian_rate": 0.1,
-            "aligned_evaluated_matches": 9,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.333333,
+            "aligned_rate": 0.916667,
+            "contrarian_rate": 0.083333,
+            "aligned_evaluated_matches": 11,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.454545,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -0.333333,
+            "contrarian_advantage": -0.454545,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -23952,6 +24672,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -23959,21 +24695,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 68,
+            "classified_matches": 91,
+            "aligned_picks": 70,
             "contrarian_picks": 21,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.764045,
-            "contrarian_rate": 0.235955,
-            "aligned_evaluated_matches": 68,
-            "aligned_correct_matches": 40,
-            "aligned_efficiency": 0.588235,
+            "aligned_rate": 0.769231,
+            "contrarian_rate": 0.230769,
+            "aligned_evaluated_matches": 70,
+            "aligned_correct_matches": 42,
+            "aligned_efficiency": 0.6,
             "contrarian_evaluated_matches": 21,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.380952,
-            "contrarian_advantage": -0.207283,
+            "contrarian_advantage": -0.219048,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -24691,27 +25427,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 68,
+            "classified_matches": 91,
+            "aligned_picks": 70,
             "contrarian_picks": 21,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.764045,
-            "contrarian_rate": 0.235955,
-            "aligned_evaluated_matches": 68,
-            "aligned_correct_matches": 40,
-            "aligned_efficiency": 0.588235,
+            "aligned_rate": 0.769231,
+            "contrarian_rate": 0.230769,
+            "aligned_evaluated_matches": 70,
+            "aligned_correct_matches": 42,
+            "aligned_efficiency": 0.6,
             "contrarian_evaluated_matches": 21,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.380952,
-            "contrarian_advantage": -0.207283,
+            "contrarian_advantage": -0.219048,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -25429,6 +26181,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -25443,21 +26211,21 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "classified_matches": 10,
-            "aligned_picks": 8,
+            "classified_matches": 12,
+            "aligned_picks": 10,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.8,
-            "contrarian_rate": 0.2,
-            "aligned_evaluated_matches": 8,
-            "aligned_correct_matches": 3,
-            "aligned_efficiency": 0.375,
+            "aligned_rate": 0.833333,
+            "contrarian_rate": 0.166667,
+            "aligned_evaluated_matches": 10,
+            "aligned_correct_matches": 5,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 1,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": 0.125,
+            "contrarian_advantage": 0,
             "tier": "consensus_leaning",
             "primary_insight": null
           },
@@ -25541,6 +26309,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -25548,21 +26332,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 73,
+            "classified_matches": 91,
+            "aligned_picks": 75,
             "contrarian_picks": 16,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.820225,
-            "contrarian_rate": 0.179775,
-            "aligned_evaluated_matches": 73,
-            "aligned_correct_matches": 43,
-            "aligned_efficiency": 0.589041,
+            "aligned_rate": 0.824176,
+            "contrarian_rate": 0.175824,
+            "aligned_evaluated_matches": 75,
+            "aligned_correct_matches": 45,
+            "aligned_efficiency": 0.6,
             "contrarian_evaluated_matches": 16,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.4375,
-            "contrarian_advantage": -0.151541,
+            "contrarian_advantage": -0.1625,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -26280,27 +27064,43 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 89,
-            "aligned_picks": 73,
+            "classified_matches": 91,
+            "aligned_picks": 75,
             "contrarian_picks": 16,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.820225,
-            "contrarian_rate": 0.179775,
-            "aligned_evaluated_matches": 73,
-            "aligned_correct_matches": 43,
-            "aligned_efficiency": 0.589041,
+            "aligned_rate": 0.824176,
+            "contrarian_rate": 0.175824,
+            "aligned_evaluated_matches": 75,
+            "aligned_correct_matches": 45,
+            "aligned_efficiency": 0.6,
             "contrarian_evaluated_matches": 16,
             "contrarian_correct_matches": 7,
             "contrarian_efficiency": 0.4375,
-            "contrarian_advantage": -0.151541,
+            "contrarian_advantage": -0.1625,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -27018,6 +27818,22 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG090",
+              "pick_team_id": "KC",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG091",
+              "pick_team_id": "BUF",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }

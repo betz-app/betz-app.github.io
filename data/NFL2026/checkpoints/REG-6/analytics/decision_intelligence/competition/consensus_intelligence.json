@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG089",
-  "evaluation_cursor": "REG089",
+  "freeze_cursor": "REG091",
+  "evaluation_cursor": "REG091",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_intelligence",
@@ -13,13 +13,13 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "frozen_matches": 10,
-        "sufficient_sample_matches": 10,
+        "frozen_matches": 12,
+        "sufficient_sample_matches": 12,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 10,
+        "dominant_matches": 12,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.825368,
+        "average_consensus_strength": 0.849571,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -349,6 +349,72 @@
               "team_id": "ARI",
               "prediction_count": 1,
               "prediction_rate": 0.058824
+            }
+          ],
+          "consensus_strength": 0.941176,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG090",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "KC",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "KC",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "LAC",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG091",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "BUF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "LV",
+              "prediction_count": 1,
+              "prediction_rate": 0.058824
+            },
+            {
+              "team_id": "BUF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
             }
           ],
           "consensus_strength": 0.941176,
@@ -361,13 +427,13 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "frozen_matches": 89,
-        "sufficient_sample_matches": 89,
+        "frozen_matches": 91,
+        "sufficient_sample_matches": 91,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 89,
+        "dominant_matches": 91,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.811184,
+        "average_consensus_strength": 0.814687,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -3304,6 +3370,72 @@
               "team_id": "ARI",
               "prediction_count": 1,
               "prediction_rate": 0.058824
+            }
+          ],
+          "consensus_strength": 0.941176,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG090",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "KC",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "KC",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "LAC",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG091",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "BUF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "LV",
+              "prediction_count": 1,
+              "prediction_rate": 0.058824
+            },
+            {
+              "team_id": "BUF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
             }
           ],
           "consensus_strength": 0.941176,
@@ -3315,13 +3447,13 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "frozen_matches": 89,
-        "sufficient_sample_matches": 89,
+        "frozen_matches": 91,
+        "sufficient_sample_matches": 91,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 89,
+        "dominant_matches": 91,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.811184,
+        "average_consensus_strength": 0.814687,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -6258,6 +6390,72 @@
               "team_id": "ARI",
               "prediction_count": 1,
               "prediction_rate": 0.058824
+            }
+          ],
+          "consensus_strength": 0.941176,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG090",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "KC",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "KC",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "LAC",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG091",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "BUF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "LV",
+              "prediction_count": 1,
+              "prediction_rate": 0.058824
+            },
+            {
+              "team_id": "BUF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
             }
           ],
           "consensus_strength": 0.941176,
