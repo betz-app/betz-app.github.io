@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG081",
-  "evaluation_cursor": "REG081",
+  "freeze_cursor": "REG088",
+  "evaluation_cursor": "REG088",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,22 +13,24 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "evaluated_matches": 2,
-        "favorite_wins": 1,
-        "underdog_wins": 1,
+        "evaluated_matches": 9,
+        "favorite_wins": 3,
+        "underdog_wins": 6,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.5,
-        "upset_rate": 0.5,
+        "market_efficiency": 0.333333,
+        "upset_rate": 0.666667,
         "consensus_comparison": {
-          "shared_evaluated_matches": 2,
-          "market_correct": 1,
-          "consensus_correct": 0,
-          "market_efficiency": 0.5,
-          "consensus_efficiency": 0,
-          "consensus_vs_market_delta": -0.5
+          "shared_evaluated_matches": 9,
+          "market_correct": 3,
+          "consensus_correct": 4,
+          "market_efficiency": 0.333333,
+          "consensus_efficiency": 0.444444,
+          "consensus_vs_market_delta": 0.111111
         },
-        "primary_insight": null
+        "primary_insight": {
+          "insight_code": "COMMUNITY_BEATS_MARKET"
+        }
       },
       "matches": [
         {
@@ -46,6 +48,62 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "HOU",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG082",
+          "favorite_team_id": "CHI",
+          "underdog_team_id": "ATL",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CHI",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG083",
+          "favorite_team_id": "BAL",
+          "underdog_team_id": "CLE",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CLE",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG084",
+          "favorite_team_id": "IND",
+          "underdog_team_id": "TEN",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "TEN",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG085",
+          "favorite_team_id": "NE",
+          "underdog_team_id": "NYJ",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "NE",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG086",
+          "favorite_team_id": "NYG",
+          "underdog_team_id": "NO",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "NO",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG087",
+          "favorite_team_id": "PHI",
+          "underdog_team_id": "CAR",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CAR",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG088",
+          "favorite_team_id": "TB",
+          "underdog_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PIT",
+          "favorite_won": false
         }
       ]
     },
@@ -53,20 +111,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 81,
-        "favorite_wins": 48,
-        "underdog_wins": 32,
+        "evaluated_matches": 88,
+        "favorite_wins": 50,
+        "underdog_wins": 37,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.592593,
-        "upset_rate": 0.395062,
+        "market_efficiency": 0.568182,
+        "upset_rate": 0.420455,
         "consensus_comparison": {
-          "shared_evaluated_matches": 81,
-          "market_correct": 48,
-          "consensus_correct": 48,
-          "market_efficiency": 0.592593,
-          "consensus_efficiency": 0.592593,
-          "consensus_vs_market_delta": 0
+          "shared_evaluated_matches": 88,
+          "market_correct": 50,
+          "consensus_correct": 52,
+          "market_efficiency": 0.568182,
+          "consensus_efficiency": 0.590909,
+          "consensus_vs_market_delta": 0.022727
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -720,26 +778,82 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "HOU",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG082",
+          "favorite_team_id": "CHI",
+          "underdog_team_id": "ATL",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CHI",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG083",
+          "favorite_team_id": "BAL",
+          "underdog_team_id": "CLE",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CLE",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG084",
+          "favorite_team_id": "IND",
+          "underdog_team_id": "TEN",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "TEN",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG085",
+          "favorite_team_id": "NE",
+          "underdog_team_id": "NYJ",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "NE",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG086",
+          "favorite_team_id": "NYG",
+          "underdog_team_id": "NO",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "NO",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG087",
+          "favorite_team_id": "PHI",
+          "underdog_team_id": "CAR",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CAR",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG088",
+          "favorite_team_id": "TB",
+          "underdog_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PIT",
+          "favorite_won": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 81,
-        "favorite_wins": 48,
-        "underdog_wins": 32,
+        "evaluated_matches": 88,
+        "favorite_wins": 50,
+        "underdog_wins": 37,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.592593,
-        "upset_rate": 0.395062,
+        "market_efficiency": 0.568182,
+        "upset_rate": 0.420455,
         "consensus_comparison": {
-          "shared_evaluated_matches": 81,
-          "market_correct": 48,
-          "consensus_correct": 48,
-          "market_efficiency": 0.592593,
-          "consensus_efficiency": 0.592593,
-          "consensus_vs_market_delta": 0
+          "shared_evaluated_matches": 88,
+          "market_correct": 50,
+          "consensus_correct": 52,
+          "market_efficiency": 0.568182,
+          "consensus_efficiency": 0.590909,
+          "consensus_vs_market_delta": 0.022727
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -1393,6 +1507,62 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "HOU",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG082",
+          "favorite_team_id": "CHI",
+          "underdog_team_id": "ATL",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CHI",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG083",
+          "favorite_team_id": "BAL",
+          "underdog_team_id": "CLE",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CLE",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG084",
+          "favorite_team_id": "IND",
+          "underdog_team_id": "TEN",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "TEN",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG085",
+          "favorite_team_id": "NE",
+          "underdog_team_id": "NYJ",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "NE",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG086",
+          "favorite_team_id": "NYG",
+          "underdog_team_id": "NO",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "NO",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG087",
+          "favorite_team_id": "PHI",
+          "underdog_team_id": "CAR",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "CAR",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG088",
+          "favorite_team_id": "TB",
+          "underdog_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PIT",
+          "favorite_won": false
         }
       ]
     }
