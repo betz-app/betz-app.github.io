@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG088",
-  "evaluation_cursor": "REG088",
+  "freeze_cursor": "REG089",
+  "evaluation_cursor": "REG089",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "lock_preference",
@@ -237,8 +237,8 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "valid_locks": 5,
-            "missing_locks": 1,
+            "valid_locks": 6,
+            "missing_locks": 0,
             "preference_status": "no_recurring_preference",
             "top_lock_team": null,
             "distribution": [
@@ -246,7 +246,7 @@
                 "rank": 1,
                 "team_id": "KC",
                 "lock_count": 2,
-                "lock_share": 0.4,
+                "lock_share": 0.333333,
                 "periods_with_locks": 2,
                 "evaluated_locks": 2,
                 "correct_locks": 2,
@@ -258,7 +258,7 @@
                 "rank": 2,
                 "team_id": "DAL",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 0,
@@ -270,7 +270,19 @@
                 "rank": 2,
                 "team_id": "LAC",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
+                "periods_with_locks": 1,
+                "evaluated_locks": 1,
+                "correct_locks": 0,
+                "incorrect_locks": 1,
+                "pending_locks": 0,
+                "efficiency": 0
+              },
+              {
+                "rank": 2,
+                "team_id": "LAR",
+                "lock_count": 1,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 0,
@@ -282,7 +294,7 @@
                 "rank": 2,
                 "team_id": "MIN",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -328,6 +340,13 @@
               "match_id": "REG065",
               "period_id": "065_REG065",
               "lock_team_id": "DAL",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG089",
+              "period_id": "080_REG080",
+              "lock_team_id": "LAR",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -753,8 +772,8 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "valid_locks": 5,
-            "missing_locks": 1,
+            "valid_locks": 6,
+            "missing_locks": 0,
             "preference_status": "no_recurring_preference",
             "top_lock_team": null,
             "distribution": [
@@ -762,7 +781,7 @@
                 "rank": 1,
                 "team_id": "JAX",
                 "lock_count": 2,
-                "lock_share": 0.4,
+                "lock_share": 0.333333,
                 "periods_with_locks": 2,
                 "evaluated_locks": 2,
                 "correct_locks": 2,
@@ -771,10 +790,22 @@
                 "efficiency": 1
               },
               {
-                "rank": 2,
+                "rank": 1,
+                "team_id": "LAR",
+                "lock_count": 2,
+                "lock_share": 0.333333,
+                "periods_with_locks": 2,
+                "evaluated_locks": 2,
+                "correct_locks": 1,
+                "incorrect_locks": 1,
+                "pending_locks": 0,
+                "efficiency": 0.5
+              },
+              {
+                "rank": 3,
                 "team_id": "BAL",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -783,22 +814,10 @@
                 "efficiency": 1
               },
               {
-                "rank": 2,
+                "rank": 3,
                 "team_id": "KC",
                 "lock_count": 1,
-                "lock_share": 0.2,
-                "periods_with_locks": 1,
-                "evaluated_locks": 1,
-                "correct_locks": 1,
-                "incorrect_locks": 0,
-                "pending_locks": 0,
-                "efficiency": 1
-              },
-              {
-                "rank": 2,
-                "team_id": "LAR",
-                "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -846,6 +865,13 @@
               "lock_team_id": "JAX",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG089",
+              "period_id": "080_REG080",
+              "lock_team_id": "LAR",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -1073,16 +1099,28 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "valid_locks": 5,
-            "missing_locks": 1,
+            "valid_locks": 6,
+            "missing_locks": 0,
             "preference_status": "no_recurring_preference",
             "top_lock_team": null,
             "distribution": [
               {
                 "rank": 1,
+                "team_id": "LAR",
+                "lock_count": 2,
+                "lock_share": 0.333333,
+                "periods_with_locks": 2,
+                "evaluated_locks": 2,
+                "correct_locks": 0,
+                "incorrect_locks": 2,
+                "pending_locks": 0,
+                "efficiency": 0
+              },
+              {
+                "rank": 1,
                 "team_id": "PHI",
                 "lock_count": 2,
-                "lock_share": 0.4,
+                "lock_share": 0.333333,
                 "periods_with_locks": 2,
                 "evaluated_locks": 2,
                 "correct_locks": 2,
@@ -1091,10 +1129,10 @@
                 "efficiency": 1
               },
               {
-                "rank": 2,
+                "rank": 3,
                 "team_id": "DAL",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 0,
@@ -1103,22 +1141,10 @@
                 "efficiency": 0
               },
               {
-                "rank": 2,
-                "team_id": "LAR",
-                "lock_count": 1,
-                "lock_share": 0.2,
-                "periods_with_locks": 1,
-                "evaluated_locks": 1,
-                "correct_locks": 0,
-                "incorrect_locks": 1,
-                "pending_locks": 0,
-                "efficiency": 0
-              },
-              {
-                "rank": 2,
+                "rank": 3,
                 "team_id": "MIN",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1164,6 +1190,13 @@
               "match_id": "REG065",
               "period_id": "065_REG065",
               "lock_team_id": "DAL",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG089",
+              "period_id": "080_REG080",
+              "lock_team_id": "LAR",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -1493,8 +1526,8 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "valid_locks": 5,
-            "missing_locks": 1,
+            "valid_locks": 6,
+            "missing_locks": 0,
             "preference_status": "no_recurring_preference",
             "top_lock_team": null,
             "distribution": [
@@ -1502,7 +1535,7 @@
                 "rank": 1,
                 "team_id": "BAL",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1514,7 +1547,7 @@
                 "rank": 1,
                 "team_id": "DAL",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 0,
@@ -1526,7 +1559,7 @@
                 "rank": 1,
                 "team_id": "KC",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1536,9 +1569,21 @@
               },
               {
                 "rank": 1,
+                "team_id": "LAR",
+                "lock_count": 1,
+                "lock_share": 0.166667,
+                "periods_with_locks": 1,
+                "evaluated_locks": 1,
+                "correct_locks": 0,
+                "incorrect_locks": 1,
+                "pending_locks": 0,
+                "efficiency": 0
+              },
+              {
+                "rank": 1,
                 "team_id": "MIN",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1550,7 +1595,7 @@
                 "rank": 1,
                 "team_id": "SF",
                 "lock_count": 1,
-                "lock_share": 0.2,
+                "lock_share": 0.166667,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1596,6 +1641,13 @@
               "match_id": "REG065",
               "period_id": "065_REG065",
               "lock_team_id": "DAL",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG089",
+              "period_id": "080_REG080",
+              "lock_team_id": "LAR",
               "evaluation_status": "evaluated",
               "correct": false
             }

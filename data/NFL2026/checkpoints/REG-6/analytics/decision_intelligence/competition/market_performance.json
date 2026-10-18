@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG088",
-  "evaluation_cursor": "REG088",
+  "freeze_cursor": "REG089",
+  "evaluation_cursor": "REG089",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "evaluated_matches": 9,
+        "evaluated_matches": 10,
         "favorite_wins": 3,
-        "underdog_wins": 6,
+        "underdog_wins": 7,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.333333,
-        "upset_rate": 0.666667,
+        "market_efficiency": 0.3,
+        "upset_rate": 0.7,
         "consensus_comparison": {
-          "shared_evaluated_matches": 9,
+          "shared_evaluated_matches": 10,
           "market_correct": 3,
           "consensus_correct": 4,
-          "market_efficiency": 0.333333,
-          "consensus_efficiency": 0.444444,
-          "consensus_vs_market_delta": 0.111111
+          "market_efficiency": 0.3,
+          "consensus_efficiency": 0.4,
+          "consensus_vs_market_delta": 0.1
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -104,6 +104,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "PIT",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG089",
+          "favorite_team_id": "LAR",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "ARI",
+          "favorite_won": false
         }
       ]
     },
@@ -111,20 +119,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 88,
+        "evaluated_matches": 89,
         "favorite_wins": 50,
-        "underdog_wins": 37,
+        "underdog_wins": 38,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.568182,
-        "upset_rate": 0.420455,
+        "market_efficiency": 0.561798,
+        "upset_rate": 0.426966,
         "consensus_comparison": {
-          "shared_evaluated_matches": 88,
+          "shared_evaluated_matches": 89,
           "market_correct": 50,
           "consensus_correct": 52,
-          "market_efficiency": 0.568182,
-          "consensus_efficiency": 0.590909,
-          "consensus_vs_market_delta": 0.022727
+          "market_efficiency": 0.561798,
+          "consensus_efficiency": 0.58427,
+          "consensus_vs_market_delta": 0.022472
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -833,6 +841,14 @@
           "underdog_team_id": "PIT",
           "evaluation_status": "evaluated",
           "winner_team_id": "PIT",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG089",
+          "favorite_team_id": "LAR",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "ARI",
           "favorite_won": false
         }
       ]
@@ -840,20 +856,20 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 88,
+        "evaluated_matches": 89,
         "favorite_wins": 50,
-        "underdog_wins": 37,
+        "underdog_wins": 38,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.568182,
-        "upset_rate": 0.420455,
+        "market_efficiency": 0.561798,
+        "upset_rate": 0.426966,
         "consensus_comparison": {
-          "shared_evaluated_matches": 88,
+          "shared_evaluated_matches": 89,
           "market_correct": 50,
           "consensus_correct": 52,
-          "market_efficiency": 0.568182,
-          "consensus_efficiency": 0.590909,
-          "consensus_vs_market_delta": 0.022727
+          "market_efficiency": 0.561798,
+          "consensus_efficiency": 0.58427,
+          "consensus_vs_market_delta": 0.022472
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -1562,6 +1578,14 @@
           "underdog_team_id": "PIT",
           "evaluation_status": "evaluated",
           "winner_team_id": "PIT",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG089",
+          "favorite_team_id": "LAR",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "ARI",
           "favorite_won": false
         }
       ]
