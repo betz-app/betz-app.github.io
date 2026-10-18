@@ -958,7 +958,7 @@ const EXPLAIN = {
   lock:{t:"Fijados",b:"Porcentaje de aciertos en los partidos que eligió como su pronóstico de mayor confianza.",s:"Historial de fijados"},
   contrario:{t:"Frente a la comunidad",b:"Muestra con qué frecuencia el jugador pronostica algo distinto a la mayoría.",s:"Pronósticos de la comunidad"},
   mercado:{t:"Frente al favorito",b:"Muestra con qué frecuencia el jugador elige al favorito o apuesta por la sorpresa.",s:"Tendencia de sus pronósticos"},
-  efficiency:{t:"Efectividad",b:"Porcentaje total de pronósticos acertados durante la temporada.",s:"Resultados de la temporada"},
+  efficiency:{t:"Efectividad",b:"Porcentaje de puntos predictivos obtenidos sobre los disponibles, incluido el partido fijado. Excluye los bonos de grupo y semana perfecta.",s:"Resultados de la temporada"},
   form:{t:"Forma reciente",b:"Las cinco jornadas más recientes: verde para una jornada ganadora y rojo para una jornada perdedora.",s:"Últimas cinco jornadas"},
   racha:{t:"Mejor racha",b:"La mayor cadena de jornadas ganadoras o perdedoras durante la temporada. No necesariamente es la racha actual.",s:"Resultados de la temporada"},
   fk:{t:"Dónde acierta más",b:"Los equipos, conferencias y divisiones que mejor ha pronosticado durante la temporada.",s:"Pronósticos evaluados"}
@@ -1248,13 +1248,13 @@ async function loadCheckpoint(){
   const selectedPeriodIndex=scoredPeriods.findIndex(period=>checkpointIdForPeriod(period)===state.cp);
   state.periodIndex = selectedPeriodIndex>=0?selectedPeriodIndex:Math.max(0,scoredPeriods.length-1);
   if((location.hash||"").replace("#/","")==="grupos") renderGrupos();
-  // Pre-freeze checkpoints publish no analytics yet — skip those fetches so the console stays clean.
-  const analyticsPublished = !/:PRE_FREEZE$/.test((state.leaderboard && state.leaderboard.cursor) || "");
+  // A new rolling period can retain season analytics from the last scored
+  // checkpoint. Its PRE_FREEZE leaderboard does not imply missing analytics.
   const perfIx = ["efficiency","form","longest_streak","consistency"];
   const diIx = ["contrarian_play","lock_efficiency","lock_preference","market_alignment","player_market_performance"];
   const loadOptional=async (target,key,rel)=>{
     target[key]=null;
-    if(analyticsPublished) target[key]=await getJSON(base+"/analytics/"+rel).catch(()=>null);
+    target[key]=await getJSON(base+"/analytics/"+rel).catch(()=>null);
   };
   await Promise.all([
     ...perfIx.map(i=>loadOptional(state.perf,i,"player_performance/"+i+".json")),
@@ -2818,3 +2818,4 @@ window.addEventListener("hashchange", ()=>{ const route=(location.hash||"").repl
 boot();
 </script>
 </html>
+
