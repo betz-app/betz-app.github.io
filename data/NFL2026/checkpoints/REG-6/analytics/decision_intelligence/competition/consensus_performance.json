@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG080",
-  "evaluation_cursor": "REG080",
+  "freeze_cursor": "REG081",
+  "evaluation_cursor": "REG081",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,9 +13,9 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "evaluated_matches": 1,
+        "evaluated_matches": 2,
         "correct_matches": 0,
-        "incorrect_matches": 1,
+        "incorrect_matches": 2,
         "pending_matches": 0,
         "consensus_efficiency": 0
       },
@@ -25,6 +25,12 @@
           "consensus_team_id": "SEA",
           "evaluation_status": "evaluated",
           "correct": false
+        },
+        {
+          "match_id": "REG081",
+          "consensus_team_id": "JAX",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
@@ -32,11 +38,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 80,
+        "evaluated_matches": 81,
         "correct_matches": 48,
-        "incorrect_matches": 32,
+        "incorrect_matches": 33,
         "pending_matches": 0,
-        "consensus_efficiency": 0.6
+        "consensus_efficiency": 0.592593
       },
       "matches": [
         {
@@ -516,6 +522,12 @@
         {
           "match_id": "REG080",
           "consensus_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG081",
+          "consensus_team_id": "JAX",
           "evaluation_status": "evaluated",
           "correct": false
         }
@@ -524,11 +536,11 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 80,
+        "evaluated_matches": 81,
         "correct_matches": 48,
-        "incorrect_matches": 32,
+        "incorrect_matches": 33,
         "pending_matches": 0,
-        "consensus_efficiency": 0.6
+        "consensus_efficiency": 0.592593
       },
       "matches": [
         {
@@ -1008,6 +1020,12 @@
         {
           "match_id": "REG080",
           "consensus_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
+        },
+        {
+          "match_id": "REG081",
+          "consensus_team_id": "JAX",
           "evaluation_status": "evaluated",
           "correct": false
         }

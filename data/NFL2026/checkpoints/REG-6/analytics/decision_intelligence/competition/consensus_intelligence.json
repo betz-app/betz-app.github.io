@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG080",
-  "evaluation_cursor": "REG080",
+  "freeze_cursor": "REG081",
+  "evaluation_cursor": "REG081",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_intelligence",
@@ -13,13 +13,13 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "frozen_matches": 1,
-        "sufficient_sample_matches": 1,
+        "frozen_matches": 2,
+        "sufficient_sample_matches": 2,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 1,
+        "dominant_matches": 2,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.875,
+        "average_consensus_strength": 0.90625,
         "primary_insight": null
       },
       "matches": [
@@ -55,6 +55,39 @@
           "consensus_strength": 0.875,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG081",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 16,
+          "missing_predictions": 1,
+          "coverage_rate": 0.941176,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "JAX",
+              "prediction_count": 15,
+              "prediction_rate": 0.9375
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "JAX",
+              "prediction_count": 15,
+              "prediction_rate": 0.9375
+            },
+            {
+              "team_id": "HOU",
+              "prediction_count": 1,
+              "prediction_rate": 0.0625
+            }
+          ],
+          "consensus_strength": 0.9375,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
       ]
     },
@@ -62,13 +95,13 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "frozen_matches": 80,
-        "sufficient_sample_matches": 80,
+        "frozen_matches": 81,
+        "sufficient_sample_matches": 81,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 80,
+        "dominant_matches": 81,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.810209,
+        "average_consensus_strength": 0.81178,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -2711,6 +2744,39 @@
             }
           ],
           "consensus_strength": 0.875,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG081",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 16,
+          "missing_predictions": 1,
+          "coverage_rate": 0.941176,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "JAX",
+              "prediction_count": 15,
+              "prediction_rate": 0.9375
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "JAX",
+              "prediction_count": 15,
+              "prediction_rate": 0.9375
+            },
+            {
+              "team_id": "HOU",
+              "prediction_count": 1,
+              "prediction_rate": 0.0625
+            }
+          ],
+          "consensus_strength": 0.9375,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
@@ -2719,13 +2785,13 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "frozen_matches": 80,
-        "sufficient_sample_matches": 80,
+        "frozen_matches": 81,
+        "sufficient_sample_matches": 81,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 80,
+        "dominant_matches": 81,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.810209,
+        "average_consensus_strength": 0.81178,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -5368,6 +5434,39 @@
             }
           ],
           "consensus_strength": 0.875,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG081",
+          "period_id": "080_REG080",
+          "registered_players": 17,
+          "valid_predictions": 16,
+          "missing_predictions": 1,
+          "coverage_rate": 0.941176,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "JAX",
+              "prediction_count": 15,
+              "prediction_rate": 0.9375
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "JAX",
+              "prediction_count": 15,
+              "prediction_rate": 0.9375
+            },
+            {
+              "team_id": "HOU",
+              "prediction_count": 1,
+              "prediction_rate": 0.0625
+            }
+          ],
+          "consensus_strength": 0.9375,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }

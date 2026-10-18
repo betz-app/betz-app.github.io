@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG080",
-  "evaluation_cursor": "REG080",
+  "freeze_cursor": "REG081",
+  "evaluation_cursor": "REG081",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "player_market_performance",
@@ -20,17 +20,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -40,6 +40,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -52,17 +60,17 @@
             "favorite_evaluated_matches": 49,
             "favorite_correct_matches": 33,
             "favorite_efficiency": 0.673469,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.545455,
+            "underdog_efficiency": 0.521739,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 71,
+              "shared_evaluated_matches": 72,
               "player_correct": 45,
-              "market_correct": 42,
-              "player_efficiency": 0.633803,
-              "market_efficiency": 0.591549,
-              "player_vs_market_delta": 0.042254
+              "market_correct": 43,
+              "player_efficiency": 0.625,
+              "market_efficiency": 0.597222,
+              "player_vs_market_delta": 0.027778
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -634,6 +642,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -645,17 +661,17 @@
             "favorite_evaluated_matches": 49,
             "favorite_correct_matches": 33,
             "favorite_efficiency": 0.673469,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.545455,
+            "underdog_efficiency": 0.521739,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 71,
+              "shared_evaluated_matches": 72,
               "player_correct": 45,
-              "market_correct": 42,
-              "player_efficiency": 0.633803,
-              "market_efficiency": 0.591549,
-              "player_vs_market_delta": 0.042254
+              "market_correct": 43,
+              "player_efficiency": 0.625,
+              "market_efficiency": 0.597222,
+              "player_vs_market_delta": 0.027778
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -1227,6 +1243,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -1246,17 +1270,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -1266,6 +1290,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -1278,17 +1310,17 @@
             "favorite_evaluated_matches": 61,
             "favorite_correct_matches": 39,
             "favorite_efficiency": 0.639344,
-            "underdog_evaluated_matches": 19,
+            "underdog_evaluated_matches": 20,
             "underdog_correct_matches": 11,
-            "underdog_efficiency": 0.578947,
+            "underdog_efficiency": 0.55,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 50,
-              "market_correct": 47,
-              "player_efficiency": 0.625,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0375
+              "market_correct": 48,
+              "player_efficiency": 0.617284,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.024691
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -1932,6 +1964,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -1943,17 +1983,17 @@
             "favorite_evaluated_matches": 61,
             "favorite_correct_matches": 39,
             "favorite_efficiency": 0.639344,
-            "underdog_evaluated_matches": 19,
+            "underdog_evaluated_matches": 20,
             "underdog_correct_matches": 11,
-            "underdog_efficiency": 0.578947,
+            "underdog_efficiency": 0.55,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 50,
-              "market_correct": 47,
-              "player_efficiency": 0.625,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0375
+              "market_correct": 48,
+              "player_efficiency": 0.617284,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.024691
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -2597,6 +2637,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -2616,17 +2664,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -2636,6 +2684,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -2648,20 +2704,20 @@
             "favorite_evaluated_matches": 66,
             "favorite_correct_matches": 42,
             "favorite_efficiency": 0.636364,
-            "underdog_evaluated_matches": 14,
+            "underdog_evaluated_matches": 15,
             "underdog_correct_matches": 9,
-            "underdog_efficiency": 0.642857,
+            "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 51,
-              "market_correct": 47,
-              "player_efficiency": 0.6375,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.05
+              "market_correct": 48,
+              "player_efficiency": 0.62963,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.037037
             },
             "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
+              "insight_code": "NO_CLEAR_MARKET_EDGE"
             }
           },
           "matches": [
@@ -3302,6 +3358,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -3313,20 +3377,20 @@
             "favorite_evaluated_matches": 66,
             "favorite_correct_matches": 42,
             "favorite_efficiency": 0.636364,
-            "underdog_evaluated_matches": 14,
+            "underdog_evaluated_matches": 15,
             "underdog_correct_matches": 9,
-            "underdog_efficiency": 0.642857,
+            "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 51,
-              "market_correct": 47,
-              "player_efficiency": 0.6375,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.05
+              "market_correct": 48,
+              "player_efficiency": 0.62963,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.037037
             },
             "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
+              "insight_code": "NO_CLEAR_MARKET_EDGE"
             }
           },
           "matches": [
@@ -3967,6 +4031,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -5155,17 +5227,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -5175,6 +5247,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -5187,17 +5267,17 @@
             "favorite_evaluated_matches": 56,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.607143,
-            "underdog_evaluated_matches": 24,
+            "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 10,
-            "underdog_efficiency": 0.416667,
+            "underdog_efficiency": 0.4,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 44,
-              "market_correct": 47,
-              "player_efficiency": 0.55,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0375
+              "market_correct": 48,
+              "player_efficiency": 0.54321,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.049383
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -5841,6 +5921,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -5852,17 +5940,17 @@
             "favorite_evaluated_matches": 56,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.607143,
-            "underdog_evaluated_matches": 24,
+            "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 10,
-            "underdog_efficiency": 0.416667,
+            "underdog_efficiency": 0.4,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 44,
-              "market_correct": 47,
-              "player_efficiency": 0.55,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0375
+              "market_correct": 48,
+              "player_efficiency": 0.54321,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.049383
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -6506,6 +6594,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -6525,17 +6621,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -6545,6 +6641,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -6557,17 +6661,17 @@
             "favorite_evaluated_matches": 41,
             "favorite_correct_matches": 24,
             "favorite_efficiency": 0.585366,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 8,
-            "underdog_efficiency": 0.363636,
+            "underdog_efficiency": 0.347826,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 63,
+              "shared_evaluated_matches": 64,
               "player_correct": 32,
-              "market_correct": 38,
-              "player_efficiency": 0.507937,
-              "market_efficiency": 0.603175,
-              "player_vs_market_delta": -0.095238
+              "market_correct": 39,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.609375,
+              "player_vs_market_delta": -0.109375
             },
             "primary_insight": {
               "insight_code": "MARKET_BEATS_PLAYER"
@@ -7075,6 +7179,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -7086,17 +7198,17 @@
             "favorite_evaluated_matches": 41,
             "favorite_correct_matches": 24,
             "favorite_efficiency": 0.585366,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 8,
-            "underdog_efficiency": 0.363636,
+            "underdog_efficiency": 0.347826,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 63,
+              "shared_evaluated_matches": 64,
               "player_correct": 32,
-              "market_correct": 38,
-              "player_efficiency": 0.507937,
-              "market_efficiency": 0.603175,
-              "player_vs_market_delta": -0.095238
+              "market_correct": 39,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.609375,
+              "player_vs_market_delta": -0.109375
             },
             "primary_insight": {
               "insight_code": "MARKET_BEATS_PLAYER"
@@ -7604,6 +7716,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -7620,20 +7740,20 @@
           "season_type": "Regular Season",
           "week": 6,
           "result": {
-            "favorite_evaluated_matches": 0,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": null,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
             "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 1,
             "underdog_efficiency": 1,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 1,
-              "market_correct": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 2,
+              "market_correct": 1,
               "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0.5
             },
             "primary_insight": null
           },
@@ -7645,6 +7765,14 @@
               "favorite_team_id": "SEA",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "favorite_team_id": "HOU",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -7652,19 +7780,19 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 56,
-            "favorite_correct_matches": 35,
-            "favorite_efficiency": 0.625,
+            "favorite_evaluated_matches": 57,
+            "favorite_correct_matches": 36,
+            "favorite_efficiency": 0.631579,
             "underdog_evaluated_matches": 24,
             "underdog_correct_matches": 12,
             "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
-              "player_correct": 47,
-              "market_correct": 47,
-              "player_efficiency": 0.5875,
-              "market_efficiency": 0.5875,
+              "shared_evaluated_matches": 81,
+              "player_correct": 48,
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
               "player_vs_market_delta": 0
             },
             "primary_insight": {
@@ -8309,6 +8437,14 @@
               "pick_team_id": "DEN",
               "market_position": "underdog",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -8317,19 +8453,19 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 56,
-            "favorite_correct_matches": 35,
-            "favorite_efficiency": 0.625,
+            "favorite_evaluated_matches": 57,
+            "favorite_correct_matches": 36,
+            "favorite_efficiency": 0.631579,
             "underdog_evaluated_matches": 24,
             "underdog_correct_matches": 12,
             "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
-              "player_correct": 47,
-              "market_correct": 47,
-              "player_efficiency": 0.5875,
-              "market_efficiency": 0.5875,
+              "shared_evaluated_matches": 81,
+              "player_correct": 48,
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
               "player_vs_market_delta": 0
             },
             "primary_insight": {
@@ -8974,6 +9110,14 @@
               "pick_team_id": "DEN",
               "market_position": "underdog",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -8993,17 +9137,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -9013,6 +9157,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -9025,17 +9177,17 @@
             "favorite_evaluated_matches": 53,
             "favorite_correct_matches": 35,
             "favorite_efficiency": 0.660377,
-            "underdog_evaluated_matches": 12,
+            "underdog_evaluated_matches": 13,
             "underdog_correct_matches": 7,
-            "underdog_efficiency": 0.583333,
+            "underdog_efficiency": 0.538462,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 65,
+              "shared_evaluated_matches": 66,
               "player_correct": 42,
-              "market_correct": 40,
-              "player_efficiency": 0.646154,
-              "market_efficiency": 0.615385,
-              "player_vs_market_delta": 0.030769
+              "market_correct": 41,
+              "player_efficiency": 0.636364,
+              "market_efficiency": 0.621212,
+              "player_vs_market_delta": 0.015152
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -9559,6 +9711,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -9570,17 +9730,17 @@
             "favorite_evaluated_matches": 53,
             "favorite_correct_matches": 35,
             "favorite_efficiency": 0.660377,
-            "underdog_evaluated_matches": 12,
+            "underdog_evaluated_matches": 13,
             "underdog_correct_matches": 7,
-            "underdog_efficiency": 0.583333,
+            "underdog_efficiency": 0.538462,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 65,
+              "shared_evaluated_matches": 66,
               "player_correct": 42,
-              "market_correct": 40,
-              "player_efficiency": 0.646154,
-              "market_efficiency": 0.615385,
-              "player_vs_market_delta": 0.030769
+              "market_correct": 41,
+              "player_efficiency": 0.636364,
+              "market_efficiency": 0.621212,
+              "player_vs_market_delta": 0.015152
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -10104,6 +10264,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -10123,17 +10291,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -10143,6 +10311,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -10155,17 +10331,17 @@
             "favorite_evaluated_matches": 68,
             "favorite_correct_matches": 42,
             "favorite_efficiency": 0.617647,
-            "underdog_evaluated_matches": 12,
+            "underdog_evaluated_matches": 13,
             "underdog_correct_matches": 6,
-            "underdog_efficiency": 0.5,
+            "underdog_efficiency": 0.461538,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 48,
-              "market_correct": 47,
-              "player_efficiency": 0.6,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -10809,6 +10985,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -10820,17 +11004,17 @@
             "favorite_evaluated_matches": 68,
             "favorite_correct_matches": 42,
             "favorite_efficiency": 0.617647,
-            "underdog_evaluated_matches": 12,
+            "underdog_evaluated_matches": 13,
             "underdog_correct_matches": 6,
-            "underdog_efficiency": 0.5,
+            "underdog_efficiency": 0.461538,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 48,
-              "market_correct": 47,
-              "player_efficiency": 0.6,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -11474,6 +11658,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -11493,17 +11685,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -11513,6 +11705,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -11525,17 +11725,17 @@
             "favorite_evaluated_matches": 58,
             "favorite_correct_matches": 41,
             "favorite_efficiency": 0.706897,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 16,
-            "underdog_efficiency": 0.727273,
+            "underdog_efficiency": 0.695652,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 57,
-              "market_correct": 47,
-              "player_efficiency": 0.7125,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.125
+              "market_correct": 48,
+              "player_efficiency": 0.703704,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.111111
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -12179,6 +12379,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -12190,17 +12398,17 @@
             "favorite_evaluated_matches": 58,
             "favorite_correct_matches": 41,
             "favorite_efficiency": 0.706897,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 16,
-            "underdog_efficiency": 0.727273,
+            "underdog_efficiency": 0.695652,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 57,
-              "market_correct": 47,
-              "player_efficiency": 0.7125,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.125
+              "market_correct": 48,
+              "player_efficiency": 0.703704,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.111111
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -12844,6 +13052,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -12863,17 +13079,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -12883,6 +13099,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -12895,17 +13119,17 @@
             "favorite_evaluated_matches": 58,
             "favorite_correct_matches": 36,
             "favorite_efficiency": 0.62069,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 10,
-            "underdog_efficiency": 0.454545,
+            "underdog_efficiency": 0.434783,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 46,
-              "market_correct": 47,
-              "player_efficiency": 0.575,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.567901,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.024692
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -13549,6 +13773,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -13560,17 +13792,17 @@
             "favorite_evaluated_matches": 58,
             "favorite_correct_matches": 36,
             "favorite_efficiency": 0.62069,
-            "underdog_evaluated_matches": 22,
+            "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 10,
-            "underdog_efficiency": 0.454545,
+            "underdog_efficiency": 0.434783,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 46,
-              "market_correct": 47,
-              "player_efficiency": 0.575,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.567901,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.024692
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -14214,6 +14446,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -14233,17 +14473,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -14253,6 +14493,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -14265,17 +14513,17 @@
             "favorite_evaluated_matches": 56,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.607143,
-            "underdog_evaluated_matches": 24,
+            "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 10,
-            "underdog_efficiency": 0.416667,
+            "underdog_efficiency": 0.4,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 44,
-              "market_correct": 47,
-              "player_efficiency": 0.55,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0375
+              "market_correct": 48,
+              "player_efficiency": 0.54321,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.049383
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -14919,6 +15167,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -14930,17 +15186,17 @@
             "favorite_evaluated_matches": 56,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.607143,
-            "underdog_evaluated_matches": 24,
+            "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 10,
-            "underdog_efficiency": 0.416667,
+            "underdog_efficiency": 0.4,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 44,
-              "market_correct": 47,
-              "player_efficiency": 0.55,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0375
+              "market_correct": 48,
+              "player_efficiency": 0.54321,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.049383
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -15584,6 +15840,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -15603,17 +15867,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -15623,6 +15887,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -15635,17 +15907,17 @@
             "favorite_evaluated_matches": 64,
             "favorite_correct_matches": 40,
             "favorite_efficiency": 0.625,
-            "underdog_evaluated_matches": 16,
+            "underdog_evaluated_matches": 17,
             "underdog_correct_matches": 8,
-            "underdog_efficiency": 0.5,
+            "underdog_efficiency": 0.470588,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 48,
-              "market_correct": 47,
-              "player_efficiency": 0.6,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -16289,6 +16561,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -16300,17 +16580,17 @@
             "favorite_evaluated_matches": 64,
             "favorite_correct_matches": 40,
             "favorite_efficiency": 0.625,
-            "underdog_evaluated_matches": 16,
+            "underdog_evaluated_matches": 17,
             "underdog_correct_matches": 8,
-            "underdog_efficiency": 0.5,
+            "underdog_efficiency": 0.470588,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 48,
-              "market_correct": 47,
-              "player_efficiency": 0.6,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -16954,6 +17234,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -16973,17 +17261,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -16993,6 +17281,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -17005,17 +17301,17 @@
             "favorite_evaluated_matches": 65,
             "favorite_correct_matches": 40,
             "favorite_efficiency": 0.615385,
-            "underdog_evaluated_matches": 15,
+            "underdog_evaluated_matches": 16,
             "underdog_correct_matches": 8,
-            "underdog_efficiency": 0.533333,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 48,
-              "market_correct": 47,
-              "player_efficiency": 0.6,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -17659,6 +17955,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -17670,17 +17974,17 @@
             "favorite_evaluated_matches": 65,
             "favorite_correct_matches": 40,
             "favorite_efficiency": 0.615385,
-            "underdog_evaluated_matches": 15,
+            "underdog_evaluated_matches": 16,
             "underdog_correct_matches": 8,
-            "underdog_efficiency": 0.533333,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 48,
-              "market_correct": 47,
-              "player_efficiency": 0.6,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.592593,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -18324,6 +18628,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -18343,17 +18655,17 @@
             "favorite_evaluated_matches": 0,
             "favorite_correct_matches": 0,
             "favorite_efficiency": null,
-            "underdog_evaluated_matches": 1,
+            "underdog_evaluated_matches": 2,
             "underdog_correct_matches": 1,
-            "underdog_efficiency": 1,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 1,
-              "market_correct": 0,
-              "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0
             },
             "primary_insight": null
           },
@@ -18365,6 +18677,14 @@
               "favorite_team_id": "SEA",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -18375,20 +18695,20 @@
             "favorite_evaluated_matches": 59,
             "favorite_correct_matches": 39,
             "favorite_efficiency": 0.661017,
-            "underdog_evaluated_matches": 21,
+            "underdog_evaluated_matches": 22,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.571429,
+            "underdog_efficiency": 0.545455,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 51,
-              "market_correct": 47,
-              "player_efficiency": 0.6375,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.05
+              "market_correct": 48,
+              "player_efficiency": 0.62963,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.037037
             },
             "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
+              "insight_code": "NO_CLEAR_MARKET_EDGE"
             }
           },
           "matches": [
@@ -19031,6 +19351,14 @@
               "favorite_team_id": "SEA",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -19040,20 +19368,20 @@
             "favorite_evaluated_matches": 59,
             "favorite_correct_matches": 39,
             "favorite_efficiency": 0.661017,
-            "underdog_evaluated_matches": 21,
+            "underdog_evaluated_matches": 22,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.571429,
+            "underdog_efficiency": 0.545455,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 51,
-              "market_correct": 47,
-              "player_efficiency": 0.6375,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": 0.05
+              "market_correct": 48,
+              "player_efficiency": 0.62963,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": 0.037037
             },
             "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
+              "insight_code": "NO_CLEAR_MARKET_EDGE"
             }
           },
           "matches": [
@@ -19696,6 +20024,14 @@
               "favorite_team_id": "SEA",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -19713,17 +20049,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -19733,6 +20069,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -19745,17 +20089,17 @@
             "favorite_evaluated_matches": 56,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.607143,
-            "underdog_evaluated_matches": 24,
+            "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 11,
-            "underdog_efficiency": 0.458333,
+            "underdog_efficiency": 0.44,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 45,
-              "market_correct": 47,
-              "player_efficiency": 0.5625,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.025
+              "market_correct": 48,
+              "player_efficiency": 0.555556,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.037037
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -20399,6 +20743,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -20410,17 +20762,17 @@
             "favorite_evaluated_matches": 56,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.607143,
-            "underdog_evaluated_matches": 24,
+            "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 11,
-            "underdog_efficiency": 0.458333,
+            "underdog_efficiency": 0.44,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 45,
-              "market_correct": 47,
-              "player_efficiency": 0.5625,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.025
+              "market_correct": 48,
+              "player_efficiency": 0.555556,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.037037
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -21064,6 +21416,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -21083,17 +21443,17 @@
             "favorite_evaluated_matches": 1,
             "favorite_correct_matches": 0,
             "favorite_efficiency": 0,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 0,
-              "market_correct": 0,
+              "market_correct": 1,
               "player_efficiency": 0,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 0
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": -0.5
             },
             "primary_insight": null
           },
@@ -21103,6 +21463,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -21115,17 +21483,17 @@
             "favorite_evaluated_matches": 54,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.62963,
-            "underdog_evaluated_matches": 26,
+            "underdog_evaluated_matches": 27,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.461538,
+            "underdog_efficiency": 0.444444,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 46,
-              "market_correct": 47,
-              "player_efficiency": 0.575,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.567901,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.024692
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -21769,6 +22137,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }
@@ -21780,17 +22156,17 @@
             "favorite_evaluated_matches": 54,
             "favorite_correct_matches": 34,
             "favorite_efficiency": 0.62963,
-            "underdog_evaluated_matches": 26,
+            "underdog_evaluated_matches": 27,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.461538,
+            "underdog_efficiency": 0.444444,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 80,
+              "shared_evaluated_matches": 81,
               "player_correct": 46,
-              "market_correct": 47,
-              "player_efficiency": 0.575,
-              "market_efficiency": 0.5875,
-              "player_vs_market_delta": -0.0125
+              "market_correct": 48,
+              "player_efficiency": 0.567901,
+              "market_efficiency": 0.592593,
+              "player_vs_market_delta": -0.024692
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -22434,6 +22810,14 @@
               "pick_team_id": "SEA",
               "market_position": "favorite",
               "favorite_team_id": "SEA",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG081",
+              "pick_team_id": "JAX",
+              "market_position": "underdog",
+              "favorite_team_id": "HOU",
               "evaluation_status": "evaluated",
               "correct": false
             }

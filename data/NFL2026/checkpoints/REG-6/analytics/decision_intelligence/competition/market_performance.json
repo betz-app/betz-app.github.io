@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG080",
-  "evaluation_cursor": "REG080",
+  "freeze_cursor": "REG081",
+  "evaluation_cursor": "REG081",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "evaluated_matches": 1,
-        "favorite_wins": 0,
+        "evaluated_matches": 2,
+        "favorite_wins": 1,
         "underdog_wins": 1,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0,
-        "upset_rate": 1,
+        "market_efficiency": 0.5,
+        "upset_rate": 0.5,
         "consensus_comparison": {
-          "shared_evaluated_matches": 1,
-          "market_correct": 0,
+          "shared_evaluated_matches": 2,
+          "market_correct": 1,
           "consensus_correct": 0,
-          "market_efficiency": 0,
+          "market_efficiency": 0.5,
           "consensus_efficiency": 0,
-          "consensus_vs_market_delta": 0
+          "consensus_vs_market_delta": -0.5
         },
         "primary_insight": null
       },
@@ -38,6 +38,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "DEN",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG081",
+          "favorite_team_id": "HOU",
+          "underdog_team_id": "JAX",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "HOU",
+          "favorite_won": true
         }
       ]
     },
@@ -45,20 +53,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 80,
-        "favorite_wins": 47,
+        "evaluated_matches": 81,
+        "favorite_wins": 48,
         "underdog_wins": 32,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.5875,
-        "upset_rate": 0.4,
+        "market_efficiency": 0.592593,
+        "upset_rate": 0.395062,
         "consensus_comparison": {
-          "shared_evaluated_matches": 80,
-          "market_correct": 47,
+          "shared_evaluated_matches": 81,
+          "market_correct": 48,
           "consensus_correct": 48,
-          "market_efficiency": 0.5875,
-          "consensus_efficiency": 0.6,
-          "consensus_vs_market_delta": 0.0125
+          "market_efficiency": 0.592593,
+          "consensus_efficiency": 0.592593,
+          "consensus_vs_market_delta": 0
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -704,26 +712,34 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "DEN",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG081",
+          "favorite_team_id": "HOU",
+          "underdog_team_id": "JAX",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "HOU",
+          "favorite_won": true
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 80,
-        "favorite_wins": 47,
+        "evaluated_matches": 81,
+        "favorite_wins": 48,
         "underdog_wins": 32,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.5875,
-        "upset_rate": 0.4,
+        "market_efficiency": 0.592593,
+        "upset_rate": 0.395062,
         "consensus_comparison": {
-          "shared_evaluated_matches": 80,
-          "market_correct": 47,
+          "shared_evaluated_matches": 81,
+          "market_correct": 48,
           "consensus_correct": 48,
-          "market_efficiency": 0.5875,
-          "consensus_efficiency": 0.6,
-          "consensus_vs_market_delta": 0.0125
+          "market_efficiency": 0.592593,
+          "consensus_efficiency": 0.592593,
+          "consensus_vs_market_delta": 0
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -1369,6 +1385,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "DEN",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG081",
+          "favorite_team_id": "HOU",
+          "underdog_team_id": "JAX",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "HOU",
+          "favorite_won": true
         }
       ]
     }

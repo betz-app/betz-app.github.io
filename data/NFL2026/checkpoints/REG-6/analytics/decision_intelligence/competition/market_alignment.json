@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG080",
-  "evaluation_cursor": "REG080",
+  "freeze_cursor": "REG081",
+  "evaluation_cursor": "REG081",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "classified_consensus_matches": 1,
+        "classified_consensus_matches": 2,
         "community_favorite_picks": 1,
-        "community_underdog_picks": 0,
-        "community_favorite_rate": 1,
-        "community_underdog_rate": 0,
+        "community_underdog_picks": 1,
+        "community_favorite_rate": 0.5,
+        "community_underdog_rate": 0.5,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -31,6 +31,14 @@
           "underdog_team_id": "DEN",
           "consensus_team_id": "SEA",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG081",
+          "market_status": "available",
+          "favorite_team_id": "HOU",
+          "underdog_team_id": "JAX",
+          "consensus_team_id": "JAX",
+          "community_market_position": "underdog"
         }
       ]
     },
@@ -38,11 +46,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 80,
+        "classified_consensus_matches": 81,
         "community_favorite_picks": 66,
-        "community_underdog_picks": 14,
-        "community_favorite_rate": 0.825,
-        "community_underdog_rate": 0.175,
+        "community_underdog_picks": 15,
+        "community_favorite_rate": 0.814815,
+        "community_underdog_rate": 0.185185,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -690,17 +698,25 @@
           "underdog_team_id": "DEN",
           "consensus_team_id": "SEA",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG081",
+          "market_status": "available",
+          "favorite_team_id": "HOU",
+          "underdog_team_id": "JAX",
+          "consensus_team_id": "JAX",
+          "community_market_position": "underdog"
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 80,
+        "classified_consensus_matches": 81,
         "community_favorite_picks": 66,
-        "community_underdog_picks": 14,
-        "community_favorite_rate": 0.825,
-        "community_underdog_rate": 0.175,
+        "community_underdog_picks": 15,
+        "community_favorite_rate": 0.814815,
+        "community_underdog_rate": 0.185185,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -1348,6 +1364,14 @@
           "underdog_team_id": "DEN",
           "consensus_team_id": "SEA",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG081",
+          "market_status": "available",
+          "favorite_team_id": "HOU",
+          "underdog_team_id": "JAX",
+          "consensus_team_id": "JAX",
+          "community_market_position": "underdog"
         }
       ]
     }
