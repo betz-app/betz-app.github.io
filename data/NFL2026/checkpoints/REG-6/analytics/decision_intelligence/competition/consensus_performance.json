@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG091",
-  "evaluation_cursor": "REG091",
+  "freeze_cursor": "REG092",
+  "evaluation_cursor": "REG092",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 6,
       "result": {
-        "evaluated_matches": 12,
-        "correct_matches": 6,
+        "evaluated_matches": 13,
+        "correct_matches": 7,
         "incorrect_matches": 6,
         "pending_matches": 0,
-        "consensus_efficiency": 0.5
+        "consensus_efficiency": 0.538462
       },
       "matches": [
         {
@@ -89,6 +89,12 @@
         {
           "match_id": "REG091",
           "consensus_team_id": "BUF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG092",
+          "consensus_team_id": "GB",
           "evaluation_status": "evaluated",
           "correct": true
         }
@@ -98,11 +104,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 91,
-        "correct_matches": 54,
+        "evaluated_matches": 92,
+        "correct_matches": 55,
         "incorrect_matches": 37,
         "pending_matches": 0,
-        "consensus_efficiency": 0.593407
+        "consensus_efficiency": 0.597826
       },
       "matches": [
         {
@@ -648,6 +654,12 @@
         {
           "match_id": "REG091",
           "consensus_team_id": "BUF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG092",
+          "consensus_team_id": "GB",
           "evaluation_status": "evaluated",
           "correct": true
         }
@@ -656,11 +668,11 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 91,
-        "correct_matches": 54,
+        "evaluated_matches": 92,
+        "correct_matches": 55,
         "incorrect_matches": 37,
         "pending_matches": 0,
-        "consensus_efficiency": 0.593407
+        "consensus_efficiency": 0.597826
       },
       "matches": [
         {
@@ -1206,6 +1218,12 @@
         {
           "match_id": "REG091",
           "consensus_team_id": "BUF",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG092",
+          "consensus_team_id": "GB",
           "evaluation_status": "evaluated",
           "correct": true
         }
