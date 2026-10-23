@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG093",
-  "evaluation_cursor": "REG093",
+  "freeze_cursor": "REG094",
+  "evaluation_cursor": "REG094",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "player_market_performance",
@@ -15,129 +15,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.4,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 1,
-            "underdog_efficiency": 0.333333,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 5,
-              "market_correct": 6,
-              "player_efficiency": 0.384615,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": -0.076923
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "MARKET_BEATS_PLAYER"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "PHI",
-              "market_position": "favorite",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "LV",
-              "market_position": "underdog",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -147,20 +49,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 58,
-            "favorite_correct_matches": 37,
-            "favorite_efficiency": 0.637931,
+            "favorite_evaluated_matches": 59,
+            "favorite_correct_matches": 38,
+            "favorite_efficiency": 0.644068,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.52,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 83,
-              "player_correct": 50,
-              "market_correct": 48,
-              "player_efficiency": 0.60241,
-              "market_efficiency": 0.578313,
-              "player_vs_market_delta": 0.024097
+              "shared_evaluated_matches": 84,
+              "player_correct": 51,
+              "market_correct": 49,
+              "player_efficiency": 0.607143,
+              "market_efficiency": 0.583333,
+              "player_vs_market_delta": 0.02381
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -828,6 +730,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -836,20 +746,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 58,
-            "favorite_correct_matches": 37,
-            "favorite_efficiency": 0.637931,
+            "favorite_evaluated_matches": 59,
+            "favorite_correct_matches": 38,
+            "favorite_efficiency": 0.644068,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.52,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 83,
-              "player_correct": 50,
-              "market_correct": 48,
-              "player_efficiency": 0.60241,
-              "market_efficiency": 0.578313,
-              "player_vs_market_delta": 0.024097
+              "shared_evaluated_matches": 84,
+              "player_correct": 51,
+              "market_correct": 49,
+              "player_efficiency": 0.607143,
+              "market_efficiency": 0.583333,
+              "player_vs_market_delta": 0.02381
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -1517,6 +1427,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1531,129 +1449,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 9,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.444444,
-            "underdog_evaluated_matches": 4,
-            "underdog_correct_matches": 2,
-            "underdog_efficiency": 0.5,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 6,
-              "market_correct": 6,
-              "player_efficiency": 0.461538,
-              "market_efficiency": 0.461538,
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
               "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "NO_CLEAR_MARKET_EDGE"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
               "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
-              "market_position": "underdog",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1663,20 +1483,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 69,
-            "favorite_correct_matches": 43,
-            "favorite_efficiency": 0.623188,
+            "favorite_evaluated_matches": 70,
+            "favorite_correct_matches": 44,
+            "favorite_efficiency": 0.628571,
             "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.565217,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 56,
-              "market_correct": 53,
-              "player_efficiency": 0.608696,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.032609
+              "shared_evaluated_matches": 93,
+              "player_correct": 57,
+              "market_correct": 54,
+              "player_efficiency": 0.612903,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.032258
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -2416,6 +2236,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -2424,20 +2252,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 69,
-            "favorite_correct_matches": 43,
-            "favorite_efficiency": 0.623188,
+            "favorite_evaluated_matches": 70,
+            "favorite_correct_matches": 44,
+            "favorite_efficiency": 0.628571,
             "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.565217,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 56,
-              "market_correct": 53,
-              "player_efficiency": 0.608696,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.032609
+              "shared_evaluated_matches": 93,
+              "player_correct": 57,
+              "market_correct": 54,
+              "player_efficiency": 0.612903,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.032258
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -3177,6 +3005,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -3191,129 +3027,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.5,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 2,
-            "underdog_efficiency": 0.666667,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 7,
-              "market_correct": 6,
-              "player_efficiency": 0.538462,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.076924
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -3323,20 +3061,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 75,
-            "favorite_correct_matches": 47,
-            "favorite_efficiency": 0.626667,
+            "favorite_evaluated_matches": 76,
+            "favorite_correct_matches": 48,
+            "favorite_efficiency": 0.631579,
             "underdog_evaluated_matches": 17,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.647059,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 58,
-              "market_correct": 53,
-              "player_efficiency": 0.630435,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.054348
+              "shared_evaluated_matches": 93,
+              "player_correct": 59,
+              "market_correct": 54,
+              "player_efficiency": 0.634409,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.053764
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -4076,6 +3814,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -4084,20 +3830,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 75,
-            "favorite_correct_matches": 47,
-            "favorite_efficiency": 0.626667,
+            "favorite_evaluated_matches": 76,
+            "favorite_correct_matches": 48,
+            "favorite_efficiency": 0.631579,
             "underdog_evaluated_matches": 17,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.647059,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 58,
-              "market_correct": 53,
-              "player_efficiency": 0.630435,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.054348
+              "shared_evaluated_matches": 93,
+              "player_correct": 59,
+              "market_correct": 54,
+              "player_efficiency": 0.634409,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.053764
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -4837,6 +4583,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -4851,57 +4605,33 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 4,
-            "favorite_correct_matches": 3,
-            "favorite_efficiency": 0.75,
-            "underdog_evaluated_matches": 0,
+            "favorite_evaluated_matches": 0,
+            "favorite_correct_matches": 0,
+            "favorite_efficiency": null,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 4,
-              "player_correct": 3,
-              "market_correct": 3,
-              "player_efficiency": 0.75,
-              "market_efficiency": 0.75,
-              "player_vs_market_delta": 0
+              "shared_evaluated_matches": 1,
+              "player_correct": 0,
+              "market_correct": 1,
+              "player_efficiency": 0,
+              "market_efficiency": 1,
+              "player_vs_market_delta": -1
             },
             "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
-              "evaluation_status": "evaluated",
-              "correct": true
             }
           ]
         },
@@ -4912,17 +4642,17 @@
             "favorite_evaluated_matches": 46,
             "favorite_correct_matches": 32,
             "favorite_efficiency": 0.695652,
-            "underdog_evaluated_matches": 26,
+            "underdog_evaluated_matches": 27,
             "underdog_correct_matches": 13,
-            "underdog_efficiency": 0.5,
+            "underdog_efficiency": 0.481481,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 72,
+              "shared_evaluated_matches": 73,
               "player_correct": 45,
-              "market_correct": 44,
-              "player_efficiency": 0.625,
-              "market_efficiency": 0.611111,
-              "player_vs_market_delta": 0.013889
+              "market_correct": 45,
+              "player_efficiency": 0.616438,
+              "market_efficiency": 0.616438,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -5504,6 +5234,14 @@
               "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -5513,17 +5251,17 @@
             "favorite_evaluated_matches": 46,
             "favorite_correct_matches": 32,
             "favorite_efficiency": 0.695652,
-            "underdog_evaluated_matches": 26,
+            "underdog_evaluated_matches": 27,
             "underdog_correct_matches": 13,
-            "underdog_efficiency": 0.5,
+            "underdog_efficiency": 0.481481,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 72,
+              "shared_evaluated_matches": 73,
               "player_correct": 45,
-              "market_correct": 44,
-              "player_efficiency": 0.625,
-              "market_efficiency": 0.611111,
-              "player_vs_market_delta": 0.013889
+              "market_correct": 45,
+              "player_efficiency": 0.616438,
+              "market_efficiency": 0.616438,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -6105,6 +5843,14 @@
               "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -6117,131 +5863,33 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.5,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 2,
-            "underdog_efficiency": 0.666667,
+            "favorite_evaluated_matches": 0,
+            "favorite_correct_matches": 0,
+            "favorite_efficiency": null,
+            "underdog_evaluated_matches": 1,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 7,
-              "market_correct": 6,
-              "player_efficiency": 0.538462,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.076924
+              "shared_evaluated_matches": 1,
+              "player_correct": 0,
+              "market_correct": 1,
+              "player_efficiency": 0,
+              "market_efficiency": 1,
+              "player_vs_market_delta": -1
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
+              "match_id": "REG094",
+              "pick_team_id": "NE",
               "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "CHI",
-              "market_position": "favorite",
               "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
               "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NO",
-              "market_position": "underdog",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "TB",
-              "market_position": "favorite",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
-              "evaluation_status": "evaluated",
-              "correct": true
             }
           ]
         },
@@ -6252,17 +5900,17 @@
             "favorite_evaluated_matches": 65,
             "favorite_correct_matches": 39,
             "favorite_efficiency": 0.6,
-            "underdog_evaluated_matches": 27,
+            "underdog_evaluated_matches": 28,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.444444,
+            "underdog_efficiency": 0.428571,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
+              "shared_evaluated_matches": 93,
               "player_correct": 51,
-              "market_correct": 53,
-              "player_efficiency": 0.554348,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.021739
+              "market_correct": 54,
+              "player_efficiency": 0.548387,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.032258
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -7004,6 +6652,14 @@
               "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -7013,17 +6669,17 @@
             "favorite_evaluated_matches": 65,
             "favorite_correct_matches": 39,
             "favorite_efficiency": 0.6,
-            "underdog_evaluated_matches": 27,
+            "underdog_evaluated_matches": 28,
             "underdog_correct_matches": 12,
-            "underdog_efficiency": 0.444444,
+            "underdog_efficiency": 0.428571,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
+              "shared_evaluated_matches": 93,
               "player_correct": 51,
-              "market_correct": 53,
-              "player_efficiency": 0.554348,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.021739
+              "market_correct": 54,
+              "player_efficiency": 0.548387,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.032258
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -7765,6 +7421,14 @@
               "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -7777,129 +7441,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 8,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.625,
-            "underdog_evaluated_matches": 5,
-            "underdog_correct_matches": 4,
-            "underdog_efficiency": 0.8,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 9,
-              "market_correct": 6,
-              "player_efficiency": 0.692308,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.23077
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NO",
-              "market_position": "underdog",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "ARI",
-              "market_position": "underdog",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -7909,20 +7475,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 48,
-            "favorite_correct_matches": 29,
-            "favorite_efficiency": 0.604167,
+            "favorite_evaluated_matches": 49,
+            "favorite_correct_matches": 30,
+            "favorite_efficiency": 0.612245,
             "underdog_evaluated_matches": 27,
             "underdog_correct_matches": 12,
             "underdog_efficiency": 0.444444,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 75,
-              "player_correct": 41,
-              "market_correct": 44,
-              "player_efficiency": 0.546667,
-              "market_efficiency": 0.586667,
-              "player_vs_market_delta": -0.04
+              "shared_evaluated_matches": 76,
+              "player_correct": 42,
+              "market_correct": 45,
+              "player_efficiency": 0.552632,
+              "market_efficiency": 0.592105,
+              "player_vs_market_delta": -0.039473
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -8526,6 +8092,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -8534,20 +8108,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 48,
-            "favorite_correct_matches": 29,
-            "favorite_efficiency": 0.604167,
+            "favorite_evaluated_matches": 49,
+            "favorite_correct_matches": 30,
+            "favorite_efficiency": 0.612245,
             "underdog_evaluated_matches": 27,
             "underdog_correct_matches": 12,
             "underdog_efficiency": 0.444444,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 75,
-              "player_correct": 41,
-              "market_correct": 44,
-              "player_efficiency": 0.546667,
-              "market_efficiency": 0.586667,
-              "player_vs_market_delta": -0.04
+              "shared_evaluated_matches": 76,
+              "player_correct": 42,
+              "market_correct": 45,
+              "player_efficiency": 0.552632,
+              "market_efficiency": 0.592105,
+              "player_vs_market_delta": -0.039473
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -9151,6 +8725,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -9165,131 +8747,33 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 9,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.555556,
-            "underdog_evaluated_matches": 4,
-            "underdog_correct_matches": 3,
-            "underdog_efficiency": 0.75,
+            "favorite_evaluated_matches": 0,
+            "favorite_correct_matches": 0,
+            "favorite_efficiency": null,
+            "underdog_evaluated_matches": 1,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 8,
-              "market_correct": 6,
-              "player_efficiency": 0.615385,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.153847
+              "shared_evaluated_matches": 1,
+              "player_correct": 0,
+              "market_correct": 1,
+              "player_efficiency": 0,
+              "market_efficiency": 1,
+              "player_vs_market_delta": -1
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "DEN",
-              "market_position": "underdog",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "HOU",
-              "market_position": "favorite",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
+              "match_id": "REG094",
+              "pick_team_id": "NE",
               "market_position": "underdog",
               "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NO",
-              "market_position": "underdog",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "TB",
-              "market_position": "favorite",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
-              "evaluation_status": "evaluated",
-              "correct": true
             }
           ]
         },
@@ -9300,17 +8784,17 @@
             "favorite_evaluated_matches": 65,
             "favorite_correct_matches": 40,
             "favorite_efficiency": 0.615385,
-            "underdog_evaluated_matches": 27,
+            "underdog_evaluated_matches": 28,
             "underdog_correct_matches": 14,
-            "underdog_efficiency": 0.518519,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
+              "shared_evaluated_matches": 93,
               "player_correct": 54,
-              "market_correct": 53,
-              "player_efficiency": 0.586957,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.01087
+              "market_correct": 54,
+              "player_efficiency": 0.580645,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -10052,6 +9536,14 @@
               "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -10061,17 +9553,17 @@
             "favorite_evaluated_matches": 65,
             "favorite_correct_matches": 40,
             "favorite_efficiency": 0.615385,
-            "underdog_evaluated_matches": 27,
+            "underdog_evaluated_matches": 28,
             "underdog_correct_matches": 14,
-            "underdog_efficiency": 0.518519,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
+              "shared_evaluated_matches": 93,
               "player_correct": 54,
-              "market_correct": 53,
-              "player_efficiency": 0.586957,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.01087
+              "market_correct": 54,
+              "player_efficiency": 0.580645,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -10813,6 +10305,14 @@
               "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "CHI",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -10825,129 +10325,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.5,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 2,
-            "underdog_efficiency": 0.666667,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 7,
-              "market_correct": 6,
-              "player_efficiency": 0.538462,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.076924
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NO",
-              "market_position": "underdog",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "PHI",
-              "market_position": "favorite",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -10957,20 +10359,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 62,
-            "favorite_correct_matches": 40,
-            "favorite_efficiency": 0.645161,
+            "favorite_evaluated_matches": 63,
+            "favorite_correct_matches": 41,
+            "favorite_efficiency": 0.650794,
             "underdog_evaluated_matches": 15,
             "underdog_correct_matches": 9,
             "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 77,
-              "player_correct": 49,
-              "market_correct": 46,
-              "player_efficiency": 0.636364,
-              "market_efficiency": 0.597403,
-              "player_vs_market_delta": 0.038961
+              "shared_evaluated_matches": 78,
+              "player_correct": 50,
+              "market_correct": 47,
+              "player_efficiency": 0.641026,
+              "market_efficiency": 0.602564,
+              "player_vs_market_delta": 0.038462
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -11590,6 +10992,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -11598,20 +11008,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 62,
-            "favorite_correct_matches": 40,
-            "favorite_efficiency": 0.645161,
+            "favorite_evaluated_matches": 63,
+            "favorite_correct_matches": 41,
+            "favorite_efficiency": 0.650794,
             "underdog_evaluated_matches": 15,
             "underdog_correct_matches": 9,
             "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 77,
-              "player_correct": 49,
-              "market_correct": 46,
-              "player_efficiency": 0.636364,
-              "market_efficiency": 0.597403,
-              "player_vs_market_delta": 0.038961
+              "shared_evaluated_matches": 78,
+              "player_correct": 50,
+              "market_correct": 47,
+              "player_efficiency": 0.641026,
+              "market_efficiency": 0.602564,
+              "player_vs_market_delta": 0.038462
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -12231,6 +11641,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -12245,133 +11663,26 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 11,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.454545,
-            "underdog_evaluated_matches": 2,
-            "underdog_correct_matches": 1,
-            "underdog_efficiency": 0.5,
+            "favorite_evaluated_matches": 0,
+            "favorite_correct_matches": 0,
+            "favorite_efficiency": null,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 6,
-              "market_correct": 6,
-              "player_efficiency": 0.461538,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0
+              "shared_evaluated_matches": 0,
+              "player_correct": 0,
+              "market_correct": 0,
+              "player_efficiency": null,
+              "market_efficiency": null,
+              "player_vs_market_delta": null
             },
-            "primary_insight": {
-              "insight_code": "NO_CLEAR_MARKET_EDGE"
-            }
+            "primary_insight": null
           },
-          "matches": [
-            {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "CHI",
-              "market_position": "favorite",
-              "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "PHI",
-              "market_position": "favorite",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            }
-          ]
+          "matches": []
         },
         {
           "perspective_id": "stage:all",
@@ -13905,129 +13216,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.4,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 1,
-            "underdog_efficiency": 0.333333,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 5,
-              "market_correct": 6,
-              "player_efficiency": 0.384615,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": -0.076923
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "MARKET_BEATS_PLAYER"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
               "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
-              "market_position": "underdog",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "TB",
-              "market_position": "favorite",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -14037,20 +13250,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 67,
-            "favorite_correct_matches": 45,
-            "favorite_efficiency": 0.671642,
+            "favorite_evaluated_matches": 68,
+            "favorite_correct_matches": 46,
+            "favorite_efficiency": 0.676471,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 17,
             "underdog_efficiency": 0.68,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 62,
-              "market_correct": 53,
-              "player_efficiency": 0.673913,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.097826
+              "shared_evaluated_matches": 93,
+              "player_correct": 63,
+              "market_correct": 54,
+              "player_efficiency": 0.677419,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.096774
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -14790,6 +14003,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -14798,20 +14019,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 67,
-            "favorite_correct_matches": 45,
-            "favorite_efficiency": 0.671642,
+            "favorite_evaluated_matches": 68,
+            "favorite_correct_matches": 46,
+            "favorite_efficiency": 0.676471,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 17,
             "underdog_efficiency": 0.68,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 62,
-              "market_correct": 53,
-              "player_efficiency": 0.673913,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.097826
+              "shared_evaluated_matches": 93,
+              "player_correct": 63,
+              "market_correct": 54,
+              "player_efficiency": 0.677419,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.096774
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -15551,6 +14772,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -15565,129 +14794,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.4,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 1,
-            "underdog_efficiency": 0.333333,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 5,
-              "market_correct": 6,
-              "player_efficiency": 0.384615,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": -0.076923
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "MARKET_BEATS_PLAYER"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
               "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
-              "market_position": "underdog",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "TB",
-              "market_position": "favorite",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -15697,20 +14828,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 67,
-            "favorite_correct_matches": 40,
-            "favorite_efficiency": 0.597015,
+            "favorite_evaluated_matches": 68,
+            "favorite_correct_matches": 41,
+            "favorite_efficiency": 0.602941,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.44,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 51,
-              "market_correct": 53,
-              "player_efficiency": 0.554348,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.021739
+              "shared_evaluated_matches": 93,
+              "player_correct": 52,
+              "market_correct": 54,
+              "player_efficiency": 0.55914,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.021505
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -16450,6 +15581,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -16458,20 +15597,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 67,
-            "favorite_correct_matches": 40,
-            "favorite_efficiency": 0.597015,
+            "favorite_evaluated_matches": 68,
+            "favorite_correct_matches": 41,
+            "favorite_efficiency": 0.602941,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.44,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 51,
-              "market_correct": 53,
-              "player_efficiency": 0.554348,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.021739
+              "shared_evaluated_matches": 93,
+              "player_correct": 52,
+              "market_correct": 54,
+              "player_efficiency": 0.55914,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.021505
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -17211,6 +16350,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -17225,129 +16372,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 11,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.454545,
-            "underdog_evaluated_matches": 2,
-            "underdog_correct_matches": 1,
-            "underdog_efficiency": 0.5,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 6,
-              "market_correct": 6,
-              "player_efficiency": 0.461538,
-              "market_efficiency": 0.461538,
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
               "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "NO_CLEAR_MARKET_EDGE"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "PHI",
-              "market_position": "favorite",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -17357,20 +16406,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 66,
-            "favorite_correct_matches": 39,
-            "favorite_efficiency": 0.590909,
+            "favorite_evaluated_matches": 67,
+            "favorite_correct_matches": 40,
+            "favorite_efficiency": 0.597015,
             "underdog_evaluated_matches": 26,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.423077,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 50,
-              "market_correct": 53,
-              "player_efficiency": 0.543478,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.032609
+              "shared_evaluated_matches": 93,
+              "player_correct": 51,
+              "market_correct": 54,
+              "player_efficiency": 0.548387,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.032258
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -18110,6 +17159,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -18118,20 +17175,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 66,
-            "favorite_correct_matches": 39,
-            "favorite_efficiency": 0.590909,
+            "favorite_evaluated_matches": 67,
+            "favorite_correct_matches": 40,
+            "favorite_efficiency": 0.597015,
             "underdog_evaluated_matches": 26,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.423077,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 50,
-              "market_correct": 53,
-              "player_efficiency": 0.543478,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.032609
+              "shared_evaluated_matches": 93,
+              "player_correct": 51,
+              "market_correct": 54,
+              "player_efficiency": 0.548387,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.032258
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -18871,6 +17928,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -18885,129 +17950,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 8,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.5,
-            "underdog_evaluated_matches": 5,
-            "underdog_correct_matches": 3,
-            "underdog_efficiency": 0.6,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 7,
-              "market_correct": 6,
-              "player_efficiency": 0.538462,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.076924
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
               "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
-              "market_position": "underdog",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NO",
-              "market_position": "underdog",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -19017,20 +17984,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 71,
-            "favorite_correct_matches": 44,
-            "favorite_efficiency": 0.619718,
+            "favorite_evaluated_matches": 72,
+            "favorite_correct_matches": 45,
+            "favorite_efficiency": 0.625,
             "underdog_evaluated_matches": 21,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.52381,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 55,
-              "market_correct": 53,
-              "player_efficiency": 0.597826,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.021739
+              "shared_evaluated_matches": 93,
+              "player_correct": 56,
+              "market_correct": 54,
+              "player_efficiency": 0.602151,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.021506
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -19770,6 +18737,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -19778,20 +18753,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 71,
-            "favorite_correct_matches": 44,
-            "favorite_efficiency": 0.619718,
+            "favorite_evaluated_matches": 72,
+            "favorite_correct_matches": 45,
+            "favorite_efficiency": 0.625,
             "underdog_evaluated_matches": 21,
             "underdog_correct_matches": 11,
             "underdog_efficiency": 0.52381,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 55,
-              "market_correct": 53,
-              "player_efficiency": 0.597826,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.021739
+              "shared_evaluated_matches": 93,
+              "player_correct": 56,
+              "market_correct": 54,
+              "player_efficiency": 0.602151,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.021506
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -20531,6 +19506,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -20545,133 +19528,26 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.4,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 1,
-            "underdog_efficiency": 0.333333,
+            "favorite_evaluated_matches": 0,
+            "favorite_correct_matches": 0,
+            "favorite_efficiency": null,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 5,
-              "market_correct": 6,
-              "player_efficiency": 0.384615,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": -0.076923
+              "shared_evaluated_matches": 0,
+              "player_correct": 0,
+              "market_correct": 0,
+              "player_efficiency": null,
+              "market_efficiency": null,
+              "player_vs_market_delta": null
             },
-            "primary_insight": {
-              "insight_code": "MARKET_BEATS_PLAYER"
-            }
+            "primary_insight": null
           },
-          "matches": [
-            {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
-              "market_position": "underdog",
-              "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "PHI",
-              "market_position": "favorite",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            }
-          ]
+          "matches": []
         },
         {
           "perspective_id": "stage:all",
@@ -22205,129 +21081,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 8,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.625,
-            "underdog_evaluated_matches": 5,
-            "underdog_correct_matches": 4,
-            "underdog_efficiency": 0.8,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 9,
-              "market_correct": 6,
-              "player_efficiency": 0.692308,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.23077
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "DEN",
-              "market_position": "underdog",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NO",
-              "market_position": "underdog",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -22337,20 +21115,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 67,
-            "favorite_correct_matches": 44,
-            "favorite_efficiency": 0.656716,
+            "favorite_evaluated_matches": 68,
+            "favorite_correct_matches": 45,
+            "favorite_efficiency": 0.661765,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 15,
             "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 59,
-              "market_correct": 53,
-              "player_efficiency": 0.641304,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.065217
+              "shared_evaluated_matches": 93,
+              "player_correct": 60,
+              "market_correct": 54,
+              "player_efficiency": 0.645161,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.064516
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -23090,6 +21868,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -23098,20 +21884,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 67,
-            "favorite_correct_matches": 44,
-            "favorite_efficiency": 0.656716,
+            "favorite_evaluated_matches": 68,
+            "favorite_correct_matches": 45,
+            "favorite_efficiency": 0.661765,
             "underdog_evaluated_matches": 25,
             "underdog_correct_matches": 15,
             "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 59,
-              "market_correct": 53,
-              "player_efficiency": 0.641304,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": 0.065217
+              "shared_evaluated_matches": 93,
+              "player_correct": 60,
+              "market_correct": 54,
+              "player_efficiency": 0.645161,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": 0.064516
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -23851,6 +22637,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -23865,129 +22659,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 9,
-            "favorite_correct_matches": 4,
-            "favorite_efficiency": 0.444444,
-            "underdog_evaluated_matches": 4,
-            "underdog_correct_matches": 2,
-            "underdog_efficiency": 0.5,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 6,
-              "market_correct": 6,
-              "player_efficiency": 0.461538,
-              "market_efficiency": 0.461538,
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
               "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "NO_CLEAR_MARKET_EDGE"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
               "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
-              "pick_team_id": "ATL",
-              "market_position": "underdog",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "BAL",
-              "market_position": "favorite",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "PIT",
-              "market_position": "underdog",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -23997,20 +22693,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 64,
-            "favorite_correct_matches": 38,
-            "favorite_efficiency": 0.59375,
+            "favorite_evaluated_matches": 65,
+            "favorite_correct_matches": 39,
+            "favorite_efficiency": 0.6,
             "underdog_evaluated_matches": 28,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.464286,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 51,
-              "market_correct": 53,
-              "player_efficiency": 0.554348,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.021739
+              "shared_evaluated_matches": 93,
+              "player_correct": 52,
+              "market_correct": 54,
+              "player_efficiency": 0.55914,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.021505
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -24750,6 +23446,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -24758,20 +23462,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 64,
-            "favorite_correct_matches": 38,
-            "favorite_efficiency": 0.59375,
+            "favorite_evaluated_matches": 65,
+            "favorite_correct_matches": 39,
+            "favorite_efficiency": 0.6,
             "underdog_evaluated_matches": 28,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.464286,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 51,
-              "market_correct": 53,
-              "player_efficiency": 0.554348,
-              "market_efficiency": 0.576087,
-              "player_vs_market_delta": -0.021739
+              "shared_evaluated_matches": 93,
+              "player_correct": 52,
+              "market_correct": 54,
+              "player_efficiency": 0.55914,
+              "market_efficiency": 0.580645,
+              "player_vs_market_delta": -0.021505
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -25511,6 +24215,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -25525,129 +24237,31 @@
         {
           "perspective_id": "week:all",
           "season_type": "Regular Season",
-          "week": 6,
+          "week": 7,
           "result": {
-            "favorite_evaluated_matches": 10,
-            "favorite_correct_matches": 5,
-            "favorite_efficiency": 0.5,
-            "underdog_evaluated_matches": 3,
-            "underdog_correct_matches": 2,
-            "underdog_efficiency": 0.666667,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
+            "underdog_evaluated_matches": 0,
+            "underdog_correct_matches": 0,
+            "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 13,
-              "player_correct": 7,
-              "market_correct": 6,
-              "player_efficiency": 0.538462,
-              "market_efficiency": 0.461538,
-              "player_vs_market_delta": 0.076924
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
-            "primary_insight": {
-              "insight_code": "PLAYER_BEATS_MARKET"
-            }
+            "primary_insight": null
           },
           "matches": [
             {
-              "match_id": "REG080",
-              "pick_team_id": "SEA",
-              "market_position": "favorite",
-              "favorite_team_id": "SEA",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG081",
-              "pick_team_id": "JAX",
-              "market_position": "underdog",
-              "favorite_team_id": "HOU",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG082",
+              "match_id": "REG094",
               "pick_team_id": "CHI",
               "market_position": "favorite",
               "favorite_team_id": "CHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG083",
-              "pick_team_id": "CLE",
-              "market_position": "underdog",
-              "favorite_team_id": "BAL",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG084",
-              "pick_team_id": "IND",
-              "market_position": "favorite",
-              "favorite_team_id": "IND",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG085",
-              "pick_team_id": "NE",
-              "market_position": "favorite",
-              "favorite_team_id": "NE",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG086",
-              "pick_team_id": "NYG",
-              "market_position": "favorite",
-              "favorite_team_id": "NYG",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG087",
-              "pick_team_id": "CAR",
-              "market_position": "underdog",
-              "favorite_team_id": "PHI",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG088",
-              "pick_team_id": "TB",
-              "market_position": "favorite",
-              "favorite_team_id": "TB",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG089",
-              "pick_team_id": "LAR",
-              "market_position": "favorite",
-              "favorite_team_id": "LAR",
-              "evaluation_status": "evaluated",
-              "correct": false
-            },
-            {
-              "match_id": "REG090",
-              "pick_team_id": "KC",
-              "market_position": "favorite",
-              "favorite_team_id": "KC",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG091",
-              "pick_team_id": "BUF",
-              "market_position": "favorite",
-              "favorite_team_id": "BUF",
-              "evaluation_status": "evaluated",
-              "correct": true
-            },
-            {
-              "match_id": "REG093",
-              "pick_team_id": "SF",
-              "market_position": "favorite",
-              "favorite_team_id": "SF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -25657,19 +24271,19 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 63,
-            "favorite_correct_matches": 39,
-            "favorite_efficiency": 0.619048,
+            "favorite_evaluated_matches": 64,
+            "favorite_correct_matches": 40,
+            "favorite_efficiency": 0.625,
             "underdog_evaluated_matches": 29,
             "underdog_correct_matches": 14,
             "underdog_efficiency": 0.482759,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 53,
-              "market_correct": 53,
-              "player_efficiency": 0.576087,
-              "market_efficiency": 0.576087,
+              "shared_evaluated_matches": 93,
+              "player_correct": 54,
+              "market_correct": 54,
+              "player_efficiency": 0.580645,
+              "market_efficiency": 0.580645,
               "player_vs_market_delta": 0
             },
             "primary_insight": {
@@ -26410,6 +25024,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -26418,19 +25040,19 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 63,
-            "favorite_correct_matches": 39,
-            "favorite_efficiency": 0.619048,
+            "favorite_evaluated_matches": 64,
+            "favorite_correct_matches": 40,
+            "favorite_efficiency": 0.625,
             "underdog_evaluated_matches": 29,
             "underdog_correct_matches": 14,
             "underdog_efficiency": 0.482759,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 92,
-              "player_correct": 53,
-              "market_correct": 53,
-              "player_efficiency": 0.576087,
-              "market_efficiency": 0.576087,
+              "shared_evaluated_matches": 93,
+              "player_correct": 54,
+              "market_correct": 54,
+              "player_efficiency": 0.580645,
+              "market_efficiency": 0.580645,
               "player_vs_market_delta": 0
             },
             "primary_insight": {
@@ -27171,6 +25793,14 @@
               "pick_team_id": "SF",
               "market_position": "favorite",
               "favorite_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG094",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "favorite_team_id": "CHI",
               "evaluation_status": "evaluated",
               "correct": true
             }
