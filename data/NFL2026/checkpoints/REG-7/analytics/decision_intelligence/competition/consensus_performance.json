@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG094",
-  "evaluation_cursor": "REG094",
+  "freeze_cursor": "REG095",
+  "evaluation_cursor": "REG095",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,8 +13,8 @@
       "season_type": "Regular Season",
       "week": 7,
       "result": {
-        "evaluated_matches": 1,
-        "correct_matches": 1,
+        "evaluated_matches": 2,
+        "correct_matches": 2,
         "incorrect_matches": 0,
         "pending_matches": 0,
         "consensus_efficiency": 1
@@ -25,6 +25,12 @@
           "consensus_team_id": "CHI",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG095",
+          "consensus_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "correct": true
         }
       ]
     },
@@ -32,11 +38,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 94,
-        "correct_matches": 57,
+        "evaluated_matches": 95,
+        "correct_matches": 58,
         "incorrect_matches": 37,
         "pending_matches": 0,
-        "consensus_efficiency": 0.606383
+        "consensus_efficiency": 0.610526
       },
       "matches": [
         {
@@ -600,6 +606,12 @@
         {
           "match_id": "REG094",
           "consensus_team_id": "CHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG095",
+          "consensus_team_id": "PIT",
           "evaluation_status": "evaluated",
           "correct": true
         }
@@ -608,11 +620,11 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 94,
-        "correct_matches": 57,
+        "evaluated_matches": 95,
+        "correct_matches": 58,
         "incorrect_matches": 37,
         "pending_matches": 0,
-        "consensus_efficiency": 0.606383
+        "consensus_efficiency": 0.610526
       },
       "matches": [
         {
@@ -1176,6 +1188,12 @@
         {
           "match_id": "REG094",
           "consensus_team_id": "CHI",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG095",
+          "consensus_team_id": "PIT",
           "evaluation_status": "evaluated",
           "correct": true
         }

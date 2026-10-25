@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG094",
-  "evaluation_cursor": "REG094",
+  "freeze_cursor": "REG095",
+  "evaluation_cursor": "REG095",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_intelligence",
@@ -13,13 +13,13 @@
       "season_type": "Regular Season",
       "week": 7,
       "result": {
-        "frozen_matches": 1,
-        "sufficient_sample_matches": 1,
+        "frozen_matches": 2,
+        "sufficient_sample_matches": 2,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 1,
+        "dominant_matches": 2,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.8,
+        "average_consensus_strength": 0.782353,
         "primary_insight": null
       },
       "matches": [
@@ -55,6 +55,39 @@
           "consensus_strength": 0.8,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG095",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "NO",
+              "prediction_count": 4,
+              "prediction_rate": 0.235294
+            },
+            {
+              "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "consensus_strength": 0.764706,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
       ]
     },
@@ -62,13 +95,13 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "frozen_matches": 94,
-        "sufficient_sample_matches": 94,
+        "frozen_matches": 95,
+        "sufficient_sample_matches": 95,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 94,
+        "dominant_matches": 95,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.816596,
+        "average_consensus_strength": 0.81605,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -3173,6 +3206,39 @@
             }
           ],
           "consensus_strength": 0.8,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG095",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "NO",
+              "prediction_count": 4,
+              "prediction_rate": 0.235294
+            },
+            {
+              "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "consensus_strength": 0.764706,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
@@ -3181,13 +3247,13 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "frozen_matches": 94,
-        "sufficient_sample_matches": 94,
+        "frozen_matches": 95,
+        "sufficient_sample_matches": 95,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 94,
+        "dominant_matches": 95,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.816596,
+        "average_consensus_strength": 0.81605,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -6292,6 +6358,39 @@
             }
           ],
           "consensus_strength": 0.8,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG095",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "NO",
+              "prediction_count": 4,
+              "prediction_rate": 0.235294
+            },
+            {
+              "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "consensus_strength": 0.764706,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
