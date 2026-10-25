@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG095",
-  "evaluation_cursor": "REG095",
+  "freeze_cursor": "REG102",
+  "evaluation_cursor": "REG102",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_intelligence",
@@ -13,14 +13,16 @@
       "season_type": "Regular Season",
       "week": 7,
       "result": {
-        "frozen_matches": 2,
-        "sufficient_sample_matches": 2,
+        "frozen_matches": 8,
+        "sufficient_sample_matches": 8,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 2,
+        "dominant_matches": 8,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.782353,
-        "primary_insight": null
+        "average_consensus_strength": 0.864706,
+        "primary_insight": {
+          "insight_code": "COMMUNITY_DIRECTION_CLEAR"
+        }
       },
       "matches": [
         {
@@ -81,6 +83,204 @@
             },
             {
               "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "consensus_strength": 0.764706,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG096",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "SF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "ATL",
+              "prediction_count": 1,
+              "prediction_rate": 0.058824
+            },
+            {
+              "team_id": "SF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "consensus_strength": 0.941176,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG097",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CIN",
+              "prediction_count": 11,
+              "prediction_rate": 0.647059
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "BAL",
+              "prediction_count": 6,
+              "prediction_rate": 0.352941
+            },
+            {
+              "team_id": "CIN",
+              "prediction_count": 11,
+              "prediction_rate": 0.647059
+            }
+          ],
+          "consensus_strength": 0.647059,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG098",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CAR",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "CAR",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "TB",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG100",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "MIN",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "MIN",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "IND",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG101",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "NYJ",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "NYJ",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "MIA",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG102",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CLE",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "TEN",
+              "prediction_count": 4,
+              "prediction_rate": 0.235294
+            },
+            {
+              "team_id": "CLE",
               "prediction_count": 13,
               "prediction_rate": 0.764706
             }
@@ -95,13 +295,13 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "frozen_matches": 95,
-        "sufficient_sample_matches": 95,
+        "frozen_matches": 101,
+        "sufficient_sample_matches": 101,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 95,
+        "dominant_matches": 101,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.81605,
+        "average_consensus_strength": 0.820571,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -3234,6 +3434,204 @@
             },
             {
               "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "consensus_strength": 0.764706,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG096",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "SF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "ATL",
+              "prediction_count": 1,
+              "prediction_rate": 0.058824
+            },
+            {
+              "team_id": "SF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "consensus_strength": 0.941176,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG097",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CIN",
+              "prediction_count": 11,
+              "prediction_rate": 0.647059
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "BAL",
+              "prediction_count": 6,
+              "prediction_rate": 0.352941
+            },
+            {
+              "team_id": "CIN",
+              "prediction_count": 11,
+              "prediction_rate": 0.647059
+            }
+          ],
+          "consensus_strength": 0.647059,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG098",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CAR",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "CAR",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "TB",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG100",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "MIN",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "MIN",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "IND",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG101",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "NYJ",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "NYJ",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "MIA",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG102",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CLE",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "TEN",
+              "prediction_count": 4,
+              "prediction_rate": 0.235294
+            },
+            {
+              "team_id": "CLE",
               "prediction_count": 13,
               "prediction_rate": 0.764706
             }
@@ -3247,13 +3645,13 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "frozen_matches": 95,
-        "sufficient_sample_matches": 95,
+        "frozen_matches": 101,
+        "sufficient_sample_matches": 101,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 95,
+        "dominant_matches": 101,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.81605,
+        "average_consensus_strength": 0.820571,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -6386,6 +6784,204 @@
             },
             {
               "team_id": "PIT",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "consensus_strength": 0.764706,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG096",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "SF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "ATL",
+              "prediction_count": 1,
+              "prediction_rate": 0.058824
+            },
+            {
+              "team_id": "SF",
+              "prediction_count": 16,
+              "prediction_rate": 0.941176
+            }
+          ],
+          "consensus_strength": 0.941176,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG097",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CIN",
+              "prediction_count": 11,
+              "prediction_rate": 0.647059
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "BAL",
+              "prediction_count": 6,
+              "prediction_rate": 0.352941
+            },
+            {
+              "team_id": "CIN",
+              "prediction_count": 11,
+              "prediction_rate": 0.647059
+            }
+          ],
+          "consensus_strength": 0.647059,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG098",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CAR",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "CAR",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "TB",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG100",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "MIN",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "MIN",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "IND",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG101",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "NYJ",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "NYJ",
+              "prediction_count": 17,
+              "prediction_rate": 1
+            },
+            {
+              "team_id": "MIA",
+              "prediction_count": 0,
+              "prediction_rate": 0
+            }
+          ],
+          "consensus_strength": 1,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG102",
+          "period_id": "094_REG094",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "CLE",
+              "prediction_count": 13,
+              "prediction_rate": 0.764706
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "TEN",
+              "prediction_count": 4,
+              "prediction_rate": 0.235294
+            },
+            {
+              "team_id": "CLE",
               "prediction_count": 13,
               "prediction_rate": 0.764706
             }
