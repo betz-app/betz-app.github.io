@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG102",
-  "evaluation_cursor": "REG102",
+  "freeze_cursor": "REG103",
+  "evaluation_cursor": "REG103",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 7,
       "result": {
-        "evaluated_matches": 9,
-        "favorite_wins": 4,
+        "evaluated_matches": 10,
+        "favorite_wins": 5,
         "underdog_wins": 5,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.444444,
-        "upset_rate": 0.555556,
+        "market_efficiency": 0.5,
+        "upset_rate": 0.5,
         "consensus_comparison": {
-          "shared_evaluated_matches": 9,
-          "market_correct": 4,
-          "consensus_correct": 5,
-          "market_efficiency": 0.444444,
-          "consensus_efficiency": 0.555556,
-          "consensus_vs_market_delta": 0.111112
+          "shared_evaluated_matches": 10,
+          "market_correct": 5,
+          "consensus_correct": 6,
+          "market_efficiency": 0.5,
+          "consensus_efficiency": 0.6,
+          "consensus_vs_market_delta": 0.1
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -104,6 +104,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CLE",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG103",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "DEN",
+          "favorite_won": true
         }
       ]
     },
@@ -111,20 +119,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 101,
-        "favorite_wins": 57,
+        "evaluated_matches": 102,
+        "favorite_wins": 58,
         "underdog_wins": 43,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.564356,
-        "upset_rate": 0.425743,
+        "market_efficiency": 0.568627,
+        "upset_rate": 0.421569,
         "consensus_comparison": {
-          "shared_evaluated_matches": 101,
-          "market_correct": 57,
-          "consensus_correct": 60,
-          "market_efficiency": 0.564356,
-          "consensus_efficiency": 0.594059,
-          "consensus_vs_market_delta": 0.029703
+          "shared_evaluated_matches": 102,
+          "market_correct": 58,
+          "consensus_correct": 61,
+          "market_efficiency": 0.568627,
+          "consensus_efficiency": 0.598039,
+          "consensus_vs_market_delta": 0.029412
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -938,26 +946,34 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CLE",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG103",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "DEN",
+          "favorite_won": true
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 101,
-        "favorite_wins": 57,
+        "evaluated_matches": 102,
+        "favorite_wins": 58,
         "underdog_wins": 43,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.564356,
-        "upset_rate": 0.425743,
+        "market_efficiency": 0.568627,
+        "upset_rate": 0.421569,
         "consensus_comparison": {
-          "shared_evaluated_matches": 101,
-          "market_correct": 57,
-          "consensus_correct": 60,
-          "market_efficiency": 0.564356,
-          "consensus_efficiency": 0.594059,
-          "consensus_vs_market_delta": 0.029703
+          "shared_evaluated_matches": 102,
+          "market_correct": 58,
+          "consensus_correct": 61,
+          "market_efficiency": 0.568627,
+          "consensus_efficiency": 0.598039,
+          "consensus_vs_market_delta": 0.029412
         },
         "primary_insight": {
           "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
@@ -1771,6 +1787,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CLE",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG103",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "DEN",
+          "favorite_won": true
         }
       ]
     }

@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG102",
-  "evaluation_cursor": "REG102",
+  "freeze_cursor": "REG103",
+  "evaluation_cursor": "REG103",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 7,
       "result": {
-        "classified_consensus_matches": 9,
-        "community_favorite_picks": 6,
+        "classified_consensus_matches": 10,
+        "community_favorite_picks": 7,
         "community_underdog_picks": 3,
-        "community_favorite_rate": 0.666667,
-        "community_underdog_rate": 0.333333,
+        "community_favorite_rate": 0.7,
+        "community_underdog_rate": 0.3,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -97,6 +97,14 @@
           "underdog_team_id": "CLE",
           "consensus_team_id": "CLE",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG103",
+          "market_status": "available",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "ARI",
+          "consensus_team_id": "DEN",
+          "community_market_position": "favorite"
         }
       ]
     },
@@ -104,11 +112,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 101,
-        "community_favorite_picks": 81,
+        "classified_consensus_matches": 102,
+        "community_favorite_picks": 82,
         "community_underdog_picks": 20,
-        "community_favorite_rate": 0.80198,
-        "community_underdog_rate": 0.19802,
+        "community_favorite_rate": 0.803922,
+        "community_underdog_rate": 0.196078,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -932,17 +940,25 @@
           "underdog_team_id": "CLE",
           "consensus_team_id": "CLE",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG103",
+          "market_status": "available",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "ARI",
+          "consensus_team_id": "DEN",
+          "community_market_position": "favorite"
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 101,
-        "community_favorite_picks": 81,
+        "classified_consensus_matches": 102,
+        "community_favorite_picks": 82,
         "community_underdog_picks": 20,
-        "community_favorite_rate": 0.80198,
-        "community_underdog_rate": 0.19802,
+        "community_favorite_rate": 0.803922,
+        "community_underdog_rate": 0.196078,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1766,6 +1782,14 @@
           "underdog_team_id": "CLE",
           "consensus_team_id": "CLE",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG103",
+          "market_status": "available",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "ARI",
+          "consensus_team_id": "DEN",
+          "community_market_position": "favorite"
         }
       ]
     }
