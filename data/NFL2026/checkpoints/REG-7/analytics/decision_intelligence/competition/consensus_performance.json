@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG106",
-  "evaluation_cursor": "REG106",
+  "freeze_cursor": "REG107",
+  "evaluation_cursor": "REG107",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 7,
       "result": {
-        "evaluated_matches": 13,
-        "correct_matches": 8,
+        "evaluated_matches": 14,
+        "correct_matches": 9,
         "incorrect_matches": 5,
         "pending_matches": 0,
-        "consensus_efficiency": 0.615385
+        "consensus_efficiency": 0.642857
       },
       "matches": [
         {
@@ -97,6 +97,12 @@
           "consensus_team_id": "KC",
           "evaluation_status": "evaluated",
           "correct": false
+        },
+        {
+          "match_id": "REG107",
+          "consensus_team_id": "DAL",
+          "evaluation_status": "evaluated",
+          "correct": true
         }
       ]
     },
@@ -104,11 +110,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 106,
-        "correct_matches": 64,
+        "evaluated_matches": 107,
+        "correct_matches": 65,
         "incorrect_matches": 42,
         "pending_matches": 0,
-        "consensus_efficiency": 0.603774
+        "consensus_efficiency": 0.607477
       },
       "matches": [
         {
@@ -746,17 +752,23 @@
           "consensus_team_id": "KC",
           "evaluation_status": "evaluated",
           "correct": false
+        },
+        {
+          "match_id": "REG107",
+          "consensus_team_id": "DAL",
+          "evaluation_status": "evaluated",
+          "correct": true
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 106,
-        "correct_matches": 64,
+        "evaluated_matches": 107,
+        "correct_matches": 65,
         "incorrect_matches": 42,
         "pending_matches": 0,
-        "consensus_efficiency": 0.603774
+        "consensus_efficiency": 0.607477
       },
       "matches": [
         {
@@ -1394,6 +1406,12 @@
           "consensus_team_id": "KC",
           "evaluation_status": "evaluated",
           "correct": false
+        },
+        {
+          "match_id": "REG107",
+          "consensus_team_id": "DAL",
+          "evaluation_status": "evaluated",
+          "correct": true
         }
       ]
     }
