@@ -1,0 +1,1616 @@
+{
+  "contract_type": "betz_projection",
+  "contract_version": "1.0",
+  "competition_id": "NFL2026",
+  "freeze_cursor": "REG107",
+  "evaluation_cursor": "REG107",
+  "indicator_id": "weekly_resolution",
+  "players": [
+    {
+      "user_id": "ADOLFO_LOZANO",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 58,
+          "extra_points": 7,
+          "total_points": 65,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 2
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 7,
+          "extra_points": 0,
+          "total_points": 7,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "BTO_Z",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "WON_TIEBREAK",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 66,
+          "extra_points": 6,
+          "total_points": 72,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 9,
+          "extra_points": 2,
+          "total_points": 11,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "CHIEFS_FAN",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 67,
+          "extra_points": 9,
+          "total_points": 76,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 4
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 5
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 8,
+          "extra_points": 1,
+          "total_points": 9,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "DAVIDMAGANA",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 52,
+          "extra_points": 3,
+          "total_points": 55,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 2
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 6,
+          "extra_points": 1,
+          "total_points": 7,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "DIEGOMAGANA",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 56,
+          "extra_points": 3,
+          "total_points": 59,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 2
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 5,
+          "extra_points": 0,
+          "total_points": 5,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "EZC",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 49,
+          "extra_points": 1,
+          "total_points": 50,
+          "extra_breakdown": [
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 7,
+          "extra_points": 0,
+          "total_points": 7,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "GABOBC",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 63,
+          "extra_points": 8,
+          "total_points": 71,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 3
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 8,
+          "extra_points": 2,
+          "total_points": 10,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "GOLDEN_EAGLE",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "LOST_TIEBREAK",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": "lock_winner",
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 60,
+          "extra_points": 5,
+          "total_points": 65,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 2
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 3
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 10,
+          "extra_points": 1,
+          "total_points": 11,
+          "extra_breakdown": [
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "GSG",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 61,
+          "extra_points": 3,
+          "total_points": 64,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 2
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 7,
+          "extra_points": 0,
+          "total_points": 7,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "HZE",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 70,
+          "extra_points": 11,
+          "total_points": 81,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 6
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 8,
+          "extra_points": 1,
+          "total_points": 9,
+          "extra_breakdown": [
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "JMTZCELIZ",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 61,
+          "extra_points": 7,
+          "total_points": 68,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 2
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 9,
+          "extra_points": 0,
+          "total_points": 9,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "LJMV",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 60,
+          "extra_points": 7,
+          "total_points": 67,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 2
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 9,
+          "extra_points": 1,
+          "total_points": 10,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "MARIOVILLARREAL",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 65,
+          "extra_points": 4,
+          "total_points": 69,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 3
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 9,
+          "extra_points": 0,
+          "total_points": 9,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "NSA",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 61,
+          "extra_points": 4,
+          "total_points": 65,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 3
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 7,
+          "extra_points": 0,
+          "total_points": 7,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "PACOT",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 68,
+          "extra_points": 8,
+          "total_points": 76,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 4
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 4
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 8,
+          "extra_points": 1,
+          "total_points": 9,
+          "extra_breakdown": [
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "user_id": "PEPE_SANCHEZ",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 58,
+          "extra_points": 5,
+          "total_points": 63,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 4
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 1
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 6,
+          "extra_points": 0,
+          "total_points": 6,
+          "extra_breakdown": []
+        }
+      }
+    },
+    {
+      "user_id": "YEU",
+      "weekly_outcome": {
+        "status": "available",
+        "reason_code": null,
+        "outcome_code": "OTHER_RESULT",
+        "official_source_ref": "data/NFL2026/checkpoints/REG-7/period_results.json#094_REG094",
+        "initial_tied_user_ids": [
+          "BTO_Z",
+          "GOLDEN_EAGLE"
+        ],
+        "winner_ids": [
+          "BTO_Z"
+        ],
+        "prize_split": false,
+        "decisive_criterion_id": "lock_winner",
+        "eliminated_at_criterion_id": null,
+        "resolution_steps": [
+          {
+            "criterion_id": "period_score",
+            "outcome": "tie",
+            "remaining_user_ids": [
+              "BTO_Z",
+              "GOLDEN_EAGLE"
+            ]
+          },
+          {
+            "criterion_id": "lock_winner",
+            "outcome": "resolved",
+            "remaining_user_ids": [
+              "BTO_Z"
+            ]
+          }
+        ],
+        "lock_evidence": [
+          {
+            "user_id": "BTO_Z",
+            "eligible": true,
+            "match_id": "REG098",
+            "winner_correct": true,
+            "predicted_home_score": 27,
+            "predicted_away_score": 17,
+            "predicted_total_points": 44,
+            "actual_total_points": 26,
+            "total_points_distance": 18,
+            "eliminated_at_criterion_id": null
+          },
+          {
+            "user_id": "GOLDEN_EAGLE",
+            "eligible": true,
+            "match_id": "REG100",
+            "winner_correct": false,
+            "predicted_home_score": 21,
+            "predicted_away_score": 7,
+            "predicted_total_points": 28,
+            "actual_total_points": 48,
+            "total_points_distance": 20,
+            "eliminated_at_criterion_id": "lock_winner"
+          }
+        ]
+      },
+      "scoring_points": {
+        "season": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 61,
+          "extra_points": 8,
+          "total_points": 69,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 5
+            },
+            {
+              "source_type": "modifier",
+              "source_id": "random_group_modifier",
+              "points": 3
+            }
+          ]
+        },
+        "week": {
+          "status": "available",
+          "reason_code": null,
+          "correct_points": 7,
+          "extra_points": 1,
+          "total_points": 8,
+          "extra_breakdown": [
+            {
+              "source_type": "component",
+              "source_id": "lock_winner_bonus",
+              "points": 1
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -716,6 +716,158 @@
     .sg-mobile-back{display:none}
     .sg-desktop-close{display:inline}
   }
+/* BEGIN BETZ INSIGHTS CSS */
+/* BETZ preview only. Shared brand tokens come from the existing read app. */
+/* 1. Navigation preserves all six existing sections plus Insights. */
+#nav{grid-template-columns:repeat(7,minmax(0,1fr))}
+#nav button{min-width:0;min-height:54px;color:var(--muted);padding:8px 1px 4px}
+#nav button.on{color:var(--turq)}
+#nav button span{font-size:9px;letter-spacing:0;line-height:1.15;min-height:20px;display:flex;align-items:center;justify-content:center;text-align:center}
+#nav button svg{width:20px;height:20px;flex-shrink:0}
+/* 2. Selection and hierarchy */
+[data-route="insights"]{--ix-border:rgba(139,153,163,.22)}
+[data-route="insights"] [hidden]{display:none!important}
+.ix-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:2px 0 20px}
+.ix-heading h1{font:700 27px/1.2 var(--display);letter-spacing:-.6px}
+.ix-heading p{color:var(--muted);font-size:13px;margin-top:6px}
+.ix-cutoff{font-size:11px;white-space:nowrap;color:var(--turq);padding:6px 9px;border:1px solid var(--ix-border);border-radius:7px;margin-top:4px}
+.ix-mode,.ix-scope{display:flex;gap:4px;border:1px solid var(--line);padding:4px;background:var(--surface);border-radius:11px;margin-bottom:18px}
+.ix-mode button,.ix-scope button{flex:1;padding:10px 12px;border:0;border-radius:7px;background:transparent;color:var(--muted);font:600 13px var(--body);cursor:pointer;min-height:42px}
+.ix-mode button[aria-pressed="true"]{background:var(--turq);color:#04211E;box-shadow:0 1px 8px rgba(10,245,225,.1)}
+.ix-selectors{display:grid;gap:12px;margin-bottom:20px}
+.ix-selectors.ix-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ix-select{min-width:0}
+.ix-select>span{display:block;color:var(--muted);font:600 10px var(--body);letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.ix-select select{width:100%;min-width:0;min-height:46px;padding:10px 28px 10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;color:var(--txt);font:600 13px var(--body);text-overflow:ellipsis}
+[data-route="insights"] :focus-visible{outline:2px solid var(--turq);outline-offset:4px}
+.ix-content{display:grid;gap:14px}
+.ix-card{background:var(--surface);border:1px solid var(--ix-border);border-radius:15px;padding:19px;min-width:0;overflow-wrap:anywhere}
+.ix-card h2{font:600 12px var(--body);color:var(--muted)}
+.ix-eyebrow{color:var(--muted);font:600 10px/1.5 var(--body);letter-spacing:1.3px;text-transform:uppercase}
+.ix-pill{display:inline-block;padding:2px 5px;margin-left:3px;background:var(--turq-dim);color:var(--turq);border-radius:4px;font:600 9px/1.4 var(--body);letter-spacing:0;text-transform:none}
+.ix-note{font-size:11px;line-height:1.65;color:var(--muted);margin-top:6px}
+.ix-note b{color:var(--txt);font-weight:600}
+.ix-section-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:10px}
+.ix-section-title h2{font:700 16px/1.4 var(--display);letter-spacing:-.3px}
+.ix-section-title>span{color:var(--muted);font-size:10px;text-align:right}
+/* 3. Data first */
+.ix-hero{background:radial-gradient(ellipse at 100% 0,rgba(10,245,225,.07),transparent 65%),var(--surface);padding:24px;border-color:rgba(10,245,225,.26)}
+.ix-big{font:700 63px/1.12 var(--display);letter-spacing:-3px;color:var(--turq);font-variant-numeric:tabular-nums;margin:10px 0 8px}
+.ix-fraction{font-size:14px;color:var(--muted)}
+.ix-fraction b{font-weight:600;color:var(--txt)}
+.ix-remate{font-size:12px;color:var(--txt);padding-top:17px;margin-top:17px;border-top:1px solid var(--ix-border)}
+.ix-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ix-metrics .ix-card{padding:17px 14px}
+.ix-metric{font:700 clamp(25px,6.6vw,35px)/1.3 var(--display);font-variant-numeric:tabular-nums;letter-spacing:-1px;margin-top:10px}
+.ix-unit{font:500 15px var(--body);letter-spacing:0;color:var(--muted)}
+.ix-teal{color:var(--turq)}.ix-down{color:var(--coral)}
+.ix-trend-card{padding:20px 15px 14px}
+.ix-trend{list-style:none;display:flex;gap:10px;align-items:end}
+.ix-trend li{flex:1;min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px}
+.ix-trend-value{font-size:11px;color:var(--txt);font-variant-numeric:tabular-nums}
+.ix-track{height:88px;width:100%;max-width:38px;display:flex;align-items:end;background:rgba(139,153,163,.06);border-radius:5px;overflow:hidden}
+.ix-track>span{width:100%;background:#446660;border:1px solid #5b827b;border-radius:5px;min-height:1px}
+.ix-current .ix-track>span{background:var(--turq);border-color:var(--turq)}
+.ix-current .ix-trend-value{color:var(--turq)}
+.ix-trend-label{font-size:9px;color:var(--muted);line-height:1.3}
+.ix-trend-count{font-size:10px;color:var(--muted)}
+.ix-trend-card figcaption{border-top:1px solid var(--ix-border);padding-top:10px;margin-top:16px}
+.ix-rank{border-left:3px solid var(--turq)}
+.ix-rank-number{font:700 36px var(--display);letter-spacing:-1px;margin:8px 0}
+.ix-rank-number>span{font:500 17px var(--body);color:var(--muted);letter-spacing:0}
+.ix-rank-target{font-size:13px;line-height:1.5;color:var(--txt)}
+/* 4. Evidence, recognition and conditional details */
+.ix-stories{display:grid;gap:12px}
+.ix-recognition{border-color:rgba(255,206,31,.35);background:linear-gradient(125deg,rgba(255,206,31,.04),transparent 70%),var(--surface)}
+.ix-recognition .ix-eyebrow{color:var(--gold)}
+.ix-resolution h3{font:700 19px/1.5 var(--display);letter-spacing:-.3px;margin:9px 0}
+.ix-evidence{margin-top:14px;border-top:1px solid var(--ix-border);padding-top:3px}
+.ix-evidence summary{font-size:12px;color:var(--txt);padding:11px 0;cursor:pointer;min-height:42px}
+.ix-locks,.ix-events,.ix-contributors{list-style:none}
+.ix-locks li,.ix-events li{padding:12px 0;border-bottom:1px solid var(--ix-border)}
+.ix-locks li:last-child,.ix-events li:last-child{border:0}
+.ix-lock-top,.ix-event-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:12px;line-height:1.5}
+.ix-lock-top>span{font-size:11px;color:var(--muted);text-align:right}
+.ix-events li>p:not(.ix-note){font-size:12px;line-height:1.5;margin-top:6px}
+.ix-result{font-size:10px;letter-spacing:.8px;font-weight:700}
+.ix-contributors{margin-top:12px}
+.ix-contributors li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--ix-border);font-size:12px}
+.ix-contributors b{font-variant-numeric:tabular-nums;font-size:17px;white-space:nowrap}
+.ix-contributors small{font-size:10px;font-weight:400;color:var(--muted)}
+.ix-consensus summary{font:600 12px var(--body);cursor:pointer;min-height:24px;line-height:1.6}
+.ix-consensus summary>span{color:var(--muted);font-weight:400;font-size:10px;margin-left:7px}
+.ix-consensus-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+.ix-consensus-grid>div{display:flex;flex-direction:column;gap:7px;font-size:11px;color:var(--muted)}
+.ix-consensus-grid b{font:700 24px var(--display);color:var(--txt)}
+.ix-consensus-grid small{font-size:11px}
+.ix-help{font-size:11px;color:var(--muted);padding:4px 1px 8px;line-height:1.7}
+.ix-help summary{cursor:pointer;padding:12px 0;min-height:44px}
+/* 5. Comparison is an aligned reading, not an inferred league winner. */
+.ix-scope{margin:0;border-radius:9px;background:transparent;max-width:100%;padding:3px}
+.ix-scope button{font-size:12px;padding:8px;min-height:38px}
+.ix-scope button[aria-pressed="true"]{background:var(--surface2);color:var(--txt)}
+.ix-versus{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);gap:8px;align-items:center}
+.ix-versus>div{display:flex;flex-direction:column;gap:9px;min-width:0}
+.ix-versus>div:last-child{text-align:right}
+.ix-versus>div>span{font-size:12px;line-height:1.4;min-height:34px;display:flex;align-items:center}
+.ix-versus>div:last-child>span{justify-content:flex-end}
+.ix-versus b{font:700 clamp(24px,7vw,39px) var(--display);letter-spacing:-1.5px;color:var(--turq);font-variant-numeric:tabular-nums}
+.ix-versus small{font-size:11px;color:var(--muted)}
+.ix-vs{font-size:9px;letter-spacing:1px;color:var(--muted);text-align:center}
+.ix-common{font-size:11px;line-height:1.5;color:var(--muted);margin-top:21px;text-align:center}
+.ix-compare-delta{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--ix-border);padding-top:16px;margin-top:17px}
+.ix-compare-delta>span{font-size:12px;line-height:1.5}
+.ix-compare-delta small{color:var(--muted);font-size:10px}
+.ix-compare-delta>b{font:700 24px var(--display);white-space:nowrap;letter-spacing:-.5px}
+.ix-table-wrap{padding:17px 14px}
+.ix-table{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:12px}
+.ix-table caption{text-align:left;font:700 14px/1.6 var(--display);padding:0 0 13px}
+.ix-table th,.ix-table td{padding:12px 6px;border-bottom:1px solid var(--ix-border);vertical-align:middle;overflow-wrap:anywhere}
+.ix-table thead th{font-size:10px;font-weight:500;color:var(--muted);line-height:1.5}
+.ix-table tr>*:first-child{width:44%;font-weight:400;text-align:left}
+.ix-table td,.ix-table th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.ix-table tr:last-child>*{border:0}
+.ix-footnote{margin:0 2px}
+.ix-retry{background:var(--turq);color:#04211E;border:0;border-radius:8px;font:600 12px var(--body);padding:12px 18px;margin-top:17px;cursor:pointer}
+@media(max-width:360px){.ix-card{padding:16px}.ix-big{font-size:54px}.ix-metrics .ix-card{padding:14px 11px}.ix-metric{font-size:24px}.ix-metrics .ix-note{font-size:10px}.ix-versus b{font-size:25px}.ix-compare-delta>b{font-size:20px}#nav button span{font-size:8px}.ix-section-title>span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){[data-route="insights"]{animation:none}}
+
+.ix-profile-entry{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(10,245,225,.28);border-radius:12px;background:var(--surface);color:var(--turq);padding:14px 16px;margin:0 0 22px;text-align:left;cursor:pointer;font-family:var(--body)}
+.ix-profile-entry b{display:block;font-size:13px;font-weight:600}.ix-profile-entry small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.ix-profile-entry>span:last-child{font-size:24px}.ix-profile-entry:focus-visible{outline:2px solid var(--turq);outline-offset:4px}
+
+.ix-table .ix-extra-row>*{border-top:1px solid var(--line)}
+.ix-table .ix-total-row>*{color:var(--turq);font-weight:700;background:rgba(10,245,225,.04)}
+
+.ix-select-context{display:block;margin-top:6px;color:var(--muted);font-size:9px;line-height:1.4}
+
+/* Best completed-period accuracy is published by Player Performance. */
+.ix-best{border-top:1px solid var(--ix-border);padding-top:14px;margin-top:16px}
+.ix-best-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.ix-best-head>span{font:600 11px var(--body);color:var(--muted)}
+.ix-best-value{font:700 25px var(--display);letter-spacing:-.7px;color:var(--txt);font-variant-numeric:tabular-nums}
+.ix-best-periods{display:grid;gap:8px;margin-top:9px}
+.ix-best-period{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-size:12px}
+.ix-best-period small{font-size:11px;color:var(--muted)}
+.ix-best-note{display:block;font-size:9px;color:var(--muted);margin-top:9px;line-height:1.5}
+.ix-versus .ix-best{margin-top:5px;padding-top:12px;width:100%}
+.ix-versus .ix-best-head{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.ix-versus>div:last-child .ix-best-head{align-items:flex-end}
+.ix-versus .ix-best-value{font-size:23px;letter-spacing:-.5px}
+.ix-versus .ix-best-period{display:flex;flex-direction:column;gap:4px;font-size:11px;align-items:flex-start}
+.ix-versus>div:last-child .ix-best-period{align-items:flex-end}
+.ix-versus .ix-best-period small{font-size:10px}
+.ix-versus{align-items:start}.ix-versus>.ix-vs{margin-top:45px}
+
+/* Published bonus sources remain subordinate to the extra-points subtotal. */
+.ix-table .ix-bonus-row>*{font-size:11px;color:var(--muted);padding-top:8px;padding-bottom:8px}
+.ix-table .ix-bonus-row>th:first-child{padding-left:16px}
+
+/* Tabla shares the Insights mode switch and keeps one classification visible. */
+[data-route="tabla"] #tabla-jornada[hidden],[data-route="tabla"] #tabla-acumulado[hidden],[data-route="tabla"] .wknav-pill[hidden]{display:none!important}
+[data-route="tabla"] .tabla-scope{margin:0 0 20px}
+[data-route="tabla"] .tabla-scope :focus-visible{outline:2px solid var(--turq);outline-offset:4px}
+
+/* END BETZ INSIGHTS CSS */
 </style>
 </head>
 
@@ -766,6 +918,9 @@
       <div class="lb" id="leaderboard"></div>
       <div class="sample">Posiciones actualizadas hasta la jornada seleccionada.</div>
     </section>
+
+    <!-- Insights consumes the owned public checkpoint bundle. -->
+    <section class="screen" data-route="insights" aria-label="Insights"></section>
 
     <!-- Perfil: selected player (BTO_Z by default) -->
     <section class="screen" data-route="perfil">
@@ -938,7 +1093,7 @@ function initClarity(environment){
 function betzTag(k,v){ try{ if(__clarityOn && window.clarity && v!=null && v!=="") window.clarity("set", String(k), String(v)); }catch(e){} }
 function betzEvent(name){ try{ if(__clarityOn && window.clarity) window.clarity("event", String(name)); }catch(e){} }
 function betzEventOnce(name){ if(__clarityOnce.has(name)) return; __clarityOnce.add(name); betzEvent(name); }
-const TABS = [["tabla","Tabla"],["partidos","Partidos"],["perfil","Perfil"],["podio","Podio"],["grupos","Mis grupos"],["pods","Grupos"]];
+const TABS = [["tabla","Tabla"],["partidos","Partidos"],["perfil","Perfil"],["insights","Insights"],["podio","Podio"],["grupos","Mis grupos"],["pods","Grupos"]];
 
 //-----------------------------//
 // Visual metadata (from the approved prototype; inline, no external assets)
@@ -2815,6 +2970,205 @@ nav.addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b)ret
 document.addEventListener("click", e=>{ const g=e.target.closest('[data-go="grupos"]'); if(g && !g.closest("#nav")) sgOnEnter(); });
 window.addEventListener("hashchange", ()=>{ const route=(location.hash||"").replace("#/",""); if(route==="grupos")sgOnEnter(); if(route==="pods")loadPodPickStatuses(); });
 
+/* BEGIN BETZ INSIGHTS JS */
+"use strict";
+(function(root,factory){const api=factory();if(typeof module==="object"&&module.exports)module.exports=api;else root.BetzInsightsView=api;})(typeof globalThis!=="undefined"?globalThis:this,function(){
+//--------------------------------------------------------------
+// 1. Display only: escape text, format published values and explain states
+//--------------------------------------------------------------
+const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const finite=v=>typeof v==="number"&&Number.isFinite(v);
+const number=v=>finite(v)?new Intl.NumberFormat("es-MX",{maximumFractionDigits:1}).format(v):"—";
+const percent=v=>finite(v)?number(v*100)+"%":"—";
+const points=v=>finite(v)?(v>0?"+":v<0?"−":"")+number(Math.abs(v))+" pp":"—";
+const usable=b=>b&&["available","provisional"].includes(b.status);
+const reason=b=>({SCORING_BREAKDOWN_UNAVAILABLE:"El desglose de puntos todavía no está disponible.",NO_COMPLETE_PERIODS:"Disponible después de la primera jornada cerrada.",SCORING_CUTOFF_NOT_ALIGNED:"Los puntos se mostrarán cuando cierre la jornada.",OFFICIAL_SCORING_UNAVAILABLE:"Los puntos oficiales todavía no están disponibles.",NO_PREVIOUS_PERIOD:"Primera jornada: todavía no hay una anterior.",PERIOD_OPEN:"La jornada sigue abierta. El cambio se muestra al cerrar ambas jornadas.",NO_RESOLVED_MATCHES:"Aún no hay resultados oficiales.",PREVIOUS_PERIOD_NO_RESOLVED_MATCHES:"La jornada anterior aún no tiene resultados.",NO_DISTINCT_POSITION:"Sin otro puesto como referencia.",PERIOD_NOT_SETTLED:"La jornada sigue abierta. El desenlace espera.",MODIFIER_NOT_CONFIGURED:"Sin punto de grupo en esta jornada."}[b&&b.reason_code]||(b&&b.status==="integrity_error"?"Este dato está en revisión.":"Este dato todavía no está disponible."));
+const status=b=>b&&b.status==="provisional"?'<span class="ix-pill">En juego</span>':"";
+const names=(ids,bundle)=>ids.map(id=>esc(bundle.players.find(p=>p.user_id===id)?.display_name||id)).join(" · ");
+const heading=(title,caption)=>'<div class="ix-section-title"><h2>'+title+'</h2>'+(caption?'<span>'+caption+'</span>':"")+'</div>';
+const small=b=>'<p class="ix-note">'+esc(reason(b))+'</p>';
+function omission(a){return a.missing?number(a.missing)+' omitido'+(a.missing===1?'':'s')+' · cuenta'+(a.missing===1?'':'n')+' como fallo'+(a.missing===1?'':'s'):'Sin omisiones';}
+function help(){return '<details class="ix-help"><summary>Cómo se mide</summary><p>Aciertos entre todos los partidos con resultado oficial al corte. Las omisiones cuentan como fallos; los pendientes todavía no entran. Cada partido cuenta una vez, incluido el fijado. Los bonos sí cuentan en la tabla de puntos.</p></details>';}
+//--------------------------------------------------------------
+// 2. Player: published accuracy, delta, trend and official rank context
+//--------------------------------------------------------------
+function bestWeekSummary(best,context={}){
+ const periods=(best?.periods||[]).map(r=>{const regular=/^REG-(\d+)$/.exec(r.checkpoint_id||""),label=context.periodLabels?.[r.period_id]||(regular?"Jornada "+Number(regular[1]):r.checkpoint_id||r.period_id);return '<div class="ix-best-period"><span>'+esc(label)+'</span><small>'+number(r.correct)+' de '+number(r.resolved_opportunities)+' aciertos</small></div>';}).join('');
+ return '<div class="ix-best"><div class="ix-best-head"><span>Mejor jornada</span><strong class="ix-best-value">'+percent(usable(best)?best.accuracy_rate:null)+'</strong></div>'+(usable(best)?'<div class="ix-best-periods">'+periods+'</div><small class="ix-best-note">'+(best.periods.length>1?'Máximo empatado · ':'')+'Solo jornadas cerradas</small>':small(best))+'</div>';
+}
+function playerNumbers(p,context){const a=p.season_accuracy,w=p.week_accuracy,d=p.weekly_change;
+ return '<article class="ix-card ix-hero"><div class="ix-eyebrow">Efectividad · temporada '+status(a)+'</div><div class="ix-big">'+percent(usable(a)?a.accuracy_rate:null)+'</div>'+(usable(a)?'<p class="ix-fraction"><b>'+number(a.correct)+'</b> de '+number(a.resolved_opportunities)+' aciertos</p><p class="ix-note">'+esc(omission(a))+'</p>':small(a))+bestWeekSummary(p.best_week,context)+'</article><div class="ix-metrics"><article class="ix-card"><h2>Esta jornada '+status(w)+'</h2><div class="ix-metric">'+percent(usable(w)?w.accuracy_rate:null)+'</div>'+(usable(w)?'<p class="ix-note">'+number(w.correct)+' de '+number(w.resolved_opportunities)+' aciertos</p><p class="ix-note">'+esc(omission(w))+'</p>':small(w))+'</article><article class="ix-card"><h2>Cambio semanal</h2><div class="ix-metric '+(usable(d)&&d.delta_pp<0?'ix-down':'ix-teal')+'">'+points(usable(d)?d.delta_pp:null)+'</div>'+(usable(d)?'<p class="ix-note">'+percent(d.previous_accuracy_rate)+' → '+percent(d.current_accuracy_rate)+'</p><p class="ix-note">Frente a la jornada anterior</p>':small(d))+'</article></div>';
+}
+function trend(p,context){return heading('Así viene tu juego','Hasta cinco jornadas')+'<figure class="ix-card ix-trend-card"><ol class="ix-trend">'+p.trend.map((r,i)=>{const a=r.accuracy,v=usable(a)?a.accuracy_rate:null,label=context.periodLabels?.[r.period_id]||r.period_id;return '<li class="'+(i===p.trend.length-1?'ix-current':'')+'"><span class="ix-trend-value">'+percent(v)+'</span><span class="ix-track" aria-hidden="true"><span style="height:'+(finite(v)?Math.min(100,Math.max(0,v*100)):0)+'%"></span></span><span class="ix-trend-label">'+esc(label)+'</span><span class="ix-trend-count">'+(usable(a)?number(a.correct)+'/'+number(a.resolved_opportunities):'Sin resultados')+(r.completion_status==='open'?' · en juego':'')+'</span></li>';}).join('')+'</ol><figcaption class="ix-note">Efectividad por jornada. Se incluyen partidos sin picks.</figcaption></figure>';}
+function rank(p,bundle){const r=p.position_context;
+ if(!usable(r))return '<article class="ix-card">'+heading('Tu lugar en la pelea','Tabla oficial')+small(r)+(r.same_rank_user_ids?.length?'<p class="ix-note">Mismo puesto: '+names(r.same_rank_user_ids,bundle)+'</p>':'')+'</article>';
+ return '<article class="ix-card ix-rank"><div class="ix-eyebrow">'+(r.direction==='ahead'?'Al siguiente puesto':'Ventaja sobre el siguiente puesto')+'</div><div class="ix-rank-number">'+number(r.points_gap)+' <span>punto'+(r.points_gap===1?'':'s')+'</span></div><p class="ix-rank-target">'+names(r.target_user_ids,bundle)+'</p><p class="ix-note">Puesto '+number(r.current_rank)+' → '+number(r.target_rank)+(r.direction==='behind'?' · Mirando hacia atrás':'')+'</p>'+(r.same_rank_user_ids.length?'<p class="ix-note">Compartes puesto con '+names(r.same_rank_user_ids,bundle)+'</p>':'')+'</article>';
+}
+//--------------------------------------------------------------
+// 3. Evidence-backed copy: never infer a winner, threshold or group award
+//--------------------------------------------------------------
+function resolution(p,bundle){const o=p.weekly_outcome;if(!usable(o)||!o.outcome_code||o.outcome_code==='OTHER_RESULT')return '';
+ const titles={WON_TIEBREAK:'Iguales en puntos. El desempate fue tuyo.',LOST_TIEBREAK:'Los puntos empataron. El desempate decidió.',SHARED_WEEKLY_WIN:'Nadie soltó el primer lugar.',WON_ON_POINTS:'La jornada fue tuya.'};
+ const criterion=o.outcome_code==='LOST_TIEBREAK'?o.eliminated_at_criterion_id:o.decisive_criterion_id;
+ const criteria={lock_winner:'Acertar el partido fijado',lock_total_points_distance:'Menor distancia al total del fijado',period_score:'Puntos de la jornada'};
+ const win=o.winner_ids.includes(p.user_id),details=(o.lock_evidence||[]).map(l=>'<li><div class="ix-lock-top"><b>'+names([l.user_id],bundle)+'</b><span>'+(l.eligible?(l.winner_correct?'Fijado acertado':'Fijado fallado'):'Sin fijado elegible')+'</span></div>'+(l.eligible?'<p class="ix-note">Total pronosticado <b>'+number(l.predicted_total_points)+'</b> · Real <b>'+number(l.actual_total_points)+'</b> · Distancia <b>'+number(l.total_points_distance)+'</b></p>':'')+'</li>').join('');
+ return '<article class="ix-card ix-resolution '+(win?'ix-recognition':'')+'"><div class="ix-eyebrow">'+(o.prize_split?'Victoria compartida':'Desenlace oficial')+'</div><h3>'+esc(titles[o.outcome_code]||'Resultado oficial')+'</h3><p class="ix-note">'+(o.prize_split?'Ganadores: '+names(o.winner_ids,bundle):'Criterio '+(o.outcome_code==='LOST_TIEBREAK'?'que resolvió tu empate':'decisivo')+': <b>'+esc(criteria[criterion]||'Resolución oficial')+'</b>')+'</p>'+(details?'<details class="ix-evidence"><summary>Ver el desempate</summary><ul class="ix-locks">'+details+'</ul><p class="ix-note">Cada distancia corresponde al fijado de ese jugador. Distancia cero no significa marcador exacto.</p></details>':'')+'</article>';
+}
+function decisions(p,context){const d=p.decision_highlights;if(!usable(d)||!d.events?.length)return '';
+ const rows=d.events.map(e=>{const x=e.evidence,good=e.insight_code==='CORRECT_AGAINST_SUPERMAJORITY',match=context.matchLabels?.[x.match_id]||x.selected_team_id;return '<li><div class="ix-event-top"><span class="ix-result '+(good?'ix-teal':'ix-down')+'">'+(good?'ACIERTO':'FALLO')+'</span><b>'+esc(match)+'</b></div><p>'+(good?'Acertaste con '+esc(x.selected_team_id)+'.':'Esta vez la mayoría tuvo razón.')+'</p><p class="ix-note">'+number(x.majority_count)+' de '+number(x.valid_predictions)+' eligieron '+esc(x.majority_team_id)+' · '+percent(x.majority_rate)+'</p></li>';}).join('');
+ return '<article class="ix-card"><div class="ix-eyebrow">Contra casi todos · jornada</div><div class="ix-metric">'+number(d.supermajority_attempts.correct)+' <span class="ix-unit">de '+number(d.supermajority_attempts.evaluated)+'</span></div><p class="ix-note">Aciertos al ir contra un consenso de al menos 80%.</p><p class="ix-note">Balance completo: '+number(d.supermajority_attempts.correct)+' aciertos · '+number(d.supermajority_attempts.incorrect)+' fallos.</p><details class="ix-evidence" open><summary>Ver '+number(d.events.length)+' partido'+(d.events.length===1?'':'s')+'</summary><ul class="ix-events">'+rows+'</ul></details></article>';
+}
+function group(p,bundle){const g=p.group_contribution;if(!usable(g)||!(g.awarded_points>0))return '';
+ return '<article class="ix-card"><div class="ix-eyebrow">Tu grupo sumó</div><div class="ix-metric">+'+number(g.awarded_points)+' <span class="ix-unit">punto'+(g.awarded_points===1?'':'s')+'</span></div>'+(g.top_contributors.length?'<p class="ix-note">Mayores aportadores · '+esc(g.group_id)+'</p><ul class="ix-contributors">'+g.top_contributors.map(t=>'<li><span>'+names([t.user_id],bundle)+'</span><b>'+number(t.pre_modifier_period_score)+' <small>pts</small></b></li>').join('')+'</ul><p class="ix-note">Puntos antes del bono. Todos los máximos, sin desempatar.</p>':'<p class="ix-note">Punto otorgado. Esta jornada, sin aportes positivos para destacar.</p>')+'</article>';
+}
+function consensus(p){const c=p.consensus_performance.week;if(!usable(c))return '';
+ return '<details class="ix-card ix-consensus"><summary>Frente a la comunidad <span>Esta jornada</span></summary><div class="ix-consensus-grid"><div><span>Con la mayoría</span><b>'+percent(c.aligned.accuracy_rate)+'</b><small>'+number(c.aligned.correct)+'/'+number(c.aligned.evaluated)+' aciertos</small></div><div><span>Contra la mayoría</span><b>'+percent(c.contrarian.accuracy_rate)+'</b><small>'+number(c.contrarian.correct)+'/'+number(c.contrarian.evaluated)+' aciertos</small></div></div><p class="ix-note">Solo picks respondidos con consenso suficiente. '+number(c.neutral_evaluated)+' divididos · '+number(c.insufficient_sample_evaluated)+' sin muestra · '+number(c.missing_evaluated)+' omitidos. Describe tus decisiones; no explica por sí solo tu posición.</p></details>';
+}
+//--------------------------------------------------------------
+// 4. Compare consumes one published unordered pair and only swaps columns
+//--------------------------------------------------------------
+function compare(bundle,p,other,scope,context={}){if(!other||p.user_id===other.user_id)return '<div class="ix-card">Elige dos jugadores distintos para comparar.</div>';
+ const pair=bundle.pair_comparisons.find(r=>[r.user_a,r.user_b].includes(p.user_id)&&[r.user_a,r.user_b].includes(other.user_id)),r=pair?.perspectives.find(r=>r.perspective_id===(scope==='week'?'week:all':'season:all'));
+ if(!r)return '<div class="ix-card"><p>Esta comparación todavía no está disponible.</p></div>';
+ const first=pair.user_a===p.user_id,a=first?'a':'b',b=first?'b':'a',value=(side,key)=>r[side+'_'+key],delta=finite(r.delta_pp_a_minus_b)?(first?r.delta_pp_a_minus_b:-r.delta_pp_a_minus_b):null;
+ const scoringA=p.scoring_points?.[scope==='week'?'week':'season'],scoringB=other.scoring_points?.[scope==='week'?'week':'season'];
+ const scoringNote=usable(scoringA)&&usable(scoringB)?'':'<p class="ix-note ix-footnote">'+esc(reason(!usable(scoringA)?scoringA:scoringB))+'</p>';
+ const scoreRow=(label,key,cls)=>'<tr class="'+cls+'"><th scope="row">'+label+'</th><td>'+number(usable(scoringA)?scoringA[key]:null)+'</td><td>'+number(usable(scoringB)?scoringB[key]:null)+'</td></tr>';
+ const bonusNames={"component:lock_winner_bonus":"Partido fijado","component:other_match_bonus":"Otros adicionales de partidos","modifier:random_group_modifier":"Bono de grupo","modifier:perfect_week_modifier":"Semana perfecta"};
+ const bonusKeys=["component:lock_winner_bonus","modifier:random_group_modifier","modifier:perfect_week_modifier"];
+ for(const score of [scoringA,scoringB])if(usable(score))for(const item of score.extra_breakdown||[]){const key=item.source_type+":"+item.source_id;if(!bonusKeys.includes(key))bonusKeys.push(key);}
+ const bonusValue=(score,key)=>usable(score)&&Array.isArray(score.extra_breakdown)?number(score.extra_breakdown.find(r=>r.source_type+":"+r.source_id===key)?.points??0):"—";
+ const bonusRows=bonusKeys.map(key=>'<tr class="ix-bonus-row"><th scope="row">'+esc(bonusNames[key]||'Otro bono · '+key.slice(key.indexOf(':')+1))+'</th><td>'+bonusValue(scoringA,key)+'</td><td>'+bonusValue(scoringB,key)+'</td></tr>').join('');
+ const scoringRows=scoreRow('Puntos extra','extra_points','ix-extra-row')+bonusRows+scoreRow('Puntos totales','total_points','ix-total-row');
+ const rows=[['Aciertos','correct'],['Fallos totales','failed'],['Omisiones incluidas','missing'],['Picks respondidos','answered_evaluated']].map(([label,key])=>'<tr><th scope="row">'+label+'</th><td>'+number(value(a,key))+'</td><td>'+number(value(b,key))+'</td></tr>').join('');
+ return '<div class="ix-scope" role="group" aria-label="Alcance de la comparación"><button data-ix-scope="season" aria-pressed="'+(scope!=='week')+'">Temporada</button><button data-ix-scope="week" aria-pressed="'+(scope==='week')+'">Jornada</button></div>'+heading('Rendimiento cara a cara',scope==='week'?'Esta jornada':'Al corte seleccionado')+'<article class="ix-card"><div class="ix-versus"><div><span>'+esc(p.display_name)+'</span><b>'+percent(usable(r)?value(a,'accuracy_rate'):null)+'</b><small>'+number(value(a,'correct'))+' de '+number(r.evaluated)+'</small>'+(scope!=='week'?bestWeekSummary(p.best_week,context):'')+'</div><span class="ix-vs">VS</span><div><span>'+esc(other.display_name)+'</span><b>'+percent(usable(r)?value(b,'accuracy_rate'):null)+'</b><small>'+number(value(b,'correct'))+' de '+number(r.evaluated)+'</small>'+(scope!=='week'?bestWeekSummary(other.best_week,context):'')+'</div></div><p class="ix-common">'+(usable(r)?number(r.evaluated)+' partidos resueltos para ambos'+(r.status==='provisional'?' · En juego':''):esc(reason(r)))+'</p><div class="ix-compare-delta"><span>'+(scope==='week'?'Diferencia en esta jornada':'Diferencia de temporada')+'<br><small>'+esc(p.display_name)+' frente a '+esc(other.display_name)+'</small></span><b>'+points(usable(r)?delta:null)+'</b></div></article><div class="ix-card ix-table-wrap"><table class="ix-table"><caption>La misma base. Las cuentas completas.</caption><thead><tr><th scope="col">'+(scope==='week'?'Jornada':'Temporada')+'</th><th scope="col">'+esc(p.display_name)+'</th><th scope="col">'+esc(other.display_name)+'</th></tr></thead><tbody>'+rows+scoringRows+'</tbody></table></div><p class="ix-note ix-footnote">Se incluyen partidos sin picks. Aciertos + puntos extra = puntos totales. El fijado muestra solo el adicional; su acierto ya está contado arriba.</p>'+scoringNote+help();
+}
+//--------------------------------------------------------------
+// 5. Full view: controls are separated from the selected mode's contents
+//--------------------------------------------------------------
+function render(bundle,options={}){
+ if(!bundle&&options.loading)return '<div class="ix-heading"><h1>Insights</h1><p>Tu juego, en números.</p></div><div class="ix-card" role="status"><h2>Leyendo tu juego.</h2><p class="ix-note">Reuniendo los datos de esta jornada.</p></div>';
+ if(!bundle)return '<div class="ix-heading"><h1>Insights</h1><p>Tu juego, en números.</p></div><div class="ix-card" role="status"><h2>Esta lectura está pendiente.</h2><p class="ix-note">No pudimos cargar los datos de esta jornada. Intenta de nuevo.</p><button class="ix-retry" data-ix-retry>Volver a cargar</button></div>';
+ const p=bundle.players.find(p=>p.user_id===options.player)||bundle.players[0],mode=options.mode==='compare'?'compare':'player',rival=bundle.players.find(r=>r.user_id===options.rival&&r.user_id!==p.user_id);
+ const ranks=new Map((bundle.standings?.rows||[]).filter(r=>Number.isInteger(r.rank)&&r.rank>0).map(r=>[r.user_id,r.rank]));
+ const rivals=bundle.players.filter(r=>r.user_id!==p.user_id).sort((a,b)=>(ranks.get(a.user_id)??Infinity)-(ranks.get(b.user_id)??Infinity)||a.user_id.localeCompare(b.user_id));
+ const select=(id,label,players,value,ranked=false)=>'<label class="ix-select" for="'+id+'"><span>'+label+'</span><select id="'+id+'">'+players.map(r=>'<option value="'+esc(r.user_id)+'"'+(r.user_id===value?' selected':'')+'>'+esc((ranked?(ranks.has(r.user_id)?ranks.get(r.user_id)+'.º · ':'Sin puesto · '):'')+r.display_name)+'</option>').join('')+'</select>'+(ranked?'<small class="ix-select-context">Puesto acumulado · '+esc(options.checkpointLabel||bundle.selected_period.checkpoint_id)+'</small>':'')+'</label>';
+ const body=mode==='compare'?compare(bundle,p,rival,options.scope,options):playerNumbers(p,options)+trend(p,options)+rank(p,bundle)+(()=>{const cards=resolution(p,bundle)+decisions(p,options)+group(p,bundle);return cards?heading('Tu jornada, al detalle','Esta jornada')+'<div class="ix-stories">'+cards+'</div>':'';})()+consensus(p)+help();
+ return '<div class="ix-heading"><div><h1>Insights</h1><p>Tu juego, en números.</p></div><span class="ix-cutoff">'+esc(options.checkpointLabel||bundle.selected_period.checkpoint_id)+'</span></div><div class="ix-mode" role="group" aria-label="Modo de Insights"><button data-ix-mode="player" aria-pressed="'+(mode==='player')+'">Jugador</button><button data-ix-mode="compare" aria-pressed="'+(mode==='compare')+'">Comparar</button></div><div class="ix-selectors '+(mode==='compare'?'ix-two':'')+'">'+select('insights-player','Jugador',bundle.players,p.user_id)+(mode==='compare'?select('insights-rival','Comparar con',rivals,rival?.user_id,true):'')+'</div><div class="ix-content" data-insights-mode="'+mode+'">'+body+'</div>';
+}
+return {render,percent,points,esc,compare};
+});
+
+"use strict";
+const insightsAppVersion="db91c325d480";
+//--------------------------------------------------------------
+// 3. Isolated Insights route: share the current profile and checkpoint
+//--------------------------------------------------------------
+const insightParams=new URL(location.href).searchParams;
+const insightState={bundle:null,loading:false,mode:insightParams.get("modo")==="comparar"?"compare":"player",scope:insightParams.get("alcance")==="jornada"?"week":"season",rival:insightParams.get("rival")||"PACOT",request:0};
+if(insightParams.get("jugador"))state.player=insightParams.get("jugador");
+ICONS.insights='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 15v-4M12 15V5M18 15V8"/><path d="m4 6 3-3 3 3"/></svg>';
+nav.innerHTML=TABS.map(([r,l])=>'<button data-go="'+r+'">'+(ICONS[r]||"")+'<span>'+l+'</span></button>').join("");
+const insightsScreen=document.querySelector('.screen[data-route="insights"]');
+const profileEntry=document.createElement("button");profileEntry.type="button";profileEntry.className="ix-profile-entry";profileEntry.dataset.go="insights";
+el("p-di").after(profileEntry);
+function insightSelectionUrl(url){
+  const out=new URL(url,location.href);
+  out.searchParams.set("jugador",state.player);
+  out.searchParams.set("modo",insightState.mode==="compare"?"comparar":"jugador");
+  if(insightState.mode==="compare"){out.searchParams.set("rival",insightState.rival);out.searchParams.set("alcance",insightState.scope==="week"?"jornada":"temporada");}
+  else{out.searchParams.delete("rival");out.searchParams.delete("alcance");}
+  return out.pathname+out.search+out.hash;
+}
+function rememberInsightSelection(){if(currentRoute()==="insights")history.replaceState(null,"",insightSelectionUrl(location.href));}
+function renderInsights(){
+  const bundle=insightState.bundle;
+  if(bundle&&!bundle.players.some(p=>p.user_id===insightState.rival&&p.user_id!==state.player))insightState.rival=bundle.players.find(p=>p.user_id!==state.player)?.user_id||null;
+  const periodLabels=Object.fromEntries((state.periodResults?.periods||[]).map(p=>[p.period_id,periodLabel(p)]));
+  const matchLabels=Object.fromEntries((state.context?.matches||[]).map(m=>[m.match_id,m.away_team.id+" @ "+m.home_team.id]));
+  const active=document.activeElement,focusId=insightsScreen.contains(active)?active.id:null;
+  insightsScreen.innerHTML=BetzInsightsView.render(bundle,{player:state.player,rival:insightState.rival,mode:insightState.mode,scope:insightState.scope,loading:insightState.loading,checkpointLabel:checkpointLabel(state.cp),periodLabels,matchLabels});
+  if(focusId)document.getElementById(focusId)?.focus({preventScroll:true});
+  const p=bundle?.players.find(p=>p.user_id===state.player);
+  profileEntry.innerHTML=p&&["available","provisional"].includes(p.season_accuracy.status)?'<span><b>'+BetzInsightsView.percent(p.season_accuracy.accuracy_rate)+' de efectividad</b><small>'+p.season_accuracy.correct+' de '+p.season_accuracy.resolved_opportunities+' aciertos · Ver Insights</small></span><span aria-hidden="true">↗</span>':'<span><b>Tu juego, en números</b><small>Abrir Insights</small></span><span aria-hidden="true">↗</span>';
+}
+async function loadInsights(){
+  const request=++insightState.request;insightState.bundle=null;insightState.loading=true;renderInsights();
+  try{
+    const b=await getJSON("checkpoints/"+state.cp+"/insights/player_insights.json");
+    if(b.contract_type!=="betz_player_insights"||b.contract_version!=="1.0"||b.competition_id!=="NFL2026"||b.selected_period?.checkpoint_id!==state.cp||!Array.isArray(b.players)||!b.players.length||!Array.isArray(b.pair_comparisons))throw new Error("INSIGHTS_VIEW_CONTRACT_INVALID");
+    if(request===insightState.request)insightState.bundle=b;
+  }catch(e){if(request===insightState.request)insightState.bundle=null;}
+  if(request===insightState.request){insightState.loading=false;renderInsights();rememberInsightSelection();}
+}
+const previousReadLoadCheckpoint=loadCheckpoint;
+loadCheckpoint=async function(){await previousReadLoadCheckpoint();void loadInsights();};
+const previousReadSelectPlayer=selectPlayer;
+selectPlayer=function(id){previousReadSelectPlayer(id);renderInsights();rememberInsightSelection();};
+const previousReadGo=go;
+go=function(route){previousReadGo(route);if(route==="insights"){renderInsights();rememberInsightSelection();}};
+const previousReadCheckpointUrl=publicCheckpointUrl;
+publicCheckpointUrl=function(id){const url=previousReadCheckpointUrl(id);return currentRoute()==="insights"?insightSelectionUrl(url):url;};
+const previousReadRenderPerfil=renderPerfil;
+renderPerfil=function(){previousReadRenderPerfil();const label=el("p-perf").querySelector('[data-explain="efficiency"] .k');if(label)label.textContent="Conversión de puntos";renderInsights();};
+EXPLAIN.efficiency.t="Conversión de puntos";
+insightsScreen.addEventListener("change",event=>{
+  if(event.target.id==="insights-player")selectPlayer(event.target.value);
+  if(event.target.id==="insights-rival"){insightState.rival=event.target.value;renderInsights();rememberInsightSelection();}
+});
+insightsScreen.addEventListener("click",event=>{
+  const mode=event.target.closest("[data-ix-mode]"),scope=event.target.closest("[data-ix-scope]");
+  if(mode){insightState.mode=mode.dataset.ixMode;renderInsights();rememberInsightSelection();insightsScreen.querySelector('[data-ix-mode="'+insightState.mode+'"]').focus({preventScroll:true});}
+  if(scope){insightState.scope=scope.dataset.ixScope;renderInsights();rememberInsightSelection();insightsScreen.querySelector('[data-ix-scope="'+insightState.scope+'"]').focus({preventScroll:true});}
+  if(event.target.closest("[data-ix-retry]"))loadInsights();
+});
+//--------------------------------------------------------------
+// 3a. Table view switches existing official lists without rebuilding their data
+//--------------------------------------------------------------
+const tableScreen=document.querySelector('.screen[data-route="tabla"]');
+let tableScope=insightParams.get("tabla")==="acumulado"?"acumulado":"jornada";
+const tableSwitch=document.createElement("div");
+tableSwitch.className="ix-mode tabla-scope";
+tableSwitch.setAttribute("role","group");tableSwitch.setAttribute("aria-label","Clasificación de la tabla");
+tableSwitch.innerHTML='<button type="button" data-table-scope="jornada" aria-controls="tabla-jornada">Jornada</button><button type="button" data-table-scope="acumulado" aria-controls="tabla-acumulado">Acumulado</button>';
+const weeklyTablePanel=document.createElement("div"),seasonTablePanel=document.createElement("div");
+weeklyTablePanel.id="tabla-jornada";seasonTablePanel.id="tabla-acumulado";
+weeklyTablePanel.setAttribute("role","region");weeklyTablePanel.setAttribute("aria-label","Tabla de jornada");
+seasonTablePanel.setAttribute("role","region");seasonTablePanel.setAttribute("aria-label","Tabla acumulada");
+const weeklyNavigation=el("tabla-prev").closest(".wknav-pill");
+weeklyNavigation.previousElementSibling.remove();
+// Retain the hidden IDs for the base renderer; the checkpoint pills own selection.
+weeklyNavigation.hidden=true;
+weeklyTablePanel.append(weeklyNavigation,el("weekly-leaderboard"),el("weekly-note"),el("weekly-lock-note"));
+const accumulatedList=el("leaderboard");
+seasonTablePanel.append(accumulatedList.previousElementSibling,accumulatedList,accumulatedList.nextElementSibling);
+tableScreen.querySelector(".season-summary").after(tableSwitch,weeklyTablePanel,seasonTablePanel);
+function renderTableScope(){
+  weeklyTablePanel.hidden=tableScope!=="jornada";seasonTablePanel.hidden=tableScope!=="acumulado";
+  tableSwitch.querySelectorAll("[data-table-scope]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.tableScope===tableScope)));
+}
+function tableSelectionUrl(value){const url=new URL(value,location.href);url.searchParams.set("tabla",tableScope);return url.pathname+url.search+url.hash;}
+function rememberTableScope(){if(currentRoute()==="tabla")history.replaceState(null,"",tableSelectionUrl(location.href));}
+tableSwitch.addEventListener("click",event=>{const button=event.target.closest("[data-table-scope]");if(!button)return;tableScope=button.dataset.tableScope;renderTableScope();rememberTableScope();});
+const previousReadTableGo=go;
+go=function(route){previousReadTableGo(route);if(route==="tabla"){renderTableScope();rememberTableScope();}};
+const previousReadTableCheckpointUrl=publicCheckpointUrl;
+publicCheckpointUrl=function(id){
+  const url=new URL(previousReadTableCheckpointUrl(id),location.href);
+  if(insightsAppVersion)url.searchParams.set("v",insightsAppVersion);
+  const path=url.pathname+url.search+url.hash;
+  return currentRoute()==="tabla"?tableSelectionUrl(path):path;
+};
+// Keep Tabla on its visible checkpoint even after Partidos browses another period.
+const previousReadRenderTabla=renderTabla;
+renderTabla=function(){
+  const previousPeriodIndex=state.periodIndex;
+  state.periodIndex=periods().findIndex(period=>periodCheckpointId(period)===state.cp);
+  try{previousReadRenderTabla();}finally{state.periodIndex=previousPeriodIndex;}
+};
+renderTableScope();
+
+/* END BETZ INSIGHTS JS */
 boot();
 </script>
 </html>
