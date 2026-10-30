@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG107",
-  "evaluation_cursor": "REG107",
+  "freeze_cursor": "REG108",
+  "evaluation_cursor": "REG108",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -11,132 +11,26 @@
     {
       "perspective_id": "week:all",
       "season_type": "Regular Season",
-      "week": 7,
+      "week": 8,
       "result": {
-        "classified_consensus_matches": 14,
-        "community_favorite_picks": 9,
-        "community_underdog_picks": 5,
-        "community_favorite_rate": 0.642857,
-        "community_underdog_rate": 0.357143,
+        "classified_consensus_matches": 1,
+        "community_favorite_picks": 1,
+        "community_underdog_picks": 0,
+        "community_favorite_rate": 1,
+        "community_underdog_rate": 0,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
-        "primary_insight": {
-          "insight_code": "COMMUNITY_FOLLOWS_MARKET"
-        }
+        "primary_insight": null
       },
       "matches": [
         {
-          "match_id": "REG094",
+          "match_id": "REG108",
           "market_status": "available",
-          "favorite_team_id": "CHI",
-          "underdog_team_id": "NE",
-          "consensus_team_id": "CHI",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG095",
-          "market_status": "available",
-          "favorite_team_id": "PIT",
-          "underdog_team_id": "NO",
-          "consensus_team_id": "PIT",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG096",
-          "market_status": "available",
-          "favorite_team_id": "SF",
-          "underdog_team_id": "ATL",
-          "consensus_team_id": "SF",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG097",
-          "market_status": "available",
-          "favorite_team_id": "BAL",
-          "underdog_team_id": "CIN",
-          "consensus_team_id": "CIN",
-          "community_market_position": "underdog"
-        },
-        {
-          "match_id": "REG098",
-          "market_status": "available",
-          "favorite_team_id": "TB",
+          "favorite_team_id": "GB",
           "underdog_team_id": "CAR",
-          "consensus_team_id": "CAR",
-          "community_market_position": "underdog"
-        },
-        {
-          "match_id": "REG099",
-          "market_status": "available",
-          "favorite_team_id": "HOU",
-          "underdog_team_id": "NYG",
-          "consensus_team_id": "HOU",
+          "consensus_team_id": "GB",
           "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG100",
-          "market_status": "available",
-          "favorite_team_id": "MIN",
-          "underdog_team_id": "IND",
-          "consensus_team_id": "MIN",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG101",
-          "market_status": "available",
-          "favorite_team_id": "NYJ",
-          "underdog_team_id": "MIA",
-          "consensus_team_id": "NYJ",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG102",
-          "market_status": "available",
-          "favorite_team_id": "TEN",
-          "underdog_team_id": "CLE",
-          "consensus_team_id": "CLE",
-          "community_market_position": "underdog"
-        },
-        {
-          "match_id": "REG103",
-          "market_status": "available",
-          "favorite_team_id": "DEN",
-          "underdog_team_id": "ARI",
-          "consensus_team_id": "DEN",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG104",
-          "market_status": "available",
-          "favorite_team_id": "DET",
-          "underdog_team_id": "GB",
-          "consensus_team_id": "DET",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG105",
-          "market_status": "available",
-          "favorite_team_id": "LAR",
-          "underdog_team_id": "LV",
-          "consensus_team_id": "LAR",
-          "community_market_position": "favorite"
-        },
-        {
-          "match_id": "REG106",
-          "market_status": "available",
-          "favorite_team_id": "SEA",
-          "underdog_team_id": "KC",
-          "consensus_team_id": "KC",
-          "community_market_position": "underdog"
-        },
-        {
-          "match_id": "REG107",
-          "market_status": "available",
-          "favorite_team_id": "PHI",
-          "underdog_team_id": "DAL",
-          "consensus_team_id": "DAL",
-          "community_market_position": "underdog"
         }
       ]
     },
@@ -144,11 +38,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 106,
-        "community_favorite_picks": 84,
+        "classified_consensus_matches": 107,
+        "community_favorite_picks": 85,
         "community_underdog_picks": 22,
-        "community_favorite_rate": 0.792453,
-        "community_underdog_rate": 0.207547,
+        "community_favorite_rate": 0.794393,
+        "community_underdog_rate": 0.205607,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1012,17 +906,25 @@
           "underdog_team_id": "DAL",
           "consensus_team_id": "DAL",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG108",
+          "market_status": "available",
+          "favorite_team_id": "GB",
+          "underdog_team_id": "CAR",
+          "consensus_team_id": "GB",
+          "community_market_position": "favorite"
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 106,
-        "community_favorite_picks": 84,
+        "classified_consensus_matches": 107,
+        "community_favorite_picks": 85,
         "community_underdog_picks": 22,
-        "community_favorite_rate": 0.792453,
-        "community_underdog_rate": 0.207547,
+        "community_favorite_rate": 0.794393,
+        "community_underdog_rate": 0.205607,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1886,6 +1788,14 @@
           "underdog_team_id": "DAL",
           "consensus_team_id": "DAL",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG108",
+          "market_status": "available",
+          "favorite_team_id": "GB",
+          "underdog_team_id": "CAR",
+          "consensus_team_id": "GB",
+          "community_market_position": "favorite"
         }
       ]
     }
