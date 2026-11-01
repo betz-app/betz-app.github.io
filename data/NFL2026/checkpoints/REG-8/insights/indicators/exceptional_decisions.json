@@ -3,7 +3,7 @@
   "contract_version": "1.0",
   "competition_id": "NFL2026",
   "freeze_cursor": "REG119",
-  "evaluation_cursor": "REG108",
+  "evaluation_cursor": "REG115",
   "indicator_id": "exceptional_decisions",
   "players": [
     {
@@ -58,9 +58,9 @@
         "reason_code": null,
         "period_id": "REG-8",
         "supermajority_attempts": {
-          "evaluated": 1,
+          "evaluated": 2,
           "correct": 0,
-          "incorrect": 1,
+          "incorrect": 2,
           "accuracy_rate": 0
         },
         "events": [
@@ -78,6 +78,23 @@
               "majority_count": 13,
               "minority_count": 3,
               "majority_rate": 0.8125,
+              "player_correct": false
+            }
+          },
+          {
+            "insight_code": "INCORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG112",
+              "sort_order": 112,
+              "selected_team_id": "CLE",
+              "winner_team_id": "PIT",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "PIT",
+              "majority_count": 15,
+              "minority_count": 2,
+              "majority_rate": 0.882353,
               "player_correct": false
             }
           }
@@ -289,15 +306,33 @@
       "user_id": "PEPE_SANCHEZ",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-8",
         "supermajority_attempts": {
-          "evaluated": 0,
+          "evaluated": 1,
           "correct": 0,
-          "incorrect": 0,
-          "accuracy_rate": null
+          "incorrect": 1,
+          "accuracy_rate": 0
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "INCORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG112",
+              "sort_order": 112,
+              "selected_team_id": "CLE",
+              "winner_team_id": "PIT",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "PIT",
+              "majority_count": 15,
+              "minority_count": 2,
+              "majority_rate": 0.882353,
+              "player_correct": false
+            }
+          }
+        ]
       }
     },
     {

@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG108",
-  "evaluation_cursor": "REG108",
+  "freeze_cursor": "REG116",
+  "evaluation_cursor": "REG116",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "lock_efficiency",
@@ -16,14 +16,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 7,
-            "correct_locks": 5,
+            "evaluated_locks": 8,
+            "correct_locks": 6,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.714286,
-            "global_efficiency": 0.543103,
-            "lock_vs_global_efficiency_delta": 0.171183,
+            "missing_locks": 0,
+            "lock_accuracy": 0.75,
+            "global_efficiency": 0.561983,
+            "lock_vs_global_efficiency_delta": 0.188017,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -70,20 +70,26 @@
               "lock_team_id": "NYJ",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG115",
+              "lock_team_id": "PIT",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 7,
-            "correct_locks": 5,
+            "evaluated_locks": 8,
+            "correct_locks": 6,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.714286,
-            "global_efficiency": 0.543103,
-            "lock_vs_global_efficiency_delta": 0.171183,
+            "missing_locks": 0,
+            "lock_accuracy": 0.75,
+            "global_efficiency": 0.561983,
+            "lock_vs_global_efficiency_delta": 0.188017,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -130,6 +136,12 @@
               "lock_team_id": "NYJ",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG115",
+              "lock_team_id": "PIT",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -149,8 +161,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.62069,
-            "lock_vs_global_efficiency_delta": 0.093596,
+            "global_efficiency": 0.633333,
+            "lock_vs_global_efficiency_delta": 0.080953,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -209,8 +221,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.62069,
-            "lock_vs_global_efficiency_delta": 0.093596,
+            "global_efficiency": 0.633333,
+            "lock_vs_global_efficiency_delta": 0.080953,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -276,10 +288,10 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.571429,
-            "global_efficiency": 0.62069,
-            "lock_vs_global_efficiency_delta": -0.049261,
+            "global_efficiency": 0.625,
+            "lock_vs_global_efficiency_delta": -0.053571,
             "primary_insight": {
-              "insight_code": "NO_CLEAR_LOCK_EDGE"
+              "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
           },
           "matches": [
@@ -336,10 +348,10 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.571429,
-            "global_efficiency": 0.62069,
-            "lock_vs_global_efficiency_delta": -0.049261,
+            "global_efficiency": 0.625,
+            "lock_vs_global_efficiency_delta": -0.053571,
             "primary_insight": {
-              "insight_code": "NO_CLEAR_LOCK_EDGE"
+              "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
           },
           "matches": [
@@ -403,8 +415,8 @@
             "pending_locks": 0,
             "missing_locks": 6,
             "lock_accuracy": 1,
-            "global_efficiency": 0.465517,
-            "lock_vs_global_efficiency_delta": 0.534483,
+            "global_efficiency": 0.466667,
+            "lock_vs_global_efficiency_delta": 0.533333,
             "primary_insight": null
           },
           "matches": [
@@ -431,8 +443,8 @@
             "pending_locks": 0,
             "missing_locks": 6,
             "lock_accuracy": 1,
-            "global_efficiency": 0.465517,
-            "lock_vs_global_efficiency_delta": 0.534483,
+            "global_efficiency": 0.466667,
+            "lock_vs_global_efficiency_delta": 0.533333,
             "primary_insight": null
           },
           "matches": [
@@ -466,8 +478,8 @@
             "pending_locks": 0,
             "missing_locks": 2,
             "lock_accuracy": 0.333333,
-            "global_efficiency": 0.5,
-            "lock_vs_global_efficiency_delta": -0.166667,
+            "global_efficiency": 0.495868,
+            "lock_vs_global_efficiency_delta": -0.162535,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -520,8 +532,8 @@
             "pending_locks": 0,
             "missing_locks": 2,
             "lock_accuracy": 0.333333,
-            "global_efficiency": 0.5,
-            "lock_vs_global_efficiency_delta": -0.166667,
+            "global_efficiency": 0.495868,
+            "lock_vs_global_efficiency_delta": -0.162535,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -581,8 +593,8 @@
             "pending_locks": 0,
             "missing_locks": 4,
             "lock_accuracy": 0,
-            "global_efficiency": 0.431034,
-            "lock_vs_global_efficiency_delta": -0.431034,
+            "global_efficiency": 0.45,
+            "lock_vs_global_efficiency_delta": -0.45,
             "primary_insight": null
           },
           "matches": [
@@ -621,8 +633,8 @@
             "pending_locks": 0,
             "missing_locks": 4,
             "lock_accuracy": 0,
-            "global_efficiency": 0.431034,
-            "lock_vs_global_efficiency_delta": -0.431034,
+            "global_efficiency": 0.45,
+            "lock_vs_global_efficiency_delta": -0.45,
             "primary_insight": null
           },
           "matches": [
@@ -662,14 +674,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 7,
-            "correct_locks": 5,
+            "evaluated_locks": 8,
+            "correct_locks": 6,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.714286,
-            "global_efficiency": 0.586207,
-            "lock_vs_global_efficiency_delta": 0.128079,
+            "missing_locks": 0,
+            "lock_accuracy": 0.75,
+            "global_efficiency": 0.595041,
+            "lock_vs_global_efficiency_delta": 0.154959,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -714,6 +726,12 @@
             {
               "match_id": "REG100",
               "lock_team_id": "MIN",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG113",
+              "lock_team_id": "JAX",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -722,14 +740,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 7,
-            "correct_locks": 5,
+            "evaluated_locks": 8,
+            "correct_locks": 6,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.714286,
-            "global_efficiency": 0.586207,
-            "lock_vs_global_efficiency_delta": 0.128079,
+            "missing_locks": 0,
+            "lock_accuracy": 0.75,
+            "global_efficiency": 0.595041,
+            "lock_vs_global_efficiency_delta": 0.154959,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -774,6 +792,12 @@
             {
               "match_id": "REG100",
               "lock_team_id": "MIN",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG113",
+              "lock_team_id": "JAX",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -795,8 +819,8 @@
             "pending_locks": 0,
             "missing_locks": 3,
             "lock_accuracy": 0.4,
-            "global_efficiency": 0.543103,
-            "lock_vs_global_efficiency_delta": -0.143103,
+            "global_efficiency": 0.558333,
+            "lock_vs_global_efficiency_delta": -0.158333,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -843,8 +867,8 @@
             "pending_locks": 0,
             "missing_locks": 3,
             "lock_accuracy": 0.4,
-            "global_efficiency": 0.543103,
-            "lock_vs_global_efficiency_delta": -0.143103,
+            "global_efficiency": 0.558333,
+            "lock_vs_global_efficiency_delta": -0.158333,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -898,8 +922,8 @@
             "pending_locks": 0,
             "missing_locks": 5,
             "lock_accuracy": 0.666667,
-            "global_efficiency": 0.551724,
-            "lock_vs_global_efficiency_delta": 0.114943,
+            "global_efficiency": 0.570248,
+            "lock_vs_global_efficiency_delta": 0.096419,
             "primary_insight": null
           },
           "matches": [
@@ -932,8 +956,8 @@
             "pending_locks": 0,
             "missing_locks": 5,
             "lock_accuracy": 0.666667,
-            "global_efficiency": 0.551724,
-            "lock_vs_global_efficiency_delta": 0.114943,
+            "global_efficiency": 0.570248,
+            "lock_vs_global_efficiency_delta": 0.096419,
             "primary_insight": null
           },
           "matches": [
@@ -973,10 +997,10 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.655172,
-            "lock_vs_global_efficiency_delta": 0.059114,
+            "global_efficiency": 0.666667,
+            "lock_vs_global_efficiency_delta": 0.047619,
             "primary_insight": {
-              "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
+              "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
           },
           "matches": [
@@ -1033,10 +1057,10 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.655172,
-            "lock_vs_global_efficiency_delta": 0.059114,
+            "global_efficiency": 0.666667,
+            "lock_vs_global_efficiency_delta": 0.047619,
             "primary_insight": {
-              "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
+              "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
           },
           "matches": [
@@ -1100,8 +1124,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.577586,
-            "lock_vs_global_efficiency_delta": 0.1367,
+            "global_efficiency": 0.591667,
+            "lock_vs_global_efficiency_delta": 0.122619,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1160,8 +1184,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.577586,
-            "lock_vs_global_efficiency_delta": 0.1367,
+            "global_efficiency": 0.591667,
+            "lock_vs_global_efficiency_delta": 0.122619,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1227,8 +1251,8 @@
             "pending_locks": 0,
             "missing_locks": 2,
             "lock_accuracy": 0.833333,
-            "global_efficiency": 0.568966,
-            "lock_vs_global_efficiency_delta": 0.264367,
+            "global_efficiency": 0.575,
+            "lock_vs_global_efficiency_delta": 0.258333,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1281,8 +1305,8 @@
             "pending_locks": 0,
             "missing_locks": 2,
             "lock_accuracy": 0.833333,
-            "global_efficiency": 0.568966,
-            "lock_vs_global_efficiency_delta": 0.264367,
+            "global_efficiency": 0.575,
+            "lock_vs_global_efficiency_delta": 0.258333,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1342,8 +1366,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.428571,
-            "global_efficiency": 0.594828,
-            "lock_vs_global_efficiency_delta": -0.166257,
+            "global_efficiency": 0.6,
+            "lock_vs_global_efficiency_delta": -0.171429,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -1402,8 +1426,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.428571,
-            "global_efficiency": 0.594828,
-            "lock_vs_global_efficiency_delta": -0.166257,
+            "global_efficiency": 0.6,
+            "lock_vs_global_efficiency_delta": -0.171429,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -1469,8 +1493,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.428571,
-            "global_efficiency": 0.560345,
-            "lock_vs_global_efficiency_delta": -0.131774,
+            "global_efficiency": 0.583333,
+            "lock_vs_global_efficiency_delta": -0.154762,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -1529,8 +1553,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.428571,
-            "global_efficiency": 0.560345,
-            "lock_vs_global_efficiency_delta": -0.131774,
+            "global_efficiency": 0.583333,
+            "lock_vs_global_efficiency_delta": -0.154762,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -1596,8 +1620,8 @@
             "pending_locks": 0,
             "missing_locks": 2,
             "lock_accuracy": 0.666667,
-            "global_efficiency": 0.62931,
-            "lock_vs_global_efficiency_delta": 0.037357,
+            "global_efficiency": 0.65,
+            "lock_vs_global_efficiency_delta": 0.016667,
             "primary_insight": {
               "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
@@ -1650,8 +1674,8 @@
             "pending_locks": 0,
             "missing_locks": 2,
             "lock_accuracy": 0.666667,
-            "global_efficiency": 0.62931,
-            "lock_vs_global_efficiency_delta": 0.037357,
+            "global_efficiency": 0.65,
+            "lock_vs_global_efficiency_delta": 0.016667,
             "primary_insight": {
               "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
@@ -1711,8 +1735,8 @@
             "pending_locks": 0,
             "missing_locks": 3,
             "lock_accuracy": 0.8,
-            "global_efficiency": 0.543103,
-            "lock_vs_global_efficiency_delta": 0.256897,
+            "global_efficiency": 0.55,
+            "lock_vs_global_efficiency_delta": 0.25,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1759,8 +1783,8 @@
             "pending_locks": 0,
             "missing_locks": 3,
             "lock_accuracy": 0.8,
-            "global_efficiency": 0.543103,
-            "lock_vs_global_efficiency_delta": 0.256897,
+            "global_efficiency": 0.55,
+            "lock_vs_global_efficiency_delta": 0.25,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1814,8 +1838,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.577586,
-            "lock_vs_global_efficiency_delta": 0.1367,
+            "global_efficiency": 0.6,
+            "lock_vs_global_efficiency_delta": 0.114286,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1874,8 +1898,8 @@
             "pending_locks": 0,
             "missing_locks": 1,
             "lock_accuracy": 0.714286,
-            "global_efficiency": 0.577586,
-            "lock_vs_global_efficiency_delta": 0.1367,
+            "global_efficiency": 0.6,
+            "lock_vs_global_efficiency_delta": 0.114286,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
