@@ -15,21 +15,33 @@
       "result": {
         "observed_periods": 1,
         "eligible_lock_opportunities": 17,
-        "valid_locks": 4,
-        "missing_locks": 13,
-        "coverage_rate": 0.235294,
+        "valid_locks": 13,
+        "missing_locks": 4,
+        "coverage_rate": 0.764706,
         "minimum_sample": 9,
-        "sample_status": "insufficient",
+        "sample_status": "sufficient",
         "ranking_limit": 3,
-        "ranking_status": "unavailable",
+        "ranking_status": "no_clear_ranking",
         "preference_status": "not_applicable",
         "top_lock_teams": [],
         "distribution": [
           {
             "rank": 1,
+            "team_id": "CIN",
+            "lock_count": 9,
+            "lock_share": 0.692308,
+            "periods_with_locks": 1,
+            "evaluated_locks": 9,
+            "correct_locks": 9,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 2,
             "team_id": "CAR",
             "lock_count": 1,
-            "lock_share": 0.25,
+            "lock_share": 0.076923,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 0,
@@ -38,10 +50,10 @@
             "efficiency": 0
           },
           {
-            "rank": 1,
+            "rank": 2,
             "team_id": "GB",
             "lock_count": 1,
-            "lock_share": 0.25,
+            "lock_share": 0.076923,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 1,
@@ -50,10 +62,10 @@
             "efficiency": 1
           },
           {
-            "rank": 1,
+            "rank": 2,
             "team_id": "JAX",
             "lock_count": 1,
-            "lock_share": 0.25,
+            "lock_share": 0.076923,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 1,
@@ -62,10 +74,10 @@
             "efficiency": 1
           },
           {
-            "rank": 1,
+            "rank": 2,
             "team_id": "PIT",
             "lock_count": 1,
-            "lock_share": 0.25,
+            "lock_share": 0.076923,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 1,
@@ -74,7 +86,9 @@
             "efficiency": 1
           }
         ],
-        "primary_insight": null
+        "primary_insight": {
+          "insight_code": "COMMUNITY_WEEKLY_LOCK_CHOICES_UNCLEAR"
+        }
       },
       "matches": [
         {
@@ -90,6 +104,78 @@
           "period_id": "108_REG108",
           "user_id": "GSG",
           "lock_team_id": "GB",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "BTO_Z",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "CHIEFS_FAN",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "DAVIDMAGANA",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "EZC",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "HZE",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "JMTZCELIZ",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "LJMV",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "MARIOVILLARREAL",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "NSA",
+          "lock_team_id": "CIN",
           "evaluation_status": "evaluated",
           "correct": true
         },
@@ -116,9 +202,9 @@
       "result": {
         "observed_periods": 8,
         "eligible_lock_opportunities": 136,
-        "valid_locks": 102,
-        "missing_locks": 34,
-        "coverage_rate": 0.75,
+        "valid_locks": 111,
+        "missing_locks": 25,
+        "coverage_rate": 0.816176,
         "minimum_sample": 68,
         "sample_status": "sufficient",
         "ranking_limit": 5,
@@ -129,7 +215,7 @@
             "rank": 1,
             "team_id": "KC",
             "lock_count": 16,
-            "lock_share": 0.156863,
+            "lock_share": 0.144144,
             "periods_with_locks": 5,
             "evaluated_locks": 16,
             "correct_locks": 16,
@@ -141,7 +227,7 @@
             "rank": 2,
             "team_id": "MIN",
             "lock_count": 9,
-            "lock_share": 0.088235,
+            "lock_share": 0.081081,
             "periods_with_locks": 3,
             "evaluated_locks": 9,
             "correct_locks": 9,
@@ -153,7 +239,7 @@
             "rank": 2,
             "team_id": "SF",
             "lock_count": 9,
-            "lock_share": 0.088235,
+            "lock_share": 0.081081,
             "periods_with_locks": 4,
             "evaluated_locks": 9,
             "correct_locks": 7,
@@ -165,7 +251,7 @@
             "rank": 4,
             "team_id": "BAL",
             "lock_count": 7,
-            "lock_share": 0.068627,
+            "lock_share": 0.063063,
             "periods_with_locks": 3,
             "evaluated_locks": 7,
             "correct_locks": 6,
@@ -177,7 +263,7 @@
             "rank": 4,
             "team_id": "HOU",
             "lock_count": 7,
-            "lock_share": 0.068627,
+            "lock_share": 0.063063,
             "periods_with_locks": 3,
             "evaluated_locks": 7,
             "correct_locks": 1,
@@ -191,7 +277,7 @@
             "rank": 1,
             "team_id": "KC",
             "lock_count": 16,
-            "lock_share": 0.156863,
+            "lock_share": 0.144144,
             "periods_with_locks": 5,
             "evaluated_locks": 16,
             "correct_locks": 16,
@@ -201,9 +287,21 @@
           },
           {
             "rank": 2,
+            "team_id": "CIN",
+            "lock_count": 10,
+            "lock_share": 0.09009,
+            "periods_with_locks": 2,
+            "evaluated_locks": 10,
+            "correct_locks": 10,
+            "incorrect_locks": 0,
+            "pending_locks": 0,
+            "efficiency": 1
+          },
+          {
+            "rank": 2,
             "team_id": "DAL",
             "lock_count": 10,
-            "lock_share": 0.098039,
+            "lock_share": 0.09009,
             "periods_with_locks": 2,
             "evaluated_locks": 10,
             "correct_locks": 1,
@@ -212,10 +310,10 @@
             "efficiency": 0.1
           },
           {
-            "rank": 3,
+            "rank": 4,
             "team_id": "MIN",
             "lock_count": 9,
-            "lock_share": 0.088235,
+            "lock_share": 0.081081,
             "periods_with_locks": 3,
             "evaluated_locks": 9,
             "correct_locks": 9,
@@ -224,10 +322,10 @@
             "efficiency": 1
           },
           {
-            "rank": 3,
+            "rank": 4,
             "team_id": "SF",
             "lock_count": 9,
-            "lock_share": 0.088235,
+            "lock_share": 0.081081,
             "periods_with_locks": 4,
             "evaluated_locks": 9,
             "correct_locks": 7,
@@ -236,10 +334,10 @@
             "efficiency": 0.777778
           },
           {
-            "rank": 5,
+            "rank": 6,
             "team_id": "BAL",
             "lock_count": 7,
-            "lock_share": 0.068627,
+            "lock_share": 0.063063,
             "periods_with_locks": 3,
             "evaluated_locks": 7,
             "correct_locks": 6,
@@ -248,10 +346,10 @@
             "efficiency": 0.857143
           },
           {
-            "rank": 5,
+            "rank": 6,
             "team_id": "HOU",
             "lock_count": 7,
-            "lock_share": 0.068627,
+            "lock_share": 0.063063,
             "periods_with_locks": 3,
             "evaluated_locks": 7,
             "correct_locks": 1,
@@ -260,10 +358,10 @@
             "efficiency": 0.142857
           },
           {
-            "rank": 7,
+            "rank": 8,
             "team_id": "LAR",
             "lock_count": 6,
-            "lock_share": 0.058824,
+            "lock_share": 0.054054,
             "periods_with_locks": 3,
             "evaluated_locks": 6,
             "correct_locks": 1,
@@ -272,10 +370,10 @@
             "efficiency": 0.166667
           },
           {
-            "rank": 7,
+            "rank": 8,
             "team_id": "PHI",
             "lock_count": 6,
-            "lock_share": 0.058824,
+            "lock_share": 0.054054,
             "periods_with_locks": 3,
             "evaluated_locks": 6,
             "correct_locks": 4,
@@ -284,10 +382,10 @@
             "efficiency": 0.666667
           },
           {
-            "rank": 9,
+            "rank": 10,
             "team_id": "CAR",
             "lock_count": 5,
-            "lock_share": 0.04902,
+            "lock_share": 0.045045,
             "periods_with_locks": 5,
             "evaluated_locks": 5,
             "correct_locks": 2,
@@ -296,10 +394,10 @@
             "efficiency": 0.4
           },
           {
-            "rank": 10,
+            "rank": 11,
             "team_id": "JAX",
             "lock_count": 4,
-            "lock_share": 0.039216,
+            "lock_share": 0.036036,
             "periods_with_locks": 3,
             "evaluated_locks": 4,
             "correct_locks": 4,
@@ -308,10 +406,10 @@
             "efficiency": 1
           },
           {
-            "rank": 10,
+            "rank": 11,
             "team_id": "PIT",
             "lock_count": 4,
-            "lock_share": 0.039216,
+            "lock_share": 0.036036,
             "periods_with_locks": 4,
             "evaluated_locks": 4,
             "correct_locks": 4,
@@ -320,10 +418,10 @@
             "efficiency": 1
           },
           {
-            "rank": 12,
+            "rank": 13,
             "team_id": "LAC",
             "lock_count": 3,
-            "lock_share": 0.029412,
+            "lock_share": 0.027027,
             "periods_with_locks": 1,
             "evaluated_locks": 3,
             "correct_locks": 0,
@@ -332,10 +430,10 @@
             "efficiency": 0
           },
           {
-            "rank": 13,
+            "rank": 14,
             "team_id": "BUF",
             "lock_count": 2,
-            "lock_share": 0.019608,
+            "lock_share": 0.018018,
             "periods_with_locks": 2,
             "evaluated_locks": 2,
             "correct_locks": 2,
@@ -344,10 +442,10 @@
             "efficiency": 1
           },
           {
-            "rank": 13,
+            "rank": 14,
             "team_id": "CHI",
             "lock_count": 2,
-            "lock_share": 0.019608,
+            "lock_share": 0.018018,
             "periods_with_locks": 2,
             "evaluated_locks": 2,
             "correct_locks": 1,
@@ -356,10 +454,10 @@
             "efficiency": 0.5
           },
           {
-            "rank": 13,
+            "rank": 14,
             "team_id": "DEN",
             "lock_count": 2,
-            "lock_share": 0.019608,
+            "lock_share": 0.018018,
             "periods_with_locks": 2,
             "evaluated_locks": 2,
             "correct_locks": 2,
@@ -368,10 +466,10 @@
             "efficiency": 1
           },
           {
-            "rank": 13,
+            "rank": 14,
             "team_id": "DET",
             "lock_count": 2,
-            "lock_share": 0.019608,
+            "lock_share": 0.018018,
             "periods_with_locks": 2,
             "evaluated_locks": 2,
             "correct_locks": 1,
@@ -380,10 +478,10 @@
             "efficiency": 0.5
           },
           {
-            "rank": 13,
+            "rank": 14,
             "team_id": "NYJ",
             "lock_count": 2,
-            "lock_share": 0.019608,
+            "lock_share": 0.018018,
             "periods_with_locks": 1,
             "evaluated_locks": 2,
             "correct_locks": 0,
@@ -392,22 +490,10 @@
             "efficiency": 0
           },
           {
-            "rank": 18,
-            "team_id": "CIN",
-            "lock_count": 1,
-            "lock_share": 0.009804,
-            "periods_with_locks": 1,
-            "evaluated_locks": 1,
-            "correct_locks": 1,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 18,
+            "rank": 19,
             "team_id": "GB",
             "lock_count": 1,
-            "lock_share": 0.009804,
+            "lock_share": 0.009009,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 1,
@@ -416,10 +502,10 @@
             "efficiency": 1
           },
           {
-            "rank": 18,
+            "rank": 19,
             "team_id": "IND",
             "lock_count": 1,
-            "lock_share": 0.009804,
+            "lock_share": 0.009009,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 0,
@@ -428,10 +514,10 @@
             "efficiency": 0
           },
           {
-            "rank": 18,
+            "rank": 19,
             "team_id": "NO",
             "lock_count": 1,
-            "lock_share": 0.009804,
+            "lock_share": 0.009009,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 0,
@@ -440,10 +526,10 @@
             "efficiency": 0
           },
           {
-            "rank": 18,
+            "rank": 19,
             "team_id": "SEA",
             "lock_count": 1,
-            "lock_share": 0.009804,
+            "lock_share": 0.009009,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 0,
@@ -452,10 +538,10 @@
             "efficiency": 0
           },
           {
-            "rank": 18,
+            "rank": 19,
             "team_id": "TB",
             "lock_count": 1,
-            "lock_share": 0.009804,
+            "lock_share": 0.009009,
             "periods_with_locks": 1,
             "evaluated_locks": 1,
             "correct_locks": 0,
@@ -1266,6 +1352,78 @@
           "period_id": "108_REG108",
           "user_id": "GSG",
           "lock_team_id": "GB",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "BTO_Z",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "CHIEFS_FAN",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "DAVIDMAGANA",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "EZC",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "HZE",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "JMTZCELIZ",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "LJMV",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "MARIOVILLARREAL",
+          "lock_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG110",
+          "period_id": "108_REG108",
+          "user_id": "NSA",
+          "lock_team_id": "CIN",
           "evaluation_status": "evaluated",
           "correct": true
         },
