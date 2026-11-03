@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG120",
-  "evaluation_cursor": "REG120",
+  "freeze_cursor": "REG121",
+  "evaluation_cursor": "REG121",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 8,
       "result": {
-        "evaluated_matches": 13,
+        "evaluated_matches": 14,
         "correct_matches": 11,
-        "incorrect_matches": 2,
+        "incorrect_matches": 3,
         "pending_matches": 0,
-        "consensus_efficiency": 0.846154
+        "consensus_efficiency": 0.785714
       },
       "matches": [
         {
@@ -97,6 +97,12 @@
           "consensus_team_id": "WSH",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG121",
+          "consensus_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
@@ -104,11 +110,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 120,
+        "evaluated_matches": 121,
         "correct_matches": 76,
-        "incorrect_matches": 44,
+        "incorrect_matches": 45,
         "pending_matches": 0,
-        "consensus_efficiency": 0.633333
+        "consensus_efficiency": 0.628099
       },
       "matches": [
         {
@@ -830,17 +836,23 @@
           "consensus_team_id": "WSH",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG121",
+          "consensus_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 120,
+        "evaluated_matches": 121,
         "correct_matches": 76,
-        "incorrect_matches": 44,
+        "incorrect_matches": 45,
         "pending_matches": 0,
-        "consensus_efficiency": 0.633333
+        "consensus_efficiency": 0.628099
       },
       "matches": [
         {
@@ -1562,6 +1574,12 @@
           "consensus_team_id": "WSH",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG121",
+          "consensus_team_id": "SEA",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     }
