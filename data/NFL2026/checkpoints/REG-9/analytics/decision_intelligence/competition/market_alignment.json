@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG122",
-  "evaluation_cursor": "REG122",
+  "freeze_cursor": "REG123",
+  "evaluation_cursor": "REG123",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 9,
       "result": {
-        "classified_consensus_matches": 1,
-        "community_favorite_picks": 0,
+        "classified_consensus_matches": 2,
+        "community_favorite_picks": 1,
         "community_underdog_picks": 1,
-        "community_favorite_rate": 0,
-        "community_underdog_rate": 1,
+        "community_favorite_rate": 0.5,
+        "community_underdog_rate": 0.5,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -31,6 +31,14 @@
           "underdog_team_id": "JAX",
           "consensus_team_id": "JAX",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG123",
+          "market_status": "available",
+          "favorite_team_id": "CIN",
+          "underdog_team_id": "ATL",
+          "consensus_team_id": "CIN",
+          "community_market_position": "favorite"
         }
       ]
     },
@@ -38,11 +46,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 121,
-        "community_favorite_picks": 95,
+        "classified_consensus_matches": 122,
+        "community_favorite_picks": 96,
         "community_underdog_picks": 26,
-        "community_favorite_rate": 0.785124,
-        "community_underdog_rate": 0.214876,
+        "community_favorite_rate": 0.786885,
+        "community_underdog_rate": 0.213115,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1026,17 +1034,25 @@
           "underdog_team_id": "JAX",
           "consensus_team_id": "JAX",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG123",
+          "market_status": "available",
+          "favorite_team_id": "CIN",
+          "underdog_team_id": "ATL",
+          "consensus_team_id": "CIN",
+          "community_market_position": "favorite"
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 121,
-        "community_favorite_picks": 95,
+        "classified_consensus_matches": 122,
+        "community_favorite_picks": 96,
         "community_underdog_picks": 26,
-        "community_favorite_rate": 0.785124,
-        "community_underdog_rate": 0.214876,
+        "community_favorite_rate": 0.786885,
+        "community_underdog_rate": 0.213115,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -2020,6 +2036,14 @@
           "underdog_team_id": "JAX",
           "consensus_team_id": "JAX",
           "community_market_position": "underdog"
+        },
+        {
+          "match_id": "REG123",
+          "market_status": "available",
+          "favorite_team_id": "CIN",
+          "underdog_team_id": "ATL",
+          "consensus_team_id": "CIN",
+          "community_market_position": "favorite"
         }
       ]
     }
