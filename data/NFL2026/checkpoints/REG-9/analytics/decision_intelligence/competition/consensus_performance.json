@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG130",
-  "evaluation_cursor": "REG130",
+  "freeze_cursor": "REG131",
+  "evaluation_cursor": "REG131",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,8 +13,8 @@
       "season_type": "Regular Season",
       "week": 9,
       "result": {
-        "evaluated_matches": 9,
-        "correct_matches": 9,
+        "evaluated_matches": 10,
+        "correct_matches": 10,
         "incorrect_matches": 0,
         "pending_matches": 0,
         "consensus_efficiency": 1
@@ -73,6 +73,12 @@
           "consensus_team_id": "LAR",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG131",
+          "consensus_team_id": "HOU",
+          "evaluation_status": "evaluated",
+          "correct": true
         }
       ]
     },
@@ -80,11 +86,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 130,
-        "correct_matches": 85,
+        "evaluated_matches": 131,
+        "correct_matches": 86,
         "incorrect_matches": 45,
         "pending_matches": 0,
-        "consensus_efficiency": 0.653846
+        "consensus_efficiency": 0.656489
       },
       "matches": [
         {
@@ -864,6 +870,12 @@
         {
           "match_id": "REG130",
           "consensus_team_id": "LAR",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG131",
+          "consensus_team_id": "HOU",
           "evaluation_status": "evaluated",
           "correct": true
         }
@@ -872,11 +884,11 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 130,
-        "correct_matches": 85,
+        "evaluated_matches": 131,
+        "correct_matches": 86,
         "incorrect_matches": 45,
         "pending_matches": 0,
-        "consensus_efficiency": 0.653846
+        "consensus_efficiency": 0.656489
       },
       "matches": [
         {
@@ -1656,6 +1668,12 @@
         {
           "match_id": "REG130",
           "consensus_team_id": "LAR",
+          "evaluation_status": "evaluated",
+          "correct": true
+        },
+        {
+          "match_id": "REG131",
+          "consensus_team_id": "HOU",
           "evaluation_status": "evaluated",
           "correct": true
         }

@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG130",
-  "evaluation_cursor": "REG130",
+  "freeze_cursor": "REG131",
+  "evaluation_cursor": "REG131",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 9,
       "result": {
-        "classified_consensus_matches": 9,
+        "classified_consensus_matches": 10,
         "community_favorite_picks": 7,
-        "community_underdog_picks": 2,
-        "community_favorite_rate": 0.777778,
-        "community_underdog_rate": 0.222222,
+        "community_underdog_picks": 3,
+        "community_favorite_rate": 0.7,
+        "community_underdog_rate": 0.3,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -97,6 +97,14 @@
           "underdog_team_id": "WSH",
           "consensus_team_id": "LAR",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG131",
+          "market_status": "available",
+          "favorite_team_id": "LAC",
+          "underdog_team_id": "HOU",
+          "consensus_team_id": "HOU",
+          "community_market_position": "underdog"
         }
       ]
     },
@@ -104,11 +112,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 129,
+        "classified_consensus_matches": 130,
         "community_favorite_picks": 102,
-        "community_underdog_picks": 27,
-        "community_favorite_rate": 0.790698,
-        "community_underdog_rate": 0.209302,
+        "community_underdog_picks": 28,
+        "community_favorite_rate": 0.784615,
+        "community_underdog_rate": 0.215385,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1156,17 +1164,25 @@
           "underdog_team_id": "WSH",
           "consensus_team_id": "LAR",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG131",
+          "market_status": "available",
+          "favorite_team_id": "LAC",
+          "underdog_team_id": "HOU",
+          "consensus_team_id": "HOU",
+          "community_market_position": "underdog"
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 129,
+        "classified_consensus_matches": 130,
         "community_favorite_picks": 102,
-        "community_underdog_picks": 27,
-        "community_favorite_rate": 0.790698,
-        "community_underdog_rate": 0.209302,
+        "community_underdog_picks": 28,
+        "community_favorite_rate": 0.784615,
+        "community_underdog_rate": 0.215385,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -2214,6 +2230,14 @@
           "underdog_team_id": "WSH",
           "consensus_team_id": "LAR",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG131",
+          "market_status": "available",
+          "favorite_team_id": "LAC",
+          "underdog_team_id": "HOU",
+          "consensus_team_id": "HOU",
+          "community_market_position": "underdog"
         }
       ]
     }

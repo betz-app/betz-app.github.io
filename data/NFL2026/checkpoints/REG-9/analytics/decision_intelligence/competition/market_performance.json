@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG130",
-  "evaluation_cursor": "REG130",
+  "freeze_cursor": "REG131",
+  "evaluation_cursor": "REG131",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 9,
       "result": {
-        "evaluated_matches": 9,
+        "evaluated_matches": 10,
         "favorite_wins": 7,
-        "underdog_wins": 2,
+        "underdog_wins": 3,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.777778,
-        "upset_rate": 0.222222,
+        "market_efficiency": 0.7,
+        "upset_rate": 0.3,
         "consensus_comparison": {
-          "shared_evaluated_matches": 9,
+          "shared_evaluated_matches": 10,
           "market_correct": 7,
-          "consensus_correct": 9,
-          "market_efficiency": 0.777778,
+          "consensus_correct": 10,
+          "market_efficiency": 0.7,
           "consensus_efficiency": 1,
-          "consensus_vs_market_delta": 0.222222
+          "consensus_vs_market_delta": 0.3
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -104,6 +104,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "LAR",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG131",
+          "favorite_team_id": "LAC",
+          "underdog_team_id": "HOU",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "HOU",
+          "favorite_won": false
         }
       ]
     },
@@ -111,23 +119,23 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 129,
+        "evaluated_matches": 130,
         "favorite_wins": 78,
-        "underdog_wins": 50,
+        "underdog_wins": 51,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.604651,
-        "upset_rate": 0.387597,
+        "market_efficiency": 0.6,
+        "upset_rate": 0.392308,
         "consensus_comparison": {
-          "shared_evaluated_matches": 129,
+          "shared_evaluated_matches": 130,
           "market_correct": 78,
-          "consensus_correct": 84,
-          "market_efficiency": 0.604651,
-          "consensus_efficiency": 0.651163,
-          "consensus_vs_market_delta": 0.046512
+          "consensus_correct": 85,
+          "market_efficiency": 0.6,
+          "consensus_efficiency": 0.653846,
+          "consensus_vs_market_delta": 0.053846
         },
         "primary_insight": {
-          "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
+          "insight_code": "COMMUNITY_BEATS_MARKET"
         }
       },
       "matches": [
@@ -1162,29 +1170,37 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "LAR",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG131",
+          "favorite_team_id": "LAC",
+          "underdog_team_id": "HOU",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "HOU",
+          "favorite_won": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 129,
+        "evaluated_matches": 130,
         "favorite_wins": 78,
-        "underdog_wins": 50,
+        "underdog_wins": 51,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.604651,
-        "upset_rate": 0.387597,
+        "market_efficiency": 0.6,
+        "upset_rate": 0.392308,
         "consensus_comparison": {
-          "shared_evaluated_matches": 129,
+          "shared_evaluated_matches": 130,
           "market_correct": 78,
-          "consensus_correct": 84,
-          "market_efficiency": 0.604651,
-          "consensus_efficiency": 0.651163,
-          "consensus_vs_market_delta": 0.046512
+          "consensus_correct": 85,
+          "market_efficiency": 0.6,
+          "consensus_efficiency": 0.653846,
+          "consensus_vs_market_delta": 0.053846
         },
         "primary_insight": {
-          "insight_code": "NO_CLEAR_COLLECTIVE_EDGE"
+          "insight_code": "COMMUNITY_BEATS_MARKET"
         }
       },
       "matches": [
@@ -2219,6 +2235,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "LAR",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG131",
+          "favorite_team_id": "LAC",
+          "underdog_team_id": "HOU",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "HOU",
+          "favorite_won": false
         }
       ]
     }
