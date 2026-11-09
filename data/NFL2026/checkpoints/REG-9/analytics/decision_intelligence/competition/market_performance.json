@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG131",
-  "evaluation_cursor": "REG131",
+  "freeze_cursor": "REG134",
+  "evaluation_cursor": "REG134",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 9,
       "result": {
-        "evaluated_matches": 10,
-        "favorite_wins": 7,
+        "evaluated_matches": 12,
+        "favorite_wins": 9,
         "underdog_wins": 3,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.7,
-        "upset_rate": 0.3,
+        "market_efficiency": 0.75,
+        "upset_rate": 0.25,
         "consensus_comparison": {
-          "shared_evaluated_matches": 10,
-          "market_correct": 7,
-          "consensus_correct": 10,
-          "market_efficiency": 0.7,
+          "shared_evaluated_matches": 12,
+          "market_correct": 9,
+          "consensus_correct": 12,
+          "market_efficiency": 0.75,
           "consensus_efficiency": 1,
-          "consensus_vs_market_delta": 0.3
+          "consensus_vs_market_delta": 0.25
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -112,6 +112,22 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "HOU",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG132",
+          "favorite_team_id": "SF",
+          "underdog_team_id": "LV",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SF",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG134",
+          "favorite_team_id": "SEA",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SEA",
+          "favorite_won": true
         }
       ]
     },
@@ -119,20 +135,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 130,
-        "favorite_wins": 78,
+        "evaluated_matches": 132,
+        "favorite_wins": 80,
         "underdog_wins": 51,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.6,
-        "upset_rate": 0.392308,
+        "market_efficiency": 0.606061,
+        "upset_rate": 0.386364,
         "consensus_comparison": {
-          "shared_evaluated_matches": 130,
-          "market_correct": 78,
-          "consensus_correct": 85,
-          "market_efficiency": 0.6,
-          "consensus_efficiency": 0.653846,
-          "consensus_vs_market_delta": 0.053846
+          "shared_evaluated_matches": 132,
+          "market_correct": 80,
+          "consensus_correct": 87,
+          "market_efficiency": 0.606061,
+          "consensus_efficiency": 0.659091,
+          "consensus_vs_market_delta": 0.05303
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -1178,26 +1194,42 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "HOU",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG132",
+          "favorite_team_id": "SF",
+          "underdog_team_id": "LV",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SF",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG134",
+          "favorite_team_id": "SEA",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SEA",
+          "favorite_won": true
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 130,
-        "favorite_wins": 78,
+        "evaluated_matches": 132,
+        "favorite_wins": 80,
         "underdog_wins": 51,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.6,
-        "upset_rate": 0.392308,
+        "market_efficiency": 0.606061,
+        "upset_rate": 0.386364,
         "consensus_comparison": {
-          "shared_evaluated_matches": 130,
-          "market_correct": 78,
-          "consensus_correct": 85,
-          "market_efficiency": 0.6,
-          "consensus_efficiency": 0.653846,
-          "consensus_vs_market_delta": 0.053846
+          "shared_evaluated_matches": 132,
+          "market_correct": 80,
+          "consensus_correct": 87,
+          "market_efficiency": 0.606061,
+          "consensus_efficiency": 0.659091,
+          "consensus_vs_market_delta": 0.05303
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -2243,6 +2275,22 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "HOU",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG132",
+          "favorite_team_id": "SF",
+          "underdog_team_id": "LV",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SF",
+          "favorite_won": true
+        },
+        {
+          "match_id": "REG134",
+          "favorite_team_id": "SEA",
+          "underdog_team_id": "ARI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SEA",
+          "favorite_won": true
         }
       ]
     }
