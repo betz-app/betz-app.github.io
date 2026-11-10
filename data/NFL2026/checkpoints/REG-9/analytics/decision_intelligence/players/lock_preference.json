@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG135",
-  "evaluation_cursor": "REG135",
+  "freeze_cursor": "REG136",
+  "evaluation_cursor": "REG136",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "lock_preference",
@@ -1135,16 +1135,28 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "valid_locks": 3,
-            "missing_locks": 6,
+            "valid_locks": 4,
+            "missing_locks": 5,
             "preference_status": "no_recurring_preference",
             "top_lock_team": null,
             "distribution": [
               {
                 "rank": 1,
+                "team_id": "BUF",
+                "lock_count": 1,
+                "lock_share": 0.25,
+                "periods_with_locks": 1,
+                "evaluated_locks": 1,
+                "correct_locks": 1,
+                "incorrect_locks": 0,
+                "pending_locks": 0,
+                "efficiency": 1
+              },
+              {
+                "rank": 1,
                 "team_id": "GB",
                 "lock_count": 1,
-                "lock_share": 0.333333,
+                "lock_share": 0.25,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1156,7 +1168,7 @@
                 "rank": 1,
                 "team_id": "HOU",
                 "lock_count": 1,
-                "lock_share": 0.333333,
+                "lock_share": 0.25,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 1,
@@ -1168,7 +1180,7 @@
                 "rank": 1,
                 "team_id": "SF",
                 "lock_count": 1,
-                "lock_share": 0.333333,
+                "lock_share": 0.25,
                 "periods_with_locks": 1,
                 "evaluated_locks": 1,
                 "correct_locks": 0,
@@ -1200,6 +1212,13 @@
               "match_id": "REG108",
               "period_id": "108_REG108",
               "lock_team_id": "GB",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG136",
+              "period_id": "122_REG122",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
