@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG136",
-  "evaluation_cursor": "REG136",
+  "freeze_cursor": "REG137",
+  "evaluation_cursor": "REG137",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "lock_preference",
@@ -11,253 +11,33 @@
     {
       "perspective_id": "week:all",
       "season_type": "Regular Season",
-      "week": 9,
+      "week": 10,
       "result": {
         "observed_periods": 1,
         "eligible_lock_opportunities": 17,
-        "valid_locks": 15,
-        "missing_locks": 2,
-        "coverage_rate": 0.882353,
+        "valid_locks": 0,
+        "missing_locks": 17,
+        "coverage_rate": 0,
         "minimum_sample": 9,
-        "sample_status": "sufficient",
+        "sample_status": "insufficient",
         "ranking_limit": 3,
-        "ranking_status": "no_clear_ranking",
+        "ranking_status": "unavailable",
         "preference_status": "not_applicable",
         "top_lock_teams": [],
-        "distribution": [
-          {
-            "rank": 1,
-            "team_id": "KC",
-            "lock_count": 5,
-            "lock_share": 0.333333,
-            "periods_with_locks": 1,
-            "evaluated_locks": 5,
-            "correct_locks": 5,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 2,
-            "team_id": "DET",
-            "lock_count": 2,
-            "lock_share": 0.133333,
-            "periods_with_locks": 1,
-            "evaluated_locks": 2,
-            "correct_locks": 2,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 2,
-            "team_id": "JAX",
-            "lock_count": 2,
-            "lock_share": 0.133333,
-            "periods_with_locks": 1,
-            "evaluated_locks": 2,
-            "correct_locks": 2,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 2,
-            "team_id": "SF",
-            "lock_count": 2,
-            "lock_share": 0.133333,
-            "periods_with_locks": 1,
-            "evaluated_locks": 2,
-            "correct_locks": 2,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 5,
-            "team_id": "BUF",
-            "lock_count": 1,
-            "lock_share": 0.066667,
-            "periods_with_locks": 1,
-            "evaluated_locks": 1,
-            "correct_locks": 1,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 5,
-            "team_id": "CAR",
-            "lock_count": 1,
-            "lock_share": 0.066667,
-            "periods_with_locks": 1,
-            "evaluated_locks": 1,
-            "correct_locks": 0,
-            "incorrect_locks": 1,
-            "pending_locks": 0,
-            "efficiency": 0
-          },
-          {
-            "rank": 5,
-            "team_id": "CHI",
-            "lock_count": 1,
-            "lock_share": 0.066667,
-            "periods_with_locks": 1,
-            "evaluated_locks": 1,
-            "correct_locks": 1,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          },
-          {
-            "rank": 5,
-            "team_id": "SEA",
-            "lock_count": 1,
-            "lock_share": 0.066667,
-            "periods_with_locks": 1,
-            "evaluated_locks": 1,
-            "correct_locks": 1,
-            "incorrect_locks": 0,
-            "pending_locks": 0,
-            "efficiency": 1
-          }
-        ],
-        "primary_insight": {
-          "insight_code": "COMMUNITY_WEEKLY_LOCK_CHOICES_UNCLEAR"
-        }
+        "distribution": [],
+        "primary_insight": null
       },
-      "matches": [
-        {
-          "match_id": "REG122",
-          "period_id": "122_REG122",
-          "user_id": "GABOBC",
-          "lock_team_id": "JAX",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG122",
-          "period_id": "122_REG122",
-          "user_id": "JMTZCELIZ",
-          "lock_team_id": "JAX",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG124",
-          "period_id": "122_REG122",
-          "user_id": "DIEGOMAGANA",
-          "lock_team_id": "CAR",
-          "evaluation_status": "evaluated",
-          "correct": false
-        },
-        {
-          "match_id": "REG126",
-          "period_id": "122_REG122",
-          "user_id": "CHIEFS_FAN",
-          "lock_team_id": "KC",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG126",
-          "period_id": "122_REG122",
-          "user_id": "DAVIDMAGANA",
-          "lock_team_id": "KC",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG126",
-          "period_id": "122_REG122",
-          "user_id": "GOLDEN_EAGLE",
-          "lock_team_id": "KC",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG126",
-          "period_id": "122_REG122",
-          "user_id": "HZE",
-          "lock_team_id": "KC",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG126",
-          "period_id": "122_REG122",
-          "user_id": "YEU",
-          "lock_team_id": "KC",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG127",
-          "period_id": "122_REG122",
-          "user_id": "LJMV",
-          "lock_team_id": "DET",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG127",
-          "period_id": "122_REG122",
-          "user_id": "MARIOVILLARREAL",
-          "lock_team_id": "DET",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG132",
-          "period_id": "122_REG122",
-          "user_id": "NSA",
-          "lock_team_id": "SF",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG132",
-          "period_id": "122_REG122",
-          "user_id": "PACOT",
-          "lock_team_id": "SF",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG134",
-          "period_id": "122_REG122",
-          "user_id": "EZC",
-          "lock_team_id": "SEA",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG135",
-          "period_id": "122_REG122",
-          "user_id": "BTO_Z",
-          "lock_team_id": "CHI",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG136",
-          "period_id": "122_REG122",
-          "user_id": "GSG",
-          "lock_team_id": "BUF",
-          "evaluation_status": "evaluated",
-          "correct": true
-        }
-      ]
+      "matches": []
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "observed_periods": 9,
-        "eligible_lock_opportunities": 153,
+        "observed_periods": 10,
+        "eligible_lock_opportunities": 170,
         "valid_locks": 129,
-        "missing_locks": 24,
-        "coverage_rate": 0.843137,
-        "minimum_sample": 77,
+        "missing_locks": 41,
+        "coverage_rate": 0.758824,
+        "minimum_sample": 85,
         "sample_status": "sufficient",
         "ranking_limit": 5,
         "ranking_status": "no_clear_ranking",

@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG136",
-  "evaluation_cursor": "REG136",
+  "freeze_cursor": "REG137",
+  "evaluation_cursor": "REG137",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -11,104 +11,20 @@
     {
       "perspective_id": "week:all",
       "season_type": "Regular Season",
-      "week": 9,
+      "week": 10,
       "result": {
-        "evaluated_matches": 15,
-        "correct_matches": 14,
+        "evaluated_matches": 1,
+        "correct_matches": 0,
         "incorrect_matches": 1,
         "pending_matches": 0,
-        "consensus_efficiency": 0.933333
+        "consensus_efficiency": 0
       },
       "matches": [
         {
-          "match_id": "REG122",
-          "consensus_team_id": "JAX",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG123",
-          "consensus_team_id": "CIN",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG124",
-          "consensus_team_id": "DEN",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG125",
-          "consensus_team_id": "DAL",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG126",
-          "consensus_team_id": "KC",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG127",
-          "consensus_team_id": "DET",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG128",
-          "consensus_team_id": "NO",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG129",
+          "match_id": "REG137",
           "consensus_team_id": "NYG",
           "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG130",
-          "consensus_team_id": "LAR",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG131",
-          "consensus_team_id": "HOU",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG132",
-          "consensus_team_id": "SF",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG133",
-          "consensus_team_id": "NE",
-          "evaluation_status": "evaluated",
           "correct": false
-        },
-        {
-          "match_id": "REG134",
-          "consensus_team_id": "SEA",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG135",
-          "consensus_team_id": "CHI",
-          "evaluation_status": "evaluated",
-          "correct": true
-        },
-        {
-          "match_id": "REG136",
-          "consensus_team_id": "BUF",
-          "evaluation_status": "evaluated",
-          "correct": true
         }
       ]
     },
@@ -116,11 +32,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 136,
+        "evaluated_matches": 137,
         "correct_matches": 90,
-        "incorrect_matches": 46,
+        "incorrect_matches": 47,
         "pending_matches": 0,
-        "consensus_efficiency": 0.661765
+        "consensus_efficiency": 0.656934
       },
       "matches": [
         {
@@ -938,17 +854,23 @@
           "consensus_team_id": "BUF",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG137",
+          "consensus_team_id": "NYG",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 136,
+        "evaluated_matches": 137,
         "correct_matches": 90,
-        "incorrect_matches": 46,
+        "incorrect_matches": 47,
         "pending_matches": 0,
-        "consensus_efficiency": 0.661765
+        "consensus_efficiency": 0.656934
       },
       "matches": [
         {
@@ -1766,6 +1688,12 @@
           "consensus_team_id": "BUF",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG137",
+          "consensus_team_id": "NYG",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     }
