@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG137",
-  "evaluation_cursor": "REG137",
+  "freeze_cursor": "REG138",
+  "evaluation_cursor": "REG138",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_intelligence",
@@ -13,13 +13,13 @@
       "season_type": "Regular Season",
       "week": 10,
       "result": {
-        "frozen_matches": 1,
-        "sufficient_sample_matches": 1,
+        "frozen_matches": 2,
+        "sufficient_sample_matches": 2,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 1,
+        "dominant_matches": 2,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.666667,
+        "average_consensus_strength": 0.77451,
         "primary_insight": null
       },
       "matches": [
@@ -55,6 +55,39 @@
           "consensus_strength": 0.666667,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG138",
+          "period_id": "137_REG137",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "DET",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "DET",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            },
+            {
+              "team_id": "NE",
+              "prediction_count": 2,
+              "prediction_rate": 0.117647
+            }
+          ],
+          "consensus_strength": 0.882353,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
       ]
     },
@@ -62,13 +95,13 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "frozen_matches": 137,
-        "sufficient_sample_matches": 137,
+        "frozen_matches": 138,
+        "sufficient_sample_matches": 138,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 137,
+        "dominant_matches": 138,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.826537,
+        "average_consensus_strength": 0.826941,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -4592,6 +4625,39 @@
             }
           ],
           "consensus_strength": 0.666667,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG138",
+          "period_id": "137_REG137",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "DET",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "DET",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            },
+            {
+              "team_id": "NE",
+              "prediction_count": 2,
+              "prediction_rate": 0.117647
+            }
+          ],
+          "consensus_strength": 0.882353,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
@@ -4600,13 +4666,13 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "frozen_matches": 137,
-        "sufficient_sample_matches": 137,
+        "frozen_matches": 138,
+        "sufficient_sample_matches": 138,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 137,
+        "dominant_matches": 138,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.826537,
+        "average_consensus_strength": 0.826941,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -9130,6 +9196,39 @@
             }
           ],
           "consensus_strength": 0.666667,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG138",
+          "period_id": "137_REG137",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "DET",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "DET",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            },
+            {
+              "team_id": "NE",
+              "prediction_count": 2,
+              "prediction_rate": 0.117647
+            }
+          ],
+          "consensus_strength": 0.882353,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }

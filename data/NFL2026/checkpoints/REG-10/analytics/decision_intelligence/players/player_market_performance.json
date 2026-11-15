@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG137",
-  "evaluation_cursor": "REG137",
+  "freeze_cursor": "REG138",
+  "evaluation_cursor": "REG138",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "player_market_performance",
@@ -20,17 +20,17 @@
             "favorite_evaluated_matches": 0,
             "favorite_correct_matches": 0,
             "favorite_efficiency": null,
-            "underdog_evaluated_matches": 1,
+            "underdog_evaluated_matches": 2,
             "underdog_correct_matches": 1,
-            "underdog_efficiency": 1,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
+              "shared_evaluated_matches": 2,
               "player_correct": 1,
-              "market_correct": 0,
-              "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0
             },
             "primary_insight": null
           },
@@ -42,6 +42,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -52,17 +60,17 @@
             "favorite_evaluated_matches": 83,
             "favorite_correct_matches": 56,
             "favorite_efficiency": 0.674699,
-            "underdog_evaluated_matches": 43,
+            "underdog_evaluated_matches": 44,
             "underdog_correct_matches": 22,
-            "underdog_efficiency": 0.511628,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 126,
+              "shared_evaluated_matches": 127,
               "player_correct": 78,
-              "market_correct": 76,
-              "player_efficiency": 0.619048,
-              "market_efficiency": 0.603175,
-              "player_vs_market_delta": 0.015873
+              "market_correct": 77,
+              "player_efficiency": 0.614173,
+              "market_efficiency": 0.606299,
+              "player_vs_market_delta": 0.007874
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -1076,6 +1084,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -1085,17 +1101,17 @@
             "favorite_evaluated_matches": 83,
             "favorite_correct_matches": 56,
             "favorite_efficiency": 0.674699,
-            "underdog_evaluated_matches": 43,
+            "underdog_evaluated_matches": 44,
             "underdog_correct_matches": 22,
-            "underdog_efficiency": 0.511628,
+            "underdog_efficiency": 0.5,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 126,
+              "shared_evaluated_matches": 127,
               "player_correct": 78,
-              "market_correct": 76,
-              "player_efficiency": 0.619048,
-              "market_efficiency": 0.603175,
-              "player_vs_market_delta": 0.015873
+              "market_correct": 77,
+              "player_efficiency": 0.614173,
+              "market_efficiency": 0.606299,
+              "player_vs_market_delta": 0.007874
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -2109,6 +2125,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -2123,19 +2147,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -2148,6 +2172,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -2155,20 +2187,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 101,
-            "favorite_correct_matches": 68,
-            "favorite_efficiency": 0.673267,
+            "favorite_evaluated_matches": 102,
+            "favorite_correct_matches": 69,
+            "favorite_efficiency": 0.676471,
             "underdog_evaluated_matches": 35,
             "underdog_correct_matches": 21,
             "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 89,
-              "market_correct": 82,
-              "player_efficiency": 0.654412,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.051471
+              "shared_evaluated_matches": 137,
+              "player_correct": 90,
+              "market_correct": 83,
+              "player_efficiency": 0.656934,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.051095
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -3262,26 +3294,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 101,
-            "favorite_correct_matches": 68,
-            "favorite_efficiency": 0.673267,
+            "favorite_evaluated_matches": 102,
+            "favorite_correct_matches": 69,
+            "favorite_efficiency": 0.676471,
             "underdog_evaluated_matches": 35,
             "underdog_correct_matches": 21,
             "underdog_efficiency": 0.6,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 89,
-              "market_correct": 82,
-              "player_efficiency": 0.654412,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.051471
+              "shared_evaluated_matches": 137,
+              "player_correct": 90,
+              "market_correct": 83,
+              "player_efficiency": 0.656934,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.051095
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -4375,6 +4415,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -4389,19 +4437,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -4414,6 +4462,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -4421,20 +4477,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 106,
-            "favorite_correct_matches": 69,
-            "favorite_efficiency": 0.650943,
+            "favorite_evaluated_matches": 107,
+            "favorite_correct_matches": 70,
+            "favorite_efficiency": 0.654206,
             "underdog_evaluated_matches": 30,
             "underdog_correct_matches": 17,
             "underdog_efficiency": 0.566667,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 86,
-              "market_correct": 82,
-              "player_efficiency": 0.632353,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.029412
+              "shared_evaluated_matches": 137,
+              "player_correct": 87,
+              "market_correct": 83,
+              "player_efficiency": 0.635036,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.029197
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -5528,26 +5584,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 106,
-            "favorite_correct_matches": 69,
-            "favorite_efficiency": 0.650943,
+            "favorite_evaluated_matches": 107,
+            "favorite_correct_matches": 70,
+            "favorite_efficiency": 0.654206,
             "underdog_evaluated_matches": 30,
             "underdog_correct_matches": 17,
             "underdog_efficiency": 0.566667,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 86,
-              "market_correct": 82,
-              "player_efficiency": 0.632353,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.029412
+              "shared_evaluated_matches": 137,
+              "player_correct": 87,
+              "market_correct": 83,
+              "player_efficiency": 0.635036,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.029197
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -6641,6 +6705,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -6655,43 +6727,52 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 0,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": null,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 0,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": null,
-              "market_efficiency": null,
-              "player_vs_market_delta": null
+              "shared_evaluated_matches": 1,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 1,
+              "market_efficiency": 1,
+              "player_vs_market_delta": 0
             },
             "primary_insight": null
           },
-          "matches": []
+          "matches": [
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
+            }
+          ]
         },
         {
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 66,
-            "favorite_correct_matches": 48,
-            "favorite_efficiency": 0.727273,
+            "favorite_evaluated_matches": 67,
+            "favorite_correct_matches": 49,
+            "favorite_efficiency": 0.731343,
             "underdog_evaluated_matches": 47,
             "underdog_correct_matches": 22,
             "underdog_efficiency": 0.468085,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 113,
-              "player_correct": 70,
-              "market_correct": 72,
-              "player_efficiency": 0.619469,
-              "market_efficiency": 0.637168,
-              "player_vs_market_delta": -0.017699
+              "shared_evaluated_matches": 114,
+              "player_correct": 71,
+              "market_correct": 73,
+              "player_efficiency": 0.622807,
+              "market_efficiency": 0.640351,
+              "player_vs_market_delta": -0.017544
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -7599,6 +7680,14 @@
               "pick_team_id": "BUF",
               "market_position": "favorite",
               "favorite_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -7607,20 +7696,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 66,
-            "favorite_correct_matches": 48,
-            "favorite_efficiency": 0.727273,
+            "favorite_evaluated_matches": 67,
+            "favorite_correct_matches": 49,
+            "favorite_efficiency": 0.731343,
             "underdog_evaluated_matches": 47,
             "underdog_correct_matches": 22,
             "underdog_efficiency": 0.468085,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 113,
-              "player_correct": 70,
-              "market_correct": 72,
-              "player_efficiency": 0.619469,
-              "market_efficiency": 0.637168,
-              "player_vs_market_delta": -0.017699
+              "shared_evaluated_matches": 114,
+              "player_correct": 71,
+              "market_correct": 73,
+              "player_efficiency": 0.622807,
+              "market_efficiency": 0.640351,
+              "player_vs_market_delta": -0.017544
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -8528,6 +8617,14 @@
               "pick_team_id": "BUF",
               "market_position": "favorite",
               "favorite_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -8544,20 +8641,20 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 0,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": null,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
             "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 1,
             "underdog_efficiency": 1,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 1,
-              "market_correct": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 2,
+              "market_correct": 1,
               "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0.5
             },
             "primary_insight": null
           },
@@ -8569,6 +8666,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -8576,20 +8681,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 89,
-            "favorite_correct_matches": 56,
-            "favorite_efficiency": 0.629213,
+            "favorite_evaluated_matches": 90,
+            "favorite_correct_matches": 57,
+            "favorite_efficiency": 0.633333,
             "underdog_evaluated_matches": 47,
             "underdog_correct_matches": 20,
             "underdog_efficiency": 0.425532,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 76,
-              "market_correct": 82,
-              "player_efficiency": 0.558824,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": -0.044117
+              "shared_evaluated_matches": 137,
+              "player_correct": 77,
+              "market_correct": 83,
+              "player_efficiency": 0.562044,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": -0.043795
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -9681,6 +9786,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -9689,20 +9802,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 89,
-            "favorite_correct_matches": 56,
-            "favorite_efficiency": 0.629213,
+            "favorite_evaluated_matches": 90,
+            "favorite_correct_matches": 57,
+            "favorite_efficiency": 0.633333,
             "underdog_evaluated_matches": 47,
             "underdog_correct_matches": 20,
             "underdog_efficiency": 0.425532,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 76,
-              "market_correct": 82,
-              "player_efficiency": 0.558824,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": -0.044117
+              "shared_evaluated_matches": 137,
+              "player_correct": 77,
+              "market_correct": 83,
+              "player_efficiency": 0.562044,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": -0.043795
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -10794,6 +10907,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -10813,21 +10934,30 @@
             "favorite_evaluated_matches": 0,
             "favorite_correct_matches": 0,
             "favorite_efficiency": null,
-            "underdog_evaluated_matches": 0,
+            "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 0,
-            "underdog_efficiency": null,
+            "underdog_efficiency": 0,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 0,
+              "shared_evaluated_matches": 1,
               "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": null,
-              "market_efficiency": null,
-              "player_vs_market_delta": null
+              "market_correct": 1,
+              "player_efficiency": 0,
+              "market_efficiency": 1,
+              "player_vs_market_delta": -1
             },
             "primary_insight": null
           },
-          "matches": []
+          "matches": [
+            {
+              "match_id": "REG138",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": false
+            }
+          ]
         },
         {
           "perspective_id": "stage:all",
@@ -10836,17 +10966,17 @@
             "favorite_evaluated_matches": 85,
             "favorite_correct_matches": 56,
             "favorite_efficiency": 0.658824,
-            "underdog_evaluated_matches": 33,
+            "underdog_evaluated_matches": 34,
             "underdog_correct_matches": 16,
-            "underdog_efficiency": 0.484848,
+            "underdog_efficiency": 0.470588,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 118,
+              "shared_evaluated_matches": 119,
               "player_correct": 72,
-              "market_correct": 73,
-              "player_efficiency": 0.610169,
-              "market_efficiency": 0.618644,
-              "player_vs_market_delta": -0.008475
+              "market_correct": 74,
+              "player_efficiency": 0.605042,
+              "market_efficiency": 0.621849,
+              "player_vs_market_delta": -0.016807
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -11796,6 +11926,14 @@
               "favorite_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -11805,17 +11943,17 @@
             "favorite_evaluated_matches": 85,
             "favorite_correct_matches": 56,
             "favorite_efficiency": 0.658824,
-            "underdog_evaluated_matches": 33,
+            "underdog_evaluated_matches": 34,
             "underdog_correct_matches": 16,
-            "underdog_efficiency": 0.484848,
+            "underdog_efficiency": 0.470588,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 118,
+              "shared_evaluated_matches": 119,
               "player_correct": 72,
-              "market_correct": 73,
-              "player_efficiency": 0.610169,
-              "market_efficiency": 0.618644,
-              "player_vs_market_delta": -0.008475
+              "market_correct": 74,
+              "player_efficiency": 0.605042,
+              "market_efficiency": 0.621849,
+              "player_vs_market_delta": -0.016807
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -12765,6 +12903,14 @@
               "favorite_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "NE",
+              "market_position": "underdog",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -12779,20 +12925,20 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 0,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": null,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
             "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 1,
             "underdog_efficiency": 1,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 1,
-              "market_correct": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 2,
+              "market_correct": 1,
               "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0.5
             },
             "primary_insight": null
           },
@@ -12804,6 +12950,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -12811,20 +12965,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 91,
-            "favorite_correct_matches": 61,
-            "favorite_efficiency": 0.67033,
+            "favorite_evaluated_matches": 92,
+            "favorite_correct_matches": 62,
+            "favorite_efficiency": 0.673913,
             "underdog_evaluated_matches": 45,
             "underdog_correct_matches": 24,
             "underdog_efficiency": 0.533333,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 85,
-              "market_correct": 82,
-              "player_efficiency": 0.625,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.022059
+              "shared_evaluated_matches": 137,
+              "player_correct": 86,
+              "market_correct": 83,
+              "player_efficiency": 0.627737,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.021898
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -13916,6 +14070,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -13924,20 +14086,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 91,
-            "favorite_correct_matches": 61,
-            "favorite_efficiency": 0.67033,
+            "favorite_evaluated_matches": 92,
+            "favorite_correct_matches": 62,
+            "favorite_efficiency": 0.673913,
             "underdog_evaluated_matches": 45,
             "underdog_correct_matches": 24,
             "underdog_efficiency": 0.533333,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 85,
-              "market_correct": 82,
-              "player_efficiency": 0.625,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.022059
+              "shared_evaluated_matches": 137,
+              "player_correct": 86,
+              "market_correct": 83,
+              "player_efficiency": 0.627737,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.021898
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -15029,6 +15191,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -15045,19 +15215,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -15070,6 +15240,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -15077,20 +15255,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 97,
-            "favorite_correct_matches": 67,
-            "favorite_efficiency": 0.690722,
+            "favorite_evaluated_matches": 98,
+            "favorite_correct_matches": 68,
+            "favorite_efficiency": 0.693878,
             "underdog_evaluated_matches": 24,
             "underdog_correct_matches": 16,
             "underdog_efficiency": 0.666667,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 121,
-              "player_correct": 83,
-              "market_correct": 75,
-              "player_efficiency": 0.68595,
-              "market_efficiency": 0.619835,
-              "player_vs_market_delta": 0.066115
+              "shared_evaluated_matches": 122,
+              "player_correct": 84,
+              "market_correct": 76,
+              "player_efficiency": 0.688525,
+              "market_efficiency": 0.622951,
+              "player_vs_market_delta": 0.065574
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -16064,26 +16242,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 97,
-            "favorite_correct_matches": 67,
-            "favorite_efficiency": 0.690722,
+            "favorite_evaluated_matches": 98,
+            "favorite_correct_matches": 68,
+            "favorite_efficiency": 0.693878,
             "underdog_evaluated_matches": 24,
             "underdog_correct_matches": 16,
             "underdog_efficiency": 0.666667,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 121,
-              "player_correct": 83,
-              "market_correct": 75,
-              "player_efficiency": 0.68595,
-              "market_efficiency": 0.619835,
-              "player_vs_market_delta": 0.066115
+              "shared_evaluated_matches": 122,
+              "player_correct": 84,
+              "market_correct": 76,
+              "player_efficiency": 0.688525,
+              "market_efficiency": 0.622951,
+              "player_vs_market_delta": 0.065574
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -17057,6 +17243,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -17071,19 +17265,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -17096,6 +17290,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -17103,20 +17305,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 112,
-            "favorite_correct_matches": 72,
-            "favorite_efficiency": 0.642857,
+            "favorite_evaluated_matches": 113,
+            "favorite_correct_matches": 73,
+            "favorite_efficiency": 0.646018,
             "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.565217,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 135,
-              "player_correct": 85,
-              "market_correct": 81,
-              "player_efficiency": 0.62963,
-              "market_efficiency": 0.6,
-              "player_vs_market_delta": 0.02963
+              "shared_evaluated_matches": 136,
+              "player_correct": 86,
+              "market_correct": 82,
+              "player_efficiency": 0.632353,
+              "market_efficiency": 0.602941,
+              "player_vs_market_delta": 0.029412
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -18202,26 +18404,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 112,
-            "favorite_correct_matches": 72,
-            "favorite_efficiency": 0.642857,
+            "favorite_evaluated_matches": 113,
+            "favorite_correct_matches": 73,
+            "favorite_efficiency": 0.646018,
             "underdog_evaluated_matches": 23,
             "underdog_correct_matches": 13,
             "underdog_efficiency": 0.565217,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 135,
-              "player_correct": 85,
-              "market_correct": 81,
-              "player_efficiency": 0.62963,
-              "market_efficiency": 0.6,
-              "player_vs_market_delta": 0.02963
+              "shared_evaluated_matches": 136,
+              "player_correct": 86,
+              "market_correct": 82,
+              "player_efficiency": 0.632353,
+              "market_efficiency": 0.602941,
+              "player_vs_market_delta": 0.029412
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -19307,6 +19517,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -19321,19 +19539,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -19346,6 +19564,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -19353,20 +19579,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 97,
-            "favorite_correct_matches": 69,
-            "favorite_efficiency": 0.71134,
+            "favorite_evaluated_matches": 98,
+            "favorite_correct_matches": 70,
+            "favorite_efficiency": 0.714286,
             "underdog_evaluated_matches": 39,
             "underdog_correct_matches": 26,
             "underdog_efficiency": 0.666667,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 95,
-              "market_correct": 82,
-              "player_efficiency": 0.698529,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.095588
+              "shared_evaluated_matches": 137,
+              "player_correct": 96,
+              "market_correct": 83,
+              "player_efficiency": 0.70073,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.094891
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -20460,26 +20686,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 97,
-            "favorite_correct_matches": 69,
-            "favorite_efficiency": 0.71134,
+            "favorite_evaluated_matches": 98,
+            "favorite_correct_matches": 70,
+            "favorite_efficiency": 0.714286,
             "underdog_evaluated_matches": 39,
             "underdog_correct_matches": 26,
             "underdog_efficiency": 0.666667,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 95,
-              "market_correct": 82,
-              "player_efficiency": 0.698529,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.095588
+              "shared_evaluated_matches": 137,
+              "player_correct": 96,
+              "market_correct": 83,
+              "player_efficiency": 0.70073,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.094891
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -21573,6 +21807,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -21587,19 +21829,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -21612,6 +21854,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -21619,20 +21869,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 101,
-            "favorite_correct_matches": 66,
-            "favorite_efficiency": 0.653465,
+            "favorite_evaluated_matches": 102,
+            "favorite_correct_matches": 67,
+            "favorite_efficiency": 0.656863,
             "underdog_evaluated_matches": 35,
             "underdog_correct_matches": 18,
             "underdog_efficiency": 0.514286,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 84,
-              "market_correct": 82,
-              "player_efficiency": 0.617647,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.014706
+              "shared_evaluated_matches": 137,
+              "player_correct": 85,
+              "market_correct": 83,
+              "player_efficiency": 0.620438,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.014599
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -22726,26 +22976,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 101,
-            "favorite_correct_matches": 66,
-            "favorite_efficiency": 0.653465,
+            "favorite_evaluated_matches": 102,
+            "favorite_correct_matches": 67,
+            "favorite_efficiency": 0.656863,
             "underdog_evaluated_matches": 35,
             "underdog_correct_matches": 18,
             "underdog_efficiency": 0.514286,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 84,
-              "market_correct": 82,
-              "player_efficiency": 0.617647,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.014706
+              "shared_evaluated_matches": 137,
+              "player_correct": 85,
+              "market_correct": 83,
+              "player_efficiency": 0.620438,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.014599
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -23839,6 +24097,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -23853,19 +24119,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -23878,6 +24144,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -23885,19 +24159,19 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 99,
-            "favorite_correct_matches": 64,
-            "favorite_efficiency": 0.646465,
+            "favorite_evaluated_matches": 100,
+            "favorite_correct_matches": 65,
+            "favorite_efficiency": 0.65,
             "underdog_evaluated_matches": 37,
             "underdog_correct_matches": 18,
             "underdog_efficiency": 0.486486,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 82,
-              "market_correct": 82,
-              "player_efficiency": 0.602941,
-              "market_efficiency": 0.602941,
+              "shared_evaluated_matches": 137,
+              "player_correct": 83,
+              "market_correct": 83,
+              "player_efficiency": 0.605839,
+              "market_efficiency": 0.605839,
               "player_vs_market_delta": 0
             },
             "primary_insight": {
@@ -24992,25 +25266,33 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 99,
-            "favorite_correct_matches": 64,
-            "favorite_efficiency": 0.646465,
+            "favorite_evaluated_matches": 100,
+            "favorite_correct_matches": 65,
+            "favorite_efficiency": 0.65,
             "underdog_evaluated_matches": 37,
             "underdog_correct_matches": 18,
             "underdog_efficiency": 0.486486,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 82,
-              "market_correct": 82,
-              "player_efficiency": 0.602941,
-              "market_efficiency": 0.602941,
+              "shared_evaluated_matches": 137,
+              "player_correct": 83,
+              "market_correct": 83,
+              "player_efficiency": 0.605839,
+              "market_efficiency": 0.605839,
               "player_vs_market_delta": 0
             },
             "primary_insight": {
@@ -26105,6 +26387,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -26119,19 +26409,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -26144,6 +26434,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -26151,20 +26449,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 100,
-            "favorite_correct_matches": 67,
-            "favorite_efficiency": 0.67,
+            "favorite_evaluated_matches": 101,
+            "favorite_correct_matches": 68,
+            "favorite_efficiency": 0.673267,
             "underdog_evaluated_matches": 36,
             "underdog_correct_matches": 20,
             "underdog_efficiency": 0.555556,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 87,
-              "market_correct": 82,
-              "player_efficiency": 0.639706,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.036765
+              "shared_evaluated_matches": 137,
+              "player_correct": 88,
+              "market_correct": 83,
+              "player_efficiency": 0.642336,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.036497
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -27258,26 +27556,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 100,
-            "favorite_correct_matches": 67,
-            "favorite_efficiency": 0.67,
+            "favorite_evaluated_matches": 101,
+            "favorite_correct_matches": 68,
+            "favorite_efficiency": 0.673267,
             "underdog_evaluated_matches": 36,
             "underdog_correct_matches": 20,
             "underdog_efficiency": 0.555556,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 87,
-              "market_correct": 82,
-              "player_efficiency": 0.639706,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.036765
+              "shared_evaluated_matches": 137,
+              "player_correct": 88,
+              "market_correct": 83,
+              "player_efficiency": 0.642336,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.036497
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -28371,6 +28677,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -28385,19 +28699,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -28410,6 +28724,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -28417,20 +28739,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 109,
-            "favorite_correct_matches": 70,
-            "favorite_efficiency": 0.642202,
+            "favorite_evaluated_matches": 110,
+            "favorite_correct_matches": 71,
+            "favorite_efficiency": 0.645455,
             "underdog_evaluated_matches": 26,
             "underdog_correct_matches": 15,
             "underdog_efficiency": 0.576923,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 135,
-              "player_correct": 85,
-              "market_correct": 81,
-              "player_efficiency": 0.62963,
-              "market_efficiency": 0.6,
-              "player_vs_market_delta": 0.02963
+              "shared_evaluated_matches": 136,
+              "player_correct": 86,
+              "market_correct": 82,
+              "player_efficiency": 0.632353,
+              "market_efficiency": 0.602941,
+              "player_vs_market_delta": 0.029412
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -29516,26 +29838,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 109,
-            "favorite_correct_matches": 70,
-            "favorite_efficiency": 0.642202,
+            "favorite_evaluated_matches": 110,
+            "favorite_correct_matches": 71,
+            "favorite_efficiency": 0.645455,
             "underdog_evaluated_matches": 26,
             "underdog_correct_matches": 15,
             "underdog_efficiency": 0.576923,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 135,
-              "player_correct": 85,
-              "market_correct": 81,
-              "player_efficiency": 0.62963,
-              "market_efficiency": 0.6,
-              "player_vs_market_delta": 0.02963
+              "shared_evaluated_matches": 136,
+              "player_correct": 86,
+              "market_correct": 82,
+              "player_efficiency": 0.632353,
+              "market_efficiency": 0.602941,
+              "player_vs_market_delta": 0.029412
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -30621,6 +30951,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -30635,19 +30973,19 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 1,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": 0,
+            "favorite_evaluated_matches": 2,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 0.5,
             "underdog_evaluated_matches": 0,
             "underdog_correct_matches": 0,
             "underdog_efficiency": null,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 0,
-              "market_correct": 0,
-              "player_efficiency": 0,
-              "market_efficiency": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 1,
+              "market_correct": 1,
+              "player_efficiency": 0.5,
+              "market_efficiency": 0.5,
               "player_vs_market_delta": 0
             },
             "primary_insight": null
@@ -30660,6 +30998,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -30667,20 +31013,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 101,
-            "favorite_correct_matches": 70,
-            "favorite_efficiency": 0.693069,
+            "favorite_evaluated_matches": 102,
+            "favorite_correct_matches": 71,
+            "favorite_efficiency": 0.696078,
             "underdog_evaluated_matches": 35,
             "underdog_correct_matches": 22,
             "underdog_efficiency": 0.628571,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 92,
-              "market_correct": 82,
-              "player_efficiency": 0.676471,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.07353
+              "shared_evaluated_matches": 137,
+              "player_correct": 93,
+              "market_correct": 83,
+              "player_efficiency": 0.678832,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.072993
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -31774,26 +32120,34 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 101,
-            "favorite_correct_matches": 70,
-            "favorite_efficiency": 0.693069,
+            "favorite_evaluated_matches": 102,
+            "favorite_correct_matches": 71,
+            "favorite_efficiency": 0.696078,
             "underdog_evaluated_matches": 35,
             "underdog_correct_matches": 22,
             "underdog_efficiency": 0.628571,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 92,
-              "market_correct": 82,
-              "player_efficiency": 0.676471,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.07353
+              "shared_evaluated_matches": 137,
+              "player_correct": 93,
+              "market_correct": 83,
+              "player_efficiency": 0.678832,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.072993
             },
             "primary_insight": {
               "insight_code": "PLAYER_BEATS_MARKET"
@@ -32887,6 +33241,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -32901,20 +33263,20 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 0,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": null,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
             "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 1,
             "underdog_efficiency": 1,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 1,
-              "market_correct": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 2,
+              "market_correct": 1,
               "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0.5
             },
             "primary_insight": null
           },
@@ -32926,6 +33288,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -32933,20 +33303,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 95,
-            "favorite_correct_matches": 60,
-            "favorite_efficiency": 0.631579,
+            "favorite_evaluated_matches": 96,
+            "favorite_correct_matches": 61,
+            "favorite_efficiency": 0.635417,
             "underdog_evaluated_matches": 40,
             "underdog_correct_matches": 18,
             "underdog_efficiency": 0.45,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 135,
-              "player_correct": 78,
-              "market_correct": 82,
-              "player_efficiency": 0.577778,
-              "market_efficiency": 0.607407,
-              "player_vs_market_delta": -0.029629
+              "shared_evaluated_matches": 136,
+              "player_correct": 79,
+              "market_correct": 83,
+              "player_efficiency": 0.580882,
+              "market_efficiency": 0.610294,
+              "player_vs_market_delta": -0.029412
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -34030,6 +34400,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -34038,20 +34416,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 95,
-            "favorite_correct_matches": 60,
-            "favorite_efficiency": 0.631579,
+            "favorite_evaluated_matches": 96,
+            "favorite_correct_matches": 61,
+            "favorite_efficiency": 0.635417,
             "underdog_evaluated_matches": 40,
             "underdog_correct_matches": 18,
             "underdog_efficiency": 0.45,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 135,
-              "player_correct": 78,
-              "market_correct": 82,
-              "player_efficiency": 0.577778,
-              "market_efficiency": 0.607407,
-              "player_vs_market_delta": -0.029629
+              "shared_evaluated_matches": 136,
+              "player_correct": 79,
+              "market_correct": 83,
+              "player_efficiency": 0.580882,
+              "market_efficiency": 0.610294,
+              "player_vs_market_delta": -0.029412
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -35135,6 +35513,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -35151,20 +35537,20 @@
           "season_type": "Regular Season",
           "week": 10,
           "result": {
-            "favorite_evaluated_matches": 0,
-            "favorite_correct_matches": 0,
-            "favorite_efficiency": null,
+            "favorite_evaluated_matches": 1,
+            "favorite_correct_matches": 1,
+            "favorite_efficiency": 1,
             "underdog_evaluated_matches": 1,
             "underdog_correct_matches": 1,
             "underdog_efficiency": 1,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 1,
-              "player_correct": 1,
-              "market_correct": 0,
+              "shared_evaluated_matches": 2,
+              "player_correct": 2,
+              "market_correct": 1,
               "player_efficiency": 1,
-              "market_efficiency": 0,
-              "player_vs_market_delta": 1
+              "market_efficiency": 0.5,
+              "player_vs_market_delta": 0.5
             },
             "primary_insight": null
           },
@@ -35176,6 +35562,14 @@
               "favorite_team_id": "NYG",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -35183,20 +35577,20 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "favorite_evaluated_matches": 91,
-            "favorite_correct_matches": 62,
-            "favorite_efficiency": 0.681319,
+            "favorite_evaluated_matches": 92,
+            "favorite_correct_matches": 63,
+            "favorite_efficiency": 0.684783,
             "underdog_evaluated_matches": 45,
             "underdog_correct_matches": 24,
             "underdog_efficiency": 0.533333,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 86,
-              "market_correct": 82,
-              "player_efficiency": 0.632353,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.029412
+              "shared_evaluated_matches": 137,
+              "player_correct": 87,
+              "market_correct": 83,
+              "player_efficiency": 0.635036,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.029197
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -36288,6 +36682,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -36296,20 +36698,20 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "favorite_evaluated_matches": 91,
-            "favorite_correct_matches": 62,
-            "favorite_efficiency": 0.681319,
+            "favorite_evaluated_matches": 92,
+            "favorite_correct_matches": 63,
+            "favorite_efficiency": 0.684783,
             "underdog_evaluated_matches": 45,
             "underdog_correct_matches": 24,
             "underdog_efficiency": 0.533333,
             "pending_matches": 0,
             "market_comparison": {
-              "shared_evaluated_matches": 136,
-              "player_correct": 86,
-              "market_correct": 82,
-              "player_efficiency": 0.632353,
-              "market_efficiency": 0.602941,
-              "player_vs_market_delta": 0.029412
+              "shared_evaluated_matches": 137,
+              "player_correct": 87,
+              "market_correct": 83,
+              "player_efficiency": 0.635036,
+              "market_efficiency": 0.605839,
+              "player_vs_market_delta": 0.029197
             },
             "primary_insight": {
               "insight_code": "NO_CLEAR_MARKET_EDGE"
@@ -37401,6 +37803,14 @@
               "pick_team_id": "WSH",
               "market_position": "underdog",
               "favorite_team_id": "NYG",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG138",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "favorite_team_id": "DET",
               "evaluation_status": "evaluated",
               "correct": true
             }
