@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG147",
-  "evaluation_cursor": "REG147",
+  "freeze_cursor": "REG148",
+  "evaluation_cursor": "REG148",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 10,
       "result": {
-        "classified_consensus_matches": 11,
+        "classified_consensus_matches": 12,
         "community_favorite_picks": 10,
-        "community_underdog_picks": 1,
-        "community_favorite_rate": 0.909091,
-        "community_underdog_rate": 0.090909,
+        "community_underdog_picks": 2,
+        "community_favorite_rate": 0.833333,
+        "community_underdog_rate": 0.166667,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
@@ -113,6 +113,14 @@
           "underdog_team_id": "LV",
           "consensus_team_id": "SEA",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG148",
+          "market_status": "available",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "SF",
+          "consensus_team_id": "SF",
+          "community_market_position": "underdog"
         }
       ]
     },
@@ -120,11 +128,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 146,
+        "classified_consensus_matches": 147,
         "community_favorite_picks": 117,
-        "community_underdog_picks": 29,
-        "community_favorite_rate": 0.80137,
-        "community_underdog_rate": 0.19863,
+        "community_underdog_picks": 30,
+        "community_favorite_rate": 0.795918,
+        "community_underdog_rate": 0.204082,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1308,17 +1316,25 @@
           "underdog_team_id": "LV",
           "consensus_team_id": "SEA",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG148",
+          "market_status": "available",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "SF",
+          "consensus_team_id": "SF",
+          "community_market_position": "underdog"
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 146,
+        "classified_consensus_matches": 147,
         "community_favorite_picks": 117,
-        "community_underdog_picks": 29,
-        "community_favorite_rate": 0.80137,
-        "community_underdog_rate": 0.19863,
+        "community_underdog_picks": 30,
+        "community_favorite_rate": 0.795918,
+        "community_underdog_rate": 0.204082,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -2502,6 +2518,14 @@
           "underdog_team_id": "LV",
           "consensus_team_id": "SEA",
           "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG148",
+          "market_status": "available",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "SF",
+          "consensus_team_id": "SF",
+          "community_market_position": "underdog"
         }
       ]
     }

@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG147",
-  "evaluation_cursor": "REG147",
+  "freeze_cursor": "REG148",
+  "evaluation_cursor": "REG148",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 10,
       "result": {
-        "evaluated_matches": 11,
+        "evaluated_matches": 12,
         "favorite_wins": 7,
-        "underdog_wins": 4,
+        "underdog_wins": 5,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.636364,
-        "upset_rate": 0.363636,
+        "market_efficiency": 0.583333,
+        "upset_rate": 0.416667,
         "consensus_comparison": {
-          "shared_evaluated_matches": 11,
+          "shared_evaluated_matches": 12,
           "market_correct": 7,
-          "consensus_correct": 8,
-          "market_efficiency": 0.636364,
-          "consensus_efficiency": 0.727273,
-          "consensus_vs_market_delta": 0.090909
+          "consensus_correct": 9,
+          "market_efficiency": 0.583333,
+          "consensus_efficiency": 0.75,
+          "consensus_vs_market_delta": 0.166667
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -120,6 +120,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "SEA",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG148",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SF",
+          "favorite_won": false
         }
       ]
     },
@@ -127,20 +135,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 146,
+        "evaluated_matches": 147,
         "favorite_wins": 89,
-        "underdog_wins": 56,
+        "underdog_wins": 57,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.609589,
-        "upset_rate": 0.383562,
+        "market_efficiency": 0.605442,
+        "upset_rate": 0.387755,
         "consensus_comparison": {
-          "shared_evaluated_matches": 146,
+          "shared_evaluated_matches": 147,
           "market_correct": 89,
-          "consensus_correct": 97,
-          "market_efficiency": 0.609589,
-          "consensus_efficiency": 0.664384,
-          "consensus_vs_market_delta": 0.054795
+          "consensus_correct": 98,
+          "market_efficiency": 0.605442,
+          "consensus_efficiency": 0.666667,
+          "consensus_vs_market_delta": 0.061225
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -1314,26 +1322,34 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "SEA",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG148",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SF",
+          "favorite_won": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 146,
+        "evaluated_matches": 147,
         "favorite_wins": 89,
-        "underdog_wins": 56,
+        "underdog_wins": 57,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.609589,
-        "upset_rate": 0.383562,
+        "market_efficiency": 0.605442,
+        "upset_rate": 0.387755,
         "consensus_comparison": {
-          "shared_evaluated_matches": 146,
+          "shared_evaluated_matches": 147,
           "market_correct": 89,
-          "consensus_correct": 97,
-          "market_efficiency": 0.609589,
-          "consensus_efficiency": 0.664384,
-          "consensus_vs_market_delta": 0.054795
+          "consensus_correct": 98,
+          "market_efficiency": 0.605442,
+          "consensus_efficiency": 0.666667,
+          "consensus_vs_market_delta": 0.061225
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -2507,6 +2523,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "SEA",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG148",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "SF",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "SF",
+          "favorite_won": false
         }
       ]
     }
