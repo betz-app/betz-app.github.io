@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG149",
-  "evaluation_cursor": "REG149",
+  "freeze_cursor": "REG150",
+  "evaluation_cursor": "REG150",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 10,
       "result": {
-        "evaluated_matches": 13,
+        "evaluated_matches": 14,
         "correct_matches": 10,
-        "incorrect_matches": 3,
+        "incorrect_matches": 4,
         "pending_matches": 0,
-        "consensus_efficiency": 0.769231
+        "consensus_efficiency": 0.714286
       },
       "matches": [
         {
@@ -97,6 +97,12 @@
           "consensus_team_id": "CIN",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG150",
+          "consensus_team_id": "BAL",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
@@ -104,11 +110,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 149,
+        "evaluated_matches": 150,
         "correct_matches": 100,
-        "incorrect_matches": 49,
+        "incorrect_matches": 50,
         "pending_matches": 0,
-        "consensus_efficiency": 0.671141
+        "consensus_efficiency": 0.666667
       },
       "matches": [
         {
@@ -1004,17 +1010,23 @@
           "consensus_team_id": "CIN",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG150",
+          "consensus_team_id": "BAL",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 149,
+        "evaluated_matches": 150,
         "correct_matches": 100,
-        "incorrect_matches": 49,
+        "incorrect_matches": 50,
         "pending_matches": 0,
-        "consensus_efficiency": 0.671141
+        "consensus_efficiency": 0.666667
       },
       "matches": [
         {
@@ -1910,6 +1922,12 @@
           "consensus_team_id": "CIN",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG150",
+          "consensus_team_id": "BAL",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     }

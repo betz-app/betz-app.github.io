@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG149",
-  "evaluation_cursor": "REG149",
+  "freeze_cursor": "REG150",
+  "evaluation_cursor": "REG150",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 10,
       "result": {
-        "evaluated_matches": 13,
+        "evaluated_matches": 14,
         "favorite_wins": 8,
-        "underdog_wins": 5,
+        "underdog_wins": 6,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.615385,
-        "upset_rate": 0.384615,
+        "market_efficiency": 0.571429,
+        "upset_rate": 0.428571,
         "consensus_comparison": {
-          "shared_evaluated_matches": 13,
+          "shared_evaluated_matches": 14,
           "market_correct": 8,
           "consensus_correct": 10,
-          "market_efficiency": 0.615385,
-          "consensus_efficiency": 0.769231,
-          "consensus_vs_market_delta": 0.153846
+          "market_efficiency": 0.571429,
+          "consensus_efficiency": 0.714286,
+          "consensus_vs_market_delta": 0.142857
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -136,6 +136,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CIN",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG150",
+          "favorite_team_id": "BAL",
+          "underdog_team_id": "LAC",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "LAC",
+          "favorite_won": false
         }
       ]
     },
@@ -143,20 +151,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 148,
+        "evaluated_matches": 149,
         "favorite_wins": 90,
-        "underdog_wins": 57,
+        "underdog_wins": 58,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.608108,
-        "upset_rate": 0.385135,
+        "market_efficiency": 0.604027,
+        "upset_rate": 0.389262,
         "consensus_comparison": {
-          "shared_evaluated_matches": 148,
+          "shared_evaluated_matches": 149,
           "market_correct": 90,
           "consensus_correct": 99,
-          "market_efficiency": 0.608108,
-          "consensus_efficiency": 0.668919,
-          "consensus_vs_market_delta": 0.060811
+          "market_efficiency": 0.604027,
+          "consensus_efficiency": 0.66443,
+          "consensus_vs_market_delta": 0.060403
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -1346,26 +1354,34 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CIN",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG150",
+          "favorite_team_id": "BAL",
+          "underdog_team_id": "LAC",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "LAC",
+          "favorite_won": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 148,
+        "evaluated_matches": 149,
         "favorite_wins": 90,
-        "underdog_wins": 57,
+        "underdog_wins": 58,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.608108,
-        "upset_rate": 0.385135,
+        "market_efficiency": 0.604027,
+        "upset_rate": 0.389262,
         "consensus_comparison": {
-          "shared_evaluated_matches": 148,
+          "shared_evaluated_matches": 149,
           "market_correct": 90,
           "consensus_correct": 99,
-          "market_efficiency": 0.608108,
-          "consensus_efficiency": 0.668919,
-          "consensus_vs_market_delta": 0.060811
+          "market_efficiency": 0.604027,
+          "consensus_efficiency": 0.66443,
+          "consensus_vs_market_delta": 0.060403
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -2555,6 +2571,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CIN",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG150",
+          "favorite_team_id": "BAL",
+          "underdog_team_id": "LAC",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "LAC",
+          "favorite_won": false
         }
       ]
     }
