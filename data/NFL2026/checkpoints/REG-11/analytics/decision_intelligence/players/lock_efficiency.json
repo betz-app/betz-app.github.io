@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG151",
-  "evaluation_cursor": "REG151",
+  "freeze_cursor": "REG161",
+  "evaluation_cursor": "REG161",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "lock_efficiency",
@@ -16,14 +16,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 9,
-            "correct_locks": 7,
+            "evaluated_locks": 10,
+            "correct_locks": 8,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 2,
-            "lock_accuracy": 0.777778,
-            "global_efficiency": 0.58642,
-            "lock_vs_global_efficiency_delta": 0.191358,
+            "missing_locks": 1,
+            "lock_accuracy": 0.8,
+            "global_efficiency": 0.597633,
+            "lock_vs_global_efficiency_delta": 0.202367,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -80,6 +80,12 @@
             {
               "match_id": "REG139",
               "lock_team_id": "KC",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG153",
+              "lock_team_id": "CAR",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -88,14 +94,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 9,
-            "correct_locks": 7,
+            "evaluated_locks": 10,
+            "correct_locks": 8,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 2,
-            "lock_accuracy": 0.777778,
-            "global_efficiency": 0.58642,
-            "lock_vs_global_efficiency_delta": 0.191358,
+            "missing_locks": 1,
+            "lock_accuracy": 0.8,
+            "global_efficiency": 0.597633,
+            "lock_vs_global_efficiency_delta": 0.202367,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -152,6 +158,12 @@
             {
               "match_id": "REG139",
               "lock_team_id": "KC",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG153",
+              "lock_team_id": "CAR",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -167,14 +179,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.67284,
-            "lock_vs_global_efficiency_delta": 0.12716,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.686391,
+            "lock_vs_global_efficiency_delta": 0.131791,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -237,6 +249,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -245,14 +263,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.67284,
-            "lock_vs_global_efficiency_delta": 0.12716,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.686391,
+            "lock_vs_global_efficiency_delta": 0.131791,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -315,6 +333,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -336,8 +360,8 @@
             "pending_locks": 0,
             "missing_locks": 0,
             "lock_accuracy": 0.727273,
-            "global_efficiency": 0.654321,
-            "lock_vs_global_efficiency_delta": 0.072952,
+            "global_efficiency": 0.662722,
+            "lock_vs_global_efficiency_delta": 0.064551,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -420,8 +444,8 @@
             "pending_locks": 0,
             "missing_locks": 0,
             "lock_accuracy": 0.727273,
-            "global_efficiency": 0.654321,
-            "lock_vs_global_efficiency_delta": 0.072952,
+            "global_efficiency": 0.662722,
+            "lock_vs_global_efficiency_delta": 0.064551,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -511,8 +535,8 @@
             "pending_locks": 0,
             "missing_locks": 6,
             "lock_accuracy": 1,
-            "global_efficiency": 0.537037,
-            "lock_vs_global_efficiency_delta": 0.462963,
+            "global_efficiency": 0.547619,
+            "lock_vs_global_efficiency_delta": 0.452381,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -559,8 +583,8 @@
             "pending_locks": 0,
             "missing_locks": 6,
             "lock_accuracy": 1,
-            "global_efficiency": 0.537037,
-            "lock_vs_global_efficiency_delta": 0.462963,
+            "global_efficiency": 0.547619,
+            "lock_vs_global_efficiency_delta": 0.452381,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -608,14 +632,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 8,
-            "correct_locks": 3,
+            "evaluated_locks": 9,
+            "correct_locks": 4,
             "incorrect_locks": 5,
             "pending_locks": 0,
-            "missing_locks": 3,
-            "lock_accuracy": 0.375,
-            "global_efficiency": 0.561728,
-            "lock_vs_global_efficiency_delta": -0.186728,
+            "missing_locks": 2,
+            "lock_accuracy": 0.444444,
+            "global_efficiency": 0.579882,
+            "lock_vs_global_efficiency_delta": -0.135438,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -665,6 +689,12 @@
             },
             {
               "match_id": "REG143",
+              "lock_team_id": "CAR",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG153",
               "lock_team_id": "CAR",
               "evaluation_status": "evaluated",
               "correct": true
@@ -674,14 +704,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 8,
-            "correct_locks": 3,
+            "evaluated_locks": 9,
+            "correct_locks": 4,
             "incorrect_locks": 5,
             "pending_locks": 0,
-            "missing_locks": 3,
-            "lock_accuracy": 0.375,
-            "global_efficiency": 0.561728,
-            "lock_vs_global_efficiency_delta": -0.186728,
+            "missing_locks": 2,
+            "lock_accuracy": 0.444444,
+            "global_efficiency": 0.579882,
+            "lock_vs_global_efficiency_delta": -0.135438,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -731,6 +761,12 @@
             },
             {
               "match_id": "REG143",
+              "lock_team_id": "CAR",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG153",
               "lock_team_id": "CAR",
               "evaluation_status": "evaluated",
               "correct": true
@@ -747,16 +783,16 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 7,
-            "correct_locks": 3,
+            "evaluated_locks": 8,
+            "correct_locks": 4,
             "incorrect_locks": 4,
             "pending_locks": 0,
-            "missing_locks": 4,
-            "lock_accuracy": 0.428571,
-            "global_efficiency": 0.518519,
-            "lock_vs_global_efficiency_delta": -0.089948,
+            "missing_locks": 3,
+            "lock_accuracy": 0.5,
+            "global_efficiency": 0.538462,
+            "lock_vs_global_efficiency_delta": -0.038462,
             "primary_insight": {
-              "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
+              "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
           },
           "matches": [
@@ -799,6 +835,12 @@
             {
               "match_id": "REG148",
               "lock_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -807,16 +849,16 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 7,
-            "correct_locks": 3,
+            "evaluated_locks": 8,
+            "correct_locks": 4,
             "incorrect_locks": 4,
             "pending_locks": 0,
-            "missing_locks": 4,
-            "lock_accuracy": 0.428571,
-            "global_efficiency": 0.518519,
-            "lock_vs_global_efficiency_delta": -0.089948,
+            "missing_locks": 3,
+            "lock_accuracy": 0.5,
+            "global_efficiency": 0.538462,
+            "lock_vs_global_efficiency_delta": -0.038462,
             "primary_insight": {
-              "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
+              "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
           },
           "matches": [
@@ -859,6 +901,12 @@
             {
               "match_id": "REG148",
               "lock_team_id": "SF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -874,14 +922,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.62963,
-            "lock_vs_global_efficiency_delta": 0.17037,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.650888,
+            "lock_vs_global_efficiency_delta": 0.167294,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -944,6 +992,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG157",
+              "lock_team_id": "KC",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -952,14 +1006,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.62963,
-            "lock_vs_global_efficiency_delta": 0.17037,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.650888,
+            "lock_vs_global_efficiency_delta": 0.167294,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1022,6 +1076,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG157",
+              "lock_team_id": "KC",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1037,14 +1097,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 8,
-            "correct_locks": 3,
+            "evaluated_locks": 9,
+            "correct_locks": 4,
             "incorrect_locks": 5,
             "pending_locks": 0,
-            "missing_locks": 3,
-            "lock_accuracy": 0.375,
-            "global_efficiency": 0.598765,
-            "lock_vs_global_efficiency_delta": -0.223765,
+            "missing_locks": 2,
+            "lock_accuracy": 0.444444,
+            "global_efficiency": 0.615385,
+            "lock_vs_global_efficiency_delta": -0.170941,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -1097,20 +1157,26 @@
               "lock_team_id": "BAL",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG157",
+              "lock_team_id": "KC",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 8,
-            "correct_locks": 3,
+            "evaluated_locks": 9,
+            "correct_locks": 4,
             "incorrect_locks": 5,
             "pending_locks": 0,
-            "missing_locks": 3,
-            "lock_accuracy": 0.375,
-            "global_efficiency": 0.598765,
-            "lock_vs_global_efficiency_delta": -0.223765,
+            "missing_locks": 2,
+            "lock_accuracy": 0.444444,
+            "global_efficiency": 0.615385,
+            "lock_vs_global_efficiency_delta": -0.170941,
             "primary_insight": {
               "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
             }
@@ -1163,6 +1229,12 @@
               "lock_team_id": "BAL",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG157",
+              "lock_team_id": "KC",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         }
@@ -1176,14 +1248,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 5,
-            "correct_locks": 4,
+            "evaluated_locks": 6,
+            "correct_locks": 5,
             "incorrect_locks": 1,
             "pending_locks": 0,
-            "missing_locks": 6,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.611111,
-            "lock_vs_global_efficiency_delta": 0.188889,
+            "missing_locks": 5,
+            "lock_accuracy": 0.833333,
+            "global_efficiency": 0.627219,
+            "lock_vs_global_efficiency_delta": 0.206114,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1216,6 +1288,12 @@
             {
               "match_id": "REG139",
               "lock_team_id": "KC",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1224,14 +1302,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 5,
-            "correct_locks": 4,
+            "evaluated_locks": 6,
+            "correct_locks": 5,
             "incorrect_locks": 1,
             "pending_locks": 0,
-            "missing_locks": 6,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.611111,
-            "lock_vs_global_efficiency_delta": 0.188889,
+            "missing_locks": 5,
+            "lock_accuracy": 0.833333,
+            "global_efficiency": 0.627219,
+            "lock_vs_global_efficiency_delta": 0.206114,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1264,6 +1342,12 @@
             {
               "match_id": "REG139",
               "lock_team_id": "KC",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1279,14 +1363,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.685185,
-            "lock_vs_global_efficiency_delta": 0.114815,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.698225,
+            "lock_vs_global_efficiency_delta": 0.119957,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1349,6 +1433,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1357,14 +1447,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.685185,
-            "lock_vs_global_efficiency_delta": 0.114815,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.698225,
+            "lock_vs_global_efficiency_delta": 0.119957,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1427,6 +1517,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1442,14 +1538,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.641975,
-            "lock_vs_global_efficiency_delta": 0.158025,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.656805,
+            "lock_vs_global_efficiency_delta": 0.161377,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1514,20 +1610,26 @@
               "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.641975,
-            "lock_vs_global_efficiency_delta": 0.158025,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.656805,
+            "lock_vs_global_efficiency_delta": 0.161377,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1589,6 +1691,12 @@
             },
             {
               "match_id": "REG144",
+              "lock_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
               "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
@@ -1605,14 +1713,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 9,
-            "correct_locks": 8,
+            "evaluated_locks": 10,
+            "correct_locks": 9,
             "incorrect_locks": 1,
             "pending_locks": 0,
-            "missing_locks": 2,
-            "lock_accuracy": 0.888889,
-            "global_efficiency": 0.623457,
-            "lock_vs_global_efficiency_delta": 0.265432,
+            "missing_locks": 1,
+            "lock_accuracy": 0.9,
+            "global_efficiency": 0.639053,
+            "lock_vs_global_efficiency_delta": 0.260947,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1669,6 +1777,12 @@
             {
               "match_id": "REG149",
               "lock_team_id": "CIN",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1677,14 +1791,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 9,
-            "correct_locks": 8,
+            "evaluated_locks": 10,
+            "correct_locks": 9,
             "incorrect_locks": 1,
             "pending_locks": 0,
-            "missing_locks": 2,
-            "lock_accuracy": 0.888889,
-            "global_efficiency": 0.623457,
-            "lock_vs_global_efficiency_delta": 0.265432,
+            "missing_locks": 1,
+            "lock_accuracy": 0.9,
+            "global_efficiency": 0.639053,
+            "lock_vs_global_efficiency_delta": 0.260947,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -1741,6 +1855,12 @@
             {
               "match_id": "REG149",
               "lock_team_id": "CIN",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1756,16 +1876,16 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 6,
+            "evaluated_locks": 11,
+            "correct_locks": 7,
             "incorrect_locks": 4,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.6,
-            "global_efficiency": 0.654321,
-            "lock_vs_global_efficiency_delta": -0.054321,
+            "missing_locks": 0,
+            "lock_accuracy": 0.636364,
+            "global_efficiency": 0.668639,
+            "lock_vs_global_efficiency_delta": -0.032275,
             "primary_insight": {
-              "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
+              "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
           },
           "matches": [
@@ -1826,6 +1946,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1834,16 +1960,16 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 6,
+            "evaluated_locks": 11,
+            "correct_locks": 7,
             "incorrect_locks": 4,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.6,
-            "global_efficiency": 0.654321,
-            "lock_vs_global_efficiency_delta": -0.054321,
+            "missing_locks": 0,
+            "lock_accuracy": 0.636364,
+            "global_efficiency": 0.668639,
+            "lock_vs_global_efficiency_delta": -0.032275,
             "primary_insight": {
-              "insight_code": "LOCKS_UNDERPERFORM_GLOBAL"
+              "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
           },
           "matches": [
@@ -1904,6 +2030,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1919,14 +2051,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 6,
+            "evaluated_locks": 11,
+            "correct_locks": 7,
             "incorrect_locks": 4,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.6,
-            "global_efficiency": 0.635802,
-            "lock_vs_global_efficiency_delta": -0.035802,
+            "missing_locks": 0,
+            "lock_accuracy": 0.636364,
+            "global_efficiency": 0.650888,
+            "lock_vs_global_efficiency_delta": -0.014524,
             "primary_insight": {
               "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
@@ -1989,6 +2121,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -1997,14 +2135,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 6,
+            "evaluated_locks": 11,
+            "correct_locks": 7,
             "incorrect_locks": 4,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.6,
-            "global_efficiency": 0.635802,
-            "lock_vs_global_efficiency_delta": -0.035802,
+            "missing_locks": 0,
+            "lock_accuracy": 0.636364,
+            "global_efficiency": 0.650888,
+            "lock_vs_global_efficiency_delta": -0.014524,
             "primary_insight": {
               "insight_code": "NO_CLEAR_LOCK_EDGE"
             }
@@ -2067,6 +2205,12 @@
             {
               "match_id": "REG145",
               "lock_team_id": "JAX",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -2082,14 +2226,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 9,
-            "correct_locks": 7,
+            "evaluated_locks": 10,
+            "correct_locks": 8,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 2,
-            "lock_accuracy": 0.777778,
-            "global_efficiency": 0.679012,
-            "lock_vs_global_efficiency_delta": 0.098766,
+            "missing_locks": 1,
+            "lock_accuracy": 0.8,
+            "global_efficiency": 0.692308,
+            "lock_vs_global_efficiency_delta": 0.107692,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -2148,20 +2292,26 @@
               "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG152",
+              "lock_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 9,
-            "correct_locks": 7,
+            "evaluated_locks": 10,
+            "correct_locks": 8,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 2,
-            "lock_accuracy": 0.777778,
-            "global_efficiency": 0.679012,
-            "lock_vs_global_efficiency_delta": 0.098766,
+            "missing_locks": 1,
+            "lock_accuracy": 0.8,
+            "global_efficiency": 0.692308,
+            "lock_vs_global_efficiency_delta": 0.107692,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -2217,6 +2367,12 @@
             },
             {
               "match_id": "REG144",
+              "lock_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG152",
               "lock_team_id": "BUF",
               "evaluation_status": "evaluated",
               "correct": true
@@ -2239,8 +2395,8 @@
             "pending_locks": 0,
             "missing_locks": 5,
             "lock_accuracy": 0.833333,
-            "global_efficiency": 0.58642,
-            "lock_vs_global_efficiency_delta": 0.246913,
+            "global_efficiency": 0.60119,
+            "lock_vs_global_efficiency_delta": 0.232143,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -2293,8 +2449,8 @@
             "pending_locks": 0,
             "missing_locks": 5,
             "lock_accuracy": 0.833333,
-            "global_efficiency": 0.58642,
-            "lock_vs_global_efficiency_delta": 0.246913,
+            "global_efficiency": 0.60119,
+            "lock_vs_global_efficiency_delta": 0.232143,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -2348,14 +2504,14 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.660494,
-            "lock_vs_global_efficiency_delta": 0.139506,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.680473,
+            "lock_vs_global_efficiency_delta": 0.137709,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -2418,6 +2574,12 @@
             {
               "match_id": "REG144",
               "lock_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG157",
+              "lock_team_id": "KC",
               "evaluation_status": "evaluated",
               "correct": true
             }
@@ -2426,14 +2588,14 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "evaluated_locks": 10,
-            "correct_locks": 8,
+            "evaluated_locks": 11,
+            "correct_locks": 9,
             "incorrect_locks": 2,
             "pending_locks": 0,
-            "missing_locks": 1,
-            "lock_accuracy": 0.8,
-            "global_efficiency": 0.660494,
-            "lock_vs_global_efficiency_delta": 0.139506,
+            "missing_locks": 0,
+            "lock_accuracy": 0.818182,
+            "global_efficiency": 0.680473,
+            "lock_vs_global_efficiency_delta": 0.137709,
             "primary_insight": {
               "insight_code": "LOCKS_OUTPERFORM_GLOBAL"
             }
@@ -2496,6 +2658,12 @@
             {
               "match_id": "REG144",
               "lock_team_id": "BUF",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG157",
+              "lock_team_id": "KC",
               "evaluation_status": "evaluated",
               "correct": true
             }

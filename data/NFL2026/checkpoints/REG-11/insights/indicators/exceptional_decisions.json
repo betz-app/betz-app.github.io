@@ -3,22 +3,40 @@
   "contract_version": "1.0",
   "competition_id": "NFL2026",
   "freeze_cursor": "REG161",
-  "evaluation_cursor": "REG151",
+  "evaluation_cursor": "REG161",
   "indicator_id": "exceptional_decisions",
   "players": [
     {
       "user_id": "ADOLFO_LOZANO",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-11",
         "supermajority_attempts": {
-          "evaluated": 0,
+          "evaluated": 1,
           "correct": 0,
-          "incorrect": 0,
-          "accuracy_rate": null
+          "incorrect": 1,
+          "accuracy_rate": 0
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "INCORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG157",
+              "sort_order": 157,
+              "selected_team_id": "TB",
+              "winner_team_id": "DET",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "DET",
+              "majority_count": 16,
+              "minority_count": 1,
+              "majority_rate": 0.941176,
+              "player_correct": false
+            }
+          }
+        ]
       }
     },
     {
@@ -55,15 +73,33 @@
       "user_id": "DAVIDMAGANA",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-11",
         "supermajority_attempts": {
-          "evaluated": 0,
+          "evaluated": 1,
           "correct": 0,
-          "incorrect": 0,
-          "accuracy_rate": null
+          "incorrect": 1,
+          "accuracy_rate": 0
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "INCORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG158",
+              "sort_order": 158,
+              "selected_team_id": "TEN",
+              "winner_team_id": "DAL",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "DAL",
+              "majority_count": 16,
+              "minority_count": 1,
+              "majority_rate": 0.941176,
+              "player_correct": false
+            }
+          }
+        ]
       }
     },
     {
@@ -100,15 +136,33 @@
       "user_id": "GABOBC",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-11",
         "supermajority_attempts": {
-          "evaluated": 0,
-          "correct": 0,
+          "evaluated": 1,
+          "correct": 1,
           "incorrect": 0,
-          "accuracy_rate": null
+          "accuracy_rate": 1
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "CORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG161",
+              "sort_order": 161,
+              "selected_team_id": "PHI",
+              "winner_team_id": "PHI",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "PIT",
+              "majority_count": 15,
+              "minority_count": 2,
+              "majority_rate": 0.882353,
+              "player_correct": true
+            }
+          }
+        ]
       }
     },
     {
@@ -250,15 +304,33 @@
       "user_id": "YEU",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-11",
         "supermajority_attempts": {
-          "evaluated": 0,
-          "correct": 0,
+          "evaluated": 1,
+          "correct": 1,
           "incorrect": 0,
-          "accuracy_rate": null
+          "accuracy_rate": 1
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "CORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG161",
+              "sort_order": 161,
+              "selected_team_id": "PHI",
+              "winner_team_id": "PHI",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "PIT",
+              "majority_count": 15,
+              "minority_count": 2,
+              "majority_rate": 0.882353,
+              "player_correct": true
+            }
+          }
+        ]
       }
     }
   ]

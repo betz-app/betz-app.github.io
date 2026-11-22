@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG151",
-  "evaluation_cursor": "REG151",
+  "freeze_cursor": "REG161",
+  "evaluation_cursor": "REG161",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -17,21 +17,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 5,
+            "underdog_picks": 3,
+            "favorite_rate": 0.625,
+            "underdog_rate": 0.375,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "TB",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -40,11 +82,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 140,
-            "favorite_picks": 89,
-            "underdog_picks": 51,
-            "favorite_rate": 0.635714,
-            "underdog_rate": 0.364286,
+            "classified_market_picks": 147,
+            "favorite_picks": 93,
+            "underdog_picks": 54,
+            "favorite_rate": 0.632653,
+            "underdog_rate": 0.367347,
             "even_market_picks": 1,
             "missing_predictions": 10,
             "market_unavailable_matches": 0,
@@ -955,6 +997,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "TB",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -962,11 +1046,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 140,
-            "favorite_picks": 89,
-            "underdog_picks": 51,
-            "favorite_rate": 0.635714,
-            "underdog_rate": 0.364286,
+            "classified_market_picks": 147,
+            "favorite_picks": 93,
+            "underdog_picks": 54,
+            "favorite_rate": 0.632653,
+            "underdog_rate": 0.367347,
             "even_market_picks": 1,
             "missing_predictions": 10,
             "market_unavailable_matches": 0,
@@ -1877,6 +1961,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "TB",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -1892,21 +2018,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -1915,11 +2083,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 113,
-            "underdog_picks": 37,
-            "favorite_rate": 0.753333,
-            "underdog_rate": 0.246667,
+            "classified_market_picks": 157,
+            "favorite_picks": 118,
+            "underdog_picks": 39,
+            "favorite_rate": 0.751592,
+            "underdog_rate": 0.248408,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -2830,6 +2998,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -2837,11 +3047,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 113,
-            "underdog_picks": 37,
-            "favorite_rate": 0.753333,
-            "underdog_rate": 0.246667,
+            "classified_market_picks": 157,
+            "favorite_picks": 118,
+            "underdog_picks": 39,
+            "favorite_rate": 0.751592,
+            "underdog_rate": 0.248408,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -3752,6 +3962,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -3767,21 +4019,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -3790,11 +4084,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 118,
-            "underdog_picks": 32,
-            "favorite_rate": 0.786667,
-            "underdog_rate": 0.213333,
+            "classified_market_picks": 157,
+            "favorite_picks": 123,
+            "underdog_picks": 34,
+            "favorite_rate": 0.783439,
+            "underdog_rate": 0.216561,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -4705,6 +4999,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -4712,11 +5048,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 118,
-            "underdog_picks": 32,
-            "favorite_rate": 0.786667,
-            "underdog_rate": 0.213333,
+            "classified_market_picks": 157,
+            "favorite_picks": 123,
+            "underdog_picks": 34,
+            "favorite_rate": 0.783439,
+            "underdog_rate": 0.216561,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -5627,6 +5963,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -5642,21 +6020,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 5,
+            "underdog_picks": 3,
+            "favorite_rate": 0.625,
+            "underdog_rate": 0.375,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "TEN",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -5665,11 +6085,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 127,
-            "favorite_picks": 78,
-            "underdog_picks": 49,
-            "favorite_rate": 0.614173,
-            "underdog_rate": 0.385827,
+            "classified_market_picks": 134,
+            "favorite_picks": 82,
+            "underdog_picks": 52,
+            "favorite_rate": 0.61194,
+            "underdog_rate": 0.38806,
             "even_market_picks": 1,
             "missing_predictions": 23,
             "market_unavailable_matches": 0,
@@ -6580,6 +7000,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "TEN",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -6587,11 +7049,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 127,
-            "favorite_picks": 78,
-            "underdog_picks": 49,
-            "favorite_rate": 0.614173,
-            "underdog_rate": 0.385827,
+            "classified_market_picks": 134,
+            "favorite_picks": 82,
+            "underdog_picks": 52,
+            "favorite_rate": 0.61194,
+            "underdog_rate": 0.38806,
             "even_market_picks": 1,
             "missing_predictions": 23,
             "market_unavailable_matches": 0,
@@ -7502,6 +7964,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "TEN",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -7517,21 +8021,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -7540,11 +8086,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 98,
-            "underdog_picks": 52,
-            "favorite_rate": 0.653333,
-            "underdog_rate": 0.346667,
+            "classified_market_picks": 157,
+            "favorite_picks": 103,
+            "underdog_picks": 54,
+            "favorite_rate": 0.656051,
+            "underdog_rate": 0.343949,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -8455,6 +9001,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -8462,11 +9050,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 98,
-            "underdog_picks": 52,
-            "favorite_rate": 0.653333,
-            "underdog_rate": 0.346667,
+            "classified_market_picks": 157,
+            "favorite_picks": 103,
+            "underdog_picks": 54,
+            "favorite_rate": 0.656051,
+            "underdog_rate": 0.343949,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -9377,6 +9965,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -9392,21 +10022,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -9415,11 +10087,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 132,
-            "favorite_picks": 96,
-            "underdog_picks": 36,
-            "favorite_rate": 0.727273,
-            "underdog_rate": 0.272727,
+            "classified_market_picks": 139,
+            "favorite_picks": 101,
+            "underdog_picks": 38,
+            "favorite_rate": 0.726619,
+            "underdog_rate": 0.273381,
             "even_market_picks": 1,
             "missing_predictions": 18,
             "market_unavailable_matches": 0,
@@ -10330,6 +11002,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -10337,11 +11051,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 132,
-            "favorite_picks": 96,
-            "underdog_picks": 36,
-            "favorite_rate": 0.727273,
-            "underdog_rate": 0.272727,
+            "classified_market_picks": 139,
+            "favorite_picks": 101,
+            "underdog_picks": 38,
+            "favorite_rate": 0.726619,
+            "underdog_rate": 0.273381,
             "even_market_picks": 1,
             "missing_predictions": 18,
             "market_unavailable_matches": 0,
@@ -11252,6 +11966,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -11267,20 +12023,62 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 7,
+            "underdog_picks": 1,
+            "favorite_rate": 0.875,
+            "underdog_rate": 0.125,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PHI",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -11290,11 +12088,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 100,
-            "underdog_picks": 50,
-            "favorite_rate": 0.666667,
-            "underdog_rate": 0.333333,
+            "classified_market_picks": 157,
+            "favorite_picks": 106,
+            "underdog_picks": 51,
+            "favorite_rate": 0.675159,
+            "underdog_rate": 0.324841,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -12204,6 +13002,48 @@
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PHI",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -12212,11 +13052,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 100,
-            "underdog_picks": 50,
-            "favorite_rate": 0.666667,
-            "underdog_rate": 0.333333,
+            "classified_market_picks": 157,
+            "favorite_picks": 106,
+            "underdog_picks": 51,
+            "favorite_rate": 0.675159,
+            "underdog_rate": 0.324841,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -13126,6 +13966,48 @@
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PHI",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -13142,21 +14024,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -13165,11 +14089,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 135,
-            "favorite_picks": 110,
-            "underdog_picks": 25,
-            "favorite_rate": 0.814815,
-            "underdog_rate": 0.185185,
+            "classified_market_picks": 142,
+            "favorite_picks": 115,
+            "underdog_picks": 27,
+            "favorite_rate": 0.809859,
+            "underdog_rate": 0.190141,
             "even_market_picks": 1,
             "missing_predictions": 15,
             "market_unavailable_matches": 0,
@@ -14080,6 +15004,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -14087,11 +15053,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 135,
-            "favorite_picks": 110,
-            "underdog_picks": 25,
-            "favorite_rate": 0.814815,
-            "underdog_rate": 0.185185,
+            "classified_market_picks": 142,
+            "favorite_picks": 115,
+            "underdog_picks": 27,
+            "favorite_rate": 0.809859,
+            "underdog_rate": 0.190141,
             "even_market_picks": 1,
             "missing_predictions": 15,
             "market_unavailable_matches": 0,
@@ -15002,6 +15968,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -15017,21 +16025,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -15040,11 +16090,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 149,
-            "favorite_picks": 123,
-            "underdog_picks": 26,
-            "favorite_rate": 0.825503,
-            "underdog_rate": 0.174497,
+            "classified_market_picks": 156,
+            "favorite_picks": 128,
+            "underdog_picks": 28,
+            "favorite_rate": 0.820513,
+            "underdog_rate": 0.179487,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -15955,6 +17005,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -15962,11 +17054,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 149,
-            "favorite_picks": 123,
-            "underdog_picks": 26,
-            "favorite_rate": 0.825503,
-            "underdog_rate": 0.174497,
+            "classified_market_picks": 156,
+            "favorite_picks": 128,
+            "underdog_picks": 28,
+            "favorite_rate": 0.820513,
+            "underdog_rate": 0.179487,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -16877,6 +17969,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -16892,21 +18026,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -16915,11 +18091,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 108,
-            "underdog_picks": 42,
-            "favorite_rate": 0.72,
-            "underdog_rate": 0.28,
+            "classified_market_picks": 157,
+            "favorite_picks": 113,
+            "underdog_picks": 44,
+            "favorite_rate": 0.719745,
+            "underdog_rate": 0.280255,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -17830,6 +19006,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -17837,11 +19055,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 108,
-            "underdog_picks": 42,
-            "favorite_rate": 0.72,
-            "underdog_rate": 0.28,
+            "classified_market_picks": 157,
+            "favorite_picks": 113,
+            "underdog_picks": 44,
+            "favorite_rate": 0.719745,
+            "underdog_rate": 0.280255,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -18752,6 +19970,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -18767,21 +20027,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -18790,11 +20092,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 113,
-            "underdog_picks": 37,
-            "favorite_rate": 0.753333,
-            "underdog_rate": 0.246667,
+            "classified_market_picks": 157,
+            "favorite_picks": 118,
+            "underdog_picks": 39,
+            "favorite_rate": 0.751592,
+            "underdog_rate": 0.248408,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -19705,6 +21007,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -19712,11 +21056,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 113,
-            "underdog_picks": 37,
-            "favorite_rate": 0.753333,
-            "underdog_rate": 0.246667,
+            "classified_market_picks": 157,
+            "favorite_picks": 118,
+            "underdog_picks": 39,
+            "favorite_rate": 0.751592,
+            "underdog_rate": 0.248408,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -20627,6 +21971,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -20642,21 +22028,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -20665,11 +22093,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 112,
-            "underdog_picks": 38,
-            "favorite_rate": 0.746667,
-            "underdog_rate": 0.253333,
+            "classified_market_picks": 157,
+            "favorite_picks": 117,
+            "underdog_picks": 40,
+            "favorite_rate": 0.745223,
+            "underdog_rate": 0.254777,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -21580,6 +23008,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -21587,11 +23057,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 112,
-            "underdog_picks": 38,
-            "favorite_rate": 0.746667,
-            "underdog_rate": 0.253333,
+            "classified_market_picks": 157,
+            "favorite_picks": 117,
+            "underdog_picks": 40,
+            "favorite_rate": 0.745223,
+            "underdog_rate": 0.254777,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -22502,6 +23972,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -22517,21 +24029,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -22540,11 +24094,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 111,
-            "underdog_picks": 39,
-            "favorite_rate": 0.74,
-            "underdog_rate": 0.26,
+            "classified_market_picks": 157,
+            "favorite_picks": 116,
+            "underdog_picks": 41,
+            "favorite_rate": 0.738854,
+            "underdog_rate": 0.261146,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -23455,6 +25009,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -23462,11 +25058,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 111,
-            "underdog_picks": 39,
-            "favorite_rate": 0.74,
-            "underdog_rate": 0.26,
+            "classified_market_picks": 157,
+            "favorite_picks": 116,
+            "underdog_picks": 41,
+            "favorite_rate": 0.738854,
+            "underdog_rate": 0.261146,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -24377,6 +25973,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -24392,21 +26030,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -24415,11 +26095,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 149,
-            "favorite_picks": 121,
-            "underdog_picks": 28,
-            "favorite_rate": 0.812081,
-            "underdog_rate": 0.187919,
+            "classified_market_picks": 156,
+            "favorite_picks": 126,
+            "underdog_picks": 30,
+            "favorite_rate": 0.807692,
+            "underdog_rate": 0.192308,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -25330,6 +27010,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -25337,11 +27059,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 149,
-            "favorite_picks": 121,
-            "underdog_picks": 28,
-            "favorite_rate": 0.812081,
-            "underdog_rate": 0.187919,
+            "classified_market_picks": 156,
+            "favorite_picks": 126,
+            "underdog_picks": 30,
+            "favorite_rate": 0.807692,
+            "underdog_rate": 0.192308,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -26252,6 +27974,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -26267,21 +28031,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -26290,11 +28096,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 110,
-            "underdog_picks": 40,
-            "favorite_rate": 0.733333,
-            "underdog_rate": 0.266667,
+            "classified_market_picks": 157,
+            "favorite_picks": 115,
+            "underdog_picks": 42,
+            "favorite_rate": 0.732484,
+            "underdog_rate": 0.267516,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -27205,6 +29011,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -27212,11 +29060,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 110,
-            "underdog_picks": 40,
-            "favorite_rate": 0.733333,
-            "underdog_rate": 0.266667,
+            "classified_market_picks": 157,
+            "favorite_picks": 115,
+            "underdog_picks": 42,
+            "favorite_rate": 0.732484,
+            "underdog_rate": 0.267516,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -28127,6 +29975,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -28142,21 +30032,63 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 6,
+            "underdog_picks": 2,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -28165,11 +30097,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 149,
-            "favorite_picks": 107,
-            "underdog_picks": 42,
-            "favorite_rate": 0.718121,
-            "underdog_rate": 0.281879,
+            "classified_market_picks": 156,
+            "favorite_picks": 112,
+            "underdog_picks": 44,
+            "favorite_rate": 0.717949,
+            "underdog_rate": 0.282051,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -29080,6 +31012,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -29087,11 +31061,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 149,
-            "favorite_picks": 107,
-            "underdog_picks": 42,
-            "favorite_rate": 0.718121,
-            "underdog_rate": 0.281879,
+            "classified_market_picks": 156,
+            "favorite_picks": 112,
+            "underdog_picks": 44,
+            "favorite_rate": 0.717949,
+            "underdog_rate": 0.282051,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -30002,6 +31976,48 @@
               "match_id": "REG151",
               "pick_team_id": "HOU",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PIT",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -30017,20 +32033,62 @@
           "season_type": "Regular Season",
           "week": 11,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "classified_market_picks": 8,
+            "favorite_picks": 7,
+            "underdog_picks": 1,
+            "favorite_rate": 0.875,
+            "underdog_rate": 0.125,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
-            "tier": null
+            "tier": "favorite_leaning"
           },
           "matches": [
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PHI",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -30040,11 +32098,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 100,
-            "underdog_picks": 50,
-            "favorite_rate": 0.666667,
-            "underdog_rate": 0.333333,
+            "classified_market_picks": 157,
+            "favorite_picks": 106,
+            "underdog_picks": 51,
+            "favorite_rate": 0.675159,
+            "underdog_rate": 0.324841,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -30954,6 +33012,48 @@
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PHI",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -30962,11 +33062,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 150,
-            "favorite_picks": 100,
-            "underdog_picks": 50,
-            "favorite_rate": 0.666667,
-            "underdog_rate": 0.333333,
+            "classified_market_picks": 157,
+            "favorite_picks": 106,
+            "underdog_picks": 51,
+            "favorite_rate": 0.675159,
+            "underdog_rate": 0.324841,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -31876,6 +33976,48 @@
             {
               "match_id": "REG151",
               "pick_team_id": "HOU",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG152",
+              "pick_team_id": "BUF",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG153",
+              "pick_team_id": "CAR",
+              "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG154",
+              "pick_team_id": "CHI",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG155",
+              "pick_team_id": "DAL",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG156",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG157",
+              "pick_team_id": "KC",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG161",
+              "pick_team_id": "PHI",
               "market_position": "favorite",
               "market_status": "available"
             }
