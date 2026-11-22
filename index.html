@@ -1388,13 +1388,17 @@ async function boot(){
 
 async function loadCheckpoint(){
   const base = "checkpoints/"+state.cp;
-  const [teams, leaderboard, periodResults, context] = await Promise.all([
+  const latestCheckpoint=state.checkpoints&&state.checkpoints.current_period_id;
+  const [teams, leaderboard, periodResults, context, latestSchedule] = await Promise.all([
     state.teams || getJSON("catalog/teams.json").catch(()=>null),
     getJSON(base+"/leaderboard.json"),
     getJSON(base+"/period_results.json"),
-    getJSON(base+"/competition_context.json")
+    getJSON(base+"/competition_context.json"),
+    latestCheckpoint&&latestCheckpoint!==state.cp
+      ? getJSON("checkpoints/"+encodeURIComponent(latestCheckpoint)+"/competition_context.json").catch(()=>null)
+      : null
   ]);
-  Object.assign(state,{teams,leaderboard,periodResults,context});
+  Object.assign(state,{teams,leaderboard,periodResults,context,scheduleContext:latestSchedule||context});
   state.periodDetailCache = {};
   const scoredPeriods=(state.periodResults.periods||[]).slice();
   const rollingPeriod=state.checkpoints&&state.checkpoints.rolling_period;
@@ -1853,6 +1857,27 @@ function matchMaps(){
     context:new Map(((state.context&&state.context.matches)||[]).map(m=>[m.match_id,m]))
   };
 }
+function matchesInScheduleOrder(matches){
+  // Match historical contexts by participants and period: published IDs can differ
+  // between checkpoints. This projection changes display order only.
+  const identity=match=>match&&JSON.stringify([
+    match.season_type,match.week,match.home_team&&match.home_team.id,
+    match.away_team&&match.away_team.id
+  ]);
+  const selected=new Map(((state.context&&state.context.matches)||[]).map(match=>[match.match_id,match]));
+  const latest=new Map(((state.scheduleContext&&state.scheduleContext.matches)||[]).map(match=>[identity(match),match]));
+  const time=match=>{
+    const value=Date.parse(match&&match.kickoff);
+    return Number.isFinite(value)?value:Infinity;
+  };
+  const ordinal=match=>match&&Number.isFinite(match.sort_order)?match.sort_order:Infinity;
+  return (matches||[]).map((match,index)=>{
+    const context=selected.get(match.match_id);
+    const current=latest.get(identity(context));
+    return {match,index,kickoff:time(current||context),order:ordinal(context)};
+  }).sort((a,b)=>(a.kickoff-b.kickoff)||(a.order-b.order)||(a.index-b.index))
+    .map(entry=>entry.match);
+}
 function scheduledMatchesForCheckpoint(period){
   const regular=/^REG-(\d+)$/.exec(String(periodCheckpointId(period)||""));
   if(!regular) return [];
@@ -1919,7 +1944,7 @@ function renderPartidos(){
   const scheduledIds=new Set(scheduled.map(match=>match.match_id));
   const visibleMatches=scheduled.map(match=>publishedMatches.get(match.match_id)||match)
     .concat(((detail&&detail.matches)||[]).filter(match=>!scheduledIds.has(match.match_id)));
-  const cards=(visibleMatches||[]).map(md=>{
+  const cards=matchesInScheduleOrder(visibleMatches).map(md=>{
     const id=md.match_id,m=maps.context.get(id),ci=maps.intelligence.get(id),cp=maps.performance.get(id);
     if(!m) return "";
     const matchPublished=publishedMatches.has(id);
@@ -2068,7 +2093,7 @@ function renderProfilePicks(){
   }
   if(state.rival) return renderProfileCompare(host,period,detail);
   const maps=matchMaps();
-  const rows=(detail.matches||[]).map(match=>{
+  const rows=matchesInScheduleOrder(detail.matches).map(match=>{
     const context=maps.context.get(match.match_id);
     if(!context) return "";
     const pick=(match.picks||[]).find(x=>x.user_id===state.player);
@@ -2239,7 +2264,7 @@ function renderProfileCompare(host,period,detail){
   };
   const lockLine=(pick,name)=>pick&&pick.lock
     ? '<div class="pk-lock">📌 '+escapeHtml(name)+' fijó · <b>'+fmt(pick.predicted_away_score)+'–'+fmt(pick.predicted_home_score)+'</b></div>' : "";
-  const rows=(detail.matches||[]).map(match=>{
+  const rows=matchesInScheduleOrder(detail.matches).map(match=>{
     const context=maps.context.get(match.match_id);
     if(!context) return "";
     const pa=(match.picks||[]).find(x=>x.user_id===A), pb=(match.picks||[]).find(x=>x.user_id===B);
@@ -3060,7 +3085,7 @@ return {render,percent,points,esc,compare};
 });
 
 "use strict";
-const insightsAppVersion="db91c325d480";
+const insightsAppVersion="7d635103c905";
 //--------------------------------------------------------------
 // 3. Isolated Insights route: share the current profile and checkpoint
 //--------------------------------------------------------------
