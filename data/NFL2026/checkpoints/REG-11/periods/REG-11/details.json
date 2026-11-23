@@ -1,8 +1,8 @@
 {
   "contract_type": "betz_read_period_detail",
-  "contract_version": "1.1",
+  "contract_version": "1.2",
   "competition_id": "NFL2026",
-  "cursor": "2026-11-22T21:15:01.000Z",
+  "cursor": "REG161",
   "period": {
     "period_id": "REG-11",
     "season_type": "Regular Season",
@@ -275,7 +275,8 @@
             "correct": true
           }
         ],
-        "headline": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3"
+        "headline": "C.J. Stroud throws for 3 TDs as the Texans roll past the Colts 26-3",
+        "correction": null
       },
       {
         "match_id": "REG152",
@@ -544,7 +545,8 @@
             "correct": true
           }
         ],
-        "headline": "Mahomes throws 3 TD passes, Kelce catches 2 of them, as KC routs Cardinals 34-7 for 3rd straight win"
+        "headline": "Mahomes throws 3 TD passes, Kelce catches 2 of them, as KC routs Cardinals 34-7 for 3rd straight win",
+        "correction": null
       },
       {
         "match_id": "REG153",
@@ -813,14 +815,15 @@
             "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG154",
         "home_score": null,
         "away_score": null,
         "period_scores": [],
-        "overtime": null,
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -1061,7 +1064,8 @@
             "correct": null
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG155",
@@ -1330,7 +1334,8 @@
             "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG156",
@@ -1599,7 +1604,8 @@
             "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG157",
@@ -1868,7 +1874,8 @@
             "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG158",
@@ -2137,14 +2144,36 @@
             "correct": true
           }
         ],
-        "headline": "Dak Prescott accounts for 5 TDs as the Cowboys roll to a 51-30 victory over the Titans"
+        "headline": "Dak Prescott accounts for 5 TDs as the Cowboys roll to a 51-30 victory over the Titans",
+        "correction": null
       },
       {
         "match_id": "REG159",
-        "home_score": null,
-        "away_score": null,
-        "period_scores": [],
-        "overtime": null,
+        "home_score": 24,
+        "away_score": 27,
+        "period_scores": [
+          {
+            "period": 1,
+            "home_score": 3,
+            "away_score": 3
+          },
+          {
+            "period": 2,
+            "home_score": 7,
+            "away_score": 14
+          },
+          {
+            "period": 3,
+            "home_score": 0,
+            "away_score": 3
+          },
+          {
+            "period": 4,
+            "home_score": 14,
+            "away_score": 7
+          }
+        ],
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -2157,8 +2186,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "BTO_Z",
@@ -2171,8 +2200,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "CHIEFS_FAN",
@@ -2185,8 +2214,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "DAVIDMAGANA",
@@ -2199,8 +2228,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "DIEGOMAGANA",
@@ -2213,8 +2242,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "EZC",
@@ -2227,8 +2256,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GABOBC",
@@ -2241,8 +2270,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GOLDEN_EAGLE",
@@ -2255,8 +2284,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "GSG",
@@ -2269,8 +2298,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "HZE",
@@ -2283,8 +2312,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "JMTZCELIZ",
@@ -2297,8 +2326,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "LJMV",
@@ -2311,8 +2340,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "MARIOVILLARREAL",
@@ -2325,8 +2354,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "NSA",
@@ -2339,8 +2368,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "PACOT",
@@ -2353,8 +2382,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           },
           {
             "user_id": "PEPE_SANCHEZ",
@@ -2367,8 +2396,8 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 1,
+            "correct": true
           },
           {
             "user_id": "YEU",
@@ -2381,18 +2410,19 @@
             "lock": false,
             "predicted_home_score": null,
             "predicted_away_score": null,
-            "points_awarded": null,
-            "correct": null
+            "points_awarded": 0,
+            "correct": false
           }
         ],
-        "headline": null
+        "headline": "Jets score on first 5 drives and edge Chargers 27-24 to snap 5-game skid",
+        "correction": null
       },
       {
         "match_id": "REG160",
         "home_score": null,
         "away_score": null,
         "period_scores": [],
-        "overtime": null,
+        "overtime": false,
         "picks": [
           {
             "user_id": "ADOLFO_LOZANO",
@@ -2633,7 +2663,8 @@
             "correct": null
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       },
       {
         "match_id": "REG161",
@@ -2902,7 +2933,8 @@
             "correct": true
           }
         ],
-        "headline": null
+        "headline": null,
+        "correction": null
       }
     ]
   }
