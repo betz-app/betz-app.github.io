@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG162",
-  "evaluation_cursor": "REG162",
+  "freeze_cursor": "REG163",
+  "evaluation_cursor": "REG163",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_performance",
@@ -13,11 +13,11 @@
       "season_type": "Regular Season",
       "week": 11,
       "result": {
-        "evaluated_matches": 12,
+        "evaluated_matches": 13,
         "correct_matches": 9,
-        "incorrect_matches": 3,
+        "incorrect_matches": 4,
         "pending_matches": 0,
-        "consensus_efficiency": 0.75
+        "consensus_efficiency": 0.692308
       },
       "matches": [
         {
@@ -91,6 +91,12 @@
           "consensus_team_id": "SF",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG163",
+          "consensus_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
@@ -98,11 +104,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 162,
+        "evaluated_matches": 163,
         "correct_matches": 109,
-        "incorrect_matches": 53,
+        "incorrect_matches": 54,
         "pending_matches": 0,
-        "consensus_efficiency": 0.67284
+        "consensus_efficiency": 0.668712
       },
       "matches": [
         {
@@ -1076,17 +1082,23 @@
           "consensus_team_id": "SF",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG163",
+          "consensus_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 162,
+        "evaluated_matches": 163,
         "correct_matches": 109,
-        "incorrect_matches": 53,
+        "incorrect_matches": 54,
         "pending_matches": 0,
-        "consensus_efficiency": 0.67284
+        "consensus_efficiency": 0.668712
       },
       "matches": [
         {
@@ -2060,6 +2072,12 @@
           "consensus_team_id": "SF",
           "evaluation_status": "evaluated",
           "correct": true
+        },
+        {
+          "match_id": "REG163",
+          "consensus_team_id": "CIN",
+          "evaluation_status": "evaluated",
+          "correct": false
         }
       ]
     }

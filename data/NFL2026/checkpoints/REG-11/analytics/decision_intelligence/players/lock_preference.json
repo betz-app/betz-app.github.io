@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG162",
-  "evaluation_cursor": "REG162",
+  "freeze_cursor": "REG163",
+  "evaluation_cursor": "REG163",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "lock_preference",
@@ -617,41 +617,41 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "valid_locks": 5,
-            "missing_locks": 6,
+            "valid_locks": 6,
+            "missing_locks": 5,
             "preference_status": "preference_available",
             "top_lock_team": {
               "rank": 1,
               "team_id": "CIN",
-              "lock_count": 3,
-              "lock_share": 0.6,
-              "periods_with_locks": 3,
-              "evaluated_locks": 3,
+              "lock_count": 4,
+              "lock_share": 0.666667,
+              "periods_with_locks": 4,
+              "evaluated_locks": 4,
               "correct_locks": 3,
-              "incorrect_locks": 0,
+              "incorrect_locks": 1,
               "pending_locks": 0,
-              "efficiency": 1,
-              "overall_lock_efficiency": 1,
-              "efficiency_delta": 0
+              "efficiency": 0.75,
+              "overall_lock_efficiency": 0.833333,
+              "efficiency_delta": -0.083333
             },
             "distribution": [
               {
                 "rank": 1,
                 "team_id": "CIN",
-                "lock_count": 3,
-                "lock_share": 0.6,
-                "periods_with_locks": 3,
-                "evaluated_locks": 3,
+                "lock_count": 4,
+                "lock_share": 0.666667,
+                "periods_with_locks": 4,
+                "evaluated_locks": 4,
                 "correct_locks": 3,
-                "incorrect_locks": 0,
+                "incorrect_locks": 1,
                 "pending_locks": 0,
-                "efficiency": 1
+                "efficiency": 0.75
               },
               {
                 "rank": 2,
                 "team_id": "KC",
                 "lock_count": 2,
-                "lock_share": 0.4,
+                "lock_share": 0.333333,
                 "periods_with_locks": 2,
                 "evaluated_locks": 2,
                 "correct_locks": 2,
@@ -661,7 +661,7 @@
               }
             ],
             "primary_insight": {
-              "insight_code": "TOP_LOCK_TEAM_IN_LINE_WITH_BASELINE"
+              "insight_code": "TOP_LOCK_TEAM_BELOW_BASELINE"
             }
           },
           "matches": [
@@ -699,6 +699,13 @@
               "lock_team_id": "CIN",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG163",
+              "period_id": "151_REG151",
+              "lock_team_id": "CIN",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
