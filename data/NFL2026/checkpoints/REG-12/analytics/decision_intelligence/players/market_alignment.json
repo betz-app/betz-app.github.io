@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG164",
-  "evaluation_cursor": "REG164",
+  "freeze_cursor": "REG165",
+  "evaluation_cursor": "REG165",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -23,13 +23,19 @@
             "favorite_rate": null,
             "underdog_rate": null,
             "even_market_picks": 0,
-            "missing_predictions": 1,
+            "missing_predictions": 2,
             "market_unavailable_matches": 0,
             "tier": null
           },
           "matches": [
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -46,7 +52,7 @@
             "favorite_rate": 0.631579,
             "underdog_rate": 0.368421,
             "even_market_picks": 1,
-            "missing_predictions": 11,
+            "missing_predictions": 12,
             "market_unavailable_matches": 0,
             "tier": "favorite_leaning"
           },
@@ -1031,6 +1037,12 @@
             },
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -1046,7 +1058,7 @@
             "favorite_rate": 0.631579,
             "underdog_rate": 0.368421,
             "even_market_picks": 1,
-            "missing_predictions": 11,
+            "missing_predictions": 12,
             "market_unavailable_matches": 0,
             "tier": "favorite_leaning"
           },
@@ -2031,6 +2043,12 @@
             },
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -2048,8 +2066,8 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
+            "classified_market_picks": 2,
+            "favorite_picks": 2,
             "underdog_picks": 0,
             "favorite_rate": 1,
             "underdog_rate": 0,
@@ -2064,6 +2082,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
             }
           ]
         },
@@ -2071,11 +2095,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 124,
+            "classified_market_picks": 164,
+            "favorite_picks": 125,
             "underdog_picks": 39,
-            "favorite_rate": 0.760736,
-            "underdog_rate": 0.239264,
+            "favorite_rate": 0.762195,
+            "underdog_rate": 0.237805,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -3063,6 +3087,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -3071,11 +3101,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 124,
+            "classified_market_picks": 164,
+            "favorite_picks": 125,
             "underdog_picks": 39,
-            "favorite_rate": 0.760736,
-            "underdog_rate": 0.239264,
+            "favorite_rate": 0.762195,
+            "underdog_rate": 0.237805,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -4063,6 +4093,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -4079,11 +4115,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -4095,6 +4131,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -4102,11 +4144,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 129,
-            "underdog_picks": 34,
-            "favorite_rate": 0.791411,
-            "underdog_rate": 0.208589,
+            "underdog_picks": 35,
+            "favorite_rate": 0.786585,
+            "underdog_rate": 0.213415,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -5095,6 +5137,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -5102,11 +5150,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 129,
-            "underdog_picks": 34,
-            "favorite_rate": 0.791411,
-            "underdog_rate": 0.208589,
+            "underdog_picks": 35,
+            "favorite_rate": 0.786585,
+            "underdog_rate": 0.213415,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -6095,6 +6143,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -6110,11 +6164,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 0,
+            "classified_market_picks": 1,
             "favorite_picks": 0,
-            "underdog_picks": 0,
-            "favorite_rate": null,
-            "underdog_rate": null,
+            "underdog_picks": 1,
+            "favorite_rate": 0,
+            "underdog_rate": 1,
             "even_market_picks": 0,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -6126,6 +6180,12 @@
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -6133,11 +6193,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 139,
+            "classified_market_picks": 140,
             "favorite_picks": 85,
-            "underdog_picks": 54,
-            "favorite_rate": 0.611511,
-            "underdog_rate": 0.388489,
+            "underdog_picks": 55,
+            "favorite_rate": 0.607143,
+            "underdog_rate": 0.392857,
             "even_market_picks": 1,
             "missing_predictions": 24,
             "market_unavailable_matches": 0,
@@ -7126,6 +7186,12 @@
               "match_id": "REG164",
               "pick_team_id": null,
               "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -7133,11 +7199,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 139,
+            "classified_market_picks": 140,
             "favorite_picks": 85,
-            "underdog_picks": 54,
-            "favorite_rate": 0.611511,
-            "underdog_rate": 0.388489,
+            "underdog_picks": 55,
+            "favorite_rate": 0.607143,
+            "underdog_rate": 0.392857,
             "even_market_picks": 1,
             "missing_predictions": 24,
             "market_unavailable_matches": 0,
@@ -8126,6 +8192,12 @@
               "match_id": "REG164",
               "pick_team_id": null,
               "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -8141,11 +8213,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 0,
-            "favorite_picks": 0,
+            "classified_market_picks": 1,
+            "favorite_picks": 1,
             "underdog_picks": 0,
-            "favorite_rate": null,
-            "underdog_rate": null,
+            "favorite_rate": 1,
+            "underdog_rate": 0,
             "even_market_picks": 0,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -8157,6 +8229,12 @@
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
             }
           ]
         },
@@ -8164,11 +8242,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 162,
-            "favorite_picks": 106,
+            "classified_market_picks": 163,
+            "favorite_picks": 107,
             "underdog_picks": 56,
-            "favorite_rate": 0.654321,
-            "underdog_rate": 0.345679,
+            "favorite_rate": 0.656442,
+            "underdog_rate": 0.343558,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -9157,6 +9235,12 @@
               "match_id": "REG164",
               "pick_team_id": null,
               "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
               "market_status": "available"
             }
           ]
@@ -9164,11 +9248,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 162,
-            "favorite_picks": 106,
+            "classified_market_picks": 163,
+            "favorite_picks": 107,
             "underdog_picks": 56,
-            "favorite_rate": 0.654321,
-            "underdog_rate": 0.345679,
+            "favorite_rate": 0.656442,
+            "underdog_rate": 0.343558,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -10157,6 +10241,12 @@
               "match_id": "REG164",
               "pick_team_id": null,
               "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
               "market_status": "available"
             }
           ]
@@ -10172,8 +10262,8 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
+            "classified_market_picks": 2,
+            "favorite_picks": 2,
             "underdog_picks": 0,
             "favorite_rate": 1,
             "underdog_rate": 0,
@@ -10188,6 +10278,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
             }
           ]
         },
@@ -10195,11 +10291,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 145,
-            "favorite_picks": 107,
+            "classified_market_picks": 146,
+            "favorite_picks": 108,
             "underdog_picks": 38,
-            "favorite_rate": 0.737931,
-            "underdog_rate": 0.262069,
+            "favorite_rate": 0.739726,
+            "underdog_rate": 0.260274,
             "even_market_picks": 1,
             "missing_predictions": 18,
             "market_unavailable_matches": 0,
@@ -11187,6 +11283,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -11195,11 +11297,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 145,
-            "favorite_picks": 107,
+            "classified_market_picks": 146,
+            "favorite_picks": 108,
             "underdog_picks": 38,
-            "favorite_rate": 0.737931,
-            "underdog_rate": 0.262069,
+            "favorite_rate": 0.739726,
+            "underdog_rate": 0.260274,
             "even_market_picks": 1,
             "missing_predictions": 18,
             "market_unavailable_matches": 0,
@@ -12187,6 +12289,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -12203,11 +12311,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 0,
+            "classified_market_picks": 2,
+            "favorite_picks": 1,
             "underdog_picks": 1,
-            "favorite_rate": 0,
-            "underdog_rate": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -12219,6 +12327,12 @@
               "pick_team_id": "GB",
               "market_position": "underdog",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
             }
           ]
         },
@@ -12226,11 +12340,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 111,
+            "classified_market_picks": 164,
+            "favorite_picks": 112,
             "underdog_picks": 52,
-            "favorite_rate": 0.680982,
-            "underdog_rate": 0.319018,
+            "favorite_rate": 0.682927,
+            "underdog_rate": 0.317073,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -13219,6 +13333,12 @@
               "match_id": "REG164",
               "pick_team_id": "GB",
               "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
               "market_status": "available"
             }
           ]
@@ -13226,11 +13346,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 111,
+            "classified_market_picks": 164,
+            "favorite_picks": 112,
             "underdog_picks": 52,
-            "favorite_rate": 0.680982,
-            "underdog_rate": 0.319018,
+            "favorite_rate": 0.682927,
+            "underdog_rate": 0.317073,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -14219,6 +14339,12 @@
               "match_id": "REG164",
               "pick_team_id": "GB",
               "market_position": "underdog",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
               "market_status": "available"
             }
           ]
@@ -14240,13 +14366,19 @@
             "favorite_rate": null,
             "underdog_rate": null,
             "even_market_picks": 0,
-            "missing_predictions": 1,
+            "missing_predictions": 2,
             "market_unavailable_matches": 0,
             "tier": null
           },
           "matches": [
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -14263,7 +14395,7 @@
             "favorite_rate": 0.816327,
             "underdog_rate": 0.183673,
             "even_market_picks": 1,
-            "missing_predictions": 16,
+            "missing_predictions": 17,
             "market_unavailable_matches": 0,
             "tier": "favorite_leaning"
           },
@@ -15248,6 +15380,12 @@
             },
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -15263,7 +15401,7 @@
             "favorite_rate": 0.816327,
             "underdog_rate": 0.183673,
             "even_market_picks": 1,
-            "missing_predictions": 16,
+            "missing_predictions": 17,
             "market_unavailable_matches": 0,
             "tier": "favorite_leaning"
           },
@@ -16248,6 +16386,12 @@
             },
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -16265,11 +16409,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -16281,6 +16425,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -16288,11 +16438,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 162,
+            "classified_market_picks": 163,
             "favorite_picks": 134,
-            "underdog_picks": 28,
-            "favorite_rate": 0.82716,
-            "underdog_rate": 0.17284,
+            "underdog_picks": 29,
+            "favorite_rate": 0.822086,
+            "underdog_rate": 0.177914,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -17281,6 +17431,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -17288,11 +17444,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 162,
+            "classified_market_picks": 163,
             "favorite_picks": 134,
-            "underdog_picks": 28,
-            "favorite_rate": 0.82716,
-            "underdog_rate": 0.17284,
+            "underdog_picks": 29,
+            "favorite_rate": 0.822086,
+            "underdog_rate": 0.177914,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -18281,6 +18437,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -18296,8 +18458,8 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
+            "classified_market_picks": 2,
+            "favorite_picks": 2,
             "underdog_picks": 0,
             "favorite_rate": 1,
             "underdog_rate": 0,
@@ -18312,6 +18474,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
             }
           ]
         },
@@ -18319,11 +18487,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 119,
+            "classified_market_picks": 164,
+            "favorite_picks": 120,
             "underdog_picks": 44,
-            "favorite_rate": 0.730061,
-            "underdog_rate": 0.269939,
+            "favorite_rate": 0.731707,
+            "underdog_rate": 0.268293,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -19311,6 +19479,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -19319,11 +19493,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 119,
+            "classified_market_picks": 164,
+            "favorite_picks": 120,
             "underdog_picks": 44,
-            "favorite_rate": 0.730061,
-            "underdog_rate": 0.269939,
+            "favorite_rate": 0.731707,
+            "underdog_rate": 0.268293,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -20311,6 +20485,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -20327,8 +20507,8 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
-            "favorite_picks": 1,
+            "classified_market_picks": 2,
+            "favorite_picks": 2,
             "underdog_picks": 0,
             "favorite_rate": 1,
             "underdog_rate": 0,
@@ -20343,6 +20523,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
+              "market_position": "favorite",
+              "market_status": "available"
             }
           ]
         },
@@ -20350,11 +20536,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 122,
+            "classified_market_picks": 164,
+            "favorite_picks": 123,
             "underdog_picks": 41,
-            "favorite_rate": 0.748466,
-            "underdog_rate": 0.251534,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -21342,6 +21528,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -21350,11 +21542,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
-            "favorite_picks": 122,
+            "classified_market_picks": 164,
+            "favorite_picks": 123,
             "underdog_picks": 41,
-            "favorite_rate": 0.748466,
-            "underdog_rate": 0.251534,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -22342,6 +22534,12 @@
             {
               "match_id": "REG164",
               "pick_team_id": "LAR",
+              "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "DET",
               "market_position": "favorite",
               "market_status": "available"
             }
@@ -22358,11 +22556,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -22374,6 +22572,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -22381,11 +22585,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 123,
-            "underdog_picks": 40,
-            "favorite_rate": 0.754601,
-            "underdog_rate": 0.245399,
+            "underdog_picks": 41,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -23374,6 +23578,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -23381,11 +23591,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 123,
-            "underdog_picks": 40,
-            "favorite_rate": 0.754601,
-            "underdog_rate": 0.245399,
+            "underdog_picks": 41,
+            "favorite_rate": 0.75,
+            "underdog_rate": 0.25,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -24374,6 +24584,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -24389,11 +24605,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -24405,6 +24621,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -24412,11 +24634,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 121,
-            "underdog_picks": 42,
-            "favorite_rate": 0.742331,
-            "underdog_rate": 0.257669,
+            "underdog_picks": 43,
+            "favorite_rate": 0.737805,
+            "underdog_rate": 0.262195,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -25405,6 +25627,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -25412,11 +25640,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 121,
-            "underdog_picks": 42,
-            "favorite_rate": 0.742331,
-            "underdog_rate": 0.257669,
+            "underdog_picks": 43,
+            "favorite_rate": 0.737805,
+            "underdog_rate": 0.262195,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -26405,6 +26633,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -26420,11 +26654,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -26436,6 +26670,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -26443,11 +26683,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 162,
+            "classified_market_picks": 163,
             "favorite_picks": 132,
-            "underdog_picks": 30,
-            "favorite_rate": 0.814815,
-            "underdog_rate": 0.185185,
+            "underdog_picks": 31,
+            "favorite_rate": 0.809816,
+            "underdog_rate": 0.190184,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -27436,6 +27676,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -27443,11 +27689,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 162,
+            "classified_market_picks": 163,
             "favorite_picks": 132,
-            "underdog_picks": 30,
-            "favorite_rate": 0.814815,
-            "underdog_rate": 0.185185,
+            "underdog_picks": 31,
+            "favorite_rate": 0.809816,
+            "underdog_rate": 0.190184,
             "even_market_picks": 1,
             "missing_predictions": 1,
             "market_unavailable_matches": 0,
@@ -28436,6 +28682,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -28451,11 +28703,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -28467,6 +28719,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -28474,11 +28732,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 121,
-            "underdog_picks": 42,
-            "favorite_rate": 0.742331,
-            "underdog_rate": 0.257669,
+            "underdog_picks": 43,
+            "favorite_rate": 0.737805,
+            "underdog_rate": 0.262195,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -29467,6 +29725,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -29474,11 +29738,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 121,
-            "underdog_picks": 42,
-            "favorite_rate": 0.742331,
-            "underdog_rate": 0.257669,
+            "underdog_picks": 43,
+            "favorite_rate": 0.737805,
+            "underdog_rate": 0.262195,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -30467,6 +30731,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -30488,13 +30758,19 @@
             "favorite_rate": null,
             "underdog_rate": null,
             "even_market_picks": 0,
-            "missing_predictions": 1,
+            "missing_predictions": 2,
             "market_unavailable_matches": 0,
             "tier": null
           },
           "matches": [
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -30511,7 +30787,7 @@
             "favorite_rate": 0.714286,
             "underdog_rate": 0.285714,
             "even_market_picks": 1,
-            "missing_predictions": 2,
+            "missing_predictions": 3,
             "market_unavailable_matches": 0,
             "tier": "favorite_leaning"
           },
@@ -31496,6 +31772,12 @@
             },
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -31511,7 +31793,7 @@
             "favorite_rate": 0.714286,
             "underdog_rate": 0.285714,
             "even_market_picks": 1,
-            "missing_predictions": 2,
+            "missing_predictions": 3,
             "market_unavailable_matches": 0,
             "tier": "favorite_leaning"
           },
@@ -32496,6 +32778,12 @@
             },
             {
               "match_id": "REG164",
+              "pick_team_id": null,
+              "market_position": null,
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
               "pick_team_id": null,
               "market_position": null,
               "market_status": "available"
@@ -32513,11 +32801,11 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_market_picks": 1,
+            "classified_market_picks": 2,
             "favorite_picks": 1,
-            "underdog_picks": 0,
-            "favorite_rate": 1,
-            "underdog_rate": 0,
+            "underdog_picks": 1,
+            "favorite_rate": 0.5,
+            "underdog_rate": 0.5,
             "even_market_picks": 0,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -32529,6 +32817,12 @@
               "pick_team_id": "LAR",
               "market_position": "favorite",
               "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
+              "market_status": "available"
             }
           ]
         },
@@ -32536,11 +32830,11 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 111,
-            "underdog_picks": 52,
-            "favorite_rate": 0.680982,
-            "underdog_rate": 0.319018,
+            "underdog_picks": 53,
+            "favorite_rate": 0.676829,
+            "underdog_rate": 0.323171,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -33529,6 +33823,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
@@ -33536,11 +33836,11 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_market_picks": 163,
+            "classified_market_picks": 164,
             "favorite_picks": 111,
-            "underdog_picks": 52,
-            "favorite_rate": 0.680982,
-            "underdog_rate": 0.319018,
+            "underdog_picks": 53,
+            "favorite_rate": 0.676829,
+            "underdog_rate": 0.323171,
             "even_market_picks": 1,
             "missing_predictions": 0,
             "market_unavailable_matches": 0,
@@ -34529,6 +34829,12 @@
               "match_id": "REG164",
               "pick_team_id": "LAR",
               "market_position": "favorite",
+              "market_status": "available"
+            },
+            {
+              "match_id": "REG165",
+              "pick_team_id": "CHI",
+              "market_position": "underdog",
               "market_status": "available"
             }
           ]
