@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG167",
-  "evaluation_cursor": "REG167",
+  "freeze_cursor": "REG168",
+  "evaluation_cursor": "REG168",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_alignment",
@@ -13,15 +13,17 @@
       "season_type": "Regular Season",
       "week": 12,
       "result": {
-        "classified_consensus_matches": 4,
-        "community_favorite_picks": 3,
+        "classified_consensus_matches": 5,
+        "community_favorite_picks": 4,
         "community_underdog_picks": 1,
-        "community_favorite_rate": 0.75,
-        "community_underdog_rate": 0.25,
+        "community_favorite_rate": 0.8,
+        "community_underdog_rate": 0.2,
         "split_consensus_matches": 0,
         "even_market_matches": 0,
         "market_unavailable_matches": 0,
-        "primary_insight": null
+        "primary_insight": {
+          "insight_code": "COMMUNITY_FOLLOWS_MARKET"
+        }
       },
       "matches": [
         {
@@ -54,6 +56,14 @@
           "favorite_team_id": "BUF",
           "underdog_team_id": "KC",
           "consensus_team_id": "BUF",
+          "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG168",
+          "market_status": "available",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "PIT",
+          "consensus_team_id": "DEN",
           "community_market_position": "favorite"
         }
       ]
@@ -62,11 +72,11 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "classified_consensus_matches": 166,
-        "community_favorite_picks": 133,
+        "classified_consensus_matches": 167,
+        "community_favorite_picks": 134,
         "community_underdog_picks": 33,
-        "community_favorite_rate": 0.801205,
-        "community_underdog_rate": 0.198795,
+        "community_favorite_rate": 0.802395,
+        "community_underdog_rate": 0.197605,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -1409,6 +1419,14 @@
           "favorite_team_id": "BUF",
           "underdog_team_id": "KC",
           "consensus_team_id": "BUF",
+          "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG168",
+          "market_status": "available",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "PIT",
+          "consensus_team_id": "DEN",
           "community_market_position": "favorite"
         }
       ]
@@ -1416,11 +1434,11 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "classified_consensus_matches": 166,
-        "community_favorite_picks": 133,
+        "classified_consensus_matches": 167,
+        "community_favorite_picks": 134,
         "community_underdog_picks": 33,
-        "community_favorite_rate": 0.801205,
-        "community_underdog_rate": 0.198795,
+        "community_favorite_rate": 0.802395,
+        "community_underdog_rate": 0.197605,
         "split_consensus_matches": 0,
         "even_market_matches": 1,
         "market_unavailable_matches": 0,
@@ -2763,6 +2781,14 @@
           "favorite_team_id": "BUF",
           "underdog_team_id": "KC",
           "consensus_team_id": "BUF",
+          "community_market_position": "favorite"
+        },
+        {
+          "match_id": "REG168",
+          "market_status": "available",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "PIT",
+          "consensus_team_id": "DEN",
           "community_market_position": "favorite"
         }
       ]

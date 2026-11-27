@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG167",
-  "evaluation_cursor": "REG167",
+  "freeze_cursor": "REG168",
+  "evaluation_cursor": "REG168",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,22 +13,24 @@
       "season_type": "Regular Season",
       "week": 12,
       "result": {
-        "evaluated_matches": 4,
+        "evaluated_matches": 5,
         "favorite_wins": 2,
-        "underdog_wins": 2,
+        "underdog_wins": 3,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.5,
-        "upset_rate": 0.5,
+        "market_efficiency": 0.4,
+        "upset_rate": 0.6,
         "consensus_comparison": {
-          "shared_evaluated_matches": 4,
+          "shared_evaluated_matches": 5,
           "market_correct": 2,
           "consensus_correct": 3,
-          "market_efficiency": 0.5,
-          "consensus_efficiency": 0.75,
-          "consensus_vs_market_delta": 0.25
+          "market_efficiency": 0.4,
+          "consensus_efficiency": 0.6,
+          "consensus_vs_market_delta": 0.2
         },
-        "primary_insight": null
+        "primary_insight": {
+          "insight_code": "COMMUNITY_BEATS_MARKET"
+        }
       },
       "matches": [
         {
@@ -62,6 +64,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "BUF",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG168",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PIT",
+          "favorite_won": false
         }
       ]
     },
@@ -69,20 +79,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 166,
+        "evaluated_matches": 167,
         "favorite_wins": 101,
-        "underdog_wins": 64,
+        "underdog_wins": 65,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.608434,
-        "upset_rate": 0.385542,
+        "market_efficiency": 0.60479,
+        "upset_rate": 0.389222,
         "consensus_comparison": {
-          "shared_evaluated_matches": 166,
+          "shared_evaluated_matches": 167,
           "market_correct": 101,
           "consensus_correct": 111,
-          "market_efficiency": 0.608434,
-          "consensus_efficiency": 0.668675,
-          "consensus_vs_market_delta": 0.060241
+          "market_efficiency": 0.60479,
+          "consensus_efficiency": 0.664671,
+          "consensus_vs_market_delta": 0.059881
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -1416,26 +1426,34 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "BUF",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG168",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PIT",
+          "favorite_won": false
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 166,
+        "evaluated_matches": 167,
         "favorite_wins": 101,
-        "underdog_wins": 64,
+        "underdog_wins": 65,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.608434,
-        "upset_rate": 0.385542,
+        "market_efficiency": 0.60479,
+        "upset_rate": 0.389222,
         "consensus_comparison": {
-          "shared_evaluated_matches": 166,
+          "shared_evaluated_matches": 167,
           "market_correct": 101,
           "consensus_correct": 111,
-          "market_efficiency": 0.608434,
-          "consensus_efficiency": 0.668675,
-          "consensus_vs_market_delta": 0.060241
+          "market_efficiency": 0.60479,
+          "consensus_efficiency": 0.664671,
+          "consensus_vs_market_delta": 0.059881
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -2769,6 +2787,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "BUF",
           "favorite_won": true
+        },
+        {
+          "match_id": "REG168",
+          "favorite_team_id": "DEN",
+          "underdog_team_id": "PIT",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PIT",
+          "favorite_won": false
         }
       ]
     }

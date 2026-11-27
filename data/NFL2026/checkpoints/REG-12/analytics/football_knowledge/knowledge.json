@@ -2,10 +2,10 @@
   "contract_type": "football_knowledge_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "cursor": "REG167",
+  "cursor": "REG168",
   "as_of": {
-    "match_id": "REG167",
-    "sort_order": 167,
+    "match_id": "REG168",
+    "sort_order": 168,
     "season_type": "Regular Season",
     "week": 12
   },
@@ -30,23 +30,23 @@
             "ranking": [
               {
                 "rank": 1,
-                "team_id": "DEN",
-                "correct_picks": 5,
-                "evaluated_picks": 5,
-                "efficiency": 1,
-                "tier_code": "exclusive"
-              },
-              {
-                "rank": 2,
                 "team_id": "SF",
                 "correct_picks": 7,
                 "evaluated_picks": 8,
                 "efficiency": 0.875,
                 "tier_code": "high"
+              },
+              {
+                "rank": 2,
+                "team_id": "DEN",
+                "correct_picks": 5,
+                "evaluated_picks": 6,
+                "efficiency": 0.833333,
+                "tier_code": "high"
               }
             ],
             "primary_insight": {
-              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_EXCLUSIVE_SINGLE"
+              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_HIGH_SINGLE"
             }
           }
         },
@@ -74,8 +74,8 @@
                 "rank": 2,
                 "conference": "AFC",
                 "correct_picks": 49,
-                "evaluated_picks": 80,
-                "efficiency": 0.6125,
+                "evaluated_picks": 81,
+                "efficiency": 0.604938,
                 "tier_code": "solid"
               }
             ],
@@ -184,8 +184,8 @@
                 "rank": 2,
                 "conference": "AFC",
                 "correct_picks": 53,
-                "evaluated_picks": 81,
-                "efficiency": 0.654321,
+                "evaluated_picks": 82,
+                "efficiency": 0.646341,
                 "tier_code": "solid"
               }
             ],
@@ -250,23 +250,39 @@
             "ranking": [
               {
                 "rank": 1,
-                "team_id": "DEN",
-                "correct_picks": 6,
-                "evaluated_picks": 6,
-                "efficiency": 1,
-                "tier_code": "exclusive"
-              },
-              {
-                "rank": 2,
                 "team_id": "BUF",
                 "correct_picks": 9,
                 "evaluated_picks": 10,
                 "efficiency": 0.9,
                 "tier_code": "high"
+              },
+              {
+                "rank": 2,
+                "team_id": "CHI",
+                "correct_picks": 7,
+                "evaluated_picks": 8,
+                "efficiency": 0.875,
+                "tier_code": "high"
+              },
+              {
+                "rank": 2,
+                "team_id": "DET",
+                "correct_picks": 7,
+                "evaluated_picks": 8,
+                "efficiency": 0.875,
+                "tier_code": "high"
+              },
+              {
+                "rank": 2,
+                "team_id": "SF",
+                "correct_picks": 7,
+                "evaluated_picks": 8,
+                "efficiency": 0.875,
+                "tier_code": "high"
               }
             ],
             "primary_insight": {
-              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_EXCLUSIVE_SINGLE"
+              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_HIGH_SINGLE"
             }
           }
         },
@@ -286,8 +302,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 55,
-                "evaluated_picks": 82,
-                "efficiency": 0.670732,
+                "evaluated_picks": 83,
+                "efficiency": 0.662651,
                 "tier_code": "solid"
               },
               {
@@ -327,11 +343,11 @@
               },
               {
                 "rank": 2,
-                "conference": "AFC",
-                "division": "West",
-                "correct_picks": 16,
-                "evaluated_picks": 21,
-                "efficiency": 0.761905,
+                "conference": "NFC",
+                "division": "North",
+                "correct_picks": 22,
+                "evaluated_picks": 29,
+                "efficiency": 0.758621,
                 "tier_code": "high"
               }
             ],
@@ -352,11 +368,11 @@
             "status": "ACTIVE",
             "universe_entities": 32,
             "observed_entities": 31,
-            "eligible_entities": 20,
+            "eligible_entities": 21,
             "minimum_evaluated_picks_per_entity": 4,
             "minimum_eligible_entities": 2,
             "first_place_count": 1,
-            "first_place_share_of_eligible_entities": 0.05,
+            "first_place_share_of_eligible_entities": 0.047619,
             "ranking": [
               {
                 "rank": 1,
@@ -383,16 +399,35 @@
         {
           "perspective_id": "season:conference",
           "result": {
-            "status": "NO_DIFFERENTIATED_KNOWLEDGE",
+            "status": "ACTIVE",
             "universe_entities": 2,
             "observed_entities": 2,
             "eligible_entities": 2,
             "minimum_evaluated_picks_per_entity": 4,
             "minimum_eligible_entities": 2,
-            "first_place_count": 2,
-            "first_place_share_of_eligible_entities": 1,
-            "ranking": [],
-            "primary_insight": null
+            "first_place_count": 1,
+            "first_place_share_of_eligible_entities": 0.5,
+            "ranking": [
+              {
+                "rank": 1,
+                "conference": "NFC",
+                "correct_picks": 49,
+                "evaluated_picks": 77,
+                "efficiency": 0.636364,
+                "tier_code": "solid"
+              },
+              {
+                "rank": 2,
+                "conference": "AFC",
+                "correct_picks": 42,
+                "evaluated_picks": 67,
+                "efficiency": 0.626866,
+                "tier_code": "solid"
+              }
+            ],
+            "primary_insight": {
+              "insight_code": "FOOTBALL_KNOWLEDGE_CONFERENCE_SOLID_SINGLE"
+            }
           }
         },
         {
@@ -443,11 +478,11 @@
             "status": "ACTIVE",
             "universe_entities": 32,
             "observed_entities": 32,
-            "eligible_entities": 19,
+            "eligible_entities": 20,
             "minimum_evaluated_picks_per_entity": 4,
             "minimum_eligible_entities": 2,
             "first_place_count": 1,
-            "first_place_share_of_eligible_entities": 0.052632,
+            "first_place_share_of_eligible_entities": 0.05,
             "ranking": [
               {
                 "rank": 1,
@@ -495,8 +530,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 49,
-                "evaluated_picks": 81,
-                "efficiency": 0.604938,
+                "evaluated_picks": 82,
+                "efficiency": 0.597561,
                 "tier_code": "solid"
               },
               {
@@ -527,25 +562,25 @@
             "ranking": [
               {
                 "rank": 1,
-                "conference": "AFC",
-                "division": "West",
-                "correct_picks": 12,
-                "evaluated_picks": 16,
-                "efficiency": 0.75,
-                "tier_code": "high"
-              },
-              {
-                "rank": 2,
                 "conference": "NFC",
                 "division": "North",
                 "correct_picks": 17,
                 "evaluated_picks": 24,
                 "efficiency": 0.708333,
                 "tier_code": "solid"
+              },
+              {
+                "rank": 2,
+                "conference": "AFC",
+                "division": "West",
+                "correct_picks": 12,
+                "evaluated_picks": 17,
+                "efficiency": 0.705882,
+                "tier_code": "solid"
               }
             ],
             "primary_insight": {
-              "insight_code": "FOOTBALL_KNOWLEDGE_DIVISION_HIGH_SINGLE"
+              "insight_code": "FOOTBALL_KNOWLEDGE_DIVISION_SOLID_SINGLE"
             }
           }
         }
@@ -613,8 +648,8 @@
                 "rank": 2,
                 "conference": "AFC",
                 "correct_picks": 40,
-                "evaluated_picks": 71,
-                "efficiency": 0.56338,
+                "evaluated_picks": 72,
+                "efficiency": 0.555556,
                 "tier_code": "solid"
               }
             ],
@@ -731,8 +766,8 @@
                 "rank": 2,
                 "conference": "AFC",
                 "correct_picks": 47,
-                "evaluated_picks": 80,
-                "efficiency": 0.5875,
+                "evaluated_picks": 81,
+                "efficiency": 0.580247,
                 "tier_code": "solid"
               }
             ],
@@ -792,22 +827,14 @@
             "eligible_entities": 19,
             "minimum_evaluated_picks_per_entity": 4,
             "minimum_eligible_entities": 2,
-            "first_place_count": 3,
-            "first_place_share_of_eligible_entities": 0.157895,
+            "first_place_count": 2,
+            "first_place_share_of_eligible_entities": 0.105263,
             "ranking": [
               {
                 "rank": 1,
                 "team_id": "BUF",
                 "correct_picks": 7,
                 "evaluated_picks": 7,
-                "efficiency": 1,
-                "tier_code": "exclusive"
-              },
-              {
-                "rank": 1,
-                "team_id": "DEN",
-                "correct_picks": 5,
-                "evaluated_picks": 5,
                 "efficiency": 1,
                 "tier_code": "exclusive"
               },
@@ -841,8 +868,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 50,
-                "evaluated_picks": 73,
-                "efficiency": 0.684932,
+                "evaluated_picks": 74,
+                "efficiency": 0.675676,
                 "tier_code": "solid"
               },
               {
@@ -950,9 +977,9 @@
               {
                 "rank": 1,
                 "conference": "AFC",
-                "correct_picks": 53,
-                "evaluated_picks": 80,
-                "efficiency": 0.6625,
+                "correct_picks": 54,
+                "evaluated_picks": 81,
+                "efficiency": 0.666667,
                 "tier_code": "solid"
               },
               {
@@ -1061,8 +1088,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 56,
-                "evaluated_picks": 79,
-                "efficiency": 0.708861,
+                "evaluated_picks": 80,
+                "efficiency": 0.7,
                 "tier_code": "solid"
               },
               {
@@ -1151,14 +1178,6 @@
               },
               {
                 "rank": 2,
-                "team_id": "DEN",
-                "correct_picks": 7,
-                "evaluated_picks": 8,
-                "efficiency": 0.875,
-                "tier_code": "high"
-              },
-              {
-                "rank": 2,
                 "team_id": "JAX",
                 "correct_picks": 7,
                 "evaluated_picks": 8,
@@ -1187,8 +1206,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 55,
-                "evaluated_picks": 79,
-                "efficiency": 0.696203,
+                "evaluated_picks": 80,
+                "efficiency": 0.6875,
                 "tier_code": "solid"
               },
               {
@@ -1220,19 +1239,19 @@
               {
                 "rank": 1,
                 "conference": "AFC",
-                "division": "West",
-                "correct_picks": 17,
-                "evaluated_picks": 21,
-                "efficiency": 0.809524,
+                "division": "East",
+                "correct_picks": 11,
+                "evaluated_picks": 14,
+                "efficiency": 0.785714,
                 "tier_code": "high"
               },
               {
                 "rank": 2,
                 "conference": "AFC",
-                "division": "East",
-                "correct_picks": 11,
-                "evaluated_picks": 14,
-                "efficiency": 0.785714,
+                "division": "West",
+                "correct_picks": 17,
+                "evaluated_picks": 22,
+                "efficiency": 0.772727,
                 "tier_code": "high"
               }
             ],
@@ -1261,23 +1280,23 @@
             "ranking": [
               {
                 "rank": 1,
-                "team_id": "DEN",
-                "correct_picks": 6,
-                "evaluated_picks": 6,
-                "efficiency": 1,
-                "tier_code": "exclusive"
-              },
-              {
-                "rank": 2,
                 "team_id": "BUF",
                 "correct_picks": 9,
                 "evaluated_picks": 10,
                 "efficiency": 0.9,
                 "tier_code": "high"
+              },
+              {
+                "rank": 2,
+                "team_id": "SF",
+                "correct_picks": 8,
+                "evaluated_picks": 9,
+                "efficiency": 0.888889,
+                "tier_code": "high"
               }
             ],
             "primary_insight": {
-              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_EXCLUSIVE_SINGLE"
+              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_HIGH_SINGLE"
             }
           }
         },
@@ -1305,8 +1324,8 @@
                 "rank": 2,
                 "conference": "AFC",
                 "correct_picks": 52,
-                "evaluated_picks": 85,
-                "efficiency": 0.611765,
+                "evaluated_picks": 86,
+                "efficiency": 0.604651,
                 "tier_code": "solid"
               }
             ],
@@ -1407,8 +1426,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 54,
-                "evaluated_picks": 79,
-                "efficiency": 0.683544,
+                "evaluated_picks": 80,
+                "efficiency": 0.675,
                 "tier_code": "solid"
               },
               {
@@ -1448,12 +1467,12 @@
               },
               {
                 "rank": 2,
-                "conference": "AFC",
-                "division": "West",
-                "correct_picks": 16,
-                "evaluated_picks": 21,
-                "efficiency": 0.761905,
-                "tier_code": "high"
+                "conference": "NFC",
+                "division": "North",
+                "correct_picks": 22,
+                "evaluated_picks": 30,
+                "efficiency": 0.733333,
+                "tier_code": "solid"
               }
             ],
             "primary_insight": {
@@ -1476,17 +1495,9 @@
             "eligible_entities": 20,
             "minimum_evaluated_picks_per_entity": 4,
             "minimum_eligible_entities": 2,
-            "first_place_count": 2,
-            "first_place_share_of_eligible_entities": 0.1,
+            "first_place_count": 1,
+            "first_place_share_of_eligible_entities": 0.05,
             "ranking": [
-              {
-                "rank": 1,
-                "team_id": "DEN",
-                "correct_picks": 5,
-                "evaluated_picks": 5,
-                "efficiency": 1,
-                "tier_code": "exclusive"
-              },
               {
                 "rank": 1,
                 "team_id": "MIN",
@@ -1494,10 +1505,18 @@
                 "evaluated_picks": 4,
                 "efficiency": 1,
                 "tier_code": "exclusive"
+              },
+              {
+                "rank": 2,
+                "team_id": "BUF",
+                "correct_picks": 10,
+                "evaluated_picks": 11,
+                "efficiency": 0.909091,
+                "tier_code": "high"
               }
             ],
             "primary_insight": {
-              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_EXCLUSIVE_TIED"
+              "insight_code": "FOOTBALL_KNOWLEDGE_TEAM_EXCLUSIVE_SINGLE"
             }
           }
         },
@@ -1517,8 +1536,8 @@
                 "rank": 1,
                 "conference": "AFC",
                 "correct_picks": 53,
-                "evaluated_picks": 79,
-                "efficiency": 0.670886,
+                "evaluated_picks": 80,
+                "efficiency": 0.6625,
                 "tier_code": "solid"
               },
               {
@@ -1634,9 +1653,9 @@
               {
                 "rank": 1,
                 "conference": "AFC",
-                "correct_picks": 56,
-                "evaluated_picks": 80,
-                "efficiency": 0.7,
+                "correct_picks": 57,
+                "evaluated_picks": 81,
+                "efficiency": 0.703704,
                 "tier_code": "solid"
               },
               {
@@ -1871,8 +1890,8 @@
                 "rank": 2,
                 "conference": "AFC",
                 "correct_picks": 53,
-                "evaluated_picks": 81,
-                "efficiency": 0.654321,
+                "evaluated_picks": 82,
+                "efficiency": 0.646341,
                 "tier_code": "solid"
               }
             ],
