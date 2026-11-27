@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG165",
-  "evaluation_cursor": "REG165",
+  "freeze_cursor": "REG166",
+  "evaluation_cursor": "REG166",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 12,
       "result": {
-        "evaluated_matches": 2,
+        "evaluated_matches": 3,
         "favorite_wins": 1,
-        "underdog_wins": 1,
+        "underdog_wins": 2,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.5,
-        "upset_rate": 0.5,
+        "market_efficiency": 0.333333,
+        "upset_rate": 0.666667,
         "consensus_comparison": {
-          "shared_evaluated_matches": 2,
+          "shared_evaluated_matches": 3,
           "market_correct": 1,
           "consensus_correct": 2,
-          "market_efficiency": 0.5,
-          "consensus_efficiency": 1,
-          "consensus_vs_market_delta": 0.5
+          "market_efficiency": 0.333333,
+          "consensus_efficiency": 0.666667,
+          "consensus_vs_market_delta": 0.333334
         },
         "primary_insight": null
       },
@@ -46,6 +46,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "CHI",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG166",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PHI",
+          "favorite_won": false
         }
       ]
     },
@@ -53,20 +61,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 164,
+        "evaluated_matches": 165,
         "favorite_wins": 100,
-        "underdog_wins": 63,
+        "underdog_wins": 64,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.609756,
-        "upset_rate": 0.384146,
+        "market_efficiency": 0.606061,
+        "upset_rate": 0.387879,
         "consensus_comparison": {
-          "shared_evaluated_matches": 164,
+          "shared_evaluated_matches": 165,
           "market_correct": 100,
           "consensus_correct": 110,
-          "market_efficiency": 0.609756,
-          "consensus_efficiency": 0.670732,
-          "consensus_vs_market_delta": 0.060976
+          "market_efficiency": 0.606061,
+          "consensus_efficiency": 0.666667,
+          "consensus_vs_market_delta": 0.060606
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -1383,6 +1391,14 @@
           "underdog_team_id": "CHI",
           "evaluation_status": "evaluated",
           "winner_team_id": "CHI",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG166",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PHI",
           "favorite_won": false
         }
       ]
@@ -1390,20 +1406,20 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 164,
+        "evaluated_matches": 165,
         "favorite_wins": 100,
-        "underdog_wins": 63,
+        "underdog_wins": 64,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.609756,
-        "upset_rate": 0.384146,
+        "market_efficiency": 0.606061,
+        "upset_rate": 0.387879,
         "consensus_comparison": {
-          "shared_evaluated_matches": 164,
+          "shared_evaluated_matches": 165,
           "market_correct": 100,
           "consensus_correct": 110,
-          "market_efficiency": 0.609756,
-          "consensus_efficiency": 0.670732,
-          "consensus_vs_market_delta": 0.060976
+          "market_efficiency": 0.606061,
+          "consensus_efficiency": 0.666667,
+          "consensus_vs_market_delta": 0.060606
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -2720,6 +2736,14 @@
           "underdog_team_id": "CHI",
           "evaluation_status": "evaluated",
           "winner_team_id": "CHI",
+          "favorite_won": false
+        },
+        {
+          "match_id": "REG166",
+          "favorite_team_id": "DAL",
+          "underdog_team_id": "PHI",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "PHI",
           "favorite_won": false
         }
       ]

@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_player_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG165",
-  "evaluation_cursor": "REG165",
+  "freeze_cursor": "REG166",
+  "evaluation_cursor": "REG166",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "contrarian_play",
@@ -17,17 +17,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 0,
-            "aligned_picks": 0,
+            "classified_matches": 1,
+            "aligned_picks": 1,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 2,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": null,
-            "contrarian_rate": null,
-            "aligned_evaluated_matches": 0,
+            "aligned_rate": 1,
+            "contrarian_rate": 0,
+            "aligned_evaluated_matches": 1,
             "aligned_correct_matches": 0,
-            "aligned_efficiency": null,
+            "aligned_efficiency": 0,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -51,6 +51,14 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -58,21 +66,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 153,
-            "aligned_picks": 116,
+            "classified_matches": 154,
+            "aligned_picks": 117,
             "contrarian_picks": 37,
             "neutral_picks": 0,
             "missing_predictions": 12,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.75817,
-            "contrarian_rate": 0.24183,
-            "aligned_evaluated_matches": 116,
+            "aligned_rate": 0.75974,
+            "contrarian_rate": 0.24026,
+            "aligned_evaluated_matches": 117,
             "aligned_correct_matches": 81,
-            "aligned_efficiency": 0.698276,
+            "aligned_efficiency": 0.692308,
             "contrarian_evaluated_matches": 37,
             "contrarian_correct_matches": 14,
             "contrarian_efficiency": 0.378378,
-            "contrarian_advantage": -0.319898,
+            "contrarian_advantage": -0.31393,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -1398,27 +1406,35 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 153,
-            "aligned_picks": 116,
+            "classified_matches": 154,
+            "aligned_picks": 117,
             "contrarian_picks": 37,
             "neutral_picks": 0,
             "missing_predictions": 12,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.75817,
-            "contrarian_rate": 0.24183,
-            "aligned_evaluated_matches": 116,
+            "aligned_rate": 0.75974,
+            "contrarian_rate": 0.24026,
+            "aligned_evaluated_matches": 117,
             "aligned_correct_matches": 81,
-            "aligned_efficiency": 0.698276,
+            "aligned_efficiency": 0.692308,
             "contrarian_evaluated_matches": 37,
             "contrarian_correct_matches": 14,
             "contrarian_efficiency": 0.378378,
-            "contrarian_advantage": -0.319898,
+            "contrarian_advantage": -0.31393,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -2744,6 +2760,14 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -2758,21 +2782,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 1,
+            "classified_matches": 3,
+            "aligned_picks": 2,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.5,
-            "contrarian_rate": 0.5,
-            "aligned_evaluated_matches": 1,
+            "aligned_rate": 0.666667,
+            "contrarian_rate": 0.333333,
+            "aligned_evaluated_matches": 2,
             "aligned_correct_matches": 1,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -1,
+            "contrarian_advantage": -0.5,
             "tier": null,
             "primary_insight": null
           },
@@ -2792,6 +2816,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -2799,21 +2831,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 151,
+            "classified_matches": 166,
+            "aligned_picks": 152,
             "contrarian_picks": 14,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.915152,
-            "contrarian_rate": 0.084848,
-            "aligned_evaluated_matches": 151,
+            "aligned_rate": 0.915663,
+            "contrarian_rate": 0.084337,
+            "aligned_evaluated_matches": 152,
             "aligned_correct_matches": 104,
-            "aligned_efficiency": 0.688742,
+            "aligned_efficiency": 0.684211,
             "contrarian_evaluated_matches": 14,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.428571,
-            "contrarian_advantage": -0.260171,
+            "contrarian_advantage": -0.25564,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -4136,6 +4168,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -4145,21 +4185,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 151,
+            "classified_matches": 166,
+            "aligned_picks": 152,
             "contrarian_picks": 14,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.915152,
-            "contrarian_rate": 0.084848,
-            "aligned_evaluated_matches": 151,
+            "aligned_rate": 0.915663,
+            "contrarian_rate": 0.084337,
+            "aligned_evaluated_matches": 152,
             "aligned_correct_matches": 104,
-            "aligned_efficiency": 0.688742,
+            "aligned_efficiency": 0.684211,
             "contrarian_evaluated_matches": 14,
             "contrarian_correct_matches": 6,
             "contrarian_efficiency": 0.428571,
-            "contrarian_advantage": -0.260171,
+            "contrarian_advantage": -0.25564,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -5482,6 +5522,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -5499,17 +5547,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 2,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 2,
+            "aligned_evaluated_matches": 3,
             "aligned_correct_matches": 2,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -5533,6 +5581,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -5540,21 +5596,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 151,
+            "classified_matches": 166,
+            "aligned_picks": 152,
             "contrarian_picks": 14,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.915152,
-            "contrarian_rate": 0.084848,
-            "aligned_evaluated_matches": 151,
+            "aligned_rate": 0.915663,
+            "contrarian_rate": 0.084337,
+            "aligned_evaluated_matches": 152,
             "aligned_correct_matches": 103,
-            "aligned_efficiency": 0.682119,
+            "aligned_efficiency": 0.677632,
             "contrarian_evaluated_matches": 14,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.357143,
-            "contrarian_advantage": -0.324976,
+            "contrarian_advantage": -0.320489,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -6880,27 +6936,35 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 151,
+            "classified_matches": 166,
+            "aligned_picks": 152,
             "contrarian_picks": 14,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.915152,
-            "contrarian_rate": 0.084848,
-            "aligned_evaluated_matches": 151,
+            "aligned_rate": 0.915663,
+            "contrarian_rate": 0.084337,
+            "aligned_evaluated_matches": 152,
             "aligned_correct_matches": 103,
-            "aligned_efficiency": 0.682119,
+            "aligned_efficiency": 0.677632,
             "contrarian_evaluated_matches": 14,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.357143,
-            "contrarian_advantage": -0.324976,
+            "contrarian_advantage": -0.320489,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -8226,6 +8290,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -8240,21 +8312,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 1,
+            "classified_matches": 2,
             "aligned_picks": 1,
-            "contrarian_picks": 0,
+            "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 1,
-            "contrarian_rate": 0,
+            "aligned_rate": 0.5,
+            "contrarian_rate": 0.5,
             "aligned_evaluated_matches": 1,
             "aligned_correct_matches": 1,
             "aligned_efficiency": 1,
-            "contrarian_evaluated_matches": 0,
-            "contrarian_correct_matches": 0,
-            "contrarian_efficiency": null,
-            "contrarian_advantage": null,
+            "contrarian_evaluated_matches": 1,
+            "contrarian_correct_matches": 1,
+            "contrarian_efficiency": 1,
+            "contrarian_advantage": 0,
             "tier": null,
             "primary_insight": null
           },
@@ -8274,6 +8346,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "PHI",
+              "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -8281,21 +8361,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 141,
+            "classified_matches": 142,
             "aligned_picks": 106,
-            "contrarian_picks": 35,
+            "contrarian_picks": 36,
             "neutral_picks": 0,
             "missing_predictions": 24,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.751773,
-            "contrarian_rate": 0.248227,
+            "aligned_rate": 0.746479,
+            "contrarian_rate": 0.253521,
             "aligned_evaluated_matches": 106,
             "aligned_correct_matches": 77,
             "aligned_efficiency": 0.726415,
-            "contrarian_evaluated_matches": 35,
-            "contrarian_correct_matches": 13,
-            "contrarian_efficiency": 0.371429,
-            "contrarian_advantage": -0.354986,
+            "contrarian_evaluated_matches": 36,
+            "contrarian_correct_matches": 14,
+            "contrarian_efficiency": 0.388889,
+            "contrarian_advantage": -0.337526,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -9618,6 +9698,14 @@
               "match_id": "REG165",
               "pick_team_id": "CHI",
               "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "PHI",
+              "relation": "contrarian",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
@@ -9627,21 +9715,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 141,
+            "classified_matches": 142,
             "aligned_picks": 106,
-            "contrarian_picks": 35,
+            "contrarian_picks": 36,
             "neutral_picks": 0,
             "missing_predictions": 24,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.751773,
-            "contrarian_rate": 0.248227,
+            "aligned_rate": 0.746479,
+            "contrarian_rate": 0.253521,
             "aligned_evaluated_matches": 106,
             "aligned_correct_matches": 77,
             "aligned_efficiency": 0.726415,
-            "contrarian_evaluated_matches": 35,
-            "contrarian_correct_matches": 13,
-            "contrarian_efficiency": 0.371429,
-            "contrarian_advantage": -0.354986,
+            "contrarian_evaluated_matches": 36,
+            "contrarian_correct_matches": 14,
+            "contrarian_efficiency": 0.388889,
+            "contrarian_advantage": -0.337526,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -10964,6 +11052,14 @@
               "match_id": "REG165",
               "pick_team_id": "CHI",
               "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "PHI",
+              "relation": "contrarian",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
@@ -10981,21 +11077,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 1,
-            "aligned_picks": 0,
+            "classified_matches": 2,
+            "aligned_picks": 1,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0,
-            "contrarian_rate": 1,
-            "aligned_evaluated_matches": 0,
+            "aligned_rate": 0.5,
+            "contrarian_rate": 0.5,
+            "aligned_evaluated_matches": 1,
             "aligned_correct_matches": 0,
-            "aligned_efficiency": null,
+            "aligned_efficiency": 0,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": null,
+            "contrarian_advantage": 0,
             "tier": null,
             "primary_insight": null
           },
@@ -11015,6 +11111,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -11022,21 +11126,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 164,
-            "aligned_picks": 126,
+            "classified_matches": 165,
+            "aligned_picks": 127,
             "contrarian_picks": 38,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.768293,
-            "contrarian_rate": 0.231707,
-            "aligned_evaluated_matches": 126,
+            "aligned_rate": 0.769697,
+            "contrarian_rate": 0.230303,
+            "aligned_evaluated_matches": 127,
             "aligned_correct_matches": 84,
-            "aligned_efficiency": 0.666667,
+            "aligned_efficiency": 0.661417,
             "contrarian_evaluated_matches": 38,
             "contrarian_correct_matches": 12,
             "contrarian_efficiency": 0.315789,
-            "contrarian_advantage": -0.350878,
+            "contrarian_advantage": -0.345628,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -12359,6 +12463,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -12368,21 +12480,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 164,
-            "aligned_picks": 126,
+            "classified_matches": 165,
+            "aligned_picks": 127,
             "contrarian_picks": 38,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.768293,
-            "contrarian_rate": 0.231707,
-            "aligned_evaluated_matches": 126,
+            "aligned_rate": 0.769697,
+            "contrarian_rate": 0.230303,
+            "aligned_evaluated_matches": 127,
             "aligned_correct_matches": 84,
-            "aligned_efficiency": 0.666667,
+            "aligned_efficiency": 0.661417,
             "contrarian_evaluated_matches": 38,
             "contrarian_correct_matches": 12,
             "contrarian_efficiency": 0.315789,
-            "contrarian_advantage": -0.350878,
+            "contrarian_advantage": -0.345628,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -13705,6 +13817,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -13722,21 +13842,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 1,
+            "classified_matches": 3,
+            "aligned_picks": 2,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.5,
-            "contrarian_rate": 0.5,
-            "aligned_evaluated_matches": 1,
+            "aligned_rate": 0.666667,
+            "contrarian_rate": 0.333333,
+            "aligned_evaluated_matches": 2,
             "aligned_correct_matches": 1,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -1,
+            "contrarian_advantage": -0.5,
             "tier": null,
             "primary_insight": null
           },
@@ -13756,6 +13876,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -13763,21 +13891,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 147,
-            "aligned_picks": 117,
+            "classified_matches": 148,
+            "aligned_picks": 118,
             "contrarian_picks": 30,
             "neutral_picks": 0,
             "missing_predictions": 18,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.795918,
-            "contrarian_rate": 0.204082,
-            "aligned_evaluated_matches": 117,
+            "aligned_rate": 0.797297,
+            "contrarian_rate": 0.202703,
+            "aligned_evaluated_matches": 118,
             "aligned_correct_matches": 82,
-            "aligned_efficiency": 0.700855,
+            "aligned_efficiency": 0.694915,
             "contrarian_evaluated_matches": 30,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.266667,
-            "contrarian_advantage": -0.434188,
+            "contrarian_advantage": -0.428248,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -15100,6 +15228,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -15109,21 +15245,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 147,
-            "aligned_picks": 117,
+            "classified_matches": 148,
+            "aligned_picks": 118,
             "contrarian_picks": 30,
             "neutral_picks": 0,
             "missing_predictions": 18,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.795918,
-            "contrarian_rate": 0.204082,
-            "aligned_evaluated_matches": 117,
+            "aligned_rate": 0.797297,
+            "contrarian_rate": 0.202703,
+            "aligned_evaluated_matches": 118,
             "aligned_correct_matches": 82,
-            "aligned_efficiency": 0.700855,
+            "aligned_efficiency": 0.694915,
             "contrarian_evaluated_matches": 30,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.266667,
-            "contrarian_advantage": -0.434188,
+            "contrarian_advantage": -0.428248,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -16446,6 +16582,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -16463,21 +16607,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 0,
+            "classified_matches": 3,
+            "aligned_picks": 1,
             "contrarian_picks": 2,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0,
-            "contrarian_rate": 1,
-            "aligned_evaluated_matches": 0,
+            "aligned_rate": 0.333333,
+            "contrarian_rate": 0.666667,
+            "aligned_evaluated_matches": 1,
             "aligned_correct_matches": 0,
-            "aligned_efficiency": null,
+            "aligned_efficiency": 0,
             "contrarian_evaluated_matches": 2,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": null,
+            "contrarian_advantage": 0,
             "tier": null,
             "primary_insight": null
           },
@@ -16497,6 +16641,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -16504,21 +16656,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 126,
+            "classified_matches": 166,
+            "aligned_picks": 127,
             "contrarian_picks": 39,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.763636,
-            "contrarian_rate": 0.236364,
-            "aligned_evaluated_matches": 126,
+            "aligned_rate": 0.76506,
+            "contrarian_rate": 0.23494,
+            "aligned_evaluated_matches": 127,
             "aligned_correct_matches": 88,
-            "aligned_efficiency": 0.698413,
+            "aligned_efficiency": 0.692913,
             "contrarian_evaluated_matches": 39,
             "contrarian_correct_matches": 15,
             "contrarian_efficiency": 0.384615,
-            "contrarian_advantage": -0.313798,
+            "contrarian_advantage": -0.308298,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -17841,6 +17993,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -17850,21 +18010,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 126,
+            "classified_matches": 166,
+            "aligned_picks": 127,
             "contrarian_picks": 39,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.763636,
-            "contrarian_rate": 0.236364,
-            "aligned_evaluated_matches": 126,
+            "aligned_rate": 0.76506,
+            "contrarian_rate": 0.23494,
+            "aligned_evaluated_matches": 127,
             "aligned_correct_matches": 88,
-            "aligned_efficiency": 0.698413,
+            "aligned_efficiency": 0.692913,
             "contrarian_evaluated_matches": 39,
             "contrarian_correct_matches": 15,
             "contrarian_efficiency": 0.384615,
-            "contrarian_advantage": -0.313798,
+            "contrarian_advantage": -0.308298,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -19187,6 +19347,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -19204,17 +19372,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 0,
-            "aligned_picks": 0,
+            "classified_matches": 1,
+            "aligned_picks": 1,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 2,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": null,
-            "contrarian_rate": null,
-            "aligned_evaluated_matches": 0,
+            "aligned_rate": 1,
+            "contrarian_rate": 0,
+            "aligned_evaluated_matches": 1,
             "aligned_correct_matches": 0,
-            "aligned_efficiency": null,
+            "aligned_efficiency": 0,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -19238,6 +19406,14 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -19245,21 +19421,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 148,
-            "aligned_picks": 137,
+            "classified_matches": 149,
+            "aligned_picks": 138,
             "contrarian_picks": 11,
             "neutral_picks": 0,
             "missing_predictions": 17,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.925676,
-            "contrarian_rate": 0.074324,
-            "aligned_evaluated_matches": 137,
+            "aligned_rate": 0.926174,
+            "contrarian_rate": 0.073826,
+            "aligned_evaluated_matches": 138,
             "aligned_correct_matches": 97,
-            "aligned_efficiency": 0.708029,
+            "aligned_efficiency": 0.702899,
             "contrarian_evaluated_matches": 11,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.454545,
-            "contrarian_advantage": -0.253484,
+            "contrarian_advantage": -0.248354,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -20585,27 +20761,35 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 148,
-            "aligned_picks": 137,
+            "classified_matches": 149,
+            "aligned_picks": 138,
             "contrarian_picks": 11,
             "neutral_picks": 0,
             "missing_predictions": 17,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.925676,
-            "contrarian_rate": 0.074324,
-            "aligned_evaluated_matches": 137,
+            "aligned_rate": 0.926174,
+            "contrarian_rate": 0.073826,
+            "aligned_evaluated_matches": 138,
             "aligned_correct_matches": 97,
-            "aligned_efficiency": 0.708029,
+            "aligned_efficiency": 0.702899,
             "contrarian_evaluated_matches": 11,
             "contrarian_correct_matches": 5,
             "contrarian_efficiency": 0.454545,
-            "contrarian_advantage": -0.253484,
+            "contrarian_advantage": -0.248354,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -21931,6 +22115,14 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -21945,21 +22137,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
+            "classified_matches": 3,
             "aligned_picks": 2,
-            "contrarian_picks": 0,
+            "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 1,
-            "contrarian_rate": 0,
+            "aligned_rate": 0.666667,
+            "contrarian_rate": 0.333333,
             "aligned_evaluated_matches": 2,
             "aligned_correct_matches": 2,
             "aligned_efficiency": 1,
-            "contrarian_evaluated_matches": 0,
-            "contrarian_correct_matches": 0,
-            "contrarian_efficiency": null,
-            "contrarian_advantage": null,
+            "contrarian_evaluated_matches": 1,
+            "contrarian_correct_matches": 1,
+            "contrarian_efficiency": 1,
+            "contrarian_advantage": 0,
             "tier": null,
             "primary_insight": null
           },
@@ -21979,6 +22171,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "PHI",
+              "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
             }
           ]
         },
@@ -21986,21 +22186,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 164,
+            "classified_matches": 165,
             "aligned_picks": 143,
-            "contrarian_picks": 21,
+            "contrarian_picks": 22,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.871951,
-            "contrarian_rate": 0.128049,
+            "aligned_rate": 0.866667,
+            "contrarian_rate": 0.133333,
             "aligned_evaluated_matches": 143,
             "aligned_correct_matches": 97,
             "aligned_efficiency": 0.678322,
-            "contrarian_evaluated_matches": 21,
-            "contrarian_correct_matches": 8,
-            "contrarian_efficiency": 0.380952,
-            "contrarian_advantage": -0.29737,
+            "contrarian_evaluated_matches": 22,
+            "contrarian_correct_matches": 9,
+            "contrarian_efficiency": 0.409091,
+            "contrarian_advantage": -0.269231,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -23323,6 +23523,14 @@
               "match_id": "REG165",
               "pick_team_id": "CHI",
               "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "PHI",
+              "relation": "contrarian",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
@@ -23332,21 +23540,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 164,
+            "classified_matches": 165,
             "aligned_picks": 143,
-            "contrarian_picks": 21,
+            "contrarian_picks": 22,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.871951,
-            "contrarian_rate": 0.128049,
+            "aligned_rate": 0.866667,
+            "contrarian_rate": 0.133333,
             "aligned_evaluated_matches": 143,
             "aligned_correct_matches": 97,
             "aligned_efficiency": 0.678322,
-            "contrarian_evaluated_matches": 21,
-            "contrarian_correct_matches": 8,
-            "contrarian_efficiency": 0.380952,
-            "contrarian_advantage": -0.29737,
+            "contrarian_evaluated_matches": 22,
+            "contrarian_correct_matches": 9,
+            "contrarian_efficiency": 0.409091,
+            "contrarian_advantage": -0.269231,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -24669,6 +24877,14 @@
               "match_id": "REG165",
               "pick_team_id": "CHI",
               "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "PHI",
+              "relation": "contrarian",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
@@ -24686,21 +24902,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 1,
+            "classified_matches": 3,
+            "aligned_picks": 2,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.5,
-            "contrarian_rate": 0.5,
-            "aligned_evaluated_matches": 1,
+            "aligned_rate": 0.666667,
+            "contrarian_rate": 0.333333,
+            "aligned_evaluated_matches": 2,
             "aligned_correct_matches": 1,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -1,
+            "contrarian_advantage": -0.5,
             "tier": null,
             "primary_insight": null
           },
@@ -24720,6 +24936,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -24727,21 +24951,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 135,
+            "classified_matches": 166,
+            "aligned_picks": 136,
             "contrarian_picks": 30,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.818182,
-            "contrarian_rate": 0.181818,
-            "aligned_evaluated_matches": 135,
+            "aligned_rate": 0.819277,
+            "contrarian_rate": 0.180723,
+            "aligned_evaluated_matches": 136,
             "aligned_correct_matches": 97,
-            "aligned_efficiency": 0.718519,
+            "aligned_efficiency": 0.713235,
             "contrarian_evaluated_matches": 30,
             "contrarian_correct_matches": 15,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.218519,
+            "contrarian_advantage": -0.213235,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -26064,6 +26288,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -26073,21 +26305,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 135,
+            "classified_matches": 166,
+            "aligned_picks": 136,
             "contrarian_picks": 30,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.818182,
-            "contrarian_rate": 0.181818,
-            "aligned_evaluated_matches": 135,
+            "aligned_rate": 0.819277,
+            "contrarian_rate": 0.180723,
+            "aligned_evaluated_matches": 136,
             "aligned_correct_matches": 97,
-            "aligned_efficiency": 0.718519,
+            "aligned_efficiency": 0.713235,
             "contrarian_evaluated_matches": 30,
             "contrarian_correct_matches": 15,
             "contrarian_efficiency": 0.5,
-            "contrarian_advantage": -0.218519,
+            "contrarian_advantage": -0.213235,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -27410,6 +27642,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -27427,21 +27667,21 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 1,
+            "classified_matches": 3,
+            "aligned_picks": 2,
             "contrarian_picks": 1,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.5,
-            "contrarian_rate": 0.5,
-            "aligned_evaluated_matches": 1,
+            "aligned_rate": 0.666667,
+            "contrarian_rate": 0.333333,
+            "aligned_evaluated_matches": 2,
             "aligned_correct_matches": 1,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.5,
             "contrarian_evaluated_matches": 1,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": 0,
-            "contrarian_advantage": -1,
+            "contrarian_advantage": -0.5,
             "tier": null,
             "primary_insight": null
           },
@@ -27461,6 +27701,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -27468,21 +27716,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 139,
+            "classified_matches": 166,
+            "aligned_picks": 140,
             "contrarian_picks": 26,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.842424,
-            "contrarian_rate": 0.157576,
-            "aligned_evaluated_matches": 139,
+            "aligned_rate": 0.843373,
+            "contrarian_rate": 0.156627,
+            "aligned_evaluated_matches": 140,
             "aligned_correct_matches": 95,
-            "aligned_efficiency": 0.683453,
+            "aligned_efficiency": 0.678571,
             "contrarian_evaluated_matches": 26,
             "contrarian_correct_matches": 10,
             "contrarian_efficiency": 0.384615,
-            "contrarian_advantage": -0.298838,
+            "contrarian_advantage": -0.293956,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -28805,6 +29053,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -28814,21 +29070,21 @@
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 139,
+            "classified_matches": 166,
+            "aligned_picks": 140,
             "contrarian_picks": 26,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.842424,
-            "contrarian_rate": 0.157576,
-            "aligned_evaluated_matches": 139,
+            "aligned_rate": 0.843373,
+            "contrarian_rate": 0.156627,
+            "aligned_evaluated_matches": 140,
             "aligned_correct_matches": 95,
-            "aligned_efficiency": 0.683453,
+            "aligned_efficiency": 0.678571,
             "contrarian_evaluated_matches": 26,
             "contrarian_correct_matches": 10,
             "contrarian_efficiency": 0.384615,
-            "contrarian_advantage": -0.298838,
+            "contrarian_advantage": -0.293956,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -30151,6 +30407,14 @@
               "match_id": "REG165",
               "pick_team_id": "DET",
               "relation": "contrarian",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": false
@@ -30168,17 +30432,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 2,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 2,
+            "aligned_evaluated_matches": 3,
             "aligned_correct_matches": 2,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -30202,6 +30466,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -30209,21 +30481,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 141,
+            "classified_matches": 166,
+            "aligned_picks": 142,
             "contrarian_picks": 24,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.854545,
-            "contrarian_rate": 0.145455,
-            "aligned_evaluated_matches": 141,
+            "aligned_rate": 0.855422,
+            "contrarian_rate": 0.144578,
+            "aligned_evaluated_matches": 142,
             "aligned_correct_matches": 95,
-            "aligned_efficiency": 0.673759,
+            "aligned_efficiency": 0.669014,
             "contrarian_evaluated_matches": 24,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.333333,
-            "contrarian_advantage": -0.340426,
+            "contrarian_advantage": -0.335681,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -31549,27 +31821,35 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 141,
+            "classified_matches": 166,
+            "aligned_picks": 142,
             "contrarian_picks": 24,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.854545,
-            "contrarian_rate": 0.145455,
-            "aligned_evaluated_matches": 141,
+            "aligned_rate": 0.855422,
+            "contrarian_rate": 0.144578,
+            "aligned_evaluated_matches": 142,
             "aligned_correct_matches": 95,
-            "aligned_efficiency": 0.673759,
+            "aligned_efficiency": 0.669014,
             "contrarian_evaluated_matches": 24,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.333333,
-            "contrarian_advantage": -0.340426,
+            "contrarian_advantage": -0.335681,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -32895,6 +33175,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -32909,17 +33197,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 2,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 2,
+            "aligned_evaluated_matches": 3,
             "aligned_correct_matches": 2,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -32943,6 +33231,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -32950,21 +33246,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 145,
+            "classified_matches": 166,
+            "aligned_picks": 146,
             "contrarian_picks": 20,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.878788,
-            "contrarian_rate": 0.121212,
-            "aligned_evaluated_matches": 145,
+            "aligned_rate": 0.879518,
+            "contrarian_rate": 0.120482,
+            "aligned_evaluated_matches": 146,
             "aligned_correct_matches": 100,
-            "aligned_efficiency": 0.689655,
+            "aligned_efficiency": 0.684932,
             "contrarian_evaluated_matches": 20,
             "contrarian_correct_matches": 9,
             "contrarian_efficiency": 0.45,
-            "contrarian_advantage": -0.239655,
+            "contrarian_advantage": -0.234932,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -34290,27 +34586,35 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 145,
+            "classified_matches": 166,
+            "aligned_picks": 146,
             "contrarian_picks": 20,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.878788,
-            "contrarian_rate": 0.121212,
-            "aligned_evaluated_matches": 145,
+            "aligned_rate": 0.879518,
+            "contrarian_rate": 0.120482,
+            "aligned_evaluated_matches": 146,
             "aligned_correct_matches": 100,
-            "aligned_efficiency": 0.689655,
+            "aligned_efficiency": 0.684932,
             "contrarian_evaluated_matches": 20,
             "contrarian_correct_matches": 9,
             "contrarian_efficiency": 0.45,
-            "contrarian_advantage": -0.239655,
+            "contrarian_advantage": -0.234932,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -35636,6 +35940,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -35650,17 +35962,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 2,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 2,
+            "aligned_evaluated_matches": 3,
             "aligned_correct_matches": 2,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -35684,6 +35996,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -35691,21 +36011,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 164,
-            "aligned_picks": 144,
+            "classified_matches": 165,
+            "aligned_picks": 145,
             "contrarian_picks": 20,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.878049,
-            "contrarian_rate": 0.121951,
-            "aligned_evaluated_matches": 144,
+            "aligned_rate": 0.878788,
+            "contrarian_rate": 0.121212,
+            "aligned_evaluated_matches": 145,
             "aligned_correct_matches": 99,
-            "aligned_efficiency": 0.6875,
+            "aligned_efficiency": 0.682759,
             "contrarian_evaluated_matches": 20,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.4,
-            "contrarian_advantage": -0.2875,
+            "contrarian_advantage": -0.282759,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -37031,27 +37351,35 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 164,
-            "aligned_picks": 144,
+            "classified_matches": 165,
+            "aligned_picks": 145,
             "contrarian_picks": 20,
             "neutral_picks": 0,
             "missing_predictions": 1,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.878049,
-            "contrarian_rate": 0.121951,
-            "aligned_evaluated_matches": 144,
+            "aligned_rate": 0.878788,
+            "contrarian_rate": 0.121212,
+            "aligned_evaluated_matches": 145,
             "aligned_correct_matches": 99,
-            "aligned_efficiency": 0.6875,
+            "aligned_efficiency": 0.682759,
             "contrarian_evaluated_matches": 20,
             "contrarian_correct_matches": 8,
             "contrarian_efficiency": 0.4,
-            "contrarian_advantage": -0.2875,
+            "contrarian_advantage": -0.282759,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -38377,6 +38705,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -38391,17 +38727,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 2,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 2,
+            "aligned_evaluated_matches": 3,
             "aligned_correct_matches": 2,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -38425,6 +38761,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -38432,21 +38776,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 139,
+            "classified_matches": 166,
+            "aligned_picks": 140,
             "contrarian_picks": 26,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.842424,
-            "contrarian_rate": 0.157576,
-            "aligned_evaluated_matches": 139,
+            "aligned_rate": 0.843373,
+            "contrarian_rate": 0.156627,
+            "aligned_evaluated_matches": 140,
             "aligned_correct_matches": 99,
-            "aligned_efficiency": 0.71223,
+            "aligned_efficiency": 0.707143,
             "contrarian_evaluated_matches": 26,
             "contrarian_correct_matches": 14,
             "contrarian_efficiency": 0.538462,
-            "contrarian_advantage": -0.173768,
+            "contrarian_advantage": -0.168681,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -39772,27 +40116,35 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 139,
+            "classified_matches": 166,
+            "aligned_picks": 140,
             "contrarian_picks": 26,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.842424,
-            "contrarian_rate": 0.157576,
-            "aligned_evaluated_matches": 139,
+            "aligned_rate": 0.843373,
+            "contrarian_rate": 0.156627,
+            "aligned_evaluated_matches": 140,
             "aligned_correct_matches": 99,
-            "aligned_efficiency": 0.71223,
+            "aligned_efficiency": 0.707143,
             "contrarian_evaluated_matches": 26,
             "contrarian_correct_matches": 14,
             "contrarian_efficiency": 0.538462,
-            "contrarian_advantage": -0.173768,
+            "contrarian_advantage": -0.168681,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -41118,6 +41470,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -41132,17 +41492,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 0,
-            "aligned_picks": 0,
+            "classified_matches": 1,
+            "aligned_picks": 1,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 2,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": null,
-            "contrarian_rate": null,
-            "aligned_evaluated_matches": 0,
+            "aligned_rate": 1,
+            "contrarian_rate": 0,
+            "aligned_evaluated_matches": 1,
             "aligned_correct_matches": 0,
-            "aligned_efficiency": null,
+            "aligned_efficiency": 0,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -41166,6 +41526,14 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -41173,21 +41541,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 162,
-            "aligned_picks": 125,
+            "classified_matches": 163,
+            "aligned_picks": 126,
             "contrarian_picks": 37,
             "neutral_picks": 0,
             "missing_predictions": 3,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.771605,
-            "contrarian_rate": 0.228395,
-            "aligned_evaluated_matches": 125,
+            "aligned_rate": 0.773006,
+            "contrarian_rate": 0.226994,
+            "aligned_evaluated_matches": 126,
             "aligned_correct_matches": 85,
-            "aligned_efficiency": 0.68,
+            "aligned_efficiency": 0.674603,
             "contrarian_evaluated_matches": 37,
             "contrarian_correct_matches": 13,
             "contrarian_efficiency": 0.351351,
-            "contrarian_advantage": -0.328649,
+            "contrarian_advantage": -0.323252,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -42513,27 +42881,35 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 162,
-            "aligned_picks": 125,
+            "classified_matches": 163,
+            "aligned_picks": 126,
             "contrarian_picks": 37,
             "neutral_picks": 0,
             "missing_predictions": 3,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.771605,
-            "contrarian_rate": 0.228395,
-            "aligned_evaluated_matches": 125,
+            "aligned_rate": 0.773006,
+            "contrarian_rate": 0.226994,
+            "aligned_evaluated_matches": 126,
             "aligned_correct_matches": 85,
-            "aligned_efficiency": 0.68,
+            "aligned_efficiency": 0.674603,
             "contrarian_evaluated_matches": 37,
             "contrarian_correct_matches": 13,
             "contrarian_efficiency": 0.351351,
-            "contrarian_advantage": -0.328649,
+            "contrarian_advantage": -0.323252,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -43859,6 +44235,14 @@
               "classification_status": "missing_prediction",
               "evaluation_status": "not_applicable",
               "correct": null
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }
@@ -43873,17 +44257,17 @@
           "season_type": "Regular Season",
           "week": 12,
           "result": {
-            "classified_matches": 2,
-            "aligned_picks": 2,
+            "classified_matches": 3,
+            "aligned_picks": 3,
             "contrarian_picks": 0,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
             "aligned_rate": 1,
             "contrarian_rate": 0,
-            "aligned_evaluated_matches": 2,
+            "aligned_evaluated_matches": 3,
             "aligned_correct_matches": 2,
-            "aligned_efficiency": 1,
+            "aligned_efficiency": 0.666667,
             "contrarian_evaluated_matches": 0,
             "contrarian_correct_matches": 0,
             "contrarian_efficiency": null,
@@ -43907,6 +44291,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
@@ -43914,21 +44306,21 @@
           "perspective_id": "stage:all",
           "season_type": "Regular Season",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 137,
+            "classified_matches": 166,
+            "aligned_picks": 138,
             "contrarian_picks": 28,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.830303,
-            "contrarian_rate": 0.169697,
-            "aligned_evaluated_matches": 137,
+            "aligned_rate": 0.831325,
+            "contrarian_rate": 0.168675,
+            "aligned_evaluated_matches": 138,
             "aligned_correct_matches": 96,
-            "aligned_efficiency": 0.70073,
+            "aligned_efficiency": 0.695652,
             "contrarian_evaluated_matches": 28,
             "contrarian_correct_matches": 13,
             "contrarian_efficiency": 0.464286,
-            "contrarian_advantage": -0.236444,
+            "contrarian_advantage": -0.231366,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -45254,27 +45646,35 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         },
         {
           "perspective_id": "season:all",
           "result": {
-            "classified_matches": 165,
-            "aligned_picks": 137,
+            "classified_matches": 166,
+            "aligned_picks": 138,
             "contrarian_picks": 28,
             "neutral_picks": 0,
             "missing_predictions": 0,
             "insufficient_consensus_matches": 0,
-            "aligned_rate": 0.830303,
-            "contrarian_rate": 0.169697,
-            "aligned_evaluated_matches": 137,
+            "aligned_rate": 0.831325,
+            "contrarian_rate": 0.168675,
+            "aligned_evaluated_matches": 138,
             "aligned_correct_matches": 96,
-            "aligned_efficiency": 0.70073,
+            "aligned_efficiency": 0.695652,
             "contrarian_evaluated_matches": 28,
             "contrarian_correct_matches": 13,
             "contrarian_efficiency": 0.464286,
-            "contrarian_advantage": -0.236444,
+            "contrarian_advantage": -0.231366,
             "tier": "consensus_leaning",
             "primary_insight": {
               "insight_code": "CONSENSUS_PAYS_OFF"
@@ -46600,6 +47000,14 @@
               "classification_status": "classified",
               "evaluation_status": "evaluated",
               "correct": true
+            },
+            {
+              "match_id": "REG166",
+              "pick_team_id": "DAL",
+              "relation": "aligned",
+              "classification_status": "classified",
+              "evaluation_status": "evaluated",
+              "correct": false
             }
           ]
         }

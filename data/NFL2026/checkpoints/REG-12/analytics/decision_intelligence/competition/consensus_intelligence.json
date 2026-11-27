@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG165",
-  "evaluation_cursor": "REG165",
+  "freeze_cursor": "REG166",
+  "evaluation_cursor": "REG166",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "consensus_intelligence",
@@ -13,13 +13,13 @@
       "season_type": "Regular Season",
       "week": 12,
       "result": {
-        "frozen_matches": 2,
-        "sufficient_sample_matches": 2,
+        "frozen_matches": 3,
+        "sufficient_sample_matches": 3,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 2,
+        "dominant_matches": 3,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.744048,
+        "average_consensus_strength": 0.79015,
         "primary_insight": null
       },
       "matches": [
@@ -88,6 +88,39 @@
           "consensus_strength": 0.571429,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG166",
+          "period_id": "164_REG164",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "DAL",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "DAL",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            },
+            {
+              "team_id": "PHI",
+              "prediction_count": 2,
+              "prediction_rate": 0.117647
+            }
+          ],
+          "consensus_strength": 0.882353,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
       ]
     },
@@ -95,13 +128,13 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "frozen_matches": 165,
-        "sufficient_sample_matches": 165,
+        "frozen_matches": 166,
+        "sufficient_sample_matches": 166,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 165,
+        "dominant_matches": 166,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.834332,
+        "average_consensus_strength": 0.834622,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -5549,6 +5582,39 @@
             }
           ],
           "consensus_strength": 0.571429,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG166",
+          "period_id": "164_REG164",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "DAL",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "DAL",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            },
+            {
+              "team_id": "PHI",
+              "prediction_count": 2,
+              "prediction_rate": 0.117647
+            }
+          ],
+          "consensus_strength": 0.882353,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }
@@ -5557,13 +5623,13 @@
     {
       "perspective_id": "season:all",
       "result": {
-        "frozen_matches": 165,
-        "sufficient_sample_matches": 165,
+        "frozen_matches": 166,
+        "sufficient_sample_matches": 166,
         "insufficient_sample_matches": 0,
-        "dominant_matches": 165,
+        "dominant_matches": 166,
         "split_matches": 0,
         "dominant_rate": 1,
-        "average_consensus_strength": 0.834332,
+        "average_consensus_strength": 0.834622,
         "primary_insight": {
           "insight_code": "COMMUNITY_DIRECTION_CLEAR"
         }
@@ -11011,6 +11077,39 @@
             }
           ],
           "consensus_strength": 0.571429,
+          "has_majority": true,
+          "insight_code": "COMMUNITY_FAVORS_TEAM"
+        },
+        {
+          "match_id": "REG166",
+          "period_id": "164_REG164",
+          "registered_players": 17,
+          "valid_predictions": 17,
+          "missing_predictions": 0,
+          "coverage_rate": 1,
+          "minimum_sample": 9,
+          "sample_status": "sufficient",
+          "consensus_status": "dominant",
+          "consensus_picks": [
+            {
+              "team_id": "DAL",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            }
+          ],
+          "distribution": [
+            {
+              "team_id": "DAL",
+              "prediction_count": 15,
+              "prediction_rate": 0.882353
+            },
+            {
+              "team_id": "PHI",
+              "prediction_count": 2,
+              "prediction_rate": 0.117647
+            }
+          ],
+          "consensus_strength": 0.882353,
           "has_majority": true,
           "insight_code": "COMMUNITY_FAVORS_TEAM"
         }

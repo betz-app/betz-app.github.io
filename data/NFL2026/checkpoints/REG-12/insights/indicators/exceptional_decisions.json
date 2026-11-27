@@ -3,7 +3,7 @@
   "contract_version": "1.0",
   "competition_id": "NFL2026",
   "freeze_cursor": "REG167",
-  "evaluation_cursor": "REG165",
+  "evaluation_cursor": "REG166",
   "indicator_id": "exceptional_decisions",
   "players": [
     {
@@ -55,15 +55,33 @@
       "user_id": "DAVIDMAGANA",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-12",
         "supermajority_attempts": {
-          "evaluated": 0,
-          "correct": 0,
+          "evaluated": 1,
+          "correct": 1,
           "incorrect": 0,
-          "accuracy_rate": null
+          "accuracy_rate": 1
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "CORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG166",
+              "sort_order": 166,
+              "selected_team_id": "PHI",
+              "winner_team_id": "PHI",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "DAL",
+              "majority_count": 15,
+              "minority_count": 2,
+              "majority_rate": 0.882353,
+              "player_correct": true
+            }
+          }
+        ]
       }
     },
     {
@@ -148,15 +166,33 @@
       "user_id": "GSG",
       "decision_highlights": {
         "status": "provisional",
-        "reason_code": "NO_QUALIFYING_EVENTS",
+        "reason_code": null,
         "period_id": "REG-12",
         "supermajority_attempts": {
-          "evaluated": 0,
-          "correct": 0,
+          "evaluated": 1,
+          "correct": 1,
           "incorrect": 0,
-          "accuracy_rate": null
+          "accuracy_rate": 1
         },
-        "events": []
+        "events": [
+          {
+            "insight_code": "CORRECT_AGAINST_SUPERMAJORITY",
+            "evidence": {
+              "match_id": "REG166",
+              "sort_order": 166,
+              "selected_team_id": "PHI",
+              "winner_team_id": "PHI",
+              "registered_players": 17,
+              "valid_predictions": 17,
+              "minimum_sample": 9,
+              "majority_team_id": "DAL",
+              "majority_count": 15,
+              "minority_count": 2,
+              "majority_rate": 0.882353,
+              "player_correct": true
+            }
+          }
+        ]
       }
     },
     {
