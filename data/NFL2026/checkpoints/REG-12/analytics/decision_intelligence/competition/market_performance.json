@@ -2,8 +2,8 @@
   "contract_type": "decision_intelligence_competition_indicator",
   "contract_version": "1.0",
   "competition_id": "NFL2026",
-  "freeze_cursor": "REG166",
-  "evaluation_cursor": "REG166",
+  "freeze_cursor": "REG167",
+  "evaluation_cursor": "REG167",
   "freeze_mode": "rolling",
   "analytics_id": "decision_intelligence",
   "indicator_id": "market_performance",
@@ -13,20 +13,20 @@
       "season_type": "Regular Season",
       "week": 12,
       "result": {
-        "evaluated_matches": 3,
-        "favorite_wins": 1,
+        "evaluated_matches": 4,
+        "favorite_wins": 2,
         "underdog_wins": 2,
         "official_ties": 0,
         "pending_matches": 0,
-        "market_efficiency": 0.333333,
-        "upset_rate": 0.666667,
+        "market_efficiency": 0.5,
+        "upset_rate": 0.5,
         "consensus_comparison": {
-          "shared_evaluated_matches": 3,
-          "market_correct": 1,
-          "consensus_correct": 2,
-          "market_efficiency": 0.333333,
-          "consensus_efficiency": 0.666667,
-          "consensus_vs_market_delta": 0.333334
+          "shared_evaluated_matches": 4,
+          "market_correct": 2,
+          "consensus_correct": 3,
+          "market_efficiency": 0.5,
+          "consensus_efficiency": 0.75,
+          "consensus_vs_market_delta": 0.25
         },
         "primary_insight": null
       },
@@ -54,6 +54,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "PHI",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG167",
+          "favorite_team_id": "BUF",
+          "underdog_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "BUF",
+          "favorite_won": true
         }
       ]
     },
@@ -61,20 +69,20 @@
       "perspective_id": "stage:all",
       "season_type": "Regular Season",
       "result": {
-        "evaluated_matches": 165,
-        "favorite_wins": 100,
+        "evaluated_matches": 166,
+        "favorite_wins": 101,
         "underdog_wins": 64,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.606061,
-        "upset_rate": 0.387879,
+        "market_efficiency": 0.608434,
+        "upset_rate": 0.385542,
         "consensus_comparison": {
-          "shared_evaluated_matches": 165,
-          "market_correct": 100,
-          "consensus_correct": 110,
-          "market_efficiency": 0.606061,
-          "consensus_efficiency": 0.666667,
-          "consensus_vs_market_delta": 0.060606
+          "shared_evaluated_matches": 166,
+          "market_correct": 101,
+          "consensus_correct": 111,
+          "market_efficiency": 0.608434,
+          "consensus_efficiency": 0.668675,
+          "consensus_vs_market_delta": 0.060241
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -1400,26 +1408,34 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "PHI",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG167",
+          "favorite_team_id": "BUF",
+          "underdog_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "BUF",
+          "favorite_won": true
         }
       ]
     },
     {
       "perspective_id": "season:all",
       "result": {
-        "evaluated_matches": 165,
-        "favorite_wins": 100,
+        "evaluated_matches": 166,
+        "favorite_wins": 101,
         "underdog_wins": 64,
         "official_ties": 1,
         "pending_matches": 0,
-        "market_efficiency": 0.606061,
-        "upset_rate": 0.387879,
+        "market_efficiency": 0.608434,
+        "upset_rate": 0.385542,
         "consensus_comparison": {
-          "shared_evaluated_matches": 165,
-          "market_correct": 100,
-          "consensus_correct": 110,
-          "market_efficiency": 0.606061,
-          "consensus_efficiency": 0.666667,
-          "consensus_vs_market_delta": 0.060606
+          "shared_evaluated_matches": 166,
+          "market_correct": 101,
+          "consensus_correct": 111,
+          "market_efficiency": 0.608434,
+          "consensus_efficiency": 0.668675,
+          "consensus_vs_market_delta": 0.060241
         },
         "primary_insight": {
           "insight_code": "COMMUNITY_BEATS_MARKET"
@@ -2745,6 +2761,14 @@
           "evaluation_status": "evaluated",
           "winner_team_id": "PHI",
           "favorite_won": false
+        },
+        {
+          "match_id": "REG167",
+          "favorite_team_id": "BUF",
+          "underdog_team_id": "KC",
+          "evaluation_status": "evaluated",
+          "winner_team_id": "BUF",
+          "favorite_won": true
         }
       ]
     }
